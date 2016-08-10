@@ -7,6 +7,7 @@ class DBManager {
     protected $password;
     protected $hostname;
     protected $connection;
+    protected $statement;
     
     private static $instance;
     
@@ -34,6 +35,10 @@ class DBManager {
     public function getConnection(){
         return $this->connection;
     } 
+    
+    public function getStatement(){
+        return $this->statement;
+    }
 
     public function prepare($statement)
     {

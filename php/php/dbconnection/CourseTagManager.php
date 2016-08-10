@@ -1,6 +1,7 @@
 <?php
 require_once 'constants.php';
 require_once __ENTITIES__."CourseTag.php";
+require_once __DB_CONNECTION__."TagManager.php";
 require_once __DB_CONNECTION__."DBManager.php";
 
 /**
@@ -9,13 +10,7 @@ require_once __DB_CONNECTION__."DBManager.php";
  */
 class CourseTagManager {
     
-    function __construct(){
-    }
-
-    function __destruct(){
-    }
-    
-    public function insertCourseTag($course_tag){
+    public static function insertCourseTag($course_tag){
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
@@ -29,7 +24,7 @@ class CourseTagManager {
         $db_instance->closeConnection();
     }
     
-    public function deleteCourseTag($course_tag) {
+    public static function deleteCourseTag($course_tag) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
@@ -43,30 +38,21 @@ class CourseTagManager {
         $db_instance->closeConnection();
     }
     
-    public function getAllTagsForCourse($course){
+    public static function getAllTagsForCourse($course){
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
-        $sql_select = $db_instance->prepare("SELECT T.name, T.description "
+        $sql_select = $db_instance->prepare("SELECT T.id, T.name, T.description "
                 . "FROM course_has_tag CT INNER JOIN tag T "
                 . "ON CT.tag_id = T.id   "
                 . "WHERE CT.course_id = ?;");
         $course_id = $course->getId();
         $sql_select->bind_param("i", $course_id);
-        $name = null;
-        $description = null;
-        $sql_select->bind_result($name, $description);
-        $db_instance->executeStatement();
-        
-        
-        while($db_instance->fetchResult()){
-            echo $name . " ; " . $description;
-            echo "<br>";
-        }
-        
+        $result = TagManager::fetchTags();        
+        $db_instance->closeStatement();
         $db_instance->closeConnection();
         
-        
-        //return $result;
+        echo json_encode($result, JSON_PRETTY_PRINT);
+        return json_encode($result, JSON_PRETTY_PRINT);
     }
 }

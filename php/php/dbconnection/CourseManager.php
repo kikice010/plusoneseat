@@ -9,13 +9,7 @@ require_once __DB_CONNECTION__."DBManager.php";
  */
 class CourseManager {
     
-    function __construct(){
-    }
-
-    function __destruct(){
-    }
-    
-    public function insertCourse($course){
+    public static function insertCourse($course){
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
@@ -27,7 +21,7 @@ class CourseManager {
         $db_instance->disconnect();
     }
     
-    public function getAllCoursesForMenu($menu) {
+    public static function getAllCoursesForMenu($menu) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();

@@ -15,12 +15,10 @@ and open the template in the editor.
         require_once __ENTITIES__."./Course.php";
         require_once __DB_CONNECTION__."./CourseTagManager.php";
         
-        $ct_manager = new CourseTagManager();
-        
         $course = new Course(2, "", "", 1);
                 
         
-        $ct_manager->getAllTagsForCourse($course);
+        CourseTagManager::getAllTagsForCourse($course);
         
         echo "test";
         
