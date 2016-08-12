@@ -1,0 +1,177 @@
+#btnPostListing{
+	font-family: 'Source Sans Pro', helvetica, sans-serif;
+	border:0;
+	margin-top:5px;
+	font-size:1em;
+	font-weight:bold;
+	border-radius:0.5em;
+	padding: 1em;
+	background:#f0804a;
+	color:white;
+}
+
+.navbar.navbar-default{
+	margin-bottom:0;
+}
+.navbar-brand{
+	min-height: 60px;
+	padding: 0;
+}
+#logo{
+	padding-top: 5px;
+    padding-bottom: 5px;
+}
+#searchForm{
+	margin-top: 5em;
+	
+}
+#searchField{
+	        font-size: 1.7em;
+    line-height: 1.09091em;
+    font-weight: 600;
+    padding: 0.875em 1em 0.6875em 1em;
+    width: 22.5em;
+    height: 2.5em;
+    border-radius:0.5em;
+	   
+}
+#searchBtn{
+	    width: 6em;
+    padding: 0.875em 1em 0.6875em 1em;
+    font-size: 1.375em;
+    line-height: 1.09091em;
+    font-weight: 600;
+    margin: 0 0 0 0.75em;
+    border-color: #f0804a;
+    border-radius:0.5em;
+}    
+
+.container,.navbar-default{
+	background:white;
+}
+
+
+.slider-handle{
+	background: #d0d0d0;
+    border-color: #d0d0d0;
+}
+.slider-selection{
+	background: #f0804a;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', helvetica, sans-serif;
+	}
+
+
+figure.fluidratio {
+  /*padding-top: 10%;  /* slope */
+  height: 600px;  /* start height */
+
+  /*background-image: url("./img/jumbotron1.jpg");*/
+  background-size: cover;
+  -moz-background-size: cover;  /* Firefox 3.6 */
+  background-position: center;  /* Internet Explorer 7/8 */
+}
+
+#jumbo1{
+	background-image: url("../img/jumbotron1.jpg");
+	height: 600px;
+}
+
+#jumbo2{
+	background-image: url("../img/jumbotron2.jpg");
+	height: 600px;
+}
+
+#jumbo3{
+	background-image: url("../img/jumbotron3.jpg");
+	height: 600px;
+}
+
+.carousel-indicators{
+	text-align: center;
+	width: auto;
+	margin:0;
+}
+
+.leftPos{
+	padding-top: 10em;
+    padding-bottom: 10em;
+    text-align: center;
+}
+
+@media screen and (min-width: 48em){
+	.leftPos{
+	padding-top: 10em;
+    padding-bottom: 10em;
+    text-align: center;
+}
+}
+.leftPos{
+	padding-top: 10em;
+    padding-bottom: 10em;
+    text-align: center;
+}
+
+@media screen and (min-width: 48em){
+	.mojH1{
+	padding: 0 1.5em;
+	margin-bottom: 0;
+    margin-top: 0;
+    font-size: 4.5em;
+    line-height: 1.14286em;
+    font-weight: 700;
+    line-height: 0.8125em;
+    color: white;
+	}  
+	.mojH2{
+	    font-size: 2.5em;
+    line-height: 1.38462em;
+    font-weight: 500;
+    margin: 0.75em auto;
+    text-align: center;
+    max-width: 22.5em;
+    color: white;
+        font-family: 'Source Sans Pro', helvetica, sans-serif;
+}
+}
+
+@media screen and (max-width: 47em){
+.mojH1{
+	margin-bottom: 0;
+    margin-top: 0;
+    position: relative;
+    padding: 0;
+    color: white;
+    font-size: 3.5em;
+    font-weight: 600;
+    line-height: 1.125em;
+        color: white;
+        font-family: 'Source Sans Pro', helvetica, sans-serif;
+} 
+
+.mojH2{
+	    font-size: 1.8em;
+    line-height: 1.38462em;
+    font-weight: 400;
+    margin: 0.75em auto;
+    text-align: center;
+    max-width: 22.5em;
+    color: white;
+        font-family: 'Source Sans Pro', helvetica, sans-serif;
+}
+}
+
+footer.footer{
+	font-family: Verdana, Geneva, sans-serif;
+ font-size: 1em;
+ font-weight: bold;
+ color: #FFF;
+ text-align: center;
+ /*padding: 10px;*/
+ margin-top: 10px;
+ height: auto;
+ width: 100%;
+}
+
+
