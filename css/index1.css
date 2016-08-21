@@ -102,6 +102,10 @@ figure.fluidratio {
     text-align: center;
 }
 
+.fb-like{
+    padding-top: 20px;
+}
+
 @media screen and (min-width: 48em){
 	.mojH1{
 	padding: 0 1.5em;
@@ -164,11 +168,28 @@ footer.footer{
 }
 
 footer{
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-top: 50px;
+    padding-left: 130px;
+    padding-right: 130px;
+}
+.footer.row h4{
+    text-align:justify;
 }
 .trademark{
     margin-top: 30px;
+}
+
+.partnerContainer{
+    margin-left: 350px;
+    margin-right: 350px;
+}
+
+.partnerContainer img{
+    text-align: center;
+}
+.socialMediaContainer{
+    padding-left: 50px;
+    padding-right: 50px;
 }
 .footer.row p{
     text-align:left;

@@ -42,6 +42,23 @@
 <!-- removing the spaces between inline-blocks. Remove this piece of code when pre Jellybean becomes unsupported -->
 </head>
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '171104249965428',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
   <nav class="navbar navbar-default">
     <div class="container">
@@ -85,8 +102,20 @@
   					  
   					</form>
             <p>Partner</p>
-            <hr/>
-            <img class="img-responsive" src="./img/partner.jpg"/>
+            <div class="row partnerContainer">
+              <div class="col-md-5"></div>
+              <div class="col-md-2">
+                <hr/>
+              </div>
+              <div class="col-md-5"></div>
+            </div>
+            <div class="row partnerContainer">
+              <div class="col-md-5"></div>
+              <div class="col-md-2">
+                <img class="img-responsive" src="./img/partner.jpg"/>
+              </div>
+              <div class="col-md-5"></div>
+            </div>
         </div>
       </figure>
   	</div>          
@@ -225,16 +254,16 @@
     <div class="col-lg-4 col-md-4">
       <div class="contact-box">
         <div class="row imageBox">
-          <img class="img-responsive center-block" src="./img/meal_offer_icon.png"/>
+          <img class="img-responsive center-block" src="./img/thumbsUp.png"/>
         </div>
         <h4><b>Like our page and invite your friends!</b></h4>Be a volunteer and be a part of our cause! 
-        <p>Facebook likes container!</p>                 
+        <div class="fb-like" data-href="https://www.facebook.com/plusoneseat/?fref=ts" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>                
       </div>
     </div>
     <div class="col-lg-4 col-md-4 text-center">
       <div class="contact-box">
         <div class="row imageBox">
-          <img class="img-responsive center-block" src="./img/meal_offer_icon.png"/>
+          <img class="img-responsive center-block" src="./img/thumbsUp.png"/>
         </div>
         <h4><b>Be a volunteer and be a part of our cause!</b></h4>
         <p class="text-muted">
@@ -259,22 +288,33 @@
         <p><a class="plusOneLinkWhite" href="#">Terms of Service</a></p>
       </div>
       <div class="col-lg-2 col-md-2">
-        <h4>Company</h4>
-        <p><a class="plusOneLinkWhite" href="#">About</a></p>
-        <p><a class="plusOneLinkWhite" href="#">Help</a></p>
-        <p><a class="plusOneLinkWhite" href="#">Cooperation</a></p>
-        <p><a class="plusOneLinkWhite" href="#">Privacy Policy</a></p>
-        <p><a class="plusOneLinkWhite" href="#">Terms of Service</a></p>
+        <h4>Community</h4>
+        <p><a class="plusOneLinkWhite" href="#">Facebook</a></p>
+        <p><a class="plusOneLinkWhite" href="#">Instagram</a></p>
+        <p><a class="plusOneLinkWhite" href="#">Twitter</a></p>
       </div>
       <div class="col-lg-2 col-md-2">
-        <h4>Company</h4>
-        <p><a class="plusOneLinkWhite" href="#">About</a></p>
-        <p><a class="plusOneLinkWhite" href="#">Help</a></p>
-        <p><a class="plusOneLinkWhite" href="#">Cooperation</a></p>
-        <p><a class="plusOneLinkWhite" href="#">Privacy Policy</a></p>
-        <p><a class="plusOneLinkWhite" href="#">Terms of Service</a></p>
+        <h4>Donation</h4>
+        <p><a class="plusOneLinkWhite" href="#">Partner</a></p>
+        <p><a class="plusOneLinkWhite" href="#">Why Donate</a></p>
+        <p><a class="plusOneLinkWhite" href="#">Donation System</a></p>
       </div>
-      <div class="col-lg-6 col-md-6"></div>
+      <div class="col-lg-6 col-md-6 socialMediaContainer">
+        <h3>Tuned In!</h3>
+        <p>Ut non odio condimentum, ornare felis nec, pharetra lacus.</p>
+        <div class="row">
+          <div class="col-lg-2 col-md-2">
+            <img class="img-responsive center-block" src="./img/facebook.png"/>
+          </div>
+          <div class="col-lg-2 col-md-2">
+            <img class="img-responsive center-block" src="./img/instagram.png"/>
+          </div>
+          <div class="col-lg-2 col-md-2">
+            <img class="img-responsive center-block" src="./img/twitter.png"/>
+          </div>
+          <div class="col-lg-6 col-md-6"></div>
+        </div>
+      </div>
     </div>
     <div class="row trademark">
       <p class="footer" style="text-align:center">PlusOneSeat © 2016</p>
