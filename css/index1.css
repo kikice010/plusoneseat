@@ -1,0 +1,284 @@
+.navbar.navbar-default{
+	margin-bottom:0;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 0;
+    background:white;
+}
+.img-responsive{
+    max-height: 50px;
+}
+.container{
+    width: 100%;
+    background:white;
+    margin:0;
+    text-align: center;
+
+}
+.navbar-brand{
+	min-height: 60px;
+	padding: 0;
+}
+.jumbotron{
+    background: white;
+}
+.jumbotron h1{
+    color:#ef804a;
+}
+#logo{
+	padding-top: 5px;
+    padding-bottom: 5px;
+}
+#searchForm{
+	margin-top: 5em;
+    margin-bottom: 5em;
+    text-align: center;	
+}
+#searchField{
+	        font-size: 1.7em;
+    line-height: 1.09091em;
+    font-weight: 600;
+    padding: 0.875em 1em 0.6875em 1em;
+    width: 22.5em;
+    height: 2.5em;
+    border-radius:0.5em;
+	   
+}
+
+#searchForm row{
+    width: auto;
+    margin-bottom: 10px;
+}
+#searchBtn{
+	/*width: 6em;
+    padding: 0.875em 1em 0.6875em 1em;
+    font-size: 1.375em;
+    line-height: 1.09091em;
+    font-weight: 600;
+    margin: 0 0 0 0.75em;*/
+    border-color: #ccc;
+    border-radius:0;
+    border-width: 2px;
+}    
+#btn4{
+    padding: 0;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', helvetica, sans-serif;
+	}
+
+
+figure.fluidratio {
+  /*padding-top: 10%;  /* slope */
+  height: 600px;  /* start height */
+
+  /*background-image: url("./img/jumbotron1.jpg");*/
+  background-size: cover;
+  -moz-background-size: cover;  /* Firefox 3.6 */
+  background-position: center;  /* Internet Explorer 7/8 */
+}
+
+
+
+.leftPos{
+	padding-top: 10em;
+    padding-bottom: 10em;
+    text-align: center;
+}
+
+@media screen and (min-width: 48em){
+	.leftPos{
+	padding-top: 10em;
+    padding-bottom: 10em;
+    text-align: center;
+}
+}
+.leftPos{
+	padding-top: 10em;
+    padding-bottom: 10em;
+    text-align: center;
+}
+
+@media screen and (min-width: 48em){
+	.mojH1{
+	padding: 0 1.5em;
+	margin-bottom: 0;
+    margin-top: 0;
+    font-size: 4.5em;
+    line-height: 1.14286em;
+    font-weight: 700;
+    line-height: 0.8125em;
+    color: #ef804a;
+	}  
+	.mojH2{
+	    font-size: 2.5em;
+    line-height: 1.38462em;
+    font-weight: 500;
+    margin: 0.75em auto;
+    text-align: center;
+    max-width: 24em;
+    color: #ef804a;
+        font-family: 'Source Sans Pro', helvetica, sans-serif;
+}
+}
+
+@media screen and (max-width: 47em){
+.mojH1{
+	margin-bottom: 0;
+    margin-top: 0;
+    position: relative;
+    padding: 0;
+    color: #ef804a;
+    font-size: 3.5em;
+    font-weight: 600;
+    line-height: 1.125em;
+    font-family: 'Source Sans Pro', helvetica, sans-serif;
+} 
+
+.mojH2{
+	    font-size: 1.8em;
+    line-height: 1.38462em;
+    font-weight: 400;
+    margin: 0.75em auto;
+    text-align: center;
+    max-width: 22.5em;
+    color: #ef804a;
+        font-family: 'Source Sans Pro', helvetica, sans-serif;
+}
+}
+
+footer.footer{
+	font-family: Verdana, Geneva, sans-serif;
+ font-size: 1em;
+ font-weight: bold;
+ color: white;
+ background-color: #ef804a;
+ text-align: center;
+ /*padding: 10px;*/
+ /*margin-top: 10px;*/
+ height: auto;
+ width: 100%;
+}
+
+footer{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.trademark{
+    margin-top: 30px;
+}
+.footer.row p{
+    text-align:left;
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+#howContainer,#aboutContainer{
+    background-color: #ccc;
+    padding-right: 150px;
+    padding-left: 150px;
+    text-align: center;
+}
+.aboutText{
+    padding-top: 30px;
+}
+.aboutText h3{
+    text-align: justify;
+}
+.aboutText h1{
+    text-align: center;
+}
+.hows{
+    background-color: white;
+    min-height: 450px;
+}
+.col-centered,.row-centered{
+     float: none;
+    margin: 0 auto;
+}
+.plusOneLink{
+    color: #ef804a;
+}
+.plusOneLinkWhite{
+    color:white;
+}
+.service-box,.contact-box{
+    margin:30px;
+
+}
+
+.service-box p{
+    padding:25px;
+    text-align: justify;
+}
+
+.imageBox{
+    padding-bottom: 30px;
+    max-height:100% ;
+    max-width:100%;
+
+}
+
+.imageBox img{
+    max-height:70% ;
+    max-width:70%;
+}
+
+/* style icon */
+.inner-addon .glyphicon{
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  color: #ccc;
+}
+.inner-addon .img-responsive{
+  position: absolute;
+  padding: 0px 10px 10px 0px;
+  pointer-events: none;
+  height: 40px;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 0px; }
+
+#input1,#input2,#input3{
+    padding: 0
+}
+
+.inner-addon input{
+    border-radius: 0;
+}
+
+
+.donationNumber{
+    background-color: #ef804a;
+    
+}
+
+.donatorContainer{
+    padding-right: 150px;
+    padding-left: 150px;
+    text-align: center;
+}
+
+.donatorText p{
+    text-align: justify;
+    padding: 10px 10px 0px 10px;
+}
+
+.donatorBox{
+    /*margin-right: 150px;
+    margin-left: 150px;*/
+    margin: 20px;
+}
