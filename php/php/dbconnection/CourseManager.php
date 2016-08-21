@@ -15,23 +15,62 @@ class CourseManager {
         $db_instance->connect();
         $sql_insert = $db_instance->prepare("INSERT INTO course (name, description, menu) "
                 . "VALUES(?, ?, ?);");
-        $sql_insert->bind_params("ssi", $course->getName(),
-                $course->getDescription(), $course->getMenu());
-        $sql_insert->execute();
-        $db_instance->disconnect();
+        $name = $course->getName();
+        $description = $course->getDescription();
+        $menu = $course->getMenu();
+        $sql_insert->bind_params("ssi", $name, $description, $menu);
+        $db_instance->executeStatement();
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+    }
+    
+    public static function deleteCourse($course) {
+        $db_instance = DBManager::getInstance();
+        
+        $db_instance->connect();
+        $sql_delete = $db_instance->prepare("DELETE FROM course "
+                . "WHERE id = ?;");
+        $id = $course->getId();
+        $sql_delete->bind_param("i", $id);
+        $db_instance->executeStatement();
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
     }
     
     public static function getAllCoursesForMenu($menu) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
-        $sql_select = $db_instance->prepare("SELECT * FROM course WHERE menu = ?;");
-        $sql_select->bind_params("i", $menu->getId());
-        $result = null;
-        $sql_select->bind_result($result);
-        $sql_select->execute();
-        $sql_select->fetch();
-        $db_instance->disconnect();
+        $sql_select = $db_instance->prepare("SELECT id, name, description, menu "
+                . "FROM course WHERE menu = ?;");
+        $menu_id = $menu->getId();
+        $sql_select->bind_params("i", $menu_id);
+        $result = CourseManager::fetchCourses();
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+        
+        echo json_encode($result, JSON_PRETTY_PRINT);
+        return json_encode($result, JSON_PRETTY_PRINT);
+    }
+    
+    public static function fetchCourses(){
+        $db_instance = DBManager::getInstance();
+        
+        $result = array();
+        $statement = $db_instance->getStatement();
+        
+        $id = null;
+        $name = null;
+        $description = null;
+        $menu_id = null;
+        $tupple = null;
+        $statement->bind_result($id, $name, $description, $menu_id);
+        $db_instance->executeStatement();
+        
+        while($db_instance->fetchResult()){
+            $tupple = new Course($id, $name, $description, $menu_id);
+            array_push($result, $tupple);
+        }
         
         return $result;
     }

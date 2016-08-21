@@ -1,6 +1,6 @@
 <?php
 require_once 'constants.php';
-require_once __ENTITIES__."Tag.php";
+require_once __ENTITIES__."Picture.php";
 
 /**
  * Description of TagManager
@@ -8,48 +8,46 @@ require_once __ENTITIES__."Tag.php";
  */
 class TagManager {
     
-    public static function insertTag($tag){
+    public static function insertPicture($picture){
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
-        $sql_insert = $db_instance->prepare("INSERT INTO tag (name, description) "
-                . "VALUES(?, ?);");
-        $name = $tag->getName();
-        $description = $tag->getDescription();
-        $sql_insert->bind_param("ss", $name, $description);
+        $sql_insert = $db_instance->prepare("INSERT INTO picture (file_location) "
+                . "VALUES(?);");
+        $file_location = $picture->getFileLocation();
+        $sql_insert->bind_param("s", $file_location);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
     }
     
-    public static function deleteCourseTag($tag) {
+    public static function deletePicture($picture) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
-        $sql_delete = $db_instance->prepare("DELETE FROM tag "
-                . "WHERE course_id = ? AND tag_id = ?;");
-        $id = $tag->getId();
+        $sql_delete = $db_instance->prepare("DELETE FROM picture "
+                . "WHERE id = ?;");
+        $id = $picture->getId();
         $sql_delete->bind_param("i", $id);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
     }
     
-    public static function fetchTags(){
+    public static function fetchPictures(){
         $db_instance = DBManager::getInstance();
         
         $result = array();
         $statement = $db_instance->getStatement();
         
         $id = null;
-        $name = null;
-        $description = null;
+        $file_location = null;
         $tupple = null;
-        $statement->bind_result($id, $name, $description);
+        $statement->bind_result($id, $file_location);
         $db_instance->executeStatement();
         
         while($db_instance->fetchResult()){
-            $tupple = new Tag($id, $name, $description);
+            $tupple = new Tag($id, $file_location);
             array_push($result, $tupple);
         }
         
