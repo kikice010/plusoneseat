@@ -1,0 +1,24 @@
+@media(min-width:62em){
+    #title-holder {
+        height: 90px;
+        font-size: 3em;
+        float: left;
+    }
+
+    .img-logo{
+        width: 110px;
+        height: 110px;
+    }
+
+    #title-with-icon{
+        max-height: 110px;
+        height: 6em; 
+    }
+
+    #logo-holder {
+        width: 110px;
+        height: 110px;
+        float: left;
+    }
+
+}

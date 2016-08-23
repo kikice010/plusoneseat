@@ -1,0 +1,37 @@
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    display: flex;
+    align-items: center;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+
+@media(min-width:34em){
+    #title-holder {
+        height: 90px; 
+        font-size: 1em;
+        float: left;
+    }
+
+    .img-logo{
+        width: 90px;
+        height: 90px;
+        float: left;
+    }
+
+    #title-with-icon{
+        max-height: 90px;
+        height: 4em; 
+    }
+
+    #logo-holder {
+        width: 90px;
+        height: 90px;
+        float: left;
+    }
+}
