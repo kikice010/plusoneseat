@@ -1,24 +1,14 @@
-@media(min-width:48em){
-    #title-holder {
-        height: 90px;
+@media (min-width: 641px) and (max-width: 800px){
+    .title-main {
+        float:left;
+        margin-left: 2%;
         font-size: 2em;
-        float: left;
+        
     }
 
-    .img-logo{
-        width: 100px;
-        height: 100px;
-    }
-
-    #title-with-icon{
-        max-height: 100px;
-        height: 5em; 
-    }
-
-    #logo-holder {
-        width: 100px;
-        height: 100px;
-        float: left;
+    .title-holder {
+        height: 3em;
+        display: inline-flex;
     }
 
 
