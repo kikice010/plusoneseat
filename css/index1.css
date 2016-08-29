@@ -202,22 +202,22 @@ footer{
 
 #howContainer,#aboutContainer{
     background-color: #ccc;
-    padding-right: 150px;
-    padding-left: 150px;
+    padding: 30px 150px 100px 150px;
     text-align: center;
 }
 .aboutText{
-    padding-top: 30px;
+    /*padding-top: 20px;*/
 }
-.aboutText h3{
+.aboutText h4{
     text-align: justify;
 }
-.aboutText h1{
+.aboutText h2{
     text-align: center;
+    padding-bottom: 20px;
 }
 .hows{
     background-color: white;
-    min-height: 450px;
+    min-height: 250px;
 }
 .col-centered,.row-centered{
      float: none;
@@ -235,9 +235,10 @@ footer{
 }
 
 .service-box p{
-    padding:25px;
+    padding:0px 25px 25px 25px;
     text-align: justify;
 }
+
 
 .imageBox{
     padding-bottom: 30px;
