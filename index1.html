@@ -32,6 +32,7 @@
 <meta content='@plusoneseat' name='twitter:site'>
 <meta content='963087903805072' property='fb:app_id'>
 <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="./lib/bootstrap/css/font-awesome.min.css" rel="stylesheet">
 <link href="./lib/slider/css/slider.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="./fonts/MyFontsWebfontsKit.css">
 <link href="./css/index1.css" rel="stylesheet">
@@ -63,114 +64,115 @@
 </script>
 
   <nav class="navbar navbar-default">
-    <div class="container">
+    <div class="container" id="headerContainer">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <span  class="navbar-brand" ><a href="#"><img class="img-responsive" id="logo" src="./img/Plusoneseat_grey.png" height="60px" /></a></span>        
       </div>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Sign up</a></li>
-          <li><a href="#">Log in</a></li>
+          <li><a data-toggle="modal" data-target="#signUpModal" id="signUpBtn">Sign up</a></li>
+          <li><a data-toggle="modal" data-target="#logInModal" id="logInBtn">Log in</a></li>
       </ul>
     </div><!-- /.container-fluid -->
   </nav>
 
-  <div class="container-fluid">
-    <div class="jumbotron">
-  		<figure class="fluidratio" id="jumbo1">
-  			<div class="leftPos">
-            
-            <h3 class="mojH2 GloberBold">FIGHT GLOBAL HUNGER EVERYTIME YOU EAT !</h3>
-            <form class="form-horizontal" id="searchForm">
+  <!-- container for donation counter and search fields -->
+  <div class="container containerSearch">
+        <div class="donatedSeatsContainer row" style="width:50%;margin:auto">
+            <div class="col-md-8">
+              <div class="row GloberBold" style="text-align:right">
+                <span id="donatedSeatsPlus" style="color:#ef804a;">+</span>
+                <span id="donatedSeatsZeros" style="color:#ccc;">00000000</span>
+                <span id="donatedSeats" style="color:#ef804a">5</span>
+              </div>
               <div class="row">
-              <div class="col-md-6 col-centered">
-  					    <div class="inner-addon left-addon col-md-4" id="input1" >
-                    <i><img class="img-responsive" src="./img/Plusoneseat_logo_grey.png"/></i>
-                    <input type="text" class="form-control" placeholder="Number of seat"/>
-                </div>
-                <div class="inner-addon left-addon col-md-4" id="input2">
-                    <i class="glyphicon glyphicon-map-marker"></i>
-                    <input type="text" class="form-control" placeholder="Where to eat?"/>
-                </div>
-                <div class="inner-addon left-addon col-md-3" id="input3">
-                    <i class="glyphicon glyphicon-calendar"></i>
-                    <input type="text" class="form-control" placeholder="Date"/>
-                </div>
-                <div class="col-md-1 " align="left" id="btn4">
-                <button type="submit" id="searchBtn" style="background:#f0804a;color:white" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                </div>
-  					  </div>
+                <p class="GloberBookItalic" style="color:#ef804a; text-align:right;">*seats donated!</p>
               </div>
-  					  
-  					</form>
-            <p class="GloberLight">Partner</p>
-            <div class="row partnerContainer">
-              <div class="col-md-5"></div>
-              <div class="col-md-2">
-                <hr/>
-              </div>
-              <div class="col-md-5"></div>
             </div>
-            <div class="row partnerContainer">
-              <div class="col-md-5"></div>
-              <div class="col-md-2">
-                <img class="img-responsive" src="./img/partner.jpg"/>
-              </div>
-              <div class="col-md-5"></div>
-            </div>
+            <div class="col-md-4" style="text-align:left">
+              <img src="./img/Plusoneseat_logo_orange.png" height="150px" />
+            </div> 
         </div>
-      </figure>
-  	</div>          
+        <h3 class="fightGlobalHungerH2 GloberBold">FIGHT GLOBAL HUNGER EVERYTIME YOU EAT !</h3>
+        <form class="form-horizontal" id="searchForm">
+          <div class="row" style="width:50%;margin:auto">
+  				    <div class="inner-addon left-addon col-md-4" id="input1" >
+                  <i><img class="img-responsive" src="./img/Plusoneseat_logo_grey.png"/></i>
+                  <input type="text" class="form-control" placeholder="Number of seat"/>
+              </div>
+              <div class="inner-addon left-addon col-md-4" id="input2">
+                  <i class="glyphicon glyphicon-map-marker"></i>
+                  <input type="text" class="form-control" placeholder="Where to eat?"/>
+              </div>
+              <div class="inner-addon left-addon col-md-3" id="input3">
+                  <i class="glyphicon glyphicon-calendar"></i>
+                  <input type="text" class="form-control" placeholder="Date"/>
+              </div>
+              <div class="col-md-1 " align="left" id="searchBtnContainer">
+              <button type="submit" id="searchBtn" style="background:#f0804a;color:white" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+              </div>
+          </div>
+				</form>
+        <div class="row GloberSemiBold" style="width:50%;margin:auto;padding-bottom:1em">
+          Partner
+        </div>
+        <hr class="horizontalSpliter"/>
+        <div class="row">
+          <img height="50px" src="./img/partner.jpg"/>
+        </div>
   </div>
-
+<!-- end of container for donation counter and search fields  -->
+<!-- how section container-->
   <div class="container-fluid" id="howContainer">
     <h1 class="GloberBold">HOW?</h1> 
-    <div class="row row-centered">
-                        <div class="col-lg-4 col-md-4 text-center">
-                            <div class="service-box">
-                                <div class="row imageBox">
-                                    <img class="img-responsive center-block" src="./img/meal_offer_icon.png"/>
-                                </div>
-                                <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                                <div class="row hows">
-                                <h3 class="GloberBold">MEAL OFFER</h3>
-                                  <p class="text-muted">
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis. Nam nec ultrices lacus.
-                                  </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 text-center">
-                            <div class="service-box">
-                                <div class="row imageBox">
-                                    <img class="img-responsive center-block" src="./img/plus_one_seat_icon.png"/>
-                                </div>
-                                <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                                <div class="row hows">
-                                <h3 class="GloberBold">PLUS ONE SEAT</h3>
-                                  <p class="text-muted">
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis. </p>
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 text-center">
-                            <div class="service-box">
-                                 <div class="row imageBox">
-                                    <img class="img-responsive center-block" src="./img/donation_icon.png" height="846px" width="608px" />
-                                </div>
-                                <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                                <div class="row hows">
-                                <h3 class="GloberBold">DONATION</h3>
-                                  <p class="text-muted">
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-4 text-center">
+        <div class="how-box">
+          <div class="row imageBox">
+            <img class="img-responsive center-block" src="./img/meal_offer_icon.png"/>
+          </div>
+          <span class="custom-badge badge pull-left">1</span> 
+          <div class="row hows">
+            <br>
+            <h3 class="GloberBold" style="text-align:center">MEAL OFFER</h3>
+            <p class="text-muted">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis. Nam nec ultrices lacus.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 text-center">
+        <div class="how-box">
+          <div class="row imageBox">
+              <img class="img-responsive center-block" src="./img/plus_one_seat_icon.png"/>
+          </div>
+          <span class="custom-badge badge pull-left">2</span> 
+          <div class="row hows">
+          <br>
+          <h3 class="GloberBold">PLUS ONE SEAT</h3>
+            <p class="text-muted">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 text-center">
+        <div class="how-box">
+          <div class="row imageBox">
+              <img class="img-responsive center-block" src="./img/donation_icon.png"/>
+          </div>
+          <span class="custom-badge badge pull-left">3</span> 
+          <div class="row hows">
+          <br>
+          <h3 class="GloberBold">DONATION</h3>
+            <p class="text-muted">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="container-fluid donatorContainer">
+  <!-- how section container end -->
+  <div class="container-fluid donatorContainer" hidden="true">
     <h1 class="GloberBold">TOP 4 DONATORS</h1>
     <h4 class="GloberSemiBold">Lorem ipsum dolor sit amet, consectetur !</h4>
     <div class="row row-centered">
@@ -236,9 +238,11 @@
       </div>
     </div>
   </div>
+
+<!-- about section container -->
 <div class="container-fluid" id="aboutContainer">
   <div class="row">
-    <div class="aboutText col-md-6 col-centered">
+    <div class="aboutText" style="text-align:center">
       <h2 class="GloberBold">HELP US SPREAD THE WORD !</h2>
       <h4 class="GloberBook">Spread the word about this site & help more people take action
   against hunger!</h4>
@@ -249,20 +253,17 @@
       word:</h4> 
     </div>
   </div>
-  <div class="row row-centered">
-    <div class="col-lg-2 col-md-2"></div>
-    <div class="col-lg-4 col-md-4">
-      <div class="contact-box">
+  <div class="row contact-row">
+    <div class="col-md-6 contact-box">
         <div class="row imageBox">
           <img class="img-responsive center-block" src="./img/thumbsUp.png"/>
         </div>
         <h4 class="GloberSemiBold"><b>Like our page and invite your friends!</b></h4>
         <p class="text-muted GloberBook">Be a volunteer and be a part of our cause! </p>
-        <div class="fb-like col-md-8" data-href="https://www.facebook.com/plusoneseat/?fref=ts" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>           
-      </div>
+        <div class="col-md-6 col-md-offset-1 fb-like" style="text-align:center" data-href="https://www.facebook.com/plusoneseat/?fref=ts" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true">  
+        </div>           
     </div>
-    <div class="col-lg-4 col-md-4 text-center">
-      <div class="contact-box">
+    <div class="col-md-6 contact-box">
         <div class="row imageBox">
           <img class="img-responsive center-block" src="./img/thumbsUp.png"/>
         </div>
@@ -270,12 +271,11 @@
         <p class="text-muted GloberBook">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.
         </p>
-        <p><a class="plusOneLink" href="#">Contact us to take a part of our cause</a></p>                     
+        <p><a class="plusOneLink" href="#">Contact us to take a part of our cause</a></p>                   
       </div>
-    </div>
-    <div class="col-lg-2 col-md-2"></div>
   </div>
 </div>
+<!-- about section container ends-->
 
 <!-- Footer -->
   <footer class="footer">
@@ -322,19 +322,62 @@
     </div>  
   </footer>
 
+<!-- Modal SignUp-->
+<div class="modal fade" id="signUpModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title"><img src="./img/Plusoneseat_grey.png" height="30px" /></h3>
+      </div>
+      <div class="modal-body">
+        <button id="signUpBtnFacebook" class="signUpBtns col-md-12 btn btn-primary"><i class="col-md-3 fa fa-facebook" aria-hidden="true"></i>Sign up with Facebook</button>
+        <br>
+        <button id="signUpBtnGoogle" class="signUpBtns col-md-12 btn btn-default"><i class="col-md-3 fa fa-google" aria-hidden="true"></i>Sign up with Google</button>
+        <br>
+        <button id="signUpBtnEmail" class="signUpBtns col-md-12 btn btn-warning"><span class="col-md-3 "></span>Sign up with Email</button>
+      </div>
+      <div class="modal-footer">
+        <div id="modalFooterContainer" style="width:100%;display:inline-block">
+          <hr/>
+          <span class="col-md-6">Already a member?</span>
+          <span class="col-md-6 btnGroup">
+            <button type="button" id="logInBtn" class="btn btn-default" data-dismiss="modal">Log in</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal LogIn-->
+<div class="modal fade" id="logInModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><img class="img-responsive" src="./img/Plusoneseat_grey.png" height="60px" /></h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 
 <script type="text/javascript" src="./lib/js/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./lib/slider/js/bootstrap-slider.js"></script>
-<script type="text/javascript">
-// $(document).ready(function(){
-//  var height = $(".imageBox:first").css("height");
-//   $(".imageBox:last").css("height",height);
-// });
 
 
-</script>
 </body>
 </html>
 

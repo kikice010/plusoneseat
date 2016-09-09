@@ -1,3 +1,8 @@
+html,body{
+    margin:0;
+    padding: 0;
+}
+/*header styles*/
 .navbar.navbar-default{
 	margin-bottom:0;
     margin-left: 10px;
@@ -5,37 +10,125 @@
     border: 0;
     background:white;
 }
+.navbar-brand{
+    min-height: 60px;
+    padding: 0;
+}
 .img-responsive{
     max-height: 50px;
 }
+#headerContainer #signUpBtn{
+    border-radius: 1px;
+    border-style: double;
+    border-color:#ef804a;
+    border-width:3px;
+    padding:5px;
+    margin:10px;
+}
+#headerContainer #logInBtn{
+    border: none;
+    padding:5px;
+    margin:10px;
+  }
+/*header styles end*/
+
+/*footer*/
+footer.footer{
+ color: white;
+ background-color: #ef804a;
+ text-align: center;
+ height: auto;
+ width: 100%;
+}
+
+footer{
+    padding-top: 50px;
+    padding-left: 130px;
+    padding-right: 130px;
+}
+footer .footer.row h4{
+    text-align:justify;
+}
+footer .trademark{
+    margin-top: 30px;
+}
+
+footer .socialMediaContainer{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+footer .footer.row p{
+    text-align:left;
+}
+/*footer end*/
+
+/*search section landing page*/
 .container{
     width: 100%;
     background:white;
     margin:0;
     text-align: center;
+}
 
+.containerSearch{
+    margin-top: 5em;
+    margin-bottom: 5em;
 }
-.navbar-brand{
-	min-height: 60px;
-	padding: 0;
+
+.horizontalSpliter{
+    width:30%;
+    margin:auto;
+    border-width: 2px;
+    vertical-align: middle;
+    padding: 1em 0em;
 }
-.jumbotron{
-    background: white;
+
+.donatedSeatsContainer{
+    text-align: center;
 }
-.jumbotron h1{
-    color:#ef804a;
+#donatedSeatsZeros,#donatedSeats,#donatedSeatsPlus{
+    font-size: 4em;
 }
 #logo{
 	padding-top: 5px;
     padding-bottom: 5px;
 }
+
+@media screen and (min-width: 48em){
+
+    .fightGlobalHungerH2{
+    font-size: 2.5em;
+    line-height: 1.38462em;
+    font-weight: 500;
+    margin: 0.75em auto;
+    text-align: center;
+    max-width: 24em;
+    color: #ef804a;
+
+}
+}
+
+@media screen and (max-width: 47em){
+
+.fightGlobalHungerH2{
+        font-size: 1.8em;
+    line-height: 1.38462em;
+    font-weight: 400;
+    margin: 0.75em auto;
+    text-align: center;
+    max-width: 22.5em;
+    color: #ef804a;
+
+}
+}
+
 #searchForm{
-	margin-top: 5em;
-    margin-bottom: 5em;
+	margin-top: 3em;
+    margin-bottom: 3em;
     text-align: center;	
 }
 #searchField{
-	        font-size: 1.7em;
+	font-size: 1.7em;
     line-height: 1.09091em;
     font-weight: 600;
     padding: 0.875em 1em 0.6875em 1em;
@@ -50,206 +143,13 @@
     margin-bottom: 10px;
 }
 #searchBtn{
-	/*width: 6em;
-    padding: 0.875em 1em 0.6875em 1em;
-    font-size: 1.375em;
-    line-height: 1.09091em;
-    font-weight: 600;
-    margin: 0 0 0 0.75em;*/
+
     border-color: #ccc;
     border-radius:0;
     border-width: 2px;
 }    
-#btn4{
+#searchBtnContainer{
     padding: 0;
-}
-
-
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Source Sans Pro', helvetica, sans-serif;
-	}
-
-
-figure.fluidratio {
-  /*padding-top: 10%;  /* slope */
-  height: 600px;  /* start height */
-
-  /*background-image: url("./img/jumbotron1.jpg");*/
-  background-size: cover;
-  -moz-background-size: cover;  /* Firefox 3.6 */
-  background-position: center;  /* Internet Explorer 7/8 */
-}
-
-
-
-.leftPos{
-	padding-top: 10em;
-    padding-bottom: 10em;
-    text-align: center;
-}
-
-@media screen and (min-width: 48em){
-	.leftPos{
-	padding-top: 10em;
-    padding-bottom: 10em;
-    text-align: center;
-}
-}
-.leftPos{
-	padding-top: 10em;
-    padding-bottom: 10em;
-    text-align: center;
-}
-
-.fb-like{
-    padding-top: 20px;
-}
-
-@media screen and (min-width: 48em){
-	.mojH1{
-	padding: 0 1.5em;
-	margin-bottom: 0;
-    margin-top: 0;
-    font-size: 4.5em;
-    line-height: 1.14286em;
-    font-weight: 700;
-    line-height: 0.8125em;
-    color: #ef804a;
-	}  
-	.mojH2{
-	    font-size: 2.5em;
-    line-height: 1.38462em;
-    font-weight: 500;
-    margin: 0.75em auto;
-    text-align: center;
-    max-width: 24em;
-    color: #ef804a;
-        font-family: 'Source Sans Pro', helvetica, sans-serif;
-}
-}
-
-@media screen and (max-width: 47em){
-.mojH1{
-	margin-bottom: 0;
-    margin-top: 0;
-    position: relative;
-    padding: 0;
-    color: #ef804a;
-    font-size: 3.5em;
-    font-weight: 600;
-    line-height: 1.125em;
-    font-family: 'Source Sans Pro', helvetica, sans-serif;
-} 
-
-.mojH2{
-	    font-size: 1.8em;
-    line-height: 1.38462em;
-    font-weight: 400;
-    margin: 0.75em auto;
-    text-align: center;
-    max-width: 22.5em;
-    color: #ef804a;
-        font-family: 'Source Sans Pro', helvetica, sans-serif;
-}
-}
-
-footer.footer{
-	font-family: Verdana, Geneva, sans-serif;
- font-size: 1em;
- font-weight: bold;
- color: white;
- background-color: #ef804a;
- text-align: center;
- /*padding: 10px;*/
- /*margin-top: 10px;*/
- height: auto;
- width: 100%;
-}
-
-footer{
-    padding-top: 50px;
-    padding-left: 130px;
-    padding-right: 130px;
-}
-.footer.row h4{
-    text-align:justify;
-}
-.trademark{
-    margin-top: 30px;
-}
-
-.partnerContainer{
-    margin-left: 350px;
-    margin-right: 350px;
-}
-
-.partnerContainer img{
-    text-align: center;
-}
-.socialMediaContainer{
-    padding-left: 50px;
-    padding-right: 50px;
-}
-.footer.row p{
-    text-align:left;
-}
-
-/* enable absolute positioning */
-.inner-addon { 
-    position: relative; 
-}
-
-#howContainer,#aboutContainer{
-    background-color: #ccc;
-    padding: 30px 150px 100px 150px;
-    text-align: center;
-}
-.aboutText{
-    /*padding-top: 20px;*/
-}
-.aboutText h4{
-    text-align: justify;
-}
-.aboutText h2{
-    text-align: center;
-    padding-bottom: 20px;
-}
-.hows{
-    background-color: white;
-    min-height: 250px;
-}
-.col-centered,.row-centered{
-     float: none;
-    margin: 0 auto;
-}
-.plusOneLink{
-    color: #ef804a;
-}
-.plusOneLinkWhite{
-    color:white;
-}
-.service-box,.contact-box{
-    margin:30px;
-
-}
-
-.service-box p{
-    padding:0px 25px 25px 25px;
-    text-align: justify;
-}
-
-
-.imageBox{
-    padding-bottom: 30px;
-    max-height:100% ;
-    max-width:100%;
-
-}
-
-.imageBox img{
-    max-height:70% ;
-    max-width:70%;
 }
 
 /* style icon */
@@ -281,6 +181,176 @@ footer{
 .inner-addon input{
     border-radius: 0;
 }
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+/*search section landing page end*/
+
+/*how section landing page*/
+#howContainer{
+    background-color: #ccc;
+    padding: 30px 150px;
+    text-align: center;
+}
+
+#howContainer .hows{
+    background-color: white;
+    min-height: 250px;
+}
+
+#howContainer .how-box{
+    margin:20px;
+
+}
+
+#howContainer .how-box p{
+    padding:0px 25px 25px 25px;
+    text-align: justify;
+}
+#howContainer .imageBox{
+    padding-bottom: 30px;
+    max-height:100% ;
+    max-width:100%;
+
+}
+
+#howContainer .imageBox img{
+    max-height:70% ;
+    max-width:70%;
+}
+#howContainer .custom-badge{
+    /*position: absolute;*/
+    position: relative;
+    top: -20px;
+    left: -35px;
+    background:#ef804a;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    font-size:20px;
+    height: 40px;
+    width: 40px;
+    color: white;
+    padding: 9px 8px;
+}
+/*how section landing page end*/
+
+
+/*about section*/
+#aboutContainer{
+    background-color: white;
+    padding: 50px 0px;
+    width: 70%;
+    margin: auto;
+    /*padding: 30px 150px 100px 150px;*/
+    text-align: center;
+}
+#aboutContainer .aboutText{
+    width: 60%;
+    margin:auto;
+    padding-bottom: 2em;
+}
+#aboutContainer .aboutText h4{
+    text-align: justify;
+}
+#aboutContainer .aboutText h2{
+    text-align: center;
+    /*padding-bottom: 20px;*/
+}
+
+#aboutContainer .contact-row{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+#aboutContainer .imageBox{
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.plusOneLink{
+    color: #ef804a;
+}
+
+#aboutContainer .fb-like{
+    padding-top: 20px;
+}
+/*end of about section*/
+
+
+/*sign up modal*/
+#signUpModal .modal-dialog{
+    width:30%   
+}
+#signUpModal .modal-content{
+    border-radius:0px;   
+}
+
+#signUpModal .modal-header{
+    padding:10px 10px 0px 0px;  
+    /*text-align: center; */
+}
+
+#signUpModal .modal-header h3{
+    /*padding:10px 10px 0px 0px;  */
+    text-align: center; 
+    vertical-align: top;
+}
+#signUpModal .signUpBtns{
+    padding: 1em;
+    margin-bottom: 0.3em;
+    border-radius: 0px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#signUpModal .signUpBtns .fa,
+#signUpModal .signUpBtns span{
+    text-align: left;
+    padding-left:0px;
+    padding-right: 0px;
+}
+
+#signUpModal .modal-footer{
+    border-top: 0px;
+}
+#signUpModal .modal-footer hr{
+    margin:3px 0px 3px 0px;
+}
+
+#signUpModal .modal-footer button{
+    border-radius: 0px;
+}
+
+#signUpModal .modal-footer #logInBtn{
+    border-radius: 1px;
+    /*border-style: groove;*/
+    border-color:#ef804a;
+    border-width:2px;
+    padding:5px;
+    /*margin:10px;*/
+}
+#signUpModal .modal-footer span.col-md-6{
+    text-align: left;
+    padding: 0;
+}
+#signUpModal .modal-footer span.btnGroup{
+    text-align: right;
+}
+
+
+/*sign up modal end*/
+
+.plusOneLinkWhite{
+    color:white;
+}
+
+
+
+
 
 
 .donationNumber{
