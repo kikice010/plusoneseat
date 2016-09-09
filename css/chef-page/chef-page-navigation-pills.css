@@ -1,0 +1,152 @@
+.nav>li>a {
+  font-family: GloberRegular;
+  font-weight: normal;
+  font-style: normal;
+}
+
+#your-rates-reviews {
+  margin: 0 auto;
+  padding: 0;
+}
+#your-rates-reviews.active>a {
+  -webkit-box-shadow:inset 0px -3px 0px white;
+  -moz-box-shadow:inset 0px -3px 0px white;
+  box-shadow: inset 0px -3px 0px white;
+}
+
+#your-meal-offers {
+  margin: 0 auto;
+  padding: 0;
+}
+#your-meal-offers.active>a {
+  -webkit-box-shadow:inset 0px -3px 0px white;
+  -moz-box-shadow:inset 0px -3px 0px white;
+  box-shadow: inset 0px -3px 0px white;
+}
+
+#your-reservations {
+  margin: 0 auto;
+  padding: 0;
+}
+#your-reservations.active>a {
+  -webkit-box-shadow:inset 0px -3px 0px white;
+  -moz-box-shadow:inset 0px -3px 0px white;
+  box-shadow: inset 0px -3px 0px white;
+}
+
+#profile {
+  margin: 0 auto;
+  padding: 0;
+}
+#profile.active>a {
+  -webkit-box-shadow:inset 0px -3px 0px white;
+  -moz-box-shadow:inset 0px -3px 0px white;
+  box-shadow: inset 0px -3px 0px white;
+}
+
+#settings {
+  margin: 0 auto;
+  padding: 0;  
+}
+#settings.active>a {
+  -webkit-box-shadow:inset 0px -3px 0px white;
+  -moz-box-shadow:inset 0px -3px 0px white;
+  box-shadow: inset 0px -3px 0px white;
+}
+
+#your-rates-reviews-pill {
+    background-color: #ef804a ;
+    color: white;
+    border-radius: 0px;
+}
+#your-rates-reviews-pill:hover {
+    background-color: #f39d72 ;
+}
+#your-rates-reviews-pill.active {
+    background-color: #f18d5b ;
+    font-family: GloberBold;
+    font-weight: normal;
+    font-style: normal;
+    border-bottom: 5px;
+    border-bottom-color: white;
+}
+
+#your-meal-offers-pill {
+    background-color: #ef804a ;
+    color: white;
+    border-radius: 0px;
+}
+#your-meal-offers-pill:hover {
+    background-color: #f39d72 ;
+}
+li.active>#your-meal-offers-pill{
+    background-color: #f18d5b ;
+    color: white;
+    font-family: GloberBold;
+    font-weight: normal;
+    font-style: normal;
+    border-bottom: 5px;
+    border-bottom-color: white;
+}
+
+#your-reservations-pill {
+    background-color: #ef804a ;
+    color: white;
+    border-radius: 0px;
+}
+#your-reservations-pill:hover {
+    background-color: #f39d72 ;
+}
+li.active>#your-reservations-pill{
+    background-color: #f18d5b ;
+    font-family: GloberBold;
+    font-weight: normal;
+    font-style: normal;
+    border-bottom: 5px;
+    border-bottom-color: white;
+}
+
+#profile-pill {
+    background-color: #ef804a ;
+    color: white;
+    border-radius: 0px;
+}
+#profile-pill:hover {
+    background-color: #f39d72 ;
+}
+li.active>#profile-pill{
+    background-color: #f18d5b ;
+    font-family: GloberBold;
+    font-weight: normal;
+    font-style: normal;
+    border-bottom: 5px;
+    border-bottom-color: white;
+}
+
+#settings-pill {
+    background-color: #ef804a ;
+    color: white;
+    border-radius: 0px;
+}
+#settings-pill:hover {
+    background-color: #f39d72 ;
+}
+li.active>#settings-pill{
+    background-color: #f18d5b ;
+    font-family: GloberBold;
+    font-weight: normal;
+    font-style: normal;
+    border-bottom: 5px;
+    border-bottom-color: white;
+}
+
+#pills-bar {
+    background-color: #ef804a ;
+    height: 40px;
+}
+
+#pills-bar>ul {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    height: 40px;
+}

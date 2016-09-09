@@ -24,7 +24,8 @@ class DBManager {
         $this->database = "plusoneseat";
         $this->username = "plusoneseat";
         $this->password = "p1s";//set password
-        $this->hostname = "localhost:3301"; 
+        //$this->hostname = "localhost"; //uncomment before push on server
+        $this->hostname = "localhost:3301"; //comment before push on server
     }
     
     

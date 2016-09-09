@@ -31,13 +31,13 @@
 <meta content='en_US' property='og:locale'>
 <meta content='@plusoneseat' name='twitter:site'>
 <meta content='963087903805072' property='fb:app_id'>
-<link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../lib/slider/css/slider.css" rel="stylesheet">
-<link href="../css/underconstruction.css" rel="stylesheet">
-<link href="../css/underconstruction-xs.css" rel="stylesheet">
-<link href="../css/underconstruction-sm.css" rel="stylesheet">
-<link href="../css/underconstruction-md.css" rel="stylesheet">
-<link href="../css/underconstruction-lg.css" rel="stylesheet">
+<link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="./lib/slider/css/slider.css" rel="stylesheet">
+<link href="./css/underconstruction.css" rel="stylesheet">
+<link href="./css/underconstruction-xs.css" rel="stylesheet">
+<link href="./css/underconstruction-sm.css" rel="stylesheet">
+<link href="./css/underconstruction-md.css" rel="stylesheet">
+<link href="./css/underconstruction-lg.css" rel="stylesheet">
 <!-- CSS -->
 
 <!-- Modernizr, in the head tag, right after stylesheets, for best performance: -->
@@ -71,7 +71,7 @@
               
               <div class="horizontal-vertical-center"> 
                   <div class="title-holder horizontal-center" >
-                      <img class="height-1-style title-logo"  src="../img/logo.jpg"  />
+                      <img class="height-1-style title-logo"  src="./img/logo.jpg"  />
                       <p class="white-text height-1-style title-main">Plusoneseat</p> 
                   </div>
               </div>
@@ -88,22 +88,50 @@
               <div class="white-text center-text">
                 <p>In the meantime, to get the newest updates, please subscribe or follow our facebook page.</p>
               </div>
-              <div class="horizontal-center" style="display: inline-flex">
-                    <div class="fb-like" data-href="https://www.facebook.com/plusoneseat/?fref=ts" 
-                    data-layout="standard" data-action="like" data-width="250px"
-                    data-size="small" data-show-faces="true" data-share="true"></div> 
+              <div class="horizontal-center" style="display: inline-flex; width: 240px">
+                  <form role="form" id="subscribeForm">
+                      <div class="input-group">
+                          <input type="text" id="email" class="form-control" placeholder="Enter your email.">
+                          <span class="input-group-btn">
+                              <button type="submit" class="btn white-button">Subscribe</button>
+                          </span>
+                      </div><!-- /input-group -->  
+                  </form>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="horizontal-center" style="display: inline-flex" >
+                      <div class="fb-like" data-href="https://www.facebook.com/plusoneseat/?fref=ts" 
+                      data-layout="standard" data-action="like" data-width="240px"
+                      data-size="small" data-show-faces="true" data-share="true"></div> 
+                  </div>
               </div>
           </div>
       </div>
       <div class="col-sm-2 col-md-2 col-lg-3"></div>       
   </div>
 
+  <div id="success-modal" class="modal fade">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #ef804a; color: white">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Success.</h4>
+        </div>
+        <div class="modal-body" style="background-color: #ef804a; color: white">
+          <p>You have been successfully subscribed to Plusoneseat.com</p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
 
-  <script type="text/javascript" src="../lib/js/jquery-2.2.4.min.js"></script>
-  <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../lib/slider/js/bootstrap-slider.js"></script>
 
+  <script type="text/javascript" src="./lib/js/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="./lib/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./lib/slider/js/bootstrap-slider.js"></script>
+  <script type="text/javascript" src="./js/temp-page-subscribe.js"></script>
 
 
 

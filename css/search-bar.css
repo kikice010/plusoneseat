@@ -1,0 +1,156 @@
+.sb-title-logo {
+    background-color: white;
+    border-right: 1px solid #BCBCBC;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+.search-bar {
+    background-color: #fff;
+    color:  #BCBCBC;
+    border: 2px solid #BCBCBC;
+    
+  }
+
+#sb-logo-img {
+    width: 50px;
+}
+
+#sb-logo-title {
+    color: #ef804a;
+}
+
+.no-margin-padding {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.affix {
+      top: 0;
+      width: 100%;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+
+.search-bar-form {
+    background-color: #fff;
+    height: 50px;
+}
+
+#seats-input-group {
+  border-left: 1px solid #BCBCBC;
+  border-right: 1px solid #BCBCBC;
+  height: 50px;
+  
+}
+
+#seats-logo-img {
+   
+   width: 30px;
+   height: 30px;
+}
+
+#seats-logo-img-wraper{
+  
+}
+
+
+#seats-input-field {
+    background-color: #fff !important;
+    border: none;
+    height: 50px;
+    border: 1px solid #eee;
+}
+
+#seats-label {
+   white-space:pre;
+}
+
+.sb-cell {
+   padding: 0px;
+   height: 50px;
+}
+
+.collapsed-form-group {
+   padding: 10px;
+}
+
+div#timepicker table.table-condensed>tbody>tr>td>.btn-primary {
+  background-color: #fff;
+  color: #ef804a !important;
+  border-color: white !important;
+  border: 0px solid white !important;
+  margin: 0px !important;
+}
+
+div#timepicker table.table-condensed>tbody>tr>td>.btn-primary:hover {
+  background-color: #eee !important;
+  border-color: white !important;
+  border: 0px solid white !important;
+  margin: 0px !important;
+}
+
+div#timepicker table.table-condensed>tbody>tr>td>a.btn {
+  color: #ef804a !important;
+  
+}
+
+div#timepicker table.table-condensed>tbody>tr>td>span.timepicker-minute {
+  color: #ef804a !important;
+  height: 30px !important;
+  width: 30px !important;
+  line-height: 30px !important;
+  margin: 0px !important;
+}
+
+div#timepicker table.table-condensed>tbody>tr>td>span.timepicker-hour {
+  color: #ef804a !important;
+  height: 30px !important;
+  width: 30px !important;
+  line-height: 30px !important;
+  margin: 0px !important;
+}
+
+div#timepicker table.table-condensed>tbody>tr>td.separator {
+   height: 30px;
+   width: 5px !important;
+   line-height: 30px !important;
+}
+
+div#timepicker table.table-condensed>tbody>tr>td {
+  padding: 0px;
+  height: 30px;
+}
+
+div#timepicker table.table-condensed>tbody>tr>td>a>span {
+   height: 30px !important;
+   width: 30px !important;
+   line-height: 30px !important;
+   margin: 0px !important;
+}
+
+.bootstrap-datetimepicker-widget table td {
+   height: 30px !important;
+   width: 30px !important;
+   line-height: 30px !important;
+   margin: 0px !important;
+}
+
+.bootstrap-datetimepicker-widget table {
+    
+}
+
+@media(max-width:767px){
+  
+}
+@media(min-width:768px){
+  
+}
+@media(min-width:992px){
+  
+}
+@media(min-width:1200px){
+ 
+}

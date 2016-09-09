@@ -17,7 +17,7 @@ function submitForm(){
 
     $.ajax({
         type: "POST",
-        url: "../php/php/api/subscribe.php",
+        url: "./php/php/api/subscribe.php",
         data: "email=" + email,
         success : function(text){
             if (text == "success"){
@@ -31,8 +31,8 @@ function submitForm(){
 }
 
 function formSuccess(){
-    $("#subscribeForm")[0].reset();
-    submitMSG(true, "Message Submitted!")
+    $("#success-modal").modal('show');
+    $("#email").val('');
 }
 
 function formError(){

@@ -107,3 +107,17 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.white-button {
+    background-color: white;
+    color: #ef804a;
+    box-shadow: inset 0px 0px 25px gray;
+    border: solid 1px white;
+}
+
+.white-button:hover {
+    background-color: #eee;
+    color: #ef804a;
+    box-shadow: inset 0px 0px 25px gray;
+    border: solid 1px white;
+}

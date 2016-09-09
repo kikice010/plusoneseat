@@ -11,4 +11,12 @@ class Subscriber {
         $this->id = $id;
         $this->email = $email;
     }
+
+    public function getEmail(){
+    	return $this->email;
+    }
+
+    public function getID(){
+    	return $this->id;
+    }
 }
