@@ -30,6 +30,7 @@
 <link href='https://plusoneseat.sharetribe.com/' rel='canonical'>
 <meta content='en_US' property='og:locale'>
 <meta content='@plusoneseat' name='twitter:site'>
+<meta name="google-signin-client_id" content="343491410925-gv4j3a5u6id991ekcf3oboqbpsq8vr22.apps.googleusercontent.com">
 <meta content='963087903805072' property='fb:app_id'>
 <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="./lib/bootstrap/css/font-awesome.min.css" rel="stylesheet">
@@ -38,6 +39,7 @@
 <link href="./css/index1.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="./css/fontClasses.css">
 <!-- CSS -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <!-- Modernizr, in the head tag, right after stylesheets, for best performance: -->
 
@@ -61,6 +63,79 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      document.getElementById('status').innerText = response.status;
+      console.log("person will be redirected to page as if he logged in");
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+        document.getElementById('status').innerText = response.status;
+        FB.login();
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+        document.getElementById('status').innerText = response.status;
+        FB.login();
+    }
+    if(($("#logInModal").data('bs.modal') || {}).isShown)
+      $('#logInModal').modal('toggle');
+    else if(($("#signUpModal").data('bs.modal') || {}).isShown)
+      $('#signUpModal').modal('toggle');
+  }
+
+var googleUser = {};
+  var startApp = function() {
+    gapi.load('auth2', function(){
+      // Retrieve the singleton for the GoogleAuth library and set up the client.
+      auth2 = gapi.auth2.init({
+        client_id: '343491410925-gv4j3a5u6id991ekcf3oboqbpsq8vr22.apps.googleusercontent.com',
+        cookiepolicy: 'single_host_origin',
+        // Request scopes in addition to 'profile' and 'email'
+        //scope: 'additional_scope'
+      });
+      var elements = [];
+      elements[0] = document.getElementById('logInUpBtnGoogle');
+      elements[1] = document.getElementById('signUpBtnGoogle');
+      attachSignin(elements);
+      //attachSignin(document.getElementById('signUpBtnGoogle'));
+    });
+  };
+
+  function attachSignin(elements) {
+    console.log(elements);
+    for(var e in elements)
+      auth2.attachClickHandler(elements[e], {},
+        function(googleUser) {
+          document.getElementById('status').innerText = "Signed in: " +
+              googleUser.getBasicProfile().getName() +
+              " Email: " + googleUser.getBasicProfile().getEmail() +
+              " ImageURL: " + googleUser.getBasicProfile().getImageUrl() ;
+              document.getElementById('profilePicture').src = googleUser.getBasicProfile().getImageUrl();
+              if(($("#logInModal").data('bs.modal') || {}).isShown)
+                $('#logInModal').modal('toggle');
+              else if(($("#signUpModal").data('bs.modal') || {}).isShown)
+                $('#signUpModal').modal('toggle');
+        }, function(error) {
+          alert(JSON.stringify(error, undefined, 2));
+        });
+  }
+
+
 </script>
 
   <nav class="navbar navbar-default">
@@ -77,6 +152,8 @@
   </nav>
 
   <!-- container for donation counter and search fields -->
+  <div id="status"></div>
+  <img src="" id="profilePicture">
   <div class="container containerSearch">
         <div class="donatedSeatsContainer row" style="width:50%;margin:auto">
             <div class="col-md-8">
@@ -113,7 +190,7 @@
               </div>
           </div>
 				</form>
-        <div class="row GloberSemiBold" style="width:50%;margin:auto;padding-bottom:1em">
+        <div class="row GloberSemiBold" style="width:50%;margin:auto;color:#ccc;font-size:1.2em;padding-bottom:1em">
           Partner
         </div>
         <hr class="horizontalSpliter"/>
@@ -323,7 +400,7 @@
   </footer>
 
 <!-- Modal SignUp-->
-<div class="modal fade" id="signUpModal" role="dialog">
+<div class="modal fade optionModal" id="signUpModal" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -332,11 +409,11 @@
         <h3 class="modal-title"><img src="./img/Plusoneseat_grey.png" height="30px" /></h3>
       </div>
       <div class="modal-body">
-        <button id="signUpBtnFacebook" class="signUpBtns col-md-12 btn btn-primary"><i class="col-md-3 fa fa-facebook" aria-hidden="true"></i>Sign up with Facebook</button>
+        <button id="signUpBtnFacebook" class="signUpBtns col-md-12 btn btn-primary" onclick="checkLoginState()"><i class="col-md-2 fa fa-facebook" aria-hidden="true"></i><span class="col-md-8 signUpBtnText">Sign up with Facebook</span></button>
         <br>
-        <button id="signUpBtnGoogle" class="signUpBtns col-md-12 btn btn-default"><i class="col-md-3 fa fa-google" aria-hidden="true"></i>Sign up with Google</button>
+        <button id="signUpBtnGoogle" class="btnGoogle signUpBtns col-md-12 btn btn-default"><i class="col-md-2 fa fa-google" aria-hidden="true"></i><span class="col-md-8 signUpBtnText">Sign up with Google</span></button>
         <br>
-        <button id="signUpBtnEmail" class="signUpBtns col-md-12 btn btn-warning"><span class="col-md-3 "></span>Sign up with Email</button>
+        <button id="signUpBtnEmail" class="signUpBtns col-md-12 btn btn-warning"><span class="col-md-2 "></span><span class="col-md-8 signUpBtnText">Sign up with Email</span></button>
       </div>
       <div class="modal-footer">
         <div id="modalFooterContainer" style="width:100%;display:inline-block">
@@ -353,19 +430,40 @@
 </div>
 
 <!-- Modal LogIn-->
-<div class="modal fade" id="logInModal" role="dialog">
+<div class="modal fade optionModal" id="logInModal" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><img class="img-responsive" src="./img/Plusoneseat_grey.png" height="60px" /></h4>
+        <h3 class="modal-title"><img src="./img/Plusoneseat_grey.png" height="30px" /></h3>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+        <button id="logInUpBtnFacebook" class="logInUpBtns col-md-12 btn btn-primary" onclick="checkLoginState();"><i class="col-md-2 fa fa-facebook" aria-hidden="true"></i>
+        <span class="col-md-8 logInUpBtnText">
+        Log in with Facebook</span></button>
+        <br>
+        <button id="logInUpBtnGoogle" class="btnGoogle logInUpBtns col-md-12 btn btn-default"><i class="col-md-2 fa fa-google" aria-hidden="true"></i><span class="col-md-8 logInUpBtnText">Log in with Google</span></button>
+        <hr style="border-width:2;" />
+        <input class="col-md-12 inputFields" id="emailField" type="text" name="emailField" placeholder="Email address">
+        <br>
+        <input class="col-md-12 inputFields" id="passwordField" type="password" name="passwordField" placeholder="Password">
+        <br>
+        <span class="col-md-6 inputFields"><input type="checkbox" name="rememberMeField">Remember me</span>
+        <span class="col-md-6 inputFields inputFieldsForgotPassword "><a class="plusOneLink" href="#">Forgot your password?</a></span>
+        <br>
+        <button id="logInUpBtnEmail" class="logInUpBtns col-md-12 btn btn-warning"><span class="col-md-2 "></span><span class="col-md-8 logInUpBtnText">Log in</span></button>
+        <br>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div id="modalFooterContainer" style="width:100%;display:inline-block">
+          <hr/>
+          <span class="col-md-6">Not a member yet?</span>
+          <span class="col-md-6 btnGroup">
+            <button type="button" id="signUpBtn" class="btn btn-default" data-dismiss="modal">Sign Up</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -376,7 +474,7 @@
 <script type="text/javascript" src="./lib/js/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./lib/slider/js/bootstrap-slider.js"></script>
-
+<script>startApp();</script>
 
 </body>
 </html>

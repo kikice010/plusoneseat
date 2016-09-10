@@ -283,7 +283,8 @@ footer .footer.row p{
 
 /*sign up modal*/
 #signUpModal .modal-dialog{
-    width:30%   
+    width:30%;
+    margin-top: 10em;   
 }
 #signUpModal .modal-content{
     border-radius:0px;   
@@ -303,14 +304,23 @@ footer .footer.row p{
     padding: 1em;
     margin-bottom: 0.3em;
     border-radius: 0px;
-    text-align: left;
+    text-align: center;
     vertical-align: middle;
+}
+
+#signUpModal .signUpBtns .signUpBtnText{
+    text-align: center;
+    vertical-align: middle;
+}
+
+#signUpModal #signUpBtnEmail{
+    background-color:  #ef804a;   
 }
 
 #signUpModal .signUpBtns .fa,
 #signUpModal .signUpBtns span{
     text-align: left;
-    padding-left:0px;
+    padding-left: 10px;
     padding-right: 0px;
 }
 
@@ -325,7 +335,8 @@ footer .footer.row p{
     border-radius: 0px;
 }
 
-#signUpModal .modal-footer #logInBtn{
+#signUpModal .modal-footer #logInBtn,
+#signUpModal .modal-footer #signUpBtn{
     border-radius: 1px;
     /*border-style: groove;*/
     border-color:#ef804a;
@@ -343,6 +354,109 @@ footer .footer.row p{
 
 
 /*sign up modal end*/
+
+/*log in modal*/
+#logInModal .modal-dialog{
+    width:30%;
+    margin-top: 10em;   
+}
+#logInModal .modal-content{
+    border-radius:0px;   
+}
+
+#logInModal .modal-header{
+    padding:10px 10px 0px 0px;  
+    /*text-align: center; */
+}
+
+#logInModal .modal-header h3{
+    /*padding:10px 10px 0px 0px;  */
+    text-align: center; 
+    vertical-align: top;
+}
+
+#logInModal hr{
+    margin:10px 0px 10px 0px;
+    width: 100%
+}
+#logInModal #logInUpBtnGoogle{
+    margin-bottom: 0.5em;
+}
+#logInModal #emailField{
+    margin-top: 0.5em;
+}
+
+#logInModal .logInUpBtns{
+    padding: 1em;
+    margin-bottom: 0.3em;
+    border-radius: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#logInModal .inputFields{
+    padding: 0.5em;
+    margin-bottom: 0.3em;
+    border-radius: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#logInModal span.inputFields{
+    padding: 0;
+    text-align: left;
+}
+#logInModal span.inputFieldsForgotPassword{
+    padding: 0;
+    text-align: right;
+}
+
+
+#logInModal .logInUpBtns .logInUpBtnText{
+    text-align: center;
+    vertical-align: middle;
+}
+
+#logInModal #logInUpBtnEmail{
+    background-color:  #ef804a;   
+}
+
+#logInModal .logInUpBtns .fa,
+#logInModal .logInUpBtns span{
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 0px;
+}
+
+#logInModal .modal-footer{
+    border-top: 0px;
+}
+#logInModal hr{
+    margin:3px 0px 3px 0px;
+
+}
+
+#logInModal .modal-footer button{
+    border-radius: 0px;
+}
+
+#logInModal .modal-footer #logInBtn,
+#logInModal .modal-footer #signUpBtn{
+    border-radius: 1px;
+    /*border-style: groove;*/
+    border-color:#ef804a;
+    border-width:2px;
+    padding:5px;
+    /*margin:10px;*/
+}
+#logInModal .modal-footer span.col-md-6{
+    text-align: left;
+    padding: 0;
+}
+#logInModal .modal-footer span.btnGroup{
+    text-align: right;
+}
+/*log in modal ends*/
 
 .plusOneLinkWhite{
     color:white;
