@@ -19,4 +19,28 @@ class User {
         $this->password = $password;
         $this->location = $location;
     }
+
+    public function getID(){
+        return $this->id;
+    }
+
+    public function getName(){
+        return $this->name;
+    }
+
+    public function getSurname(){
+        return $this->surname;
+    }
+
+    public function getEmail(){
+        return $this->email;
+    }
+
+    public function getPassword(){
+        return $this->password;
+    }
+
+    public function getLocationID(){
+        return $this->location;
+    }
 }

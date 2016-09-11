@@ -49,7 +49,6 @@ class CourseManager {
         $db_instance->closeStatement();
         $db_instance->closeConnection();
         
-        echo json_encode($result, JSON_PRETTY_PRINT);
         return json_encode($result, JSON_PRETTY_PRINT);
     }
     
