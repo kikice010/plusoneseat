@@ -36,6 +36,7 @@
   <link href="../css/search-bar.css" rel="stylesheet">
   <link href="../css/fontClasses.css" rel="stylesheet">
   <link href="../css/chef-page/corner-badge.css" rel="stylesheet">
+  <link href="../css/chef-page/datetimepicker.css" rel="stylesheet">
   <link rel="stylesheet" href="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
   
   <script type="text/javascript" src="../lib/js/jquery-2.2.4.min.js"></script>
@@ -45,6 +46,9 @@
   <script type="text/javascript" src="../lib/bower_components/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="../lib/bower_components/moment/min/moment.min.js"></script>
   <script type="text/javascript" src="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="../lib/location_picker/jquery.placepicker.js"></script>
+  <script type="text/javascript" src="../js/location-picker.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Hb7ZjcestOuK7U5luaDINFkCUCmU9YQ&sensor=true&amp;libraries=places"></script>
   
   
 </head>
@@ -52,41 +56,53 @@
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-header sb-navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <div class="navbar-header sb-title-logo">
-        <a href="#" class="navbar-left"><img id="sb-logo-img" src="../img/logo.jpg"></a>
-        <a id="sb-logo-title" class="navbar-brand GloberBold" href="#">Plusoneseat</a>
+      <div class="navbar-header vertical-center">
+        <a href="#" class="navbar-left" style="padding: 2em;">
+          <img id="sb-logo-img" src="../img/brand-assets/logo/logo_text_orange.png">
+        </a>
       </div>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <div class="row search-bar" style="padding-left: 15px; padding-right: 15px;">
-        <ul class="nav navbar-nav">
-          <li class=" hidden-xs" style="padding-left: 15px; padding-right:15px;">
+        <ul class="nav navbar-nav" id="navbar-search-form-container">
+          <li class=" hidden-xs sb-form-container">
               <form class="form-inline" role="form">
-                <div class="form-group has-success has-feedback">
-                  <label class="control-label" for="location"></label>
-                  <input type="text" class="form-control" id="location">
-                  <span class="glyphicon glyphicon-map-marker form-control-feedback" style="font-size:1.5em;"></span>
+                <div class="form-group" id="sb-form-group-seats">
+                  <div class='input-group sb-input-group' id='sb-input-group-seats'>
+                    <span class="input-group-addon sb-input-group-addon">
+                        <img id="sb-seats-chair-img" src="../img/brand-assets/logo/logo_gray.png">
+                    </span>
+                    <input type="number" class="form-control sb-input" id="sb-input-seats">
+                  </div>
                 </div>
-                <div class="form-group">
-                    <div class='input-group date' id='datepicker'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
+                <div class="form-group" id="sb-form-group-location">
+                  <div class='input-group sb-input-group' id='sb-input-group-location'>
+                    <span class="input-group-addon sb-input-group-addon">
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                    </span>
+                    <input type="text" class="form-control sb-input" id="sb-input-location">
+                  </div>
+                </div>
+                <div class="form-group" id="sb-form-group-timepicker">
+                    <div class='input-group sb-input-group date' id='sb-input-group-timepicker'>
+                        <span class="input-group-addon sb-input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
                         </span>
+                        <input type='text' class="form-control sb-input" />
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class='input-group date' id='timepicker'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
+                <div class="form-group" id="sb-form-group-datepicker">
+                    <div class='input-group sb-input-group date' id='sb-input-group-datepicker'>
+                        <span class="input-group-addon sb-input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
+                        <input type='text' class="form-control sb-input" />
                     </div>
                 </div>
               </form>
@@ -121,11 +137,16 @@
               <li id="settings"><a id="settings-pill" data-toggle="pill" href="#settings-tab">Settings</a></li>
             </ul>
           </li>
-          
+            
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <ul class="nav navbar-nav" id="navbar-right-side-buttons">
+          <li id="chef-page-button">
+            <a href="#">
+              <img id="sb-seats-chair-img" src="../img/brand-assets/icons/cheff_icon.png">
+            </a>
+          </li>
+          <li id="messages-button"><a href="#">Your Meal Offers</a></li>
+          <li id="profile-button"><a href="#">Your Reservations</a></li>
         </ul>
       </div>
 

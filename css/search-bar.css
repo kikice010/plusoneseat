@@ -1,146 +1,105 @@
 .sb-title-logo {
     background-color: white;
-    border-right: 1px solid #BCBCBC;
     margin-top: 2px;
     margin-left: 2px;
 }
 
-.search-bar {
-    background-color: #fff;
-    color:  #BCBCBC;
-    border: 2px solid #BCBCBC;
-    
-  }
-
-#sb-logo-img {
-    width: 50px;
-}
-
-#sb-logo-title {
-    color: #ef804a;
-}
-
-.no-margin-padding {
-    margin: 0 auto;
-    padding: 0;
-}
-
 .affix {
-      top: 0;
-      width: 100%;
-  }
+    top: 0;
+    width: 100%;
+}
 
-  .affix + .container-fluid {
-      padding-top: 70px;
-  }
+.affix + .container-fluid {
+    padding-top: 4.4em;
+}
+
+.search-bar {
+  background-color: #fff;
+  color:  #999999;
+  border: 2px solid #999999;
+}
 
 .search-bar-form {
     background-color: #fff;
-    height: 50px;
+    height: 4em;
 }
 
-#seats-input-group {
-  border-left: 1px solid #BCBCBC;
-  border-right: 1px solid #BCBCBC;
-  height: 50px;
-  
+.sb-input-group {
+  height: 4em;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: 2px solid #999999; 
+  width:100%;
 }
 
-#seats-logo-img {
-   
-   width: 30px;
-   height: 30px;
+.sb-input {
+  height: 4em;
+  border-top: none;
+  border-right: 0px solid #999999;
+  border-bottom: none;
+  border-left: none;
+  border-radius: 0px 0px 0px 0px;
 }
 
-#seats-logo-img-wraper{
-  
+.sb-input-group-addon {
+  background-color: white;
+  border: none;
+  width: 3.4em !important;
 }
 
-
-#seats-input-field {
-    background-color: #fff !important;
-    border: none;
-    height: 50px;
-    border: 1px solid #eee;
+.sb-input-group-addon>span {
+  background-color: white;
+  border:none;
+  font-size: 1.7em;
+  color: #999999;
 }
 
-#seats-label {
-   white-space:pre;
+.sb-navbar-header {
+  height: 4em;
+  width: 12%;   
 }
 
-.sb-cell {
-   padding: 0px;
-   height: 50px;
+#sb-logo-img {
+  width: 100%;
 }
 
-.collapsed-form-group {
-   padding: 10px;
+#navbar-right-side-buttons {
+  width: 25%; 
 }
 
-div#timepicker table.table-condensed>tbody>tr>td>.btn-primary {
-  background-color: #fff;
-  color: #ef804a !important;
-  border-color: white !important;
-  border: 0px solid white !important;
-  margin: 0px !important;
+#navbar-search-form-container {
+  width: 62%;
 }
 
-div#timepicker table.table-condensed>tbody>tr>td>.btn-primary:hover {
-  background-color: #eee !important;
-  border-color: white !important;
-  border: 0px solid white !important;
-  margin: 0px !important;
+#sb-seats-chair-img{
+  width: 100%;
 }
 
-div#timepicker table.table-condensed>tbody>tr>td>a.btn {
-  color: #ef804a !important;
-  
+#sb-form-group-seats {
+  width: 15%;
 }
 
-div#timepicker table.table-condensed>tbody>tr>td>span.timepicker-minute {
-  color: #ef804a !important;
-  height: 30px !important;
-  width: 30px !important;
-  line-height: 30px !important;
-  margin: 0px !important;
+#sb-form-group-location{
+  width: 36%;
 }
 
-div#timepicker table.table-condensed>tbody>tr>td>span.timepicker-hour {
-  color: #ef804a !important;
-  height: 30px !important;
-  width: 30px !important;
-  line-height: 30px !important;
-  margin: 0px !important;
+#sb-form-group-timepicker{
+  width: 21%;
 }
 
-div#timepicker table.table-condensed>tbody>tr>td.separator {
-   height: 30px;
-   width: 5px !important;
-   line-height: 30px !important;
+#sb-form-group-datepicker{
+  width: 25%;
 }
 
-div#timepicker table.table-condensed>tbody>tr>td {
-  padding: 0px;
-  height: 30px;
+.pac-container {
+    z-index: 1031 !important;
 }
 
-div#timepicker table.table-condensed>tbody>tr>td>a>span {
-   height: 30px !important;
-   width: 30px !important;
-   line-height: 30px !important;
-   margin: 0px !important;
+.sb-form-container {
+    width: 100%;
 }
 
-.bootstrap-datetimepicker-widget table td {
-   height: 30px !important;
-   width: 30px !important;
-   line-height: 30px !important;
-   margin: 0px !important;
-}
-
-.bootstrap-datetimepicker-widget table {
-    
-}
 
 @media(max-width:767px){
   
@@ -153,4 +112,42 @@ div#timepicker table.table-condensed>tbody>tr>td>a>span {
 }
 @media(min-width:1200px){
  
+}
+
+/* fix for collapsing the screen below 1000px */
+@media (max-width: 1000px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
 }

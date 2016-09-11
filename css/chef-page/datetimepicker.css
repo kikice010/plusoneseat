@@ -1,0 +1,71 @@
+div#sb-input-group-timepicker {
+  height: 4em;
+}
+
+.bootstrap-datetimepicker-widget table td {
+   height: 1.8em !important;
+   width: 1.8em !important;
+   line-height: 1.8em !important;
+   margin: 1.8em !important;
+}
+
+div#sb-input-group-timepicker>.bootstrap-datetimepicker-widget.dropdown-menu {
+  width: 100%;
+}
+
+div#sb-input-group-timepicker table.table-condensed>tbody>tr>td {
+  padding: 0em;
+  height: 1.8em;
+}
+
+div#sb-input-group-timepicker table.table-condensed>tbody>tr>td.separator {
+   height: 1.8em;
+   width: 0.3em !important;
+   line-height: 1.8em !important;
+}
+
+div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>.btn-primary {
+  background-color: #fff;
+  color: #ef804a !important;
+  border-color: white !important;
+  border: 0em solid white !important;
+  margin: 0em !important;
+}
+
+div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>.btn-primary:hover {
+  background-color: #eee !important;
+  border-color: white !important;
+  border: 0em solid white !important;
+  margin: 0em !important;
+}
+
+div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>a.btn {
+  color: #ef804a !important;
+  
+}
+
+div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>a>span {
+   height: 1.8em !important;
+   width: 1.8em !important;
+   line-height: 1.8em !important;
+   margin: 0em !important;
+}
+
+div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>span.timepicker-minute {
+  color: #ef804a !important;
+  height: 1.8em !important;
+  width: 1.8em !important;
+  line-height: 1.8em !important;
+  margin: 0em !important;
+}
+
+div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>span.timepicker-hour {
+  color: #ef804a !important;
+  height: 1.8em !important;
+  width: 1.8em !important;
+  line-height: 1.8em !important;
+  margin: 0em !important;
+}
+
+
+

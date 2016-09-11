@@ -1,11 +1,12 @@
 $(function () {
-    $('#datepicker').datetimepicker({ 
-        format: 'MM/dd/YYYY'
+    $('#sb-input-group-datepicker').datetimepicker({ 
+        format: 'MM/dd/YYYY',
+        debug: true
     });
 });
 
 $(function () {
-    $('#timepicker').datetimepicker({
+    $('#sb-input-group-timepicker').datetimepicker({
         format: 'LT',
         stepping: 15,
         debug: true
