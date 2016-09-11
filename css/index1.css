@@ -85,6 +85,8 @@ footer .footer.row p{
 
 .donatedSeatsContainer{
     text-align: center;
+    width:50%;
+    margin:auto;
 }
 #donatedSeatsZeros,#donatedSeats,#donatedSeatsPlus{
     font-size: 4em;
@@ -93,6 +95,12 @@ footer .footer.row p{
 	padding-top: 5px;
     padding-bottom: 5px;
 }
+
+.donatedSeatsContainer img{
+    height:150px;
+}
+
+
 
 @media screen and (min-width: 48em){
 
@@ -109,6 +117,33 @@ footer .footer.row p{
 }
 
 @media screen and (max-width: 47em){
+.navbar-header{
+    width: 40%;
+    float: left;
+}
+.navbar-right{
+    width: 60%;
+    float: right;
+}
+.navbar-right li{
+    /*width: 50%;*/
+    /*display: inline-block;*/
+    float: right;
+}
+
+#headerContainer #signUpBtn{
+    border-radius: 1px;
+    border-style: double;
+    border-color:#ef804a;
+    border-width:3px;
+    padding:3px;
+    margin:4px;
+}
+#headerContainer #logInBtn{
+    border: none;
+    /*padding:3px;*/
+    margin:4px;
+  }
 
 .fightGlobalHungerH2{
         font-size: 1.8em;
@@ -120,6 +155,79 @@ footer .footer.row p{
     color: #ef804a;
 
 }
+
+
+#donatedSeatsZeros,#donatedSeats,#donatedSeatsPlus{
+    font-size: 2.7em;
+}
+
+.donatedSeatsContainer{
+    text-align: center;
+    width:100%;
+    margin:auto;
+}
+
+.donatedSeatsContainer img{
+    height:50px;
+}
+
+}
+
+@media screen and (max-width: 36em){
+.navbar-header{
+    width: 40%;
+    float: left;
+}
+.navbar-right{
+    width: 60%;
+    float: right;
+}
+.navbar-right li{
+    /*width: 50%;*/
+    /*display: inline-block;*/
+    float: right;
+}
+
+#headerContainer #signUpBtn{
+    border-radius: 1px;
+    border-style: double;
+    border-color:#ef804a;
+    border-width:3px;
+    padding:3px;
+    margin:4px;
+}
+#headerContainer #logInBtn{
+    border: none;
+    /*padding:3px;*/
+    margin:4px;
+  }
+
+.fightGlobalHungerH2{
+        font-size: 1.8em;
+    line-height: 1.38462em;
+    font-weight: 400;
+    margin: 0.75em auto;
+    text-align: center;
+    max-width: 22.5em;
+    color: #ef804a;
+
+}
+
+
+#donatedSeatsZeros,#donatedSeats,#donatedSeatsPlus{
+    font-size: 2em;
+}
+
+.donatedSeatsContainer{
+    text-align: center;
+    width:100%;
+    margin:auto;
+}
+
+.donatedSeatsContainer img{
+    height:50px;
+}
+
 }
 
 #searchForm{
@@ -313,8 +421,15 @@ footer .footer.row p{
     vertical-align: middle;
 }
 
-#signUpModal #signUpBtnEmail{
+#signUpModal #signUpBtnEmail,
+#signUpModal #signUpEmailSignUpModalBtn{
     background-color:  #ef804a;   
+}
+
+#signUpModal #signUpError{
+    width: 100%;
+    font-size: 1em;
+    text-align: center;
 }
 
 #signUpModal .signUpBtns .fa,
@@ -335,7 +450,7 @@ footer .footer.row p{
     border-radius: 0px;
 }
 
-#signUpModal .modal-footer #logInBtn,
+#signUpModal .modal-footer #logInSignUpModalBtn,
 #signUpModal .modal-footer #signUpBtn{
     border-radius: 1px;
     /*border-style: groove;*/
@@ -352,7 +467,36 @@ footer .footer.row p{
     text-align: right;
 }
 
+#signUpModal #emailSignUpField{
+    margin-top: 0.5em;
+}
 
+#signUpModal .inputFields{
+    padding: 0.5em;
+    margin-bottom: 0.3em;
+    border-radius: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#signUpModal span.inputFields{
+    padding: 0;
+    text-align: left;
+}
+
+input[type=text],
+input[type=password] {
+    box-sizing : border-box;
+}
+
+#signUpModal hr{
+    margin:10px 0px 10px 0px;
+    width: 100%
+}
+
+#signUpModal #signUpBtnEmail{
+    margin-bottom: 0.5em;
+}
 /*sign up modal end*/
 
 /*log in modal*/
@@ -441,7 +585,7 @@ footer .footer.row p{
 }
 
 #logInModal .modal-footer #logInBtn,
-#logInModal .modal-footer #signUpBtn{
+#logInModal .modal-footer #signUpLogInModalButton{
     border-radius: 1px;
     /*border-style: groove;*/
     border-color:#ef804a;
