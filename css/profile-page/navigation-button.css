@@ -1,0 +1,66 @@
+.navigation-button {
+    height: 2em;
+    margin-left: -45px;
+    z-index: 1000;
+    position: relative;
+}
+.navigation-button-notify-badge{
+    position: relative;
+    background: #ef804a;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 9px;
+    height: 18px;
+    width: 18px;
+    color: black;
+    padding: 5px 3px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    z-index: 1001;
+}
+
+#sb-navigation-button-group {
+    height:4em;
+    width: 33%;
+}
+
+.navigation-label {
+    margin-left: 0.1em;
+}
+
+.navigation-button-container {
+    display: inline-block;
+}
+
+.navigation-button-cell:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+.navigation-button-cell {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.navigation-user-button-cell:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+.navigation-user-button-cell {
+    text-align: center;
+    white-space: nowrap;
+    padding-left: 20px;
+}
+
+.navigation-user-button-cell .navigation-button {
+    width: 2em;
+    border: 1px solid black;
+    margin-left: -15px;
+}

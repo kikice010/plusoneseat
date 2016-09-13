@@ -9,7 +9,7 @@ $method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
 
 switch ($method) {
   case 'POST':
-    
+
     //Save mail address in the database
     $email = filter_input(INPUT_POST, "email");
     $password = filter_input(INPUT_POST, "password");

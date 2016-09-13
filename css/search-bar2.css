@@ -128,7 +128,8 @@
 }
 
 /* fix for collapsing the screen below 1000px */
-@media (max-width: 1000px) {
+@media (max-width: 1000px) and (min-width: 700px){
+  
 
   .sb-navbar-header {
     height: 4em;  
@@ -147,10 +148,6 @@
     display: inline-block;
     float: left !important;
   }
-
-  .navbar {
-    background-color: white;
-  }
 }
 
 @-moz-document url-prefix() { 
@@ -158,5 +155,27 @@
       position: absolute;
       right: 3%;
       top: 3%;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: ) {
+  
+
+  .sb-navbar-header {
+    height: 4em;  
+    width: 100%;
+  }
+
+  #sb-logo-img{
+    width: 10em;
+    position: absolute;
+    left:1.5em;
+    top:1.2em;
+  }
+
+  .sb-brand {
+    padding-right: 5%;
+    display: inline-block;
+    float: left !important;
   }
 }

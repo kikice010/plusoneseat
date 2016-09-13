@@ -68,4 +68,25 @@ div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>span.timepicker-
 }
 
 
+div#sb-input-group-datepicker>.bootstrap-datetimepicker-widget.dropdown-menu {
+  width: 100%;
+  min-width: 15em;
+  height: 18em;
+}
 
+div#sb-input-group-datepicker>.bootstrap-datetimepicker-widget>.list-unstyled>li>div.datepicker .active {
+  background-color: #ef804a !important;
+}
+
+div#sb-input-group-datepicker>.bootstrap-datetimepicker-widget table tr {
+  height: 1.4em;
+}
+
+div#sb-input-group-datepicker>.bootstrap-datetimepicker-widget table td {
+  height: 1.4em !important;
+  line-height: 1.4em !important;
+}
+
+div#sb-input-group-datepicker>.bootstrap-datetimepicker-widget table td.today {
+  border-bottom-color: #ef804a !important;
+}

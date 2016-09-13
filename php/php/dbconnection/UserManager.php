@@ -19,11 +19,6 @@ class UserManager {
         $email = $user->getEmail();
         $password = $user->getPassword();
         $location = $user->getLocationID();
-
-        // echo $email;
-        // echo "\n";
-        // echo $password;
-
         $sql_insert->bind_param("ssssi", $name, $surname, $email, $password, $location);
         $db_instance->executeStatement();
         $db_instance->closeStatement();

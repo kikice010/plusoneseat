@@ -35,7 +35,7 @@ function signUp() {
 	    if(email !== "" && password!== ""){
 	    	// window.location.assign('pages/profile_page.html');
 	    	// postRequest("./php/php/signup.php",{email:email,name})
-	    	postRequest("./php/php/api/signup.php",{"email":email, "password":password},callbackFunction,setErrorMessage);
+	    	postRequest("./php/php/api/signup.php", "email=" + email + '&' + "password=" + password,callbackFunction,setErrorMessage);
 	    }
 	    else{
 	    	$("#signUpError").text("Please fill in empty fields");
@@ -52,12 +52,12 @@ function postRequest(url,params,callback_function,callback_error){
  //    		else if(data.success===0)
  //    			callback_error();
  //  		});
+
+
  $.ajax({
     url:url,
     method:'POST',
-    contentType: "application/json; charset=UTF-8",
     data: params,
-    dataType:'json',
     
     success:function(data){
           console.log(data);

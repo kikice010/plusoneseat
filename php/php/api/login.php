@@ -25,28 +25,23 @@ switch ($method) {
 
         if($returned_password==$password)
         {
-            echo "{
-                success: 1,
-                message: 'Login successful.'
-            }";
+            $result['success'] = 1;
+            $result['message'] = 'Login successful.';
+            echo json_encode($result);
         } else {
-            echo "{
-                success: 0,
-                message: 'Login failed. Password or email not correct. Please check your input.'
-            }";
+            $result['success'] = 0;
+            $result['message'] = 'Login failed. Password or email not correct. Please check your input.';
+            echo json_encode($result);
         }        
     }
     else {
-        echo "{
-            success: 0,
-            message: 'Login failed. Password or email not correct. Please check your input.'
-        }";
+        $result['success'] = 0;
+        $result['message'] = 'Login failed. Password or email not correct. Please check your input.';
+        echo json_encode($result);
     }
 }
-
-echo "{
-        success: 0,
-        message: 'API Method ERROR. Please use POST.'
-    }";
+$result['success'] = 0;
+$result['message'] = 'API Method ERROR. Please use POST.';
+echo json_encode($result);
 
 ?>
