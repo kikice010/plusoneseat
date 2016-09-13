@@ -95,3 +95,4 @@ class UserManager {
         return $result;
     }
 }
+?>

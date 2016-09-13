@@ -417,7 +417,7 @@ var googleUser = {};
           <button id="signUpBtnEmail" class="signUpBtns col-md-12 btn btn-warning" data=""><span class="col-md-2 "></span><span class="col-md-8 signUpBtnText">Sign up with Email</span></button>
           <div id="signUpEmailInputGroup" hidden>
             <hr/>
-            <label class="col-md-12 label label-warning" id="signUpError"></label>
+            <label class="col-md-12 label label-warning labelError" id="signUpError"></label>
             <input class="col-md-12 inputFields" id="emailSignUpField" type="text" name="emailSignUpField" placeholder="Email address" required>
             <br>
             <input class="col-md-12 inputFields" id="passwordSignUpField" type="password" name="passwordSignUpField" placeholder="Password" required>
@@ -456,6 +456,7 @@ var googleUser = {};
         <br>
         <button id="logInUpBtnGoogle" class="btnGoogle logInUpBtns col-md-12 btn btn-default"><i class="col-md-2 fa fa-google" aria-hidden="true"></i><span class="col-md-8 logInUpBtnText">Log in with Google</span></button>
         <hr style="border-width:2;" />
+        <label class="col-md-12 label label-warning labelError" id="logInError"></label>
         <input class="col-md-12 inputFields" id="emailField" type="text" name="emailField" placeholder="Email address">
         <br>
         <input class="col-md-12 inputFields" id="passwordField" type="password" name="passwordField" placeholder="Password">
@@ -463,7 +464,7 @@ var googleUser = {};
         <span class="col-md-6 inputFields"><input type="checkbox" name="rememberMeField">Remember me</span>
         <span class="col-md-6 inputFields inputFieldsForgotPassword "><a class="plusOneLink" href="#">Forgot your password?</a></span>
         <br>
-        <button id="logInUpBtnEmail" class="logInUpBtns col-md-12 btn btn-warning"><span class="col-md-2 "></span><span class="col-md-8 logInUpBtnText">Log in</span></button>
+        <button id="logInUpBtnEmail" class="logInUpBtns col-md-12 btn btn-warning" onclick="logIn()"><span class="col-md-2 "></span><span class="col-md-8 logInUpBtnText">Log in</span></button>
         <br>
       </div>
       <div class="modal-footer">

@@ -13,6 +13,7 @@ switch ($method) {
     //Save mail address in the database
     $email = filter_input(INPUT_POST, "email");
     $password = filter_input(INPUT_POST, "password");
+
     $user = new User(-1, null, null, $email, $password, null);
     $returned_user = UserManager::getUserByEmail($user);
 
@@ -25,8 +26,8 @@ switch ($method) {
         echo json_encode($result);
     }
     else {
-        $result["success"] = 0;
-        $result["message"] = 'Registration failed. Email already in use.';
+        $result['success'] = 0;
+        $result['message'] = 'Registration failed. Email already in use.';
         echo json_encode($result);
        
     }

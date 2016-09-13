@@ -44,3 +44,4 @@ class User {
         return $this->location;
     }
 }
+?>

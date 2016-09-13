@@ -426,7 +426,7 @@ footer .footer.row p{
     background-color:  #ef804a;   
 }
 
-#signUpModal #signUpError{
+.labelError{
     width: 100%;
     font-size: 1em;
     text-align: center;
