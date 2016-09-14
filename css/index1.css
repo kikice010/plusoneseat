@@ -53,9 +53,10 @@ footer .trademark{
     margin-top: 30px;
 }
 
-footer .socialMediaContainer{
-    padding-left: 50px;
-    padding-right: 50px;
+footer .socialMediaContainer .socMediaImgContainer{
+    /*padding-left: 50px;
+    padding-right: 50px;*/
+    padding-bottom: 1em;
 }
 footer .footer.row p{
     text-align:left;
@@ -258,7 +259,15 @@ footer .footer.row p{
 }    
 #searchBtnContainer{
     padding: 0;
+    text-align: left;
 }
+@media screen and (max-width: 47em){
+    #searchBtnContainer{
+    padding: 0;
+    text-align: center;
+}
+}
+
 
 /* style icon */
 .inner-addon .glyphicon{
@@ -282,7 +291,7 @@ footer .footer.row p{
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 0px; }
 
-#input1,#input2,#input3{
+#numberOfSeatsInput,.dateInputContainer,.locationInputContainer{
     padding: 0
 }
 
@@ -299,7 +308,7 @@ footer .footer.row p{
 /*how section landing page*/
 #howContainer{
     background-color: #ccc;
-    padding: 30px 150px;
+    padding: 3em 5em;
     text-align: center;
 }
 
@@ -356,7 +365,7 @@ footer .footer.row p{
     text-align: center;
 }
 #aboutContainer .aboutText{
-    width: 60%;
+    width: 70%;
     margin:auto;
     padding-bottom: 2em;
 }
@@ -387,13 +396,33 @@ footer .footer.row p{
     padding-top: 20px;
 }
 /*end of about section*/
-
-
-/*sign up modal*/
-#signUpModal .modal-dialog{
+#signUpModal .modal-dialog,
+#logInModal .modal-dialog{
     width:30%;
     margin-top: 10em;   
 }
+/* Extra Small Devices, Phones */ 
+    @media only screen and (max-width : 480px) {
+        #signUpModal .modal-dialog,
+        #logInModal .modal-dialog{
+    width:50%;
+    margin-top: 10em;   
+}
+
+    }
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+        #signUpModal .modal-dialog,
+        #logInModal .modal-dialog{
+    width:50%;
+    margin-top: 10em;   
+}
+        
+    }
+
+/*sign up modal*/
+
 #signUpModal .modal-content{
     border-radius:0px;   
 }
@@ -500,10 +529,10 @@ input[type=password] {
 /*sign up modal end*/
 
 /*log in modal*/
-#logInModal .modal-dialog{
+/*#logInModal .modal-dialog{
     width:30%;
     margin-top: 10em;   
-}
+}*/
 #logInModal .modal-content{
     border-radius:0px;   
 }

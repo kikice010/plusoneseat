@@ -17,7 +17,22 @@ $(document).ready(function(){
 	    $('#signUpModal').modal("show");       
 	});
 
+	$("#locationInput").placepicker();
+
+	$('#dateInput').datetimepicker({ 
+        format: 'MM/DD/YYYY',
+        debug: true
+    });
+
 });
+
+$(document).click(function(e) { 
+    var ele = $(e.toElement); 
+    if (!ele.hasClass("datepickerInput") && !ele.hasClass("datepicker"))
+       $('#dateInput').data("DateTimePicker").hide();
+});
+
+
 function setErrorMessage(msg){
 	$(".labelError").text(msg);
 	 $(".labelError").fadeIn().delay(500).fadeOut();

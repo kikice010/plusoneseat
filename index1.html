@@ -18,19 +18,6 @@
 <meta content='PlusOneSeat - Fight Global Hunger Everytime You Eat' name='twitter:title'>
 <meta content='PlusOneSeat' name='author'>
 <meta content='fight, global, hunger, everytime' name='keywords'>
-<meta content='https://plusoneseat.sharetribe.com/' property='og:url'>
-<meta content='https://plusoneseat.sharetribe.com' name='identifier-url'>
-<meta content='PlusOneSeat' name='copyright'>
-<meta content='https://plusoneseat.sharetribe.com/' name='twitter:url'>
-<meta content='PlusOneSeat' property='og:site_name'>
-<meta content='With every meal offer you join, donate that much money to end the global hunger. - Fight Global Hunger Everytime You Eat' name='description'>
-<meta content='With every meal offer you join, donate that much money to end the global hunger. - Fight Global Hunger Everytime You Eat' property='og:description'>
-<meta content='With every meal offer you join, donate that much money to end the global hunger. - Fight Global Hunger Everytime You Eat' name='twitter:description'>
-<meta content='https://user-assets.sharetribe.com/images/communities/logos/24073/original/plusoneseat_logo-1.jpg?1463826097' property='og:image'>
-<meta content='https://user-assets.sharetribe.com/images/communities/logos/24073/original/plusoneseat_logo-1.jpg?1463826097' name='twitter:image'>
-<link href='https://plusoneseat.sharetribe.com/' rel='canonical'>
-<meta content='en_US' property='og:locale'>
-<meta content='@plusoneseat' name='twitter:site'>
 <meta name="google-signin-client_id" content="343491410925-gv4j3a5u6id991ekcf3oboqbpsq8vr22.apps.googleusercontent.com">
 <meta content='963087903805072' property='fb:app_id'>
 <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +27,16 @@
 <link href="./css/index1.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="./css/fontClasses.css">
 <!-- CSS -->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+<link href="./css/profile-page/datetimepicker.css" rel="stylesheet">
+<link rel="stylesheet" href="./lib/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+  
+  <!-- <script type="text/javascript" src="./lib/js/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="./lib/bootstrap/js/bootstrap.min.js"></script> -->
+  <script type="text/javascript" src="./js/fb-pre-jellybean-fix.js"></script>
+  <!-- <script type="text/javascript" src="../js/search-bar.js"></script> -->
+  <script type="text/javascript" src="./lib/bower_components/moment/min/moment.min.js"></script> 
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Hb7ZjcestOuK7U5luaDINFkCUCmU9YQ&sensor=true&amp;libraries=places"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <!-- Modernizr, in the head tag, right after stylesheets, for best performance: -->
 
@@ -174,19 +170,19 @@ var googleUser = {};
         <h3 class="fightGlobalHungerH2 GloberBold">FIGHT GLOBAL HUNGER EVERYTIME YOU EAT !</h3>
         <form class="form-horizontal" id="searchForm">
           <div class="row" style="width:50%;margin:auto">
-  				    <div class="inner-addon left-addon col-md-4" id="input1" >
+  				    <div class="inner-addon left-addon col-xs-12 col-sm-4" id="numberOfSeatsInput" >
                   <i><img class="img-responsive" src="./img/Plusoneseat_logo_grey.png"/></i>
-                  <input type="text" class="form-control" placeholder="Number of seat"/>
+                  <input type="number" min="1" max="50" class="form-control" placeholder="Number of seat"/>
               </div>
-              <div class="inner-addon left-addon col-md-4" id="input2">
+              <div class="inner-addon locationInputContainer left-addon col-xs-12 col-sm-4" >
                   <i class="glyphicon glyphicon-map-marker"></i>
-                  <input type="text" class="form-control" placeholder="Where to eat?"/>
+                  <input type="text" class="form-control " id="locationInput" placeholder="Where to eat?"/>
               </div>
-              <div class="inner-addon left-addon col-md-3" id="input3">
+              <div class="inner-addon dateInputContainer left-addon col-xs-12 col-sm-3" >
                   <i class="glyphicon glyphicon-calendar"></i>
-                  <input type="text" class="form-control" placeholder="Date"/>
+                  <input type="text" class="form-control datepickerInput" id="dateInput" placeholder="Date"/>
               </div>
-              <div class="col-sm-4 col-md-1 " id="searchBtnContainer">
+              <div class="col-xs-12 col-sm-1 col-md-1 " id="searchBtnContainer">
               <button type="submit" id="searchBtn" style="background:#f0804a;color:white" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
               </div>
           </div>
@@ -358,7 +354,7 @@ var googleUser = {};
 <!-- Footer -->
   <footer class="footer">
     <div class="row">
-      <div class="col-lg-2 col-md-2" style="text-align:left">
+      <div class="col-xs-6 col-md-2" style="text-align:left">
         <h4 class="GloberSemiBold">Company</h4>
         <p class="GloberLight"><a class="plusOneLinkWhite" href="#">About</a></p>
         <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Help</a></p>
@@ -366,32 +362,32 @@ var googleUser = {};
         <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Privacy Policy</a></p>
         <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Terms of Service</a></p>
       </div>
-      <div class="col-lg-2 col-md-2" style="text-align:left">
+      <div class="col-xs-6 col-md-2" style="text-align:left">
         <h4 class="GloberSemiBold">Community</h4>
         <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Facebook</a></p>
         <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Instagram</a></p>
         <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Twitter</a></p>
       </div>
-      <div class="col-lg-2 col-md-2" style="text-align:left">
+      <div class="col-xs-6 col-md-2" style="text-align:left">
         <h4 class="GloberSemiBold">Donation</h4>
         <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Partner</a></p>
         <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Why Donate</a></p>
         <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Donation System</a></p>
       </div>
-      <div class="col-lg-6 col-md-6 socialMediaContainer" style="text-align:left">
+      <div class="col-xs-12 col-md-6 socialMediaContainer" style="text-align:left">
         <h3 class="GloberSemiBold">Tuned In!</h3>
         <p class="GloberLight">Ut non odio condimentum, ornare felis nec, pharetra lacus.</p>
         <div class="row">
-          <div class="col-lg-2 col-md-2">
+          <div class="col-xs-2 socMediaImgContainer">
             <img class="img-responsive center-block" src="./img/facebook.png"/>
           </div>
-          <div class="col-lg-2 col-md-2">
+          <div class="col-xs-2 socMediaImgContainer">
             <img class="img-responsive center-block" src="./img/instagram.png"/>
           </div>
-          <div class="col-lg-2 col-md-2">
+          <div class="col-xs-2 socMediaImgContainer">
             <img class="img-responsive center-block" src="./img/twitter.png"/>
           </div>
-          <div class="col-lg-6 col-md-6"></div>
+          <div class="col-sm-6"></div>
         </div>
       </div>
     </div>
@@ -410,27 +406,27 @@ var googleUser = {};
         <h3 class="modal-title"><img src="./img/Plusoneseat_grey.png" height="30px" /></h3>
       </div>
       <div class="modal-body">
-          <button id="signUpBtnFacebook" class="signUpBtns col-md-12 btn btn-primary" onclick="checkLoginState()"><i class="col-md-2 fa fa-facebook" aria-hidden="true"></i><span class="col-md-8 signUpBtnText">Sign up with Facebook</span></button>
+          <button id="signUpBtnFacebook" class="signUpBtns col-xs-12 btn btn-primary" onclick="checkLoginState()"><i class="col-xs-2 fa fa-facebook" aria-hidden="true"></i><span class="col-xs-8 signUpBtnText">Sign up with Facebook</span></button>
           <br>
-          <button id="signUpBtnGoogle" class="btnGoogle signUpBtns col-md-12 btn btn-default"><i class="col-md-2 fa fa-google" aria-hidden="true"></i><span class="col-md-8 signUpBtnText">Sign up with Google</span></button>
+          <button id="signUpBtnGoogle" class="btnGoogle signUpBtns col-xs-12 btn btn-default"><i class="col-xs-2 fa fa-google" aria-hidden="true"></i><span class="col-xs-8 signUpBtnText">Sign up with Google</span></button>
           <br>
-          <button id="signUpBtnEmail" class="signUpBtns col-md-12 btn btn-warning" data=""><span class="col-md-2 "></span><span class="col-md-8 signUpBtnText">Sign up with Email</span></button>
+          <button id="signUpBtnEmail" class="signUpBtns col-xs-12 btn btn-warning" data=""><span class="col-xs-2 "></span><span class="col-xs-8 signUpBtnText">Sign up with Email</span></button>
           <div id="signUpEmailInputGroup" hidden>
             <hr/>
-            <label class="col-md-12 label label-warning labelError" id="signUpError"></label>
-            <input class="col-md-12 inputFields" id="emailSignUpField" type="text" name="emailSignUpField" placeholder="Email address" required>
+            <label class="col-xs-12 label label-warning labelError" id="signUpError"></label>
+            <input class="col-xs-12 inputFields" id="emailSignUpField" type="text" name="emailSignUpField" placeholder="Email address" required>
             <br>
-            <input class="col-md-12 inputFields" id="passwordSignUpField" type="password" name="passwordSignUpField" placeholder="Password" required>
+            <input class="col-xs-12 inputFields" id="passwordSignUpField" type="password" name="passwordSignUpField" placeholder="Password" required>
             <br>
-            <button id="signUpEmailSignUpModalBtn" class="signUpBtns col-md-12 btn btn-warning" onclick="signUp()"><span class="col-md-2 "></span><span class="col-md-8 signUpBtnText">Sign up</span></button>
+            <button id="signUpEmailSignUpModalBtn" class="signUpBtns col-xs-12 btn btn-warning" onclick="signUp()"><span class="col-xs-2 "></span><span class="col-xs-8 signUpBtnText">Sign up</span></button>
             <br>
           </div>
       </div>
       <div class="modal-footer">
         <div id="modalFooterContainer" style="width:100%;display:inline-block">
           <hr/>
-          <span class="col-md-6">Already a member?</span>
-          <span class="col-md-6 btnGroup">
+          <span class="col-xs-6">Already a member?</span>
+          <span class="col-xs-6 btnGroup">
             <button type="button" id="logInSignUpModalBtn" class="btn btn-default" data-dismiss="modal">Log in</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </span>
@@ -450,28 +446,28 @@ var googleUser = {};
         <h3 class="modal-title"><img src="./img/Plusoneseat_grey.png" height="30px" /></h3>
       </div>
       <div class="modal-body">
-        <button id="logInUpBtnFacebook" class="logInUpBtns col-md-12 btn btn-primary" onclick="checkLoginState();"><i class="col-md-2 fa fa-facebook" aria-hidden="true"></i>
-        <span class="col-md-8 logInUpBtnText">
+        <button id="logInUpBtnFacebook" class="logInUpBtns col-xs-12 btn btn-primary" onclick="checkLoginState();"><i class="col-xs-2 fa fa-facebook" aria-hidden="true"></i>
+        <span class="col-xs-8 logInUpBtnText">
         Log in with Facebook</span></button>
         <br>
-        <button id="logInUpBtnGoogle" class="btnGoogle logInUpBtns col-md-12 btn btn-default"><i class="col-md-2 fa fa-google" aria-hidden="true"></i><span class="col-md-8 logInUpBtnText">Log in with Google</span></button>
+        <button id="logInUpBtnGoogle" class="btnGoogle logInUpBtns col-xs-12 btn btn-default"><i class="col-md-2 fa fa-google" aria-hidden="true"></i><span class="col-xs-8 logInUpBtnText">Log in with Google</span></button>
         <hr style="border-width:2;" />
-        <label class="col-md-12 label label-warning labelError" id="logInError"></label>
-        <input class="col-md-12 inputFields" id="emailField" type="text" name="emailField" placeholder="Email address">
+        <label class="col-xs-12 label label-warning labelError" id="logInError"></label>
+        <input class="col-xs-12 inputFields" id="emailField" type="text" name="emailField" placeholder="Email address">
         <br>
-        <input class="col-md-12 inputFields" id="passwordField" type="password" name="passwordField" placeholder="Password">
+        <input class="col-xs-12 inputFields" id="passwordField" type="password" name="passwordField" placeholder="Password">
         <br>
-        <span class="col-md-6 inputFields"><input type="checkbox" name="rememberMeField">Remember me</span>
-        <span class="col-md-6 inputFields inputFieldsForgotPassword "><a class="plusOneLink" href="#">Forgot your password?</a></span>
+        <span class="col-xs-6 inputFields"><input type="checkbox" name="rememberMeField">Remember me</span>
+        <span class="col-xs-6 inputFields inputFieldsForgotPassword "><a class="plusOneLink" href="#">Forgot your password?</a></span>
         <br>
-        <button id="logInUpBtnEmail" class="logInUpBtns col-md-12 btn btn-warning" onclick="logIn()"><span class="col-md-2 "></span><span class="col-md-8 logInUpBtnText">Log in</span></button>
+        <button id="logInUpBtnEmail" class="logInUpBtns col-xs-12 btn btn-warning" onclick="logIn()"><span class="col-xs-2 "></span><span class="col-xs-8 logInUpBtnText">Log in</span></button>
         <br>
       </div>
       <div class="modal-footer">
         <div id="modalFooterContainer" style="width:100%;display:inline-block">
           <hr/>
-          <span class="col-md-6">Not a member yet?</span>
-          <span class="col-md-6 btnGroup">
+          <span class="col-xs-6">Not a member yet?</span>
+          <span class="col-xs-6 btnGroup">
             <button type="button" id="signUpLogInModalButton" class="btn btn-default" data-dismiss="modal">Sign Up</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </span>
@@ -485,7 +481,10 @@ var googleUser = {};
 
 <script type="text/javascript" src="./lib/js/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./lib/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript" src="./lib/slider/js/bootstrap-slider.js"></script>
+<script type="text/javascript" src="./lib/location_picker/jquery.placepicker.js"></script>
+  <script type="text/javascript" src="./js/location-picker.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
 <script>startApp();
 </script>
