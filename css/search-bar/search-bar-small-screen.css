@@ -1,0 +1,126 @@
+@media (max-width: 600px) {
+	.search-bar {
+        height: 4.3em;
+    }
+
+  	#sb-chair-logo-img{
+    	width: 3em;
+  	}
+
+  	#navbar-right-side-buttons {
+  		display: none;
+  	}
+
+  	#pills-bar {
+  		display: none;
+  	}
+
+  	#sb-menu-button {
+	    width: 100%;
+    	height: 100%;
+    	margin: 0px;
+    	background-color: white;
+        border-radius: 0;
+  	}
+
+  	.righ-side-navbar-container {
+  		width: 4em;
+        height: 4em;
+        float: right;
+        border-left: 2px solid #999999;
+  	}
+
+    .sb-icon-bar {
+        width: 2.4em !important;
+        background-color: #ef804a !important;
+        border-radius: 30% !important;
+        height: 4px !important;
+    }
+
+    .sb-form-container{
+        float: left;
+        width: 100%;
+        width: -webkit-calc(100% - 8em);
+        width: -moz-calc(100% - 8em);
+        width: calc(100% - 8em);
+        height: 4em;
+    }
+
+    #sb-form-group-seats {
+        display: none;
+    }
+
+    #sb-form-group-location {
+        width: 100%;
+        display: inline-block;
+    }
+
+    #sb-form-group-datepicker {
+        display: none;
+    }
+
+    #sb-form-group-timepicker {
+        display: none;
+    }
+
+    .sb-logo-img-container {
+        width: 4em;
+        height: 4em;
+        padding-left: 0.35em;
+        padding-top: 0.5em;
+        float: left;
+    }
+
+    #sb-dropdown-navigation {
+        background-color: #ef804a;
+        position: relative;
+        width: 50%;
+        float: right;
+        margin-right: -3px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #sb-dropdown-navigation>ul {
+        list-style-type: none;
+        padding-left: 0px;
+        width: 100%;
+    }
+
+    #sb-dropdown-navigation>ul>li {
+        float: right;
+        width: 100%;
+        padding-right: 23px;
+    }
+
+    #sb-dropdown-navigation>ul>li>a {
+        float: right;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    #sb-navbar-container {
+        background-color: #ef804a; 
+        height: 4em;
+    }
+
+    .sb-navbar {
+        height: 4em;
+    }
+
+    .navbar {
+        height: 4em;
+    }
+
+    .sb-menu-button-active {
+        background-color: #ef804a !important;
+    }
+
+    .sb-menu-button-active>span {
+        background-color: white !important;
+    }
+
+    #sb-form-group-datepicker {
+        display: none !important;
+    }
+}

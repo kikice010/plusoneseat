@@ -4,6 +4,7 @@ $(document).ready(function() {
   
   // Basic usage
   $("#sb-input-location").placepicker();
+  $("#sb-sm-input-location").placepicker();
   
   // Advanced usage
   // $(".placepicker").each(function() {

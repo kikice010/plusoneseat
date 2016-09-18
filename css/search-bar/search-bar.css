@@ -1,0 +1,141 @@
+    .sb-title-logo {
+        background-color: white;
+        margin-top: 2px;
+        margin-left: 2px;
+    }
+
+    .affix {
+        top: 0;
+        width: 100%;
+    }
+
+    .affix + .container-fluid {
+        padding-top: 4.4em;
+    }
+
+    .search-bar {
+        background-color: #fff;
+        color:  #999999;
+        border: 2px solid #999999;
+    }
+
+    .search-bar-form {
+        background-color: #fff;
+        height: 4em;
+    }
+
+    .sb-input-group {
+        height: 4em;
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+        border-left: 2px solid #999999; 
+        width:100%;
+    }
+
+    .sb-input {
+        height: 4em;
+        border-top: none;
+        border-right: 0px solid #999999;
+        border-bottom: none;
+        border-left: none;
+        border-radius: 0px 0px 0px 0px;
+    }
+
+    .sb-input-group-addon {
+        background-color: white;
+        border: none;
+        width: 3.4em !important;
+    }
+
+    .sb-input-group-addon>span {
+        background-color: white;
+        border:none;
+        font-size: 1.7em;
+        color: #999999;
+    }
+
+    #navbar-right-side-buttons {
+        width: 25%; 
+        border-left: 2px solid #999999;
+    }
+
+    #navbar-search-form-container {
+        width: 62%;
+    }
+
+    #sb-seats-chair-img{
+        width: 100%;
+    }
+
+    #sb-form-group-seats {
+        width: 15%;
+    }
+
+    #sb-form-group-location{
+        width: 36%;
+    }
+
+    #sb-form-group-timepicker{
+        width: 21%;
+    }
+
+    #sb-form-group-datepicker{
+        width: 25%;
+    }
+
+    .pac-container {
+        z-index: 1031 !important;
+    }
+
+    .sb-form-container {
+        width: 100%;
+    }
+
+    .sb-brand-cell:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em; /* Adjusts for spacing */
+    }
+
+    .sb-brand-cell {
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .sb-navbar-toggle {
+        margin-right: 0px;
+    }
+
+
+    .navbar-collapse.collapse {
+        display: block!important;
+    }
+
+    .navbar-nav>li, .navbar-nav {
+        float: left !important;
+    }
+
+    .navbar-nav.navbar-right:last-child {
+        margin-right: -15px !important;
+    }
+
+    .navbar-right {
+        float: right!important;
+    }
+
+    .pac-item {
+        font-family: GloberBold !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+    }
+
+    @-moz-document url-prefix() { 
+        .navbar-toggle-mozzila-fix {
+            position: absolute;
+            right: 3%;
+            top: 3%;
+        }
+    }
