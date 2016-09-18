@@ -1,7 +1,10 @@
 html,body{
     margin:0;
     padding: 0;
+    height: 100%;
 }
+
+
 /*header styles*/
 .navbar.navbar-default{
 	margin-bottom:0;
@@ -32,36 +35,7 @@ html,body{
   }
 /*header styles end*/
 
-/*footer*/
-footer.footer{
- color: white;
- background-color: #ef804a;
- text-align: center;
- height: auto;
- width: 100%;
-}
 
-footer{
-    padding-top: 50px;
-    padding-left: 130px;
-    padding-right: 130px;
-}
-footer .footer.row h4{
-    text-align:justify;
-}
-footer .trademark{
-    margin-top: 30px;
-}
-
-footer .socialMediaContainer .socMediaImgContainer{
-    /*padding-left: 50px;
-    padding-right: 50px;*/
-    padding-bottom: 1em;
-}
-footer .footer.row p{
-    text-align:left;
-}
-/*footer end*/
 
 /*search section landing page*/
 .container{
@@ -98,7 +72,7 @@ footer .footer.row p{
 }
 
 .donatedSeatsContainer img{
-    height:150px;
+    height:100px;
 }
 
 
@@ -308,9 +282,30 @@ footer .footer.row p{
 /*how section landing page*/
 #howContainer{
     background-color: #ccc;
-    padding: 3em 5em;
+    padding: 4em 12em;
     text-align: center;
 }
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    #howContainer{
+        background-color: #ccc;
+        padding: 4em 3em;
+        text-align: center;
+    }
+}
+
+    /* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+  #howContainer{
+    background-color: #ccc;
+    padding: 4em 3em;
+    text-align: center;
+    }
+        
+}
+
+
+
 
 #howContainer .hows{
     background-color: white;
@@ -631,9 +626,6 @@ input[type=password] {
 }
 /*log in modal ends*/
 
-.plusOneLinkWhite{
-    color:white;
-}
 
 
 

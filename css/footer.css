@@ -1,0 +1,56 @@
+/*footer*/
+footer.footer{
+ color: white;
+ background-color: #ef804a;
+ text-align: center;
+ height: auto;
+ width: 100%;
+}
+
+footer{
+    padding-top: 4em;
+    padding-left: 10em;
+    padding-right: 10em;
+}
+footer h3.GloberSemiBold,footer h4.GloberSemiBold{
+    margin:0;
+}
+footer .footer.row h4{
+    text-align:justify;
+    margin-top: 0px;
+}
+footer .trademark{
+    margin-top: 30px;
+}
+
+footer .socialMediaContainer .socMediaImgContainer{
+    /*padding-left: 50px;
+    padding-right: 50px;*/
+    padding-bottom: 1em;
+}
+footer .footer.row p{
+    text-align:left;
+}
+/*footer end*/
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+   footer{
+    padding-top: 4em;
+    padding-left: 4em;
+    padding-right: 4em;
+}
+}
+
+    /* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+  footer{
+    padding-top: 4em;
+    padding-left: 4em;
+    padding-right: 4em;
+}
+        
+}
+.plusOneLinkWhite{
+    color:white;
+}
