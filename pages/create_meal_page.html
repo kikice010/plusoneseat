@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+
+  <meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
+  <meta content='website' property='og:type'>
+  <meta content='en' http-equiv='content-language'>
+  <meta content='summary' name='twitter:card'>
+  <!-- Additional meta tags for SEO, etc. -->
+
+  <title>PlusOneSeat - Fight Global Hunger Everytime You Eat</title>
+
+
+  <link rel="stylesheet" type="text/css" href="../fonts/MyFontsWebfontsKit.css">
+  <link href="../css/footer.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/fontClasses.css">
+
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/create_meal_page.css">
+
+  
+</head>
+<body>
+
+<div class="container" id="create-meal-container">
+  <div class="col-xs-2">
+    <ul class="nav nav-pills nav-stacked" id="navTabs">
+      <li class="active" role="presentation"><a href="#tabMealDetails" id="MealDetails" aria-controls="MealDetails" role="tab" data-toggle="tab">Meal Offer Details</a></li>
+      <li role="presentation"><a href="#tabPhotos" id="Photos" aria-controls="Photos" role="tab" data-toggle="tab">Photos</a></li>
+      <li><a href="#tabPricing" id="Pricing" aria-controls="Photos" role="tab" data-toggle="tab">Pricing & Donation</a></li>
+      <li><a href="#" id="AvailableDates">Available Dates</a></li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <div class="col-xs-10 tab-pane active" role="tabpanel"  id="tabMealDetails">
+      <div class="panel panel-default edit-profile-panel">
+        <div class="panel-heading ">Basics</div>
+        <div class="panel-body">
+            <div class="row" id="genderSelectionContiner">
+              <label  class="col-xs-2">Meal Type</label>
+              <select class="col-xs-2" id="mealTypeSelection">
+                <option>1</option>
+                <option>2</option>
+              </select>
+            </div>
+            <div class="row" id="birthdaySelectionContainer">
+              <label class="col-xs-2">Cuisine</label>
+              <select class="col-xs-2" id="cuisineContinentSelection">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+              <select class="col-xs-2" id="cuisineRegionSelection">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+              <select class="col-xs-2" id="cuisineCountrySelection">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="row">
+              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+            </div>
+            
+            <div class="row">
+              <label class="col-xs-2">Your Meal Name</label>
+              <input type="text" class="col-xs-10" name="mealNameField">
+            </div>
+            <div class="row">
+              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+            </div>
+            <div class="row">
+              <label class="col-xs-2">Course Options</label>
+              <select class="col-xs-10" id="courseOptionsSelection">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="row">
+              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default edit-profile-panel">
+        <div class="panel-heading">Menu</div>
+        <div class="panel-body">
+            <p>When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+            <div class="row">
+              <label class="col-xs-2">Single Course</label>
+              <input type="text" class="col-xs-10" name="singleCourseField" placeholder="Dish Name">
+              <!-- <div class="row"> -->
+                <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+              <!-- </div> -->
+              
+              <input type="text" class="col-xs-10 col-xs-offset-2" name="ingredientsNameField" placeholder="Ingredients">
+              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+              <div class="col-xs-3 col-xs-offset-2 addBtn" id="phoneNumberBtn" >
+                <span style="font-size: 3em; margin-right:0.2em;">+</span>Add a phone number
+              </div>
+              
+            </div>
+            <div class="row">
+              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+            </div>
+            
+        </div>
+      </div>
+
+      <div class="panel panel-default edit-profile-panel">
+        <div class="panel-heading">Details</div>
+        <div class="panel-body">
+          <p>When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+          <div class="row">
+            <label class="col-xs-2">Description</label>
+            <textarea id="descriptionCourseField" class="col-xs-10" rows="7" cols="50" maxlength="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. </textarea> 
+            <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+
+          </div>
+          <div class="row" id="numberSeatsSelectionContainer">
+              <label class="col-xs-2">Seats</label>
+              <select class="col-xs-2" id="minnumberSeatsSelection">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+              <select class="col-xs-2" id="maxnumberSeatsSelection">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="row">
+              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+            </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-warning" id="saveBtn">Save</button>
+         <button type="button" class="btn btn-default">View Meal Offer</button>
+    </div>
+    
+
+    <div class="col-xs-10 tab-pane" role="tabpanel"  id="tabPhotos">
+      <div class="panel panel-default edit-profile-panel">
+        <div class="panel-heading ">Photos</div>
+        <div class="panel-body">
+          <p>When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+          <div class="row">
+            <div class="well uploadBtn">
+              <div  id="paymentBtn" style=" text-align:center;">
+                <img src="../img/plus.png" height=90px></img><br><span style="font-size:13px;">Upload a photo</span>
+              </div>
+            </div>
+          </div>
+            
+        </div>
+      </div>
+      <button type="button" class="btn btn-warning" id="saveBtn">Save</button>
+      <button type="button" class="btn btn-default">View Meal Offer</button>
+    </div>
+
+    <div class="col-xs-10 tab-pane" role="tabpanel"  id="tabPricing">
+      <div class="panel panel-default edit-profile-panel">
+        <div class="panel-heading ">Pricing & Donation</div>
+        <div class="panel-body">
+          <div class="row">
+              <label class="col-xs-2">Per seat</label>
+              <input type="text" class="col-xs-1" name="perSeatField" placeholder="€">
+            </div>
+            <div class="row">
+              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+            </div>
+            <div class="row">
+              <label class="col-xs-2">Donation</label>
+              <select class="col-xs-2" id="DonationSelection">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="row">
+              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+            </div>
+            <div class="row">
+              <select class="col-xs-2 col-xs-offset-2" id="numberDonationSelection">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="row">
+              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+            </div>
+            <hr/>
+            <div class="row" style="text-align:center">
+              <span>Your service fee 10% <b>€1</b></span><br>
+              <span>Your donation cost <b>€2.50</b></span><br>
+              <span>Your income per seat <b>€6.50</b></span><br>
+            </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-warning" id="saveBtn">Save</button>
+      <button type="button" class="btn btn-default">View Meal Offer</button>
+    </div>
+  </div>
+
+</div>
+<!-- Footer -->
+  <footer class="footer">
+    <div class="row">
+      <div class="col-xs-6 col-md-2" style="text-align:left">
+        <h4 class="GloberSemiBold">Company</h4>
+        <p class="GloberLight"><a class="plusOneLinkWhite" href="#">About</a></p>
+        <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Help</a></p>
+        <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Cooperation</a></p>
+        <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Privacy Policy</a></p>
+        <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Terms of Service</a></p>
+      </div>
+      <div class="col-xs-6 col-md-2" style="text-align:left">
+        <h4 class="GloberSemiBold">Community</h4>
+        <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Facebook</a></p>
+        <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Instagram</a></p>
+        <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Twitter</a></p>
+      </div>
+      <div class="col-xs-6 col-md-2" style="text-align:left">
+        <h4 class="GloberSemiBold">Donation</h4>
+        <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Partner</a></p>
+        <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Why Donate</a></p>
+        <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Donation System</a></p>
+      </div>
+      <div class="col-xs-12 col-md-6 socialMediaContainer" style="text-align:left">
+        <h3 class="GloberSemiBold">Tuned In!</h3>
+        <p class="GloberLight">Ut non odio condimentum, ornare felis nec, pharetra lacus.</p>
+        <div class="row">
+          <div class="col-xs-2 socMediaImgContainer">
+            <img class="img-responsive center-block" src="../img/facebook.png"/>
+          </div>
+          <div class="col-xs-2 socMediaImgContainer">
+            <img class="img-responsive center-block" src="../img/instagram.png"/>
+          </div>
+          <div class="col-xs-2 socMediaImgContainer">
+            <img class="img-responsive center-block" src="../img/twitter.png"/>
+          </div>
+          <div class="col-sm-6"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row trademark">
+      <p class="footer GloberLight style="text-align:center">PlusOneSeat © 2016</p>
+    </div>  
+  </footer>
+
+
+</body>
+
+<script type="text/javascript" src="../lib/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+  $('#navTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show');
+  $("#tab"+e.target.id).fadeIn();
+
+})
+</script>
+
+</html>
