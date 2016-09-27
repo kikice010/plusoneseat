@@ -11,14 +11,17 @@
 
   <title>PlusOneSeat - Fight Global Hunger Everytime You Eat</title>
 
-
-  <link rel="stylesheet" type="text/css" href="../fonts/MyFontsWebfontsKit.css">
+<link href="../lib/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../font/MyFontsWebfontsKit.css">
   <link href="../css/footer.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../css/fontClasses.css">
 
   <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../css/create_meal_page.css">
 
+  <link rel="stylesheet" type="text/css" href="../css/calendar.css" />
+  <link rel="stylesheet" type="text/css" href="../css/custom_2.css" />
+  <script src="../js/modernizr.custom.63321.js"></script>
   
 </head>
 <body>
@@ -29,7 +32,7 @@
       <li class="active" role="presentation"><a href="#tabMealDetails" id="MealDetails" aria-controls="MealDetails" role="tab" data-toggle="tab">Meal Offer Details</a></li>
       <li role="presentation"><a href="#tabPhotos" id="Photos" aria-controls="Photos" role="tab" data-toggle="tab">Photos</a></li>
       <li><a href="#tabPricing" id="Pricing" aria-controls="Photos" role="tab" data-toggle="tab">Pricing & Donation</a></li>
-      <li><a href="#" id="AvailableDates">Available Dates</a></li>
+      <li><a href="#tabAvailableDates" id="AvailableDates" aria-controls="Photos" role="tab" data-toggle="tab">Available Dates</a></li>
     </ul>
   </div>
   <div class="tab-content">
@@ -47,12 +50,6 @@
             <div class="row" id="birthdaySelectionContainer">
               <label class="col-xs-2">Cuisine</label>
               <select class="col-xs-2" id="cuisineContinentSelection">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-              <select class="col-xs-2" id="cuisineRegionSelection">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -215,6 +212,30 @@
       <button type="button" class="btn btn-warning" id="saveBtn">Save</button>
       <button type="button" class="btn btn-default">View Meal Offer</button>
     </div>
+
+
+    <div class="col-xs-10 tab-pane" role="tabpanel"  id="tabAvailableDates">
+      <div class="panel panel-default edit-profile-panel">
+        <div class="panel-heading ">Available Dates</div>
+        <div class="panel-body">
+          <div class="custom-calendar-wrap">
+          <div id="custom-inner" class="custom-inner">
+            <div class="custom-header clearfix">
+              <nav>
+                <span id="custom-prev" class="custom-prev"></span>
+                <span id="custom-next" class="custom-next"></span>
+              </nav>
+              <h2 id="custom-month" class="custom-month"></h2>
+              <h3 id="custom-year" class="custom-year"></h3>
+            </div>
+            <div id="calendar" class="fc-calendar-container"></div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-warning" id="saveBtn">Save</button>
+      <button type="button" class="btn btn-default">View Meal Offer</button>
+    </div>
   </div>
 
 </div>
@@ -268,6 +289,8 @@
 
 <script type="text/javascript" src="../lib/js/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/jquery.calendario.js"></script>
+<script type="text/javascript" src="../js/data.js"></script>
 
 <script>
   $('#navTabs a').click(function (e) {
@@ -276,6 +299,75 @@
   $("#tab"+e.target.id).fadeIn();
 
 })
+
+  $( '#calendar' ).calendario();
+
+  $(function() {
+      
+        var transEndEventNames = {
+            'WebkitTransition' : 'webkitTransitionEnd',
+            'MozTransition' : 'transitionend',
+            'OTransition' : 'oTransitionEnd',
+            'msTransition' : 'MSTransitionEnd',
+            'transition' : 'transitionend'
+          },
+          transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+          $wrapper = $( '#custom-inner' ),
+          $calendar = $( '#calendar' ),
+          cal = $calendar.calendario( {
+            onDayClick : function( $el, $contentEl, dateProperties ) {
+
+              if( $contentEl.length > 0 ) {
+                showEvents( $contentEl, dateProperties );
+              }
+
+            },
+            caldata : codropsEvents,
+            displayWeekAbbr : true
+          } ),
+          $month = $( '#custom-month' ).html( cal.getMonthName() ),
+          $year = $( '#custom-year' ).html( cal.getYear() );
+
+        $( '#custom-next' ).on( 'click', function() {
+          cal.gotoNextMonth( updateMonthYear );
+        } );
+        $( '#custom-prev' ).on( 'click', function() {
+          cal.gotoPreviousMonth( updateMonthYear );
+        } );
+
+        function updateMonthYear() {        
+          $month.html( cal.getMonthName() );
+          $year.html( cal.getYear() );
+        }
+
+        // just an example..
+        function showEvents( $contentEl, dateProperties ) {
+
+          hideEvents();
+          
+          var $events = $( '<div id="custom-content-reveal" class="custom-content-reveal"><h4>Events for ' + dateProperties.monthname + ' ' + dateProperties.day + ', ' + dateProperties.year + '</h4></div>' ),
+            $close = $( '<span class="custom-content-close"></span>' ).on( 'click', hideEvents );
+
+          $events.append( $contentEl.html() , $close ).insertAfter( $wrapper );
+          
+          setTimeout( function() {
+            $events.css( 'top', '0%' );
+          }, 25 );
+
+        }
+        function hideEvents() {
+
+          var $events = $( '#custom-content-reveal' );
+          if( $events.length > 0 ) {
+            
+            $events.css( 'top', '100%' );
+            Modernizr.csstransitions ? $events.on( transEndEventName, function() { $( this ).remove(); } ) : $events.remove();
+
+          }
+
+        }
+      
+      });
 </script>
 
 </html>
