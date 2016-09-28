@@ -1,13 +1,30 @@
 body{
-    background-color: #D3D3D3;
+    background-color: #efefef;
   }
-  #userImage { 
-  background: url("../img/phone.png") 50% 50% no-repeat;
-  background-size:cover; /* 50% 50% centers image in div */
-  width: 150px;
-  height: 150px;
-  /*opacity: 0.5*/
-  }
+    .userImage-holder {
+        height: 150px;
+    }
+    .userImage { 
+        background: url("../img/donator.jpg") 50% 50% no-repeat;
+        background-size:cover; /* 50% 50% centers image in div */
+        width: 150px;
+        height: 150px;
+        border: 3px solid white;
+    }
+
+    .userImage-back {
+        -webkit-filter:brightness(60%);
+        -moz-filter:brightness(60%);
+        filter: url(#brightness);
+        filter:brightness(60%);
+    }
+
+    .userImage-front {
+        border-radius: 50%;
+        position: relative;
+        bottom: 150px;    
+    }
+
   textarea {
      resize: none;
   }

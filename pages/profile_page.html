@@ -155,7 +155,7 @@
                     </div>
                     <div id="pills-bar" class="row sb-pills">
                         <ul class="nav nav-pills horizontal-center GloberRegular" >
-                            <li id="your-rates-reviews"><a id="your-rates-reviews-pill" data-toggle="pill" href="#your-rates-reviews-tab">Your Rates/Reviews</a></li>
+                            <li id="your-rates-reviews" class="hidden"><a id="your-rates-reviews-pill" data-toggle="pill" href="#your-rates-reviews-tab">Your Rates/Reviews</a></li>
                             <li id="your-meal-offers" class="active"><a id="your-meal-offers-pill" data-toggle="pill" href="#your-meal-offers-tab">Your Meal Offers</a></li>
                             <li id="your-reservations"><a id="your-reservations-pill" data-toggle="pill" href="#your-reservations-tab">Your Reservations</a></li>
                             <li id="profile"><a id="profile-pill" data-toggle="pill" href="#profile-tab">Profile</a></li>
@@ -170,9 +170,8 @@
 
         <div class="container" id="tab-content-container">
             <div class="tab-content">
-                <div id="your-rates-reviews-tab" class="tab-pane fade">
-                    <h3>Menu 1</h3>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div id="your-rates-reviews-tab" class="tab-pane fade hidden">
+                    
                 </div>
                 <div id="your-meal-offers-tab" class="tab-pane fade in active">
                     <div class="row active-meal-offers-area">
@@ -188,11 +187,11 @@
                                 </div>                                
                                 <div class="time-date vertical-center"> 
                                     <div>
-                                        <img class="image" src="../img/brand-assets/icons/time_icon.png">
+                                        <i class="fa fa-clock-o icon" aria-hidden="true"></i>
                                         <p>19:45</p>
                                     </div>
                                     <div>
-                                        <img class="image" src="../img/brand-assets/icons/calendar_icon.png">
+                                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
                                         <p>22/11/2002</p>
                                     </div>
                                 </div>                             
@@ -206,7 +205,7 @@
                                 <div class="cell"> 
                                     <p class="title">Donation</p>
                                     <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
                                     </p>
                                 </div>
                                 <div class="cell"> 
@@ -377,14 +376,14 @@
                                 </div>                                
                                 <div class="time-date vertical-center"> 
                                     <div>
-                                        <img class="image" src="../img/brand-assets/icons/time_icon.png">
+                                        <i class="fa fa-clock-o icon" aria-hidden="true"></i>
                                         <p>19:45</p>
                                     </div>
                                     <div>
-                                        <img class="image" src="../img/brand-assets/icons/calendar_icon.png">
+                                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
                                         <p>22/11/2002</p>
                                     </div>
-                                </div>                             
+                                </div>                            
                             </div>
                             <div class="info">
                                 <p class="title">Supper great amazing burger</p>
@@ -395,7 +394,7 @@
                                 <div class="cell"> 
                                     <p class="title">Donation</p>
                                     <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
                                     </p>
                                 </div>
                                 <div class="cell"> 
@@ -569,10 +568,27 @@
                         <input type="hidden" id="current-past-offer" value="">
                         <input type="hidden" id="current-past-offer-hide" value="">
                         <div class="offer-container past-offer" id="past-offer-1">
-                            <div class="picture"> 
+                            <div class="picture">
                                 <div class="add-offer-button">
                                     <p class="plus">+</p>
-                                </div>                             
+                                </div>
+                                <div class="controlls">
+                                    <div class="button-group">
+                                        <button class="edit">Confirm</button>
+                                        <button class="cancel">Decline</button>
+                                    </div> 
+                                </div> 
+                                <div class="time-date vertical-center"> 
+                                    <div>
+                                        <i class="fa fa-clock-o icon" aria-hidden="true"></i>
+                                        <p>19:45</p>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
+                                        <p>22/11/2002</p>
+                                    </div>
+                                </div>                              
                             </div>
                             <div class="info">
                                 <p class="title">Supper great amazing burger</p>
@@ -583,7 +599,7 @@
                                 <div class="cell"> 
                                     <p class="title">Donation</p>
                                     <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
                                     </p>
                                 </div>
                                 <div class="cell"> 
@@ -663,11 +679,11 @@
                                 </div> 
                                 <div class="time-date vertical-center"> 
                                     <div>
-                                        <img class="image" src="../img/brand-assets/icons/time_icon.png">
+                                        <i class="fa fa-clock-o icon" aria-hidden="true"></i>
                                         <p>19:45</p>
                                     </div>
                                     <div>
-                                        <img class="image" src="../img/brand-assets/icons/calendar_icon.png">
+                                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
                                         <p>22/11/2002</p>
                                     </div>
                                 </div>                             
@@ -681,7 +697,7 @@
                                 <div class="cell"> 
                                     <p class="title">Donation</p>
                                     <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
                                     </p>
                                 </div>
                                 <div class="cell"> 
@@ -759,11 +775,11 @@
                                 </div> 
                                 <div class="time-date vertical-center"> 
                                     <div>
-                                        <img class="image" src="../img/brand-assets/icons/time_icon.png">
+                                        <i class="fa fa-clock-o icon" aria-hidden="true"></i>
                                         <p>19:45</p>
                                     </div>
                                     <div>
-                                        <img class="image" src="../img/brand-assets/icons/calendar_icon.png">
+                                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
                                         <p>22/11/2002</p>
                                     </div>
                                 </div>                             
@@ -777,7 +793,7 @@
                                 <div class="cell"> 
                                     <p class="title">Donation</p>
                                     <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
                                     </p>
                                 </div>
                                 <div class="cell"> 
@@ -854,11 +870,11 @@
                                 </div> 
                                 <div class="time-date vertical-center"> 
                                     <div>
-                                        <img class="image" src="../img/brand-assets/icons/time_icon.png">
+                                        <i class="fa fa-clock-o icon" aria-hidden="true"></i>
                                         <p>19:45</p>
                                     </div>
                                     <div>
-                                        <img class="image" src="../img/brand-assets/icons/calendar_icon.png">
+                                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
                                         <p>22/11/2002</p>
                                     </div>
                                 </div>                             
@@ -872,7 +888,7 @@
                                 <div class="cell"> 
                                     <p class="title">Donation</p>
                                     <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
                                     </p>
                                 </div>
                                 <div class="cell"> 
@@ -939,182 +955,191 @@
                 </div>
                 <div id="profile-tab" class="tab-pane fade">
                     <div class="container" id="edit-profile-container">
-                      <div class="panel panel-default edit-profile-panel">
-                        <div class="panel-heading ">Profile Photo</div>
-                        <div class="panel-body">
-                          <div class="col-xs-2" id="userImage">
-                            <!-- <img src="../img/donator.jpg" class="img-circle"/>       -->
-                          </div>
-                          <div class="col-xs-8">
-                             <p>Clear frontal face photos are an important way for hosts and guests to learn about each other. It's not much fun to host a landspace! Please upload a photo that clearly shows your face.</p>
-                             <button type="button" class="btn btn-warning uploadBtn" id="uploadBtn">Upload a photo</button>
-                             <button type="button" class="btn btn-primary">Use your facebook profile photo</button>
-                          </div>
+                        <div class="panel panel-default edit-profile-panel">
+                            <div class="panel-heading ">Profile Photo</div>
+                            <div class="panel-body">
+                                <div class="col-xs-2 userImage-holder">
+                                    <div class="userImage userImage-back"></div>
+                                    <div class="userImage userImage-front"></div>
+                                </div>
+                                <div class="col-xs-8">
+                                    <p>Clear frontal face photos are an important way for hosts and guests to learn about each other. It's not much fun to host a landspace! Please upload a photo that clearly shows your face.</p>
+                                    <button type="button" class="btn btn-warning uploadBtn" id="uploadBtn">Upload a photo</button>
+                                    <button type="button" class="btn btn-primary">Use your facebook profile photo</button>
+                                </div>
+                            </div>
                         </div>
-                      </div>
 
-                      <div class="panel panel-default edit-profile-panel">
-                        <div class="panel-heading">Basic Information</div>
-                        <div class="panel-body">
-                          <div class="row">
-                            <label class="col-xs-2">First Name</label>
-                            <input type="text" class="col-xs-10" name="firstName" placeholder="First Name" value="Eleonora">
-                          </div>
-                          <div class="row">
-                            <label class="col-xs-2">Last Name</label>
-                            <input type="text" class="col-xs-10" name="lastName" placeholder="Last Name" value="Serafini">
-                          </div>
-                          <div class="col-xs-2"></div><p class="col-xs-10">We never share your full name with other Plusoneseat users.</p>
-                          <div class="row">
-                            <label class="col-xs-2">Where you live</label>
-                            <input type="text" class="col-xs-10" name="locationField" placeholder="Where you live" value="Madrid,Spain">
-                          </div>
-                          <div class="row">
-                            <label class="col-xs-2">Email Address</label>
-                            <input type="text" class="col-xs-10" name="emailAddressField" placeholder="Email Address" value="eleonora@email.com">
-                          </div>
-                          <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">We won't share your private email address with other Plusoneseat users.</p>
-                          <div class="row">
-                            <label class="col-xs-2">Describe Yourself</label>
-                            <textarea id="descriptionField" class="col-xs-10" rows="5" cols="50" maxlength="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. </textarea> 
-                          </div>
-                          <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">Plusoneseat is built on relationships. Help other people get to know you.</p>
-                          <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">Tell them about the things you like: What are 5 things you can't live without?</p>
-                          <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">Tell them about you: Do you have a life motto?</p>
+                        <div class="panel panel-default edit-profile-panel">
+                            <div class="panel-heading">Basic Information</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <label class="col-xs-2">First Name</label>
+                                    <input type="text" class="col-xs-10" name="firstName" placeholder="First Name" value="Eleonora">
+                                </div>
+                                <div class="row">
+                                    <label class="col-xs-2">Last Name</label>
+                                    <input type="text" class="col-xs-10" name="lastName" placeholder="Last Name" value="Serafini">
+                                </div>
+                                <div class="col-xs-2"></div>
+                                <p class="col-xs-10">We never share your full name with other Plusoneseat users.</p>
+                                <div class="row">
+                                    <label class="col-xs-2">Where you live</label>
+                                    <input type="text" class="col-xs-10" name="locationField" placeholder="Where you live" value="Madrid,Spain">
+                                </div>
+                                <div class="row">
+                                    <label class="col-xs-2">Email Address</label>
+                                    <input type="text" class="col-xs-10" name="emailAddressField" placeholder="Email Address" value="eleonora@email.com">
+                                </div>
+                                <!-- <div class="col-xs-2"></div> -->
+                                <p class="col-xs-offset-2 col-xs-10">We won't share your private email address with other Plusoneseat users.</p>
+                                <div class="row">
+                                    <label class="col-xs-2">Describe Yourself</label>
+                                    <textarea id="descriptionField" class="col-xs-10" rows="5" cols="50" maxlength="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. </textarea> 
+                                </div>
+                                <!-- <div class="col-xs-2"></div> -->
+                                <p class="col-xs-offset-2 col-xs-10">Plusoneseat is built on relationships. Help other people get to know you.</p>
+                                <!-- <div class="col-xs-2"></div> -->
+                                <p class="col-xs-offset-2 col-xs-10">Tell them about the things you like: What are 5 things you can't live without?</p>
+                                <!-- <div class="col-xs-2"></div> -->
+                                <p class="col-xs-offset-2 col-xs-10">Tell them about you: Do you have a life motto?</p>
+                            </div>
                         </div>
-                      </div>
 
-                      <div class="panel panel-default edit-profile-panel">
-                        <div class="panel-heading">Detailed Information</div>
-                        <div class="panel-body">
-                          <p>These informations are only shared once you request to book a meal offer or if you create a meal offer</p>
-                          <div class="row" id="genderSelectionContiner">
-                            <label  class="col-xs-2">Gender</label>
-                            <select class="col-xs-2" id="genderSelection">
-                              <option>Female</option>
-                              <option>Male</option>
-                            </select>
-                          </div>
-                          <div class="row" id="birthdaySelectionContainer">
-                            <label class="col-xs-2">Birth Date</label>
-                            <select class="col-xs-2" id="monthSelection">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                            <select class="col-xs-2" id="daySelection">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                            <select class="col-xs-2" id="yearSelection">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                          </div>
-                          <div class="row" id="placeSelectionContainer">
-                            <label for="placeSelection" class="col-xs-2">Where you born</label>
-                            <input type="text" class="col-xs-10" id="placeSelection">
-                          </div>
-                          <div class="row" id="phoneSelectionContainer">
-                            <label for="phoneSelection" class="col-xs-2">Phone Number</label>
-                            <select class="col-xs-3" id="countrySelection">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                            <input type="text" class="col-xs-2" id="phoneSelection">  
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-3 col-xs-offset-2 addBtn" id="phoneNumberBtn" >
-                              <span style="font-size: 3em; margin-right:0.2em;">+</span>Add a phone number</div>
-                          </div>
-                         
-                          <!-- <div class="row">
-                            <button type="button" class="btn btn-default col-xs-offset-2" id="phoneNumberBtn">+ Add a phone number</button>
-                          </div> -->
-                          <!-- <button type="button" class="btn btn-default" id="phoneNumberBtn">+ Add a phone number</button> -->
-                          <p class="col-xs-offset-2">This is only shared once you have a confirmed booking with another Plusoneseat user</p>
-                          <div class="row" id="languageSelectionContainer">
-                            <label for="languageSelection" class="col-xs-2">Language</label>
-                            <select class="col-xs-3" id="languageSelection">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                            <select class="col-xs-3" id="languageLevelSelection">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-3 col-xs-offset-2 addBtn" id="languageBtn">
-                              <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Language</div>
-                          </div>
+                        <div class="panel panel-default edit-profile-panel">
+                            <div class="panel-heading">Detailed Information</div>
+                            <div class="panel-body">
+                                <p>These informations are only shared once you request to book a meal offer or if you create a meal offer</p>
+                                <div class="row" id="genderSelectionContiner">
+                                    <label  class="col-xs-2">Gender</label>
+                                    <select class="col-xs-2" id="genderSelection">
+                                        <option>Female</option>
+                                        <option>Male</option>
+                                    </select>
+                                </div>
+                                <div class="row" id="birthdaySelectionContainer">
+                                    <label class="col-xs-2">Birth Date</label>
+                                    <select class="col-xs-2" id="monthSelection">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                    <select class="col-xs-2" id="daySelection">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                    <select class="col-xs-2" id="yearSelection">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                                <div class="row" id="placeSelectionContainer">
+                                    <label for="placeSelection" class="col-xs-2">Where you born</label>
+                                    <input type="text" class="col-xs-10" id="placeSelection">
+                                </div>
+                                <div class="row" id="phoneSelectionContainer">
+                                    <label for="phoneSelection" class="col-xs-2">Phone Number</label>
+                                    <select class="col-xs-3" id="countrySelection">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                    <input type="text" class="col-xs-2" id="phoneSelection">  
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3 col-xs-offset-2 addBtn" id="phoneNumberBtn" >
+                                        <span style="font-size: 3em; margin-right:0.2em;">+</span>Add a phone number</div>
+                                    </div>
+                                 
+                                    <!-- <div class="row">
+                                        <button type="button" class="btn btn-default col-xs-offset-2" id="phoneNumberBtn">+ Add a phone number</button>
+                                    </div> -->
+                                    <!-- <button type="button" class="btn btn-default" id="phoneNumberBtn">+ Add a phone number</button> -->
+                                    <p class="col-xs-offset-2">This is only shared once you have a confirmed booking with another Plusoneseat user</p>
+                                    <div class="row" id="languageSelectionContainer">
+                                        <label for="languageSelection" class="col-xs-2">Language</label>
+                                        <select class="col-xs-3" id="languageSelection">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                        <select class="col-xs-3" id="languageLevelSelection">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-3 col-xs-offset-2 addBtn" id="languageBtn">
+                                            <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Language
+                                        </div>
+                                    </div>
 
-                          <!-- <div class="row">
-                            <button type="button" class="btn btn-default col-xs-offset-2" id="languageBtn">+ Add language</button>
-                          </div>
-                           -->
-                          <div class="row" id="interestsSelectionContainer">
-                            <label for="interestsSelection" class="col-xs-2">Interests</label>
-                            <select class="col-xs-3" id="interestsSelection">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                            <select class=""col-xs-3" id="interestsSelection2">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-3 col-xs-offset-2 addBtn" id="interestsBtn">
-                              <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Interest</div>
-                          </div>
-                          <p class="col-xs-offset-2">You can add minimum 3 interests, maximum 6 interests.</p>
-                        </div>
-                      </div>
-                      <div class="panel panel-default edit-profile-panel">
-                        <div class="panel-heading">Optional</div>
-                        <div class="panel-body">
-                          <div class="row" id="educationSelectionContainer">
-                            <label for="educationSelection" class="col-xs-2">Education</label>
-                            <input type="text" class="col-xs-10" id="degreeSelection" placeholder="Degree"> 
-                          </div>
-                          <div class="row" id="universitySelectionContainer"> 
-                            <input type="text" class="col-xs-10 col-xs-offset-2 " id="universitySelection" placeholder="University">  
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-3 col-xs-offset-2 addBtn" id="educationBtn" style="">
-                              <span style="font-size: 3em; margin-right:0.2em;">+</span>Add education</div>
-                          </div>
-                          <div class="row" id="workSelectionContainer">
-                            <label for="educationSelection" class="col-xs-2">Work</label>
-                            <input type="text" class="col-xs-10" id="workSelection" placeholder="Current job">
-                          </div>
-                          <div class="row" id="locationWorkSelectionContainer">   
-                            <input type="text" class="col-xs-10 col-xs-offset-2  " id="locationWorkSelection" placeholder="Where">  
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-3 col-xs-offset-2 addBtn" id="workBtn">
-                              <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Work</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div> 
-                </div>
+                                    <!-- <div class="row">
+                                        <button type="button" class="btn btn-default col-xs-offset-2" id="languageBtn">+ Add language</button>
+                                    </div>
+                                    -->
+                                    <div class="row" id="interestsSelectionContainer">
+                                        <label for="interestsSelection" class="col-xs-2">Interests</label>
+                                        <select class="col-xs-3" id="interestsSelection">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                        <select class=""col-xs-3" id="interestsSelection2">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-3 col-xs-offset-2 addBtn" id="interestsBtn">
+                                            <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Interest
+                                        </div>
+                                    </div>
+                                    <p class="col-xs-offset-2">You can add minimum 3 interests, maximum 6 interests.</p>
+                                </div>
+                            </div>
+                            <div class="panel panel-default edit-profile-panel">
+                                <div class="panel-heading">Optional</div>
+                                <div class="panel-body">
+                                    <div class="row" id="educationSelectionContainer">
+                                        <label for="educationSelection" class="col-xs-2">Education</label>
+                                        <input type="text" class="col-xs-10" id="degreeSelection" placeholder="Degree"> 
+                                    </div>
+                                    <div class="row" id="universitySelectionContainer"> 
+                                        <input type="text" class="col-xs-10 col-xs-offset-2 " id="universitySelection" placeholder="University">  
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-3 col-xs-offset-2 addBtn" id="educationBtn" style="">
+                                        <span style="font-size: 3em; margin-right:0.2em;">+</span>Add education</div>
+                                    </div>
+                                    <div class="row" id="workSelectionContainer">
+                                        <label for="educationSelection" class="col-xs-2">Work</label>
+                                        <input type="text" class="col-xs-10" id="workSelection" placeholder="Current job">
+                                    </div>
+                                    <div class="row" id="locationWorkSelectionContainer">   
+                                        <input type="text" class="col-xs-10 col-xs-offset-2  " id="locationWorkSelection" placeholder="Where">  
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-3 col-xs-offset-2 addBtn" id="workBtn">
+                                            <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Work
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
                 <div id="settings-tab" class="tab-pane fade">
                     <div class="container" id="settings-container">
                       <div class="panel panel-default edit-profile-panel">
