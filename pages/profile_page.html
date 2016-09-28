@@ -46,6 +46,9 @@
         <link href="../css/profile-page/your-meal-offers/medium-screen-styles.css" rel="stylesheet">
         <link href="../css/profile-page/your-meal-offers/small-screen-styles.css" rel="stylesheet">
         <link href="../css/profile-page/your-meal-offers/styles.css" rel="stylesheet">
+    
+        <link rel="stylesheet" type="text/css" href="../css/edit_profile_page.css">
+        <link href="../lib/bootstrap/css/font-awesome.min.css" rel="stylesheet">
         
 
 
@@ -935,11 +938,290 @@
                     </div>
                 </div>
                 <div id="profile-tab" class="tab-pane fade">
-                    
+                    <div class="container" id="edit-profile-container">
+                      <div class="panel panel-default edit-profile-panel">
+                        <div class="panel-heading ">Profile Photo</div>
+                        <div class="panel-body">
+                          <div class="col-xs-2" id="userImage">
+                            <!-- <img src="../img/donator.jpg" class="img-circle"/>       -->
+                          </div>
+                          <div class="col-xs-8">
+                             <p>Clear frontal face photos are an important way for hosts and guests to learn about each other. It's not much fun to host a landspace! Please upload a photo that clearly shows your face.</p>
+                             <button type="button" class="btn btn-warning uploadBtn" id="uploadBtn">Upload a photo</button>
+                             <button type="button" class="btn btn-primary">Use your facebook profile photo</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel panel-default edit-profile-panel">
+                        <div class="panel-heading">Basic Information</div>
+                        <div class="panel-body">
+                          <div class="row">
+                            <label class="col-xs-2">First Name</label>
+                            <input type="text" class="col-xs-10" name="firstName" placeholder="First Name" value="Eleonora">
+                          </div>
+                          <div class="row">
+                            <label class="col-xs-2">Last Name</label>
+                            <input type="text" class="col-xs-10" name="lastName" placeholder="Last Name" value="Serafini">
+                          </div>
+                          <div class="col-xs-2"></div><p class="col-xs-10">We never share your full name with other Plusoneseat users.</p>
+                          <div class="row">
+                            <label class="col-xs-2">Where you live</label>
+                            <input type="text" class="col-xs-10" name="locationField" placeholder="Where you live" value="Madrid,Spain">
+                          </div>
+                          <div class="row">
+                            <label class="col-xs-2">Email Address</label>
+                            <input type="text" class="col-xs-10" name="emailAddressField" placeholder="Email Address" value="eleonora@email.com">
+                          </div>
+                          <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">We won't share your private email address with other Plusoneseat users.</p>
+                          <div class="row">
+                            <label class="col-xs-2">Describe Yourself</label>
+                            <textarea id="descriptionField" class="col-xs-10" rows="5" cols="50" maxlength="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. </textarea> 
+                          </div>
+                          <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">Plusoneseat is built on relationships. Help other people get to know you.</p>
+                          <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">Tell them about the things you like: What are 5 things you can't live without?</p>
+                          <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">Tell them about you: Do you have a life motto?</p>
+                        </div>
+                      </div>
+
+                      <div class="panel panel-default edit-profile-panel">
+                        <div class="panel-heading">Detailed Information</div>
+                        <div class="panel-body">
+                          <p>These informations are only shared once you request to book a meal offer or if you create a meal offer</p>
+                          <div class="row" id="genderSelectionContiner">
+                            <label  class="col-xs-2">Gender</label>
+                            <select class="col-xs-2" id="genderSelection">
+                              <option>Female</option>
+                              <option>Male</option>
+                            </select>
+                          </div>
+                          <div class="row" id="birthdaySelectionContainer">
+                            <label class="col-xs-2">Birth Date</label>
+                            <select class="col-xs-2" id="monthSelection">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                            <select class="col-xs-2" id="daySelection">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                            <select class="col-xs-2" id="yearSelection">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div>
+                          <div class="row" id="placeSelectionContainer">
+                            <label for="placeSelection" class="col-xs-2">Where you born</label>
+                            <input type="text" class="col-xs-10" id="placeSelection">
+                          </div>
+                          <div class="row" id="phoneSelectionContainer">
+                            <label for="phoneSelection" class="col-xs-2">Phone Number</label>
+                            <select class="col-xs-3" id="countrySelection">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                            <input type="text" class="col-xs-2" id="phoneSelection">  
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-3 col-xs-offset-2 addBtn" id="phoneNumberBtn" >
+                              <span style="font-size: 3em; margin-right:0.2em;">+</span>Add a phone number</div>
+                          </div>
+                         
+                          <!-- <div class="row">
+                            <button type="button" class="btn btn-default col-xs-offset-2" id="phoneNumberBtn">+ Add a phone number</button>
+                          </div> -->
+                          <!-- <button type="button" class="btn btn-default" id="phoneNumberBtn">+ Add a phone number</button> -->
+                          <p class="col-xs-offset-2">This is only shared once you have a confirmed booking with another Plusoneseat user</p>
+                          <div class="row" id="languageSelectionContainer">
+                            <label for="languageSelection" class="col-xs-2">Language</label>
+                            <select class="col-xs-3" id="languageSelection">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                            <select class="col-xs-3" id="languageLevelSelection">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-3 col-xs-offset-2 addBtn" id="languageBtn">
+                              <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Language</div>
+                          </div>
+
+                          <!-- <div class="row">
+                            <button type="button" class="btn btn-default col-xs-offset-2" id="languageBtn">+ Add language</button>
+                          </div>
+                           -->
+                          <div class="row" id="interestsSelectionContainer">
+                            <label for="interestsSelection" class="col-xs-2">Interests</label>
+                            <select class="col-xs-3" id="interestsSelection">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                            <select class=""col-xs-3" id="interestsSelection2">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-3 col-xs-offset-2 addBtn" id="interestsBtn">
+                              <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Interest</div>
+                          </div>
+                          <p class="col-xs-offset-2">You can add minimum 3 interests, maximum 6 interests.</p>
+                        </div>
+                      </div>
+                      <div class="panel panel-default edit-profile-panel">
+                        <div class="panel-heading">Optional</div>
+                        <div class="panel-body">
+                          <div class="row" id="educationSelectionContainer">
+                            <label for="educationSelection" class="col-xs-2">Education</label>
+                            <input type="text" class="col-xs-10" id="degreeSelection" placeholder="Degree"> 
+                          </div>
+                          <div class="row" id="universitySelectionContainer"> 
+                            <input type="text" class="col-xs-10 col-xs-offset-2 " id="universitySelection" placeholder="University">  
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-3 col-xs-offset-2 addBtn" id="educationBtn" style="">
+                              <span style="font-size: 3em; margin-right:0.2em;">+</span>Add education</div>
+                          </div>
+                          <div class="row" id="workSelectionContainer">
+                            <label for="educationSelection" class="col-xs-2">Work</label>
+                            <input type="text" class="col-xs-10" id="workSelection" placeholder="Current job">
+                          </div>
+                          <div class="row" id="locationWorkSelectionContainer">   
+                            <input type="text" class="col-xs-10 col-xs-offset-2  " id="locationWorkSelection" placeholder="Where">  
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-3 col-xs-offset-2 addBtn" id="workBtn">
+                              <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Work</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
                 </div>
                 <div id="settings-tab" class="tab-pane fade">
-                    <h3>Menu 3</h3>
-                    <p>uae ab illo inventore ve architecto beatae vitae dicta sunt explicaboritatis et tae vitae dicta sun architecto beatae vitae dicta sunt explicabot explicabo.</p>
+                    <div class="container" id="settings-container">
+                      <div class="panel panel-default edit-profile-panel">
+                        <div class="panel-heading ">Notifications</div>
+                        <div class="panel-body">
+                            <div class="col-xs-2">
+                              <label>Email</label>
+                            </div>
+                            <div class="col-xs-10">
+                                <!-- <div></div> -->
+                              <input class="css-checkbox" type="checkbox" name="promotionsField" id="promotionsField"><label class="css-label  lite-orange-check" for="promotionsField">General promotions, updates, news about Plusoneseat updates</label><br/>
+                              <input class="css-checkbox" type="checkbox" name="weeklyOffersField" id="weeklyOffersField"><label class="css-label  lite-orange-check" for="weeklyOffersField">Weekly selected meal offers only for you</label><br/>
+                              <input class="css-checkbox" type="checkbox" name="reminderField" id="reminderField"><label class="css-label  lite-orange-check" for="reminderField">Reservations and review reminders</label>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default payment-panel">
+                        <div class="panel-heading">Payment Methods</div>
+                        <div class="panel-body">
+                            <div class="col-xs-4">
+                              <div class="well">
+                                <p>XXXXXXXXXXXXXXX6597</p>
+                                <p>06/2021</p>
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <a href="#" class="plusOneLink">Set Default</a>
+                                    <a href="#" class="plusOneLink">Remove</a>
+                                  </div>
+                                  <div class="col-xs-6">
+                                    <img src="" alt="bank card"/>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-4">
+                              <div class="well">
+                                <p>XXXXXXXXXXXXXXX6597</p>
+                                <p>06/2021</p>
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <a href="#" class="plusOneLink">Set Default</a>
+                                    <a href="#" class="plusOneLink">Remove</a>
+                                  </div>
+                                  <div class="col-xs-6">
+                                    <img src="" alt="bank card"/>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-4 ">
+                              <div class="well uploadBtn">
+                                <div  id="paymentBtn" style=" text-align:center;">
+                                  <img src="../img/plus.png" height=90px></img><br><span style="font-size:13px;">Add a new payment method</span></div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default edit-profile-panel">
+                        <div class="panel-heading">Payout Methods</div>
+                        <div class="panel-body">
+                          <p>When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+                          <table class="table">
+                            <tr>
+                              <th>Method</th><th>Details</th><th></th><th></th>
+                            </tr>
+                            <tr>
+                              <td>Bank Transfer</td>
+                              <td>IBAN *****8097 (EUR)</td>
+                              <td><a href="#" class="plusOneLink">Set Default</a></td>
+                              <td><a href="#" class="plusOneLink">Remove</a></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="addBtn" id="payoutBtn">
+                                    <span style="font-size: 1.5em; margin-right:0.2em;">+</span>Add new payout method
+                                </div>
+                              </td>
+                              <th></th><th></th><td/>
+                            </tr>
+                          </table>
+                          <div class="row"  style="text-align:center">
+                            <a href='#' class="plusOneLink">See Transaction History</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default edit-profile-panel">
+                        <div class="panel-heading">Password</div>
+                        <div class="panel-body">
+                          <div class="row" id="currentPasswordContainer">
+                            <label for="currentPassword" class="col-xs-4">Current Password</label>
+                            <input type="text" class="col-xs-8" id="currentPassword"> 
+                          </div>  
+                          <div class="row" id="newPasswordContainer">
+                            <label for="newPassword" class="col-xs-4">New Password</label>
+                            <input type="text" class="col-xs-8" id="newPassword">
+                          </div>
+                          <div class="row" id="confirmNewPasswordContainer">
+                            <label for="educationconfirmNewPasswordSelection" class="col-xs-4">Confirm New Password</label>
+                            <input type="text" class="col-xs-8" id="confirmNewPassword">
+                          </div>
+                          <div class="row" style="text-align:center;">
+                            <button type="button" class="btn btn-warning uploadBtn" >Update Password</button>
+                          </div>
+                        </div>
+                      </div>
+                      <a href='#' class="plusOneLink">Delete my account</a>
+                    </div>
                 </div>
             </div>
         </div>
