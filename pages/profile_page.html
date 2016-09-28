@@ -40,6 +40,15 @@
         <link href="../css/profile-page/datetimepicker.css" rel="stylesheet">
         <link href="../css/profile-page/profile-page-navigation-pills.css" rel="stylesheet">
         <link href="../css/profile-page/profile-page.css" rel="stylesheet">
+
+        <link href="../css/profile-page/your-meal-offers/extra-large-screen-styles.css" rel="stylesheet">
+        <link href="../css/profile-page/your-meal-offers/large-screen-styles.css" rel="stylesheet">
+        <link href="../css/profile-page/your-meal-offers/medium-screen-styles.css" rel="stylesheet">
+        <link href="../css/profile-page/your-meal-offers/small-screen-styles.css" rel="stylesheet">
+        <link href="../css/profile-page/your-meal-offers/styles.css" rel="stylesheet">
+        
+
+
         <link href="../css/profile-page/navigation-button.css" rel="stylesheet">
         <link rel="stylesheet" href="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
         <link rel="stylesheet" type="text/css" href="../fonts/MyFontsWebfontsKit.css">
@@ -53,6 +62,7 @@
         <script type="text/javascript" src="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="../lib/location_picker/jquery.placepicker.js"></script>
         <script type="text/javascript" src="../js/location-picker.js"></script>
+        <script type="text/javascript" src="../js/profile-page.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Hb7ZjcestOuK7U5luaDINFkCUCmU9YQ&sensor=true&amp;libraries=places"></script>
     </head>
     <body>
@@ -131,7 +141,7 @@
                             <div id="sb-dropdown-navigation" class="collapse hidden-sm hidden-md hidden-lg hidden-xlg">
                                 <ul class="" id="sb-dd-nav-ul">
                                     <li id="your-rates-reviews"><a class="menu-pills" id="your-rates-reviews-pill" data-toggle="pill" href="#your-rates-reviews-tab">Your Rates/Reviews</a></li>
-                                    <li id="your-meal-offers"><a class="menu-pills" id="your-meal-offers-pill" data-toggle="pill" href="#your-meal-offers-tab">Your Meal Offers</a></li>
+                                    <li id="your-meal-offers" class="active"><a class="menu-pills" id="your-meal-offers-pill" data-toggle="pill" href="#your-meal-offers-tab">Your Meal Offers</a></li>
                                     <li id="your-reservations"><a class="menu-pills" id="your-reservations-pill" data-toggle="pill" href="#your-reservations-tab">Your Reservations</a></li>
                                     <li id="profile"><a class="menu-pills" id="profile-pill" data-toggle="pill" href="#profile-tab">Profile</a></li>
                                     <li id="settings"><a class="menu-pills" id="settings-pill" data-toggle="pill" href="#settings-tab">Settings</a> </li>
@@ -143,7 +153,7 @@
                     <div id="pills-bar" class="row sb-pills">
                         <ul class="nav nav-pills horizontal-center GloberRegular" >
                             <li id="your-rates-reviews"><a id="your-rates-reviews-pill" data-toggle="pill" href="#your-rates-reviews-tab">Your Rates/Reviews</a></li>
-                            <li id="your-meal-offers"><a id="your-meal-offers-pill" data-toggle="pill" href="#your-meal-offers-tab">Your Meal Offers</a></li>
+                            <li id="your-meal-offers" class="active"><a id="your-meal-offers-pill" data-toggle="pill" href="#your-meal-offers-tab">Your Meal Offers</a></li>
                             <li id="your-reservations"><a id="your-reservations-pill" data-toggle="pill" href="#your-reservations-tab">Your Reservations</a></li>
                             <li id="profile"><a id="profile-pill" data-toggle="pill" href="#profile-tab">Profile</a></li>
                             <li id="settings"><a id="settings-pill" data-toggle="pill" href="#settings-tab">Settings</a></li>
@@ -155,218 +165,777 @@
 
 
 
-        <div class="container" >
+        <div class="container" id="tab-content-container">
             <div class="tab-content">
-                <div id="your-rates-reviews-tab" class="tab-pane fade in active">
-                    <h3>HOME</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="col-sm-4">
-                        <div>
-
-                            <span class="notify-badge badge">13</span>
-                            <img src="http://placehold.it/200x200" class="item"  alt="" />
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div>
-                            <a href="#">
-                                <span class="notify-badge badge">7</span>
-                            </a>
-                            <a href="#">
-                                <img src="http://placehold.it/200x200" class="item"  alt="" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div id="your-meal-offers-tab" class="tab-pane fade">
+                <div id="your-rates-reviews-tab" class="tab-pane fade">
                     <h3>Menu 1</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
+                <div id="your-meal-offers-tab" class="tab-pane fade in active">
+                    <div class="row active-meal-offers-area">
+                        <p class="title">Active</p>                        
+                        <div class="offer-container">
+                            <div class="picture">
+                                <div class="controlls">
+                                    <span class="notify-badge badge">2</span>
+                                    <div class="button-group">
+                                        <button class="edit">Confirm</button>
+                                        <button class="cancel">Decline</button>
+                                    </div> 
+                                </div>                                
+                                <div class="time-date vertical-center"> 
+                                    <div>
+                                        <img class="image" src="../img/brand-assets/icons/time_icon.png">
+                                        <p>19:45</p>
+                                    </div>
+                                    <div>
+                                        <img class="image" src="../img/brand-assets/icons/calendar_icon.png">
+                                        <p>22/11/2002</p>
+                                    </div>
+                                </div>                             
+                            </div>
+                            <div class="info">
+                                <p class="title">Supper great amazing burger</p>
+                                <div class="cell"> 
+                                    <p class="title">Total Income</p>
+                                    <p class="main">€37.5</p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Donation</p>
+                                    <p class="main">+1
+                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                    </p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Available Seats</p>
+                                    <p class="main">1/4</p>
+                                </div>
+                                <ul class="nav nav-pills detail-pills GloberRegular" >
+                                    <li ><a data-toggle="pill" href="#amo-income-details-1">see details</a></li>
+                                    <li ><a data-toggle="pill" href="#amo-donation-details-1">see details</a></li>
+                                    <li class="active"><a data-toggle="pill" href="#amo-seat-details-1">see details</a></li>
+                                </ul>
+                            </div>
+                            <div class="tabs">
+                                <div class="tab-content content">
+                                    <div id="amo-income-details-1" class="details-item tab-pane fade">
+                                        <div class="income-content">
+                                            <div class="item">Per seat <p>€10</p><p>x</p><p>1</p> <p class="result">€10</p> </div>
+                                            <div class="border"></div>
+                                            <div class="item">Service fee <p>10%</p><div class="question-mark">?</div> <p class="result">€1</p></div>
+                                            <div class="border"></div>
+                                            <div class="item">Donation <p>€2.5</p><p>x</p><p>1</p><div class="question-mark">?</div> <p class="result">€2.5</p></div>
+                                            <div class="border"></div>
+                                            <div class="item"><p>Total</p> <p class="result">€13.5</p></div>
+                                        </div>
+                                    </div>
+                                    <div id="amo-donation-details-1" class="details-item tab-pane fade">
+                                        <div class="donnations-content">
+                                            To get the <p>Orange Seat</p> rank all seats should be successfully booked. You can also invite your friends to this meal.
+                                            <br>
+                                            <p class="one-line">Invite your friends</p>
+                                            <br>
+                                            You will donate successfully even if this meal is not completely booked. 
+                                        </div>
+                                    </div>
+                                    <div id="amo-seat-details-1" class="details-item tab-pane fade in active">
+                                        <div class="tabs">
+                                            <ul class="nav nav-tabs">
+                                                <li class="guests active tab">
+                                                    <a data-toggle="tab" href="#amo-sd-guests-1">
+                                                        Guests<p class="number">(2)</p>
+                                                    </a>
+                                                </li>
+                                                <li class="requests tab">
+                                                    <a data-toggle="tab" href="#amo-sd-seat-requests-1">
+                                                        Seat Requests<p class="number">(2)</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content content">
+                                                <div id="amo-sd-guests-1" class="guests tab-pane fade in active">
+                                                    <div class="item">
+                                                        <div class="image-holder">
+                                                            <img class="image vertical-center" src="../img/donator.jpg">
+                                                        </div>                                            
+                                                        <p class="name">Milica</p>
+                                                        <p class="location">Milan, Italy</p>                                 
+                                                    </div>
+                                                    <div class="item"> 
+                                                        <div class="image-holder">
+                                                            <img class="image vertical-center" src="../img/donator.jpg">
+                                                        </div>
+                                                        <p class="name">Milica</p>
+                                                        <p class="location">Milan, Italy</p>                                  
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="image-holder">
+                                                            <img class="image vertical-center" src="../img/donator.jpg">
+                                                        </div>
+                                                        <p class="name">Milica</p>
+                                                        <p class="location">Milan, Italy</p>                                   
+                                                    </div> 
+                                                    <div class="item"> 
+                                                        <span class="notify-badge badge">2</span>
+                                                        <div class="image-holder pending">
+                                                            <img class="image vertical-center" src="../img/brand-assets/icons/question_mark.png">
+                                                        </div>
+                                                        <p class="name"> </p>
+                                                        <p class="location"> </p>                                  
+                                                    </div>      
+                                                </div>
+                                                <div id="amo-sd-seat-requests-1" class="requests tab-pane fade">
+                                                    <div class="item">
+                                                        <div class="guest"> 
+                                                            <div class="image-holder">
+                                                                <img class="image vertical-center" src="../img/donator.jpg">
+                                                            </div> 
+                                                            <p class="name">Milica</p>
+                                                            <p class="location">Milan, Italy</p>                                  
+                                                        </div>
+                                                        <div class="details">
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/chair_orange.png">
+                                                                <p class="label-first">Seats</p>
+                                                                <p class="value">11</p>
+                                                            </div>
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/hearth_orange.png">
+                                                                <p class="label-first">Common</p>
+                                                                <p class="label-second">Interests</p>
+                                                                <p class="value">2</p>
+                                                            </div>
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/bubble_orange.png">
+                                                                <p class="label-first">Common</p>
+                                                                <p class="label-second">Languages</p>
+                                                                <p class="value">5</p>
+                                                            </div>
+                                                        </div> 
+                                                        <div class="buttons">
+                                                            <button class="item-confirm">Confirm</button>
+                                                            <button class="item-decline">Decline</button>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="border-shorter gray-thin"></div>
+                                                    <div class="item">
+                                                        <div class="guest"> 
+                                                            <div class="image-holder">
+                                                                <img class="image vertical-center" src="../img/donator.jpg">
+                                                            </div>
+                                                            <p class="name">Milica</p>
+                                                            <p class="location">Milan, Italy</p>                                  
+                                                        </div>
+                                                        <div class="details">
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/chair_orange.png">
+                                                                <p class="label-first">Seats</p>
+                                                                <p class="value">11</p>
+                                                            </div>
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/hearth_orange.png">
+                                                                <p class="label-first">Common</p>
+                                                                <p class="label-second">Interests</p>
+                                                                <p class="value">2</p>
+                                                            </div>
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/bubble_orange.png">
+                                                                <p class="label-first">Common</p>
+                                                                <p class="label-second">Languages</p>
+                                                                <p class="value">5</p>
+                                                            </div>
+                                                        </div> 
+                                                        <div class="buttons">
+                                                            <button class="item-confirm">Confirm</button>
+                                                            <button class="item-decline">Decline</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div> 
+                            </div>    
+                        </div>
+                        <div class="offer-container">
+                            <div class="picture">
+                                <div class="controlls">
+                                    <span class="notify-badge badge">2</span>
+                                    <div class="button-group">
+                                        <button class="edit">Confirm</button>
+                                        <button class="cancel">Decline</button>
+                                    </div> 
+                                </div>                                
+                                <div class="time-date vertical-center"> 
+                                    <div>
+                                        <img class="image" src="../img/brand-assets/icons/time_icon.png">
+                                        <p>19:45</p>
+                                    </div>
+                                    <div>
+                                        <img class="image" src="../img/brand-assets/icons/calendar_icon.png">
+                                        <p>22/11/2002</p>
+                                    </div>
+                                </div>                             
+                            </div>
+                            <div class="info">
+                                <p class="title">Supper great amazing burger</p>
+                                <div class="cell"> 
+                                    <p class="title">Total Income</p>
+                                    <p class="main">€37.5</p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Donation</p>
+                                    <p class="main">+1
+                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                    </p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Available Seats</p>
+                                    <p class="main">1/4</p>
+                                </div>
+                                <ul class="nav nav-pills detail-pills GloberRegular" >
+                                    <li ><a data-toggle="pill" href="#amo-income-details-2">see details</a></li>
+                                    <li ><a data-toggle="pill" href="#amo-donation-details-2">see details</a></li>
+                                    <li class="active"><a data-toggle="pill" href="#amo-seat-details-2">see details</a></li>
+                                </ul>
+                            </div>
+                            <div class="tabs">
+                                <div class="tab-content content">
+                                    <div id="amo-income-details-2" class="details-item tab-pane fade">
+                                        <div class="income-content">
+                                            <div class="item">Per seat <p>€10</p><p>x</p><p>1</p> <p class="result">€10</p> </div>
+                                            <div class="border"></div>
+                                            <div class="item">Service fee <p>10%</p><div class="question-mark">?</div> <p class="result">€1</p></div>
+                                            <div class="border"></div>
+                                            <div class="item">Donation <p>€2.5</p><p>x</p><p>1</p><div class="question-mark">?</div> <p class="result">€2.5</p></div>
+                                            <div class="border"></div>
+                                            <div class="item"><p>Total</p> <p class="result">€13.5</p></div>
+                                        </div>
+                                    </div>
+                                    <div id="amo-donation-details-2" class="details-item tab-pane fade">
+                                        <div class="donnations-content">
+                                            To get the <p>Orange Seat</p> rank all seats should be successfully booked. You can also invite your friends to this meal.
+                                            <br>
+                                            <p class="one-line">Invite your friends</p>
+                                            <br>
+                                            You will donate successfully even if this meal is not completely booked. 
+                                        </div>
+                                    </div>
+                                    <div id="amo-seat-details-2" class="details-item tab-pane fade in active">
+                                        <div class="tabs">
+                                            <ul class="nav nav-tabs">
+                                                <li class="guests active tab">
+                                                    <a data-toggle="tab" href="#amo-sd-guests-2">
+                                                        Guests<p class="number">(2)</p>
+                                                    </a>
+                                                </li>
+                                                <li class="requests tab">
+                                                    <a data-toggle="tab" href="#amo-sd-seat-requests-2">
+                                                        Seat Requests<p class="number">(2)</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content content">
+                                                <div id="amo-sd-guests-2" class="guests tab-pane fade in active">
+                                                    <div class="item">
+                                                        <div class="image-holder">
+                                                            <img class="image vertical-center" src="../img/donator.jpg">
+                                                        </div>                                            
+                                                        <p class="name">Milica</p>
+                                                        <p class="location">Milan, Italy</p>                                 
+                                                    </div>
+                                                    <div class="item"> 
+                                                        <div class="image-holder">
+                                                            <img class="image vertical-center" src="../img/donator.jpg">
+                                                        </div>
+                                                        <p class="name">Milica</p>
+                                                        <p class="location">Milan, Italy</p>                                  
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="image-holder">
+                                                            <img class="image vertical-center" src="../img/donator.jpg">
+                                                        </div>
+                                                        <p class="name">Milica</p>
+                                                        <p class="location">Milan, Italy</p>                                   
+                                                    </div> 
+                                                    <div class="item"> 
+                                                        <span class="notify-badge badge">2</span>
+                                                        <div class="image-holder pending">
+                                                            <img class="image vertical-center" src="../img/brand-assets/icons/question_mark.png">
+                                                        </div>
+                                                        <p class="name"> </p>
+                                                        <p class="location"> </p>                                  
+                                                    </div>      
+                                                </div>
+                                                <div id="amo-sd-seat-requests-2" class="requests tab-pane fade">
+                                                    <div class="item">
+                                                        <div class="guest"> 
+                                                            <div class="image-holder">
+                                                                <img class="image vertical-center" src="../img/donator.jpg">
+                                                            </div> 
+                                                            <p class="name">Milica</p>
+                                                            <p class="location">Milan, Italy</p>                                  
+                                                        </div>
+                                                        <div class="details">
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/chair_orange.png">
+                                                                <p class="label-first">Seats</p>
+                                                                <p class="value">11</p>
+                                                            </div>
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/hearth_orange.png">
+                                                                <p class="label-first">Common</p>
+                                                                <p class="label-second">Interests</p>
+                                                                <p class="value">2</p>
+                                                            </div>
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/bubble_orange.png">
+                                                                <p class="label-first">Common</p>
+                                                                <p class="label-second">Languages</p>
+                                                                <p class="value">5</p>
+                                                            </div>
+                                                        </div> 
+                                                        <div class="buttons">
+                                                            <button class="item-confirm">Confirm</button>
+                                                            <button class="item-decline">Decline</button>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="border-shorter gray-thin"></div>
+                                                    <div class="item">
+                                                        <div class="guest"> 
+                                                            <div class="image-holder">
+                                                                <img class="image vertical-center" src="../img/donator.jpg">
+                                                            </div>
+                                                            <p class="name">Milica</p>
+                                                            <p class="location">Milan, Italy</p>                                  
+                                                        </div>
+                                                        <div class="details">
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/chair_orange.png">
+                                                                <p class="label-first">Seats</p>
+                                                                <p class="value">11</p>
+                                                            </div>
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/hearth_orange.png">
+                                                                <p class="label-first">Common</p>
+                                                                <p class="label-second">Interests</p>
+                                                                <p class="value">2</p>
+                                                            </div>
+                                                            <div class="cell">
+                                                                <img class="image horizontal-center" 
+                                                                    src="../img/brand-assets/icons/bubble_orange.png">
+                                                                <p class="label-first">Common</p>
+                                                                <p class="label-second">Languages</p>
+                                                                <p class="value">5</p>
+                                                            </div>
+                                                        </div> 
+                                                        <div class="buttons">
+                                                            <button class="item-confirm">Confirm</button>
+                                                            <button class="item-decline">Decline</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div> 
+                            </div>    
+                        </div>
+
+                        <div class="offer-container add-new-offer">
+                            <div class="add">
+                            +
+                            </div>
+                            <p class="add-label">Add new meal</p>
+                        </div> 
+                    </div>
+                    <div class="border-shorter gray-thick"></div>
+                    <div class="row past-meal-offers-area">
+                        <p class="title">Completed</p>
+                        <input type="hidden" id="current-past-offer" value="">
+                        <input type="hidden" id="current-past-offer-hide" value="">
+                        <div class="offer-container past-offer" id="past-offer-1">
+                            <div class="picture"> 
+                                <div class="add-offer-button">
+                                    <p class="plus">+</p>
+                                </div>                             
+                            </div>
+                            <div class="info">
+                                <p class="title">Supper great amazing burger</p>
+                                <div class="cell"> 
+                                    <p class="title">Total Income</p>
+                                    <p class="main">€37.5</p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Donation</p>
+                                    <p class="main">+1
+                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                    </p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Available Seats</p>
+                                    <p class="main">1/4</p>
+                                </div>
+                                 <ul class="nav nav-pills detail-pills GloberRegular" >
+                                    <li ><a data-toggle="pill" href="#po-income-details-1">see details</a></li>
+                                    <li ><a data-toggle="pill" href="#po-donation-details-1">see details</a></li>
+                                    <li ><a data-toggle="pill" href="#po-seat-details-1">see details</a></li>
+                                </ul>
+                            </div>
+                            <div class="tabs">
+                                <div class="tab-content content">
+                                    <div id="po-income-details-1" class="details-item tab-pane fade">
+                                        <div class="income-content">
+                                            <div class="item">Per seat <p>€10</p><p>x</p><p>1</p> <p class="result">€10</p> </div>
+                                            <div class="border"></div>
+                                            <div class="item">Service fee <p>10%</p><div class="question-mark">?</div> <p class="result">€1</p></div>
+                                            <div class="border"></div>
+                                            <div class="item">Donation <p>€2.5</p><p>x</p><p>1</p><div class="question-mark">?</div> <p class="result">€2.5</p></div>
+                                            <div class="border"></div>
+                                            <div class="item"><p>Total</p> <p class="result">€13.5</p></div>
+                                        </div>
+                                    </div>
+                                    <div id="po-donation-details-1" class="details-item tab-pane fade">
+                                        <div class="donnations-content">
+                                            To get the <p>Orange Seat</p> rank all seats should be successfully booked. You can also invite your friends to this meal.
+                                            <br>
+                                            <p class="one-line">Invite your friends</p>
+                                            <br>
+                                            You will donate successfully even if this meal is not completely booked. 
+                                        </div>
+                                    </div>
+                                    <div id="po-seat-details-1" class="details-item tab-pane fade">
+                                        <div class="guests-content">                                        
+                                            <div class="item">
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>                                            
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                 
+                                            </div>
+                                            <div class="item"> 
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                  
+                                            </div>
+                                            <div class="item">
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                   
+                                            </div> 
+                                        </div> 
+                                    </div>
+                                </div> 
+                            </div>    
+                        </div>
+                        
+                    </div>
+                </div>
                 <div id="your-reservations-tab" class="tab-pane fade">
-                    <h3>Menu 2</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <div class="row pending-reservations-area">
+                        <p class="title">Pending</p>                        
+                        <div class="offer-container">
+                            <div class="picture">
+                                <div class="controlls">
+                                    
+                                    <div class="button-group">
+                                        <button class="edit">Confirm</button>
+                                        <button class="cancel">Decline</button>
+                                    </div> 
+                                </div> 
+                                <div class="time-date vertical-center"> 
+                                    <div>
+                                        <img class="image" src="../img/brand-assets/icons/time_icon.png">
+                                        <p>19:45</p>
+                                    </div>
+                                    <div>
+                                        <img class="image" src="../img/brand-assets/icons/calendar_icon.png">
+                                        <p>22/11/2002</p>
+                                    </div>
+                                </div>                             
+                            </div>
+                            <div class="info">
+                                <p class="title">Supper great amazing burger</p>
+                                <div class="cell"> 
+                                    <p class="title">Total Income</p>
+                                    <p class="main">€37.5</p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Donation</p>
+                                    <p class="main">+1
+                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                    </p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Available Seats</p>
+                                    <p class="main">1/4</p>
+                                </div>
+                                <ul class="nav nav-pills detail-pills GloberRegular" >
+                                    <li ><a data-toggle="pill" href="#pending-income-details-1">see details</a></li>
+                                    <li ><a data-toggle="pill" href="#pending-donation-details-1">see details</a></li>
+                                    <li class="active"><a data-toggle="pill" href="#pending-seat-details-1">see details</a></li>
+                                </ul>
+                            </div>
+                            <div class="tabs">
+                                 <div class="tab-content content">
+                                    <div id="pending-income-details-1" class="details-item tab-pane fade">
+                                        <div class="income-content">
+                                            <div class="item">Per seat <p>€10</p><p>x</p><p>1</p> <p class="result">€10</p> </div>
+                                            <div class="border"></div>
+                                            <div class="item">Service fee <p>10%</p><div class="question-mark">?</div> <p class="result">€1</p></div>
+                                            <div class="border"></div>
+                                            <div class="item">Donation <p>€2.5</p><p>x</p><p>1</p><div class="question-mark">?</div> <p class="result">€2.5</p></div>
+                                            <div class="border"></div>
+                                            <div class="item"><p>Total</p> <p class="result">€13.5</p></div>
+                                        </div>
+                                    </div>
+                                    <div id="pending-donation-details-1" class="details-item tab-pane fade">
+                                        <div class="donnations-content">
+                                            To get the <p>Orange Seat</p> rank all seats should be successfully booked. You can also invite your friends to this meal.
+                                            <br>
+                                            <p class="one-line">Invite your friends</p>
+                                            <br>
+                                            You will donate successfully even if this meal is not completely booked. 
+                                        </div>
+                                    </div>
+                                    <div id="pending-seat-details-1" class="details-item tab-pane fade in active">
+                                        <div class="guests-content">                                        
+                                            <div class="item">
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>                                            
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                 
+                                            </div>
+                                            <div class="item"> 
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                  
+                                            </div>
+                                            <div class="item">
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                   
+                                            </div> 
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="border-shorter gray-thick"></div>
+                    <div class="row accepted-reservations-area">
+                        <p class="title">Accepted</p>                        
+                        <div class="offer-container">
+                            <div class="picture">
+                                <div class="controlls">
+                                    
+                                    <div class="button-group">
+                                        <button class="edit">Confirm</button>
+                                        <button class="cancel">Decline</button>
+                                    </div> 
+                                </div> 
+                                <div class="time-date vertical-center"> 
+                                    <div>
+                                        <img class="image" src="../img/brand-assets/icons/time_icon.png">
+                                        <p>19:45</p>
+                                    </div>
+                                    <div>
+                                        <img class="image" src="../img/brand-assets/icons/calendar_icon.png">
+                                        <p>22/11/2002</p>
+                                    </div>
+                                </div>                             
+                            </div>
+                            <div class="info">
+                                <p class="title">Supper great amazing burger</p>
+                                <div class="cell"> 
+                                    <p class="title">Total Income</p>
+                                    <p class="main">€37.5</p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Donation</p>
+                                    <p class="main">+1
+                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                    </p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Available Seats</p>
+                                    <p class="main">1/4</p>
+                                </div>
+                                <ul class="nav nav-pills detail-pills GloberRegular" >
+                                    <li ><a data-toggle="pill" href="#pending-income-details-1">see details</a></li>
+                                    <li ><a data-toggle="pill" href="#pending-donation-details-1">see details</a></li>
+                                    <li class="active"><a data-toggle="pill" href="#pending-seat-details-1">see details</a></li>
+                                </ul>
+                            </div>
+                            <div class="tabs">
+                                 <div class="tab-content content">
+                                    <div id="pending-income-details-1" class="details-item tab-pane fade">
+                                        <div class="income-content">
+                                            <div class="item">Per seat <p>€10</p><p>x</p><p>1</p> <p class="result">€10</p> </div>
+                                            <div class="border"></div>
+                                            <div class="item">Service fee <p>10%</p><div class="question-mark">?</div> <p class="result">€1</p></div>
+                                            <div class="border"></div>
+                                            <div class="item">Donation <p>€2.5</p><p>x</p><p>1</p><div class="question-mark">?</div> <p class="result">€2.5</p></div>
+                                            <div class="border"></div>
+                                            <div class="item"><p>Total</p> <p class="result">€13.5</p></div>
+                                        </div>
+                                    </div>
+                                    <div id="pending-donation-details-1" class="details-item tab-pane fade">
+                                        <div class="donnations-content">
+                                            To get the <p>Orange Seat</p> rank all seats should be successfully booked. You can also invite your friends to this meal.
+                                            <br>
+                                            <p class="one-line">Invite your friends</p>
+                                            <br>
+                                            You will donate successfully even if this meal is not completely booked. 
+                                        </div>
+                                    </div>
+                                    <div id="pending-seat-details-1" class="details-item tab-pane fade in active">
+                                        <div class="guests-content">                                        
+                                            <div class="item">
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>                                            
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                 
+                                            </div>
+                                            <div class="item"> 
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                  
+                                            </div>
+                                            <div class="item">
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                   
+                                            </div> 
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="row completed-reservations-area">
+                        <p class="title">Completed</p>                        
+                        <div class="offer-container">
+                            <div class="picture">
+                                <div class="controlls">
+                                    
+                                    <div class="button-group">
+                                        <button class="edit">Confirm</button>
+                                        <button class="cancel">Decline</button>
+                                    </div> 
+                                </div> 
+                                <div class="time-date vertical-center"> 
+                                    <div>
+                                        <img class="image" src="../img/brand-assets/icons/time_icon.png">
+                                        <p>19:45</p>
+                                    </div>
+                                    <div>
+                                        <img class="image" src="../img/brand-assets/icons/calendar_icon.png">
+                                        <p>22/11/2002</p>
+                                    </div>
+                                </div>                             
+                            </div>
+                            <div class="info">
+                                <p class="title">Supper great amazing burger</p>
+                                <div class="cell"> 
+                                    <p class="title">Total Income</p>
+                                    <p class="main">€37.5</p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Donation</p>
+                                    <p class="main">+1
+                                        <img class="image" src="../img/brand-assets/icons/chair_white.png">  
+                                    </p>
+                                </div>
+                                <div class="cell"> 
+                                    <p class="title">Available Seats</p>
+                                    <p class="main">1/4</p>
+                                </div>
+                                <ul class="nav nav-pills detail-pills GloberRegular" >
+                                    <li ><a data-toggle="pill" href="#pending-income-details-1">see details</a></li>
+                                    <li ><a data-toggle="pill" href="#pending-donation-details-1">see details</a></li>
+                                    <li ><a data-toggle="pill" href="#pending-seat-details-1">see details</a></li>
+                                </ul>
+                            </div>
+                            <div class="tabs">
+                                 <div class="tab-content content">
+                                    <div id="pending-income-details-1" class="details-item tab-pane fade">
+                                        <div class="income-content">
+                                            <div class="item">Per seat <p>€10</p><p>x</p><p>1</p> <p class="result">€10</p> </div>
+                                            <div class="border"></div>
+                                            <div class="item">Service fee <p>10%</p><div class="question-mark">?</div> <p class="result">€1</p></div>
+                                            <div class="border"></div>
+                                            <div class="item">Donation <p>€2.5</p><p>x</p><p>1</p><div class="question-mark">?</div> <p class="result">€2.5</p></div>
+                                            <div class="border"></div>
+                                            <div class="item"><p>Total</p> <p class="result">€13.5</p></div>
+                                        </div>
+                                    </div>
+                                    <div id="pending-donation-details-1" class="details-item tab-pane fade">
+                                        <div class="donnations-content">
+                                            To get the <p>Orange Seat</p> rank all seats should be successfully booked. You can also invite your friends to this meal.
+                                            <br>
+                                            <p class="one-line">Invite your friends</p>
+                                            <br>
+                                            You will donate successfully even if this meal is not completely booked. 
+                                        </div>
+                                    </div>
+                                    <div id="pending-seat-details-1" class="details-item tab-pane fade">
+                                        <div class="guests-content">                                        
+                                            <div class="item">
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>                                            
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                 
+                                            </div>
+                                            <div class="item"> 
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                  
+                                            </div>
+                                            <div class="item">
+                                                <div class="image-holder">
+                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                </div>
+                                                <p class="name">Milica</p>
+                                                <p class="location">Milan, Italy</p>                                   
+                                            </div> 
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
                 </div>
                 <div id="profile-tab" class="tab-pane fade">
-                    <div class="container" id="edit-profile-container">
-                          <div class="panel panel-default edit-profile-panel">
-                            <div class="panel-heading ">Profile Photo</div>
-                            <div class="panel-body">
-                              <div class="col-xs-2" id="userImage">
-                                <!-- <img src="../img/donator.jpg" class="img-circle"/>       -->
-                              </div>
-                              <div class="col-xs-8">
-                                 <p>Clear frontal face photos are an important way for hosts and guests to learn about each other. It's not much fun to host a landspace! Please upload a photo that clearly shows your face.</p>
-                                 <button type="button" class="btn btn-warning" id="uploadBtn">Upload a photo</button>
-                                 <button type="button" class="btn btn-primary">Use your facebook profile photo</button>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="panel panel-default edit-profile-panel">
-                            <div class="panel-heading">Basic Information</div>
-                            <div class="panel-body">
-                              <div class="row">
-                                <label class="col-xs-2">First Name</label>
-                                <input type="text" class="col-xs-10" name="firstName" placeholder="First Name" value="Eleonora">
-                              </div>
-                              <div class="row">
-                                <label class="col-xs-2">Last Name</label>
-                                <input type="text" class="col-xs-10" name="lastName" placeholder="Last Name" value="Serafini">
-                              </div>
-                              <div class="col-xs-2"></div><p class="col-xs-10">We never share your full name with other Plusoneseat users.</p>
-                              <div class="row">
-                                <label class="col-xs-2">Where you live</label>
-                                <input type="text" class="col-xs-10" name="locationField" placeholder="Where you live" value="Madrid,Spain">
-                              </div>
-                              <div class="row">
-                                <label class="col-xs-2">Email Address</label>
-                                <input type="text" class="col-xs-10" name="emailAddressField" placeholder="Email Address" value="eleonora@email.com">
-                              </div>
-                              <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">We won't share your private email address with other Plusoneseat users.</p>
-                              <div class="row">
-                                <label class="col-xs-2">Describe Yourself</label>
-                                <textarea id="descriptionField" class="col-xs-10" rows="5" cols="50" maxlength="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. </textarea> 
-                              </div>
-                              <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">Plusoneseat is built on relationships. Help other people get to know you.</p>
-                              <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">Tell them about the things you like: What are 5 things you can't live without?</p>
-                              <!-- <div class="col-xs-2"></div> --><p class="col-xs-offset-2 col-xs-10">Tell them about you: Do you have a life motto?</p>
-                            </div>
-                          </div>
-
-                          <div class="panel panel-default edit-profile-panel">
-                            <div class="panel-heading">Detailed Information</div>
-                            <div class="panel-body">
-                              <p>These informations are only shared once you request to book a meal offer or if you create a meal offer</p>
-                              <div class="row" id="genderSelectionContiner">
-                                <label  class="col-xs-2">Gender</label>
-                                <select class="col-xs-2" id="genderSelection">
-                                  <option>Female</option>
-                                  <option>Male</option>
-                                </select>
-                              </div>
-                              <div class="row" id="birthdaySelectionContainer">
-                                <label class="col-xs-2">Birth Date</label>
-                                <select class="col-xs-2" id="monthSelection">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                </select>
-                                <select class="col-xs-2" id="daySelection">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                </select>
-                                <select class="col-xs-2" id="yearSelection">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                </select>
-                              </div>
-                              <div class="row" id="placeSelectionContainer">
-                                <label for="placeSelection" class="col-xs-2">Where you born</label>
-                                <input type="text" class="col-xs-10" id="placeSelection">
-                              </div>
-                              <div class="row" id="phoneSelectionContainer">
-                                <label for="phoneSelection" class="col-xs-2">Phone Number</label>
-                                <select class="col-xs-3" id="countrySelection">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                </select>
-                                <input type="text" class="col-xs-2" id="phoneSelection">  
-                              </div>
-                              <div class="row">
-                                <div class="col-xs-3 col-xs-offset-2 addBtn" id="phoneNumberBtn" >
-                                  <span style="font-size: 3em; margin-right:0.2em;">+</span>Add a phone number</div>
-                              </div>
-                             
-                              <!-- <div class="row">
-                                <button type="button" class="btn btn-default col-xs-offset-2" id="phoneNumberBtn">+ Add a phone number</button>
-                              </div> -->
-                              <!-- <button type="button" class="btn btn-default" id="phoneNumberBtn">+ Add a phone number</button> -->
-                              <p class="col-xs-offset-2">This is only shared once you have a confirmed booking with another Plusoneseat user</p>
-                              <div class="row" id="languageSelectionContainer">
-                                <label for="languageSelection" class="col-xs-2">Language</label>
-                                <select class="col-xs-3" id="languageSelection">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                </select>
-                                <select class="col-xs-3" id="languageLevelSelection">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                </select>
-                              </div>
-                              <div class="row">
-                                <div class="col-xs-3 col-xs-offset-2 addBtn" id="languageBtn">
-                                  <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Language</div>
-                              </div>
-
-                              <!-- <div class="row">
-                                <button type="button" class="btn btn-default col-xs-offset-2" id="languageBtn">+ Add language</button>
-                              </div>
-                               -->
-                              <div class="row" id="interestsSelectionContainer">
-                                <label for="interestsSelection" class="col-xs-2">Interests</label>
-                                <select class="col-xs-3" id="interestsSelection">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                </select>
-                                <select class=""col-xs-3" id="interestsSelection2">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                </select>
-                              </div>
-                              <div class="row">
-                                <div class="col-xs-3 col-xs-offset-2 addBtn" id="interestsBtn">
-                                  <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Interest</div>
-                              </div>
-                              <p class="col-xs-offset-2">You can add minimum 3 interests, maximum 6 interests.</p>
-                            </div>
-                          </div>
-
-                          <div class="panel panel-default edit-profile-panel">
-                            <div class="panel-heading">Optional</div>
-                            <div class="panel-body">
-                              <div class="row" id="educationSelectionContainer">
-                                <label for="educationSelection" class="col-xs-2">Education</label>
-                                <input type="text" class="col-xs-10" id="degreeSelection" placeholder="Degree"> 
-                              </div>
-                              <div class="row" id="universitySelectionContainer"> 
-                                <input type="text" class="col-xs-10 col-xs-offset-2 " id="universitySelection" placeholder="University">  
-                              </div>
-                              <div class="row">
-                                <div class="col-xs-3 col-xs-offset-2 addBtn" id="educationBtn" style="">
-                                  <span style="font-size: 3em; margin-right:0.2em;">+</span>Add education</div>
-                              </div>
-                              <div class="row" id="workSelectionContainer">
-                                <label for="educationSelection" class="col-xs-2">Work</label>
-                                <input type="text" class="col-xs-10" id="workSelection" placeholder="Current job">
-                              </div>
-                              <div class="row" id="locationWorkSelectionContainer">   
-                                <input type="text" class="col-xs-10 col-xs-offset-2  " id="locationWorkSelection" placeholder="Where">  
-                              </div>
-                              <div class="row">
-                                <div class="col-xs-3 col-xs-offset-2 addBtn" id="workBtn">
-                                  <span style="font-size: 3em; margin-right:0.2em;">+</span>Add Work</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        </div>
+                    
                 </div>
                 <div id="settings-tab" class="tab-pane fade">
                     <h3>Menu 3</h3>

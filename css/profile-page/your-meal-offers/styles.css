@@ -1,0 +1,636 @@
+    #tab-content-container {
+        width: 100%;
+        width: -webkit-calc(100% - 10em);
+        width: -moz-calc(100% - 10em);
+        width: calc(100% - 10em);
+        margin-left: 5em;
+        margin-right: 5em; 
+    }
+
+    #your-rates-reviews-tab {
+        margin-top: 3em;
+    }
+
+    .border-shorter {
+        width: 100%;
+        width: -webkit-calc(100% - 4em);
+        width: -moz-calc(100% - 4em);
+        width: calc(100% - 4em);
+        margin-left: 2em;
+        margin-right: 2em;
+        display: inline-block;
+    }
+
+    .gray-thin {
+        height: 1px;
+        background-color: #848484;
+    }
+
+    .gray-thick {
+        height: 2px;
+        background-color: #949494;
+    }
+
+    .add-new-offer {
+        background-color: #ef804a;
+    }
+
+    .active-meal-offers-area>.offer-container>.add {
+        display: inline-block;
+        font-size: 17em;
+        color: white;
+        text-align: center;
+        padding: 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%); 
+        margin-bottom: -0.25em;
+    }
+
+    .active-meal-offers-area>.offer-container>.add-label {
+        display: inline-block;
+        font-size: 3em;
+        color: white;
+        text-align: center;
+        width: 100%;
+    }
+
+    .active-meal-offers-area>.offer-container>.picture,
+    .past-meal-offers-area>.offer-container>.picture,
+    .pending-reservations-area>.offer-container>.picture,
+    .accepted-reservations-area>.offer-container>.picture,
+    .completed-reservations-area>.offer-container>.picture {
+        width: 100%;
+        height: 14em;
+        background-image: url(../../../img/jumbotron3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 2px solid white;
+    }
+
+    .active-meal-offers-area>.offer-container>.picture>.controlls>.notify-badge {
+        position: relative;
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border: none;
+        background-color: #eb4a4a;
+        color: white;
+        padding: 10px 9px;
+    }
+
+    .active-meal-offers-area>.offer-container>.picture>.controlls,
+    .pending-reservations-area>.offer-container>.picture>.controlls,
+    .accepted-reservations-area>.offer-container>.picture>.controlls,
+    .completed-reservations-area>.offer-container>.picture>.controlls {
+        width: 100%;
+        height: 3.5em;
+    }
+
+    .active-meal-offers-area>.offer-container>.picture>.controlls>.button-group,
+    .pending-reservations-area>.offer-container>.picture>.controlls>.button-group,
+    .accepted-reservations-area>.offer-container>.picture>.controlls>.button-group,
+    .completed-reservations-area>.offer-container>.picture>.controlls>.button-group {
+        display: inline-block;
+        float: right;
+        padding: 1em;
+    }
+
+    .active-meal-offers-area>.offer-container>.picture>.controlls>.button-group>button,
+    .pending-reservations-area>.offer-container>.picture>.controlls>.button-group>button,
+    .accepted-reservations-area>.offer-container>.picture>.controlls>.button-group>button,
+    .completed-reservations-area>.offer-container>.picture>.controlls>.button-group>button {
+        height: 2em;
+        background: #848484;
+        border: none;
+        color: white;
+        border-radius: 15%;
+    }
+
+    .active-meal-offers-area>.offer-container>.picture>.time-date,
+    .pending-reservations-area>.offer-container>.picture>.time-date,
+    .accepted-reservations-area>.offer-container>.picture>.time-date,
+    .completed-reservations-area>.offer-container>.picture>.time-date {
+        position: relative;
+        top: 25%;
+        height: 6em;
+    }
+
+    .active-meal-offers-area>.offer-container>.picture>.time-date>div,
+    .pending-reservations-area>.offer-container>.picture>.time-date>div,
+    .accepted-reservations-area>.offer-container>.picture>.time-date>div,
+    .completed-reservations-area>.offer-container>.picture>.time-date>div {
+        display: inline-block;
+        left: 30%;
+        position: relative;
+        text-shadow: 0px 2px 4px black;
+    }
+
+    .active-meal-offers-area>.offer-container>.picture>.time-date>div+div,
+    .pending-reservations-area>.offer-container>.picture>.time-date>div+div,
+    .accepted-reservations-area>.offer-container>.picture>.time-date>div+div,
+    .completed-reservations-area>.offer-container>.picture>.time-date>div+div {
+        left:20%;
+    }
+
+    .active-meal-offers-area>.offer-container>.picture>.time-date>div>img,
+    .pending-reservations-area>.offer-container>.picture>.time-date>div>img,
+    .accepted-reservations-area>.offer-container>.picture>.time-date>div>img,
+    .completed-reservations-area>.offer-container>.picture>.time-date>div>img  {
+        height: 2.5em;
+        width: 2.5em;
+        float: left;
+        -webkit-filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1);
+        margin-top: 2%;
+    }
+
+    .active-meal-offers-area>.offer-container>.picture>.time-date>div>p,
+    .pending-reservations-area>.offer-container>.picture>.time-date>div>p,
+    .accepted-reservations-area>.offer-container>.picture>.time-date>div>p,
+    .completed-reservations-area>.offer-container>.picture>.time-date>div>p {
+        color: white;
+        font-size: 24pt;
+        float: right;
+        text-indent: 8px;
+    }
+
+    .past-meal-offers-area>.offer-container>.picture>.add-offer-button {
+        height: 5em;
+        width: 5em;
+        background-color: #ef804a;
+        color: white;
+        float: right;
+    }
+
+    .past-meal-offers-area>.offer-container>.picture>.add-offer-button>.plus {
+        width: 100%;
+        text-align: center;
+        font-size: 40pt;
+        margin-top: -0.05em;
+    }
+
+    .offer-container>.info {
+        width: 100%;
+        height: 11em;
+        border: 2px solid white;
+        display: inline-block;
+    }
+
+    .active-meal-offers-area>.offer-container>.info, 
+    .pending-reservations-area>.offer-container>.info,
+    .accepted-reservations-area>.offer-container>.info{
+        background-color: #ef804a;
+    }
+
+    .past-meal-offers-area>.offer-container>.info,
+    .completed-reservations-area>.offer-container>.info {
+        background-color: #848484;
+    }
+
+    .active-meal-offers-area>.offer-container>.info>.title,
+    .past-meal-offers-area>.offer-container>.info>.title,
+    .pending-reservations-area>.offer-container>.info>.title,
+    .accepted-reservations-area>.offer-container>.info>.title,
+    .completed-reservations-area>.offer-container>.info>.title {
+        width: 100%;
+        width: -webkit-calc(100% - 20px);
+        width: -moz-calc(100% - 20px);
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 3em;
+        color: white;
+        text-align: center;
+        border-bottom: 1px solid white;
+    }
+
+    .active-meal-offers-area>.offer-container>.info>.cell,
+    .past-meal-offers-area>.offer-container>.info>.cell,
+    .pending-reservations-area>.offer-container>.info>.cell,
+    .accepted-reservations-area>.offer-container>.info>.cell,
+    .completed-reservations-area>.offer-container>.info>.cell {
+        width: 33%;
+        float: left;
+    }
+
+    .active-meal-offers-area>.offer-container>.info>.cell>.title,
+    .past-meal-offers-area>.offer-container>.info>.cell>.title,
+    .pending-reservations-area>.offer-container>.info>.cell>.title,
+    .accepted-reservations-area>.offer-container>.info>.cell>.title,
+    .completed-reservations-area>.offer-container>.info>.cell>.title {
+        color: white;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    .active-meal-offers-area>.offer-container>.info>.cell>.main,
+    .past-meal-offers-area>.offer-container>.info>.cell>.main,
+    .pending-reservations-area>.offer-container>.info>.cell>.main,
+    .accepted-reservations-area>.offer-container>.info>.cell>.main,
+    .completed-reservations-area>.offer-container>.info>.cell>.main {
+        color: white;
+        text-align: center;
+        font-size: xx-large;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    .active-meal-offers-area>.offer-container>.info>.cell>.main>.image,
+    .past-meal-offers-area>.offer-container>.info>.cell>.main>.image,
+    .pending-reservations-area>.offer-container>.info>.cell>.main>.image,
+    .accepted-reservations-area>.offer-container>.info>.cell>.main>.image,
+    .completed-reservations-area>.offer-container>.info>.cell>.main>.image {
+        height: 1.3em;
+        margin-top: -7px;
+        margin-left: -8px;
+    }
+
+    .active-meal-offers-area>.offer-container>.info>.detail-pills,
+    .past-meal-offers-area>.offer-container>.info>.detail-pills,
+    .pending-reservations-area>.offer-container>.info>.detail-pills,
+    .accepted-reservations-area>.offer-container>.info>.detail-pills,
+    .completed-reservations-area>.offer-container>.info>.detail-pills {
+        width: 100%;
+        position: relative;
+        bottom: 4px;
+    }
+
+    .active-meal-offers-area>.offer-container>.info>.detail-pills>li,
+    .past-meal-offers-area>.offer-container>.info>.detail-pills>li,
+    .pending-reservations-area>.offer-container>.info>.detail-pills>li,
+    .accepted-reservations-area>.offer-container>.info>.detail-pills>li,
+    .completed-reservations-area>.offer-container>.info>.detail-pills>li {
+        width: 32.9%;
+        border: none;
+    }
+
+    .active-meal-offers-area>.offer-container>.info>.detail-pills>li.active>a,
+    .past-meal-offers-area>.offer-container>.info>.detail-pills>li.active>a,
+    .pending-reservations-area>.offer-container>.info>.detail-pills>li.active>a,
+    .accepted-reservations-area>.offer-container>.info>.detail-pills>li.active>a,
+    .completed-reservations-area>.offer-container>.info>.detail-pills>li.active>a {
+        background-color: #f18d5b;
+        text-decoration: underline;
+    }
+
+    .past-meal-offers-area>.offer-container>.info>.detail-pills>li.active>a,
+    .completed-reservations-area>.offer-container>.info>.detail-pills>li.active>a {
+        background-color: #949494 !important;
+    }
+
+    .active-meal-offers-area>.offer-container>.info>.detail-pills>li>a,
+    .past-meal-offers-area>.offer-container>.info>.detail-pills>li>a,
+    .pending-reservations-area>.offer-container>.info>.detail-pills>li>a,
+    .accepted-reservations-area>.offer-container>.info>.detail-pills>li>a,
+    .completed-reservations-area>.offer-container>.info>.detail-pills>li>a {
+        text-align: center;
+        background-color: #ef804a;
+        color: white;
+        border: none;
+        border-radius: 0;
+    } 
+
+    .past-meal-offers-area>.offer-container>.info>.detail-pills>li>a,
+    .completed-reservations-area>.offer-container>.info>.detail-pills>li>a {
+        background-color: #848484 !important;
+    }  
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item   {
+        height: 24.8em;
+        background-color: white;
+    } 
+
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.donnations-content,
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.income-content,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.donnations-content,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.income-content,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.donnations-content,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.donnations-content,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.donnations-content,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content {
+        padding: 30px;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.income-content>.border,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.income-content>.border,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.border,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.border,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.border {
+        height: 1px;
+        width: 100%;
+        background-color: #848484;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>.question-mark,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>.question-mark,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>.question-mark,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>.question-mark,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>.question-mark {
+       height: 15px;
+       width: 15px;
+       border-radius: 50%;
+       background-color: #ef804a;
+       color: white;
+       display: inline-block;
+       text-align: center;
+       margin-left: 5px;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>p,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>p,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>p,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>p,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>p {
+        font-weight: 700;
+        display: inline-block;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>p.result,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>p.result,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>p.result,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>p.result,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.income-content>.item>p.result {
+        text-align: right;
+        float: right;
+        margin-right: 15px;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.donnations-content>p,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.donnations-content>p,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.donnations-content>p,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.donnations-content>p,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.donnations-content>p {
+        color: #ef804a;
+        font-weight: 700;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.donnations-content>p.one-line,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.donnations-content>p.one-line,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.donnations-content>p.one-line,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.donnations-content>p.one-line,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.donnations-content>p.one-line {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.nav {
+        border: 2px solid white;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.nav>.guests {
+        width: 39%;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.nav>.requests {
+        width: 61%;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.nav>.tab {
+        font-size: 16pt;
+        background-color: #efefef;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.nav>.active {
+        background-color: white !important;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.nav>.tab>a {
+        color: black !important;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.nav>.tab>a>.number {
+        margin: 0;
+        display: inline-block;
+        color: #efefef;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content {
+        height: 21em;
+        overflow: auto;
+        background-color: white;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.guests,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.guests-content,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content {
+        width: 100%;
+        background-color: white;
+        padding-left: 1.5em;
+        padding-top: 2.5em; 
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.guests>.item,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item  {
+        display: inline-block;
+        float: left;
+        margin: 0.5em;
+        padding: 0px !important;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.guests>.item>.image-holder,
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.guest>.image-holder,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.image-holder,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.image-holder,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.image-holder,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.image-holder  {
+        width: 6em;
+        height: 6em;
+        border-radius: 50%;
+        display: inline-block;
+        border: 0.1em solid #848484; 
+        overflow: hidden; 
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.guests>.item>.image-holder>.image,
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.guest>.image-holder>.image,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.image-holder>.image,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.image-holder>.image,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.image-holder>.image,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.image-holder>.image {
+        width: 5.8em;
+        transform: translateY(-51%);
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.guests>.item>.pending,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.guests>.item>.pending,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.pending {
+        margin-left: -2em;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.guests>.item>.notify-badge{
+        position: relative;
+        background: #eb4a4a;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 12px;
+        height: 24px;
+        width: 24px;
+        color: white;
+        padding: 6px 0px;
+        left: 5em;
+        top: -5.7em;
+        z-index: 1001;
+        border: none;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.guests>.item>.name,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.name,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.name,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.name,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.name {
+        color: #ef804a;
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.guests>.item>.location,
+    .past-meal-offers-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.location,
+    .pending-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.location,
+    .accepted-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.location,
+    .completed-reservations-area>.offer-container>.tabs>.content>.details-item>.guests-content>.item>.location {
+        color: black;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests {
+        width: 100%;
+       
+        background-color: white;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item{
+        display: inline-block;
+        width: 100%;
+        padding-left: 15px;
+        margin-bottom: 1em;
+        padding-top: 2.5em;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.guest {
+        display: inline-block;
+        float: left;
+        margin: 0.5em;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.guest>.image {
+        width: 6em;
+        height: 6em;
+        border-radius: 50%;
+        display: inline-block;
+        border: 2px solid #efefef;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.guest>.name {
+        color: #ef804a;
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.guest>.location {
+        color: black;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.details {
+        width: 15em;
+        display: inline-block;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.details>.cell {
+        width: 5em;
+        float:left;
+        display: inline-block;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.details>.cell>.image {
+        margin-bottom: 2px;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.details>.cell>.label-first {
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        color: #ef804a;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.details>.cell>.label-second {
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        color: #ef804a;
+        margin-top: -3px;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.details>.cell>.value {
+        text-align: center;
+        font-size: xx-large;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.buttons {
+        display: inline-block;
+        padding-left: 20px;
+        width: 15em;
+        margin-top: -1em;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.buttons>.item-confirm {
+        width: 49%;
+        height: 2em;
+        background-color: #ef804a;
+        color: white;
+        border: 1px solid bisque;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.details-item>.tabs>.content>.requests>.item>.buttons>.item-decline {
+        width: 48%;
+        height: 2em;
+        background-color: #efefef;
+        color: black;
+        border: 1px solid bisque;
+    }
+
+    .past-meal-offers-area {
+        border-top: 2px solid #efefef;
+        padding-top: 5em;
+    }
+
+    .past-meal-offers-area>.offer-container{
+        background-color: #848484;
+    }
+
+    .past-meal-offers-area>.offer-container{
+        background-color: #848484;
+    }

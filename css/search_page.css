@@ -1,0 +1,42 @@
+  
+    #sb-input-group-location>.input-group>.input-group-btn {
+        display: none !important;
+    }
+
+    .map-container {
+        float: right;
+        width: 50em;
+        height: 50em;
+        display: inline-block;
+    }
+
+    .placepicker-map-override {
+        width: 50em;
+        height: 50em;
+    }
+
+    .marker-label>.price {
+        float: left;
+        font-size: 20pt;
+    }
+
+    .marker-label>.decimal {
+        float: left;
+    }
+
+    .marker-label>.decimal>.cents {
+        margin: 0;
+        width: 20px;
+        padding: 0;
+        position: relative;
+        bottom: 1px;
+    }
+
+    .marker-label>.decimal>.dollar {
+        margin: 0;
+        width: 20px;
+        padding: 0;
+        position: relative;
+        font-size: 14pt;
+        bottom: 10px;
+    }
