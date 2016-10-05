@@ -33,6 +33,21 @@
         width:100%;
     }
 
+    #sb-input-group-timepicker-end {
+        width: 47% !important;
+        float: left;
+        border: none !important;
+    }
+
+    #sb-input-group-timepicker-end>.sb-input-group-addon {
+        width: 10px !important;
+    }
+
+    #sb-input-group-timepicker-start {
+        width: 52% !important;
+        float: left;
+    }
+
     .sb-input {
         height: 4em;
         border-top: none;
@@ -70,18 +85,28 @@
 
     #sb-form-group-seats {
         width: 15%;
+        float: left;
     }
 
     #sb-form-group-location{
         width: 36%;
+        float: left;
     }
 
-    #sb-form-group-timepicker{
-        width: 21%;
+    #sb-form-group-timepicker-start{
+        width: 10%;
+        float: left;
+    }
+
+    #sb-form-group-timepicker-end {
+        width: 10%;
+        float: left;
+        border: none;
     }
 
     #sb-form-group-datepicker{
         width: 25%;
+        float: left;
     }
 
     .pac-container {

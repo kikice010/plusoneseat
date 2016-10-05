@@ -1,42 +1,391 @@
-  
+    .content-container {
+        width: 100%;
+        display: inline-block;
+        margin-top: -30px;
+        position: relative;
+    }
+
     #sb-input-group-location>.input-group>.input-group-btn {
         display: none !important;
     }
 
-    .map-container {
+    #results-container>.result-item {
+        background-color: #ef804a;
+        border-radius: 0%;
+    }
+
+    #results-container>.golden {
+        background-color: #ffc500 !important;
+    }
+
+    #results-container>.golden>.item-header{
+        text-shadow: 0px 2px 4px black;
+    }
+
+    #results-container>.result-item>.item-header {
+        width: 100%;
+        height: 3em;
+        vertical-align: middle;
+    }
+
+    #results-container>.result-item>.item-header>.header-title {
+        font-size: 12px;
+        color: white;
+        float: left;
+        padding-left: 14px;
+        width: 74%;
+    }
+
+    #results-container>.result-item>.item-header>.price {
+        font-size: 30px;
         float: right;
-        width: 50em;
+        padding-right: 10px;
+        color: white;
+        font-weight: 700;
+    }
+
+    #results-container>.result-item>.meal-picture {
+        width: 100%;
+        height: 12em;
+        background-image: url(../img/jumbotron3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 1001;
+        display: inline-flex;   
+    }
+
+    #results-container>.result-item>.meal-picture>.user-picture {
+        width: 6em;
+        height: 6em;
+        background: url(../img/donator.jpg) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 4px solid white;
+        margin-left: -webkit-calc((100% - 6em)/2);
+        margin-left: -moz-calc((100% - 6em)/2);
+        margin-left: calc((100% - 6em)/2);
+        margin-top: 3em;
+        border-radius: 50%;
+    }
+
+    #results-container>.result-item>.meal-picture>.rating {
+        width: 4.5em;
+        height: 4.5em;
+        background: url(../img/brand-assets/icons/chef_badge.png) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: 1em;
+        position: relative;
+        top: 9em;
+        left: -14.7em;
+    }
+
+    #results-container>.result-item>.meal-picture>.rating>.average {
+        font-size: 24px;
+        font-weight: 700;
+        margin-left: 1em;
+        padding-top: 0.5em;
+    }
+
+    #results-container>.result-item>.meal-picture>.rating>.rating-title {
+        margin-left: 0.8em;
+        font-size: 10px;
+    }
+
+    #results-container>.result-item>.meal-picture>.rating>.rew-number {
+        margin-top: 0.1em;
+        font-size: 12px;
+        color: #848484;
+    }
+
+    #results-container>.result-item>.meal-picture>.upper {
+        background: white;
+        width: 100%;
+    }
+
+    #results-container>.result-item>.info {
+        background-color: white;
+    }
+
+    #results-container>.result-item>.info>.upper>.user {
+        width: 47%;
+        float: left;
+        margin-left: 24%;
+        padding-top: 5px;
+    }
+
+    #results-container>.result-item>.info>.upper>.user>.hosted {
+        width: 100%;
+        margin-top: 6px;
+    }
+
+    #results-container>.result-item>.info>.upper>.user>.hosted>.gray-out {
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        float: left;
+        color: #848484;
+        padding-right: 5px;
+    }
+
+    #results-container>.result-item>.info>.upper>.user>.hosted>.name {
+        font-size: 14px;
+        font-weight: 600;
+        float: left;
+        margin-top: -1px;
+        margin-bottom: 2px;
+    }
+
+    #results-container>.result-item>.info>.upper>.user>.location {
+        width: 100%;
+        clear: left;
+    }
+
+    #results-container>.result-item>.info>.upper {
+        position: relative;
+        z-index: 1000;
+        height: 3.5em;
+    }
+
+    #results-container>.result-item>.info>.upper>.donation {
+        width: 23%;
+        float: right;
+        display: inline-block;
+        padding-top: 5px;
+    }
+
+    #results-container>.result-item>.info>.upper>.donation>.gray-out {
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        color: #848484;
+        padding-right: 15px;
+        float: right;
+        padding-top: 2px; 
+    }
+
+    #results-container>.result-item>.info>.upper>.donation>.value {
+        font-weight: 700;
+        color: #ef804a;
+        display: inline-block;
+        float: right;
+        font-size: 26px;
+        padding-right: 8px;
+        position: absolute;
+        width: 40%;
+        top: 0.7em;
+        left: 8em;
+    }
+
+    #results-container>.result-item>.info>.upper>.donation>.value>.plus {
+        font-size: 20px;
+        float: right;
+    }
+
+    #results-container>.result-item>.info>.upper>.donation>.value>.number {
+        font-size: 26px;
+        float: right;
+    }
+
+    #results-container>.result-item>.info>.upper>.donation>.value>.chair {
+        height: 1em;
+        width: 1em;
+        background: url(../img/brand-assets/icons/orange_chair.png) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: 0.3em;
+        float: right;
+    }
+
+    #results-container>.result-item>.info>.separator {
+        height: 2px;
+        background-color: #eee;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #results-container>.result-item>.info>.lower {
+        padding-left: 15px;
+        padding-right: 5px;
+        display: inline-block;
+        background-color: white;
+        width: 100%;
+    }
+
+    #results-container>.result-item>.info>.lower>.cell {
+        width: 25%;
+        float: left;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    #results-container>.result-item>.info>.lower>.cell-title {
+        font-size: 12px;
+        color: #848484;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #results-container>.result-item>.info>.lower>.value {
+        font-size: 16px;
+        color: black;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    #top-donators-container {
+        width: 42em;
+        background-color: white;
+        height: 21em;
+        display: inline-block;
+        float: right;
+    }
+
+    #top-donators-container>.don-header {
+        color: #ef804a;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    #top-donators-container>.don-text {
+        color: #848484;
+        padding: 5px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    #top-donators-container>.box {
+        width: 100%;
+    }
+
+    #top-donators-container>.box>.item {
+        height: 14em;
+        width: 20%;
+        margin-left: 4%;
+        background-color: #ef804a;
+        float: left;
+        padding: 0;
+        border: 2px solid #848484;
+        margin-top: 1em;
+    }
+
+    #top-donators-container>.box>.item>.food-picture {
+        width: 100%;
+        height: 7em;
+        background-image: url(../img/jumbotron3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 1em;
+        position: relative;
+    }
+
+    #top-donators-container>.box>.item>.food-picture>.badge {
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        position: relative;
+        border-radius: 50%;
+        position: absolute;
+        top: -.7em;
+        left: -.7em;
+        border: 1px solid black;
+        color: black;
+        font-size: 15px;
+    }
+
+    #top-donators-container>.box>.item>.food-picture>.user-picture {
+        width: 5em;
+        height: 5em;
+        background: url(../img/donator.jpg) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 2px solid white;
+        margin-left: -webkit-calc((100% - 5em)/2);
+        margin-left: -moz-calc((100% - 5em)/2);
+        margin-left: calc((100% - 5em)/2);
+        border-radius: 50%;
+    }
+
+    #top-donators-container>.box>.item>.info {
+        color: black;
+        background-color: white;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    #top-donators-container>.box>.item>.donations {
+        color: white;
+        display: inline-block;
+        margin-top: 1em;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #top-donators-container>.box>.item>.donations>.plus {
+        font-size: 21px;
+        float: left;
+        font-weight: 700;
+    }
+
+    #top-donators-container>.box>.item>.donations>.number {
+        font-size: 30px;
+        float: left;
+        font-weight: 700;
+    }
+
+    #top-donators-container>.box>.item>.donations>.chair {
+        height: 3em;
+        width: 2em;
+        background: url(../img/brand-assets/icons/orange_chair.png) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: 0.2em;
+        -webkit-filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1);
+        float: left;
+    }
+
+    #map-container {
+        float: right;
+        width: 42em;
         height: 50em;
         display: inline-block;
+        /*position: fixed !important;*/
     }
 
-    .placepicker-map-override {
-        width: 50em;
-        height: 50em;
+    .p1s-marker {
+        background-color: #ef804a;
+        color: white;
+        position: absolute;
+        border-radius: 5px;
+        padding: 2px 5px 2px 5px;ute;
     }
 
-    .marker-label>.price {
+    .p1s-marker>.price {
+        font-size: 15px;
+        font-weight: 700;
         float: left;
-        font-size: 20pt;
+        margin: 0;
     }
 
-    .marker-label>.decimal {
+    .p1s-marker>.decimal {
+        font-size: 10px;
+        padding-top: 5px;
         float: left;
+        margin: 0;
     }
 
-    .marker-label>.decimal>.cents {
-        margin: 0;
-        width: 20px;
-        padding: 0;
-        position: relative;
-        bottom: 1px;
+    #floating-container {
+        float: right;
+        position: absolute;
     }
 
-    .marker-label>.decimal>.dollar {
-        margin: 0;
-        width: 20px;
-        padding: 0;
-        position: relative;
-        font-size: 14pt;
-        bottom: 10px;
-    }
+    

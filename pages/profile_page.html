@@ -70,7 +70,7 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav id="header" class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="sb-navbar-container">
                     <div class="row search-bar">
@@ -92,15 +92,21 @@
                                         <span class="input-group-addon sb-input-group-addon">
                                             <span class="glyphicon glyphicon-map-marker"></span>
                                         </span>
-                                        <input type="text" placeholder="Enter a location" class="form-control sb-input" id="sb-input-location">
+                                        <input type="text" placeholder="Location" class="form-control sb-input" id="sb-input-location">
                                     </div>
                                 </div>
                                 <div class="form-group" id="sb-form-group-timepicker">
-                                    <div class='input-group sb-input-group date' id='sb-input-group-timepicker'>
+                                    <div class='input-group sb-input-group date sb-time' id='sb-input-group-timepicker-start'>
                                         <span class="input-group-addon sb-input-group-addon">
                                             <span class="glyphicon glyphicon-time"></span>
                                         </span>
-                                        <input type='text' placeholder="Enter a time" class="form-control sb-input" />
+                                        <input type='text' placeholder="Start time" class="form-control sb-input" />
+                                    </div>
+                                    <div class='input-group sb-input-group date sb-time' id='sb-input-group-timepicker-end'>
+                                        <span class="input-group-addon sb-input-group-addon">
+                                            —
+                                        </span>
+                                        <input type='text' placeholder="End time" class="form-control sb-input" />
                                     </div>
                                 </div>
                                 <div class="form-group GloberBold" id="sb-form-group-datepicker">
@@ -108,7 +114,7 @@
                                         <span class="input-group-addon sb-input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
-                                        <input type='text' placeholder="Enter a date" class="form-control sb-input" />
+                                        <input type='text' placeholder="Date" class="form-control sb-input" />
                                     </div>
                                 </div>
                             </div>
@@ -143,8 +149,8 @@
                             </div>
                             <div id="sb-dropdown-navigation" class="collapse hidden-sm hidden-md hidden-lg hidden-xlg">
                                 <ul class="" id="sb-dd-nav-ul">
-                                    <li id="your-rates-reviews"><a class="menu-pills" id="your-rates-reviews-pill" data-toggle="pill" href="#your-rates-reviews-tab">Your Rates/Reviews</a></li>
-                                    <li id="your-meal-offers" class="active"><a class="menu-pills" id="your-meal-offers-pill" data-toggle="pill" href="#your-meal-offers-tab">Your Meal Offers</a></li>
+                                    <li id="your-rates-reviews hidden="" "><a class="menu-pills" id="your-rates-reviews-pill" data-toggle="pill" href="#your-rates-reviews-tab">Your Rates/Reviews</a></li>
+                                    <li id="your-meal-offers"><a class="menu-pills" id="your-meal-offers-pill" data-toggle="pill" href="#your-meal-offers-tab">Your Meal Offers</a></li>
                                     <li id="your-reservations"><a class="menu-pills" id="your-reservations-pill" data-toggle="pill" href="#your-reservations-tab">Your Reservations</a></li>
                                     <li id="profile"><a class="menu-pills" id="profile-pill" data-toggle="pill" href="#profile-tab">Profile</a></li>
                                     <li id="settings"><a class="menu-pills" id="settings-pill" data-toggle="pill" href="#settings-tab">Settings</a> </li>
@@ -152,15 +158,6 @@
                                  <input type="hidden" id="ignore_body_click" value="1">
                             </div>
                         </div>
-                    </div>
-                    <div id="pills-bar" class="row sb-pills">
-                        <ul class="nav nav-pills horizontal-center GloberRegular" >
-                            <li id="your-rates-reviews" class="hidden"><a id="your-rates-reviews-pill" data-toggle="pill" href="#your-rates-reviews-tab">Your Rates/Reviews</a></li>
-                            <li id="your-meal-offers" class="active"><a id="your-meal-offers-pill" data-toggle="pill" href="#your-meal-offers-tab">Your Meal Offers</a></li>
-                            <li id="your-reservations"><a id="your-reservations-pill" data-toggle="pill" href="#your-reservations-tab">Your Reservations</a></li>
-                            <li id="profile"><a id="profile-pill" data-toggle="pill" href="#profile-tab">Profile</a></li>
-                            <li id="settings"><a id="settings-pill" data-toggle="pill" href="#settings-tab">Settings</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>

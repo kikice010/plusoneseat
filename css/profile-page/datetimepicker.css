@@ -1,4 +1,5 @@
-div#sb-input-group-timepicker {
+#sb-input-group-timepicker-start,
+#sb-input-group-timepicker-end {
   height: 4em;
 }
 
@@ -9,22 +10,26 @@ div#sb-input-group-timepicker {
    margin: 1.8em !important;
 }
 
-div#sb-input-group-timepicker>.bootstrap-datetimepicker-widget.dropdown-menu {
+#sb-input-group-timepicker-start>.bootstrap-datetimepicker-widget.dropdown-menu,
+#sb-input-group-timepicker-end>.bootstrap-datetimepicker-widget.dropdown-menu {
   width: 100%;
 }
 
-div#sb-input-group-timepicker table.table-condensed>tbody>tr>td {
+#sb-input-group-timepicker-start table.table-condensed>tbody>tr>td,
+#sb-input-group-timepicker-end table.table-condensed>tbody>tr>td {
   padding: 0em;
   height: 1.8em;
 }
 
-div#sb-input-group-timepicker table.table-condensed>tbody>tr>td.separator {
+#sb-input-group-timepicker-start table.table-condensed>tbody>tr>td.separator,
+#sb-input-group-timepicker-end table.table-condensed>tbody>tr>td.separator {
    height: 1.8em;
    width: 0.3em !important;
    line-height: 1.8em !important;
 }
 
-div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>.btn-primary {
+#sb-input-group-timepicker-start table.table-condensed>tbody>tr>td>.btn-primary,
+#sb-input-group-timepicker-end table.table-condensed>tbody>tr>td>.btn-primary {
   background-color: #fff;
   color: #ef804a !important;
   border-color: white !important;
@@ -32,26 +37,30 @@ div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>.btn-primary {
   margin: 0em !important;
 }
 
-div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>.btn-primary:hover {
+#sb-input-group-timepicker-start table.table-condensed>tbody>tr>td>.btn-primary:hover,
+#sb-input-group-timepicker-end table.table-condensed>tbody>tr>td>.btn-primary:hover {
   background-color: #eee !important;
   border-color: white !important;
   border: 0em solid white !important;
   margin: 0em !important;
 }
 
-div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>a.btn {
+#sb-input-group-timepicker-start table.table-condensed>tbody>tr>td>a.btn,
+#sb-input-group-timepicker-end table.table-condensed>tbody>tr>td>a.btn {
   color: #ef804a !important;
   
 }
 
-div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>a>span {
+#sb-input-group-timepicker-start table.table-condensed>tbody>tr>td>a>span,
+#sb-input-group-timepicker-end table.table-condensed>tbody>tr>td>a>span {
    height: 1.8em !important;
    width: 1.8em !important;
    line-height: 1.8em !important;
    margin: 0em !important;
 }
 
-div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>span.timepicker-minute {
+#sb-input-group-timepicker-start table.table-condensed>tbody>tr>td>span.timepicker-minute,
+#sb-input-group-timepicker-end table.table-condensed>tbody>tr>td>span.timepicker-minute {
   color: #ef804a !important;
   height: 1.8em !important;
   width: 1.8em !important;
@@ -59,7 +68,8 @@ div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>span.timepicker-
   margin: 0em !important;
 }
 
-div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>span.timepicker-hour {
+#sb-input-group-timepicker-start table.table-condensed>tbody>tr>td>span.timepicker-hour,
+#sb-input-group-timepicker-end table.table-condensed>tbody>tr>td>span.timepicker-hour {
   color: #ef804a !important;
   height: 1.8em !important;
   width: 1.8em !important;
@@ -68,25 +78,25 @@ div#sb-input-group-timepicker table.table-condensed>tbody>tr>td>span.timepicker-
 }
 
 
-div#sb-input-group-datepicker>.bootstrap-datetimepicker-widget.dropdown-menu {
+#sb-input-group-datepicker>.bootstrap-datetimepicker-widget.dropdown-menu {
   width: 100%;
   min-width: 15em;
   height: 18em;
 }
 
-div#sb-input-group-datepicker>.bootstrap-datetimepicker-widget>.list-unstyled>li>div.datepicker .active {
+#sb-input-group-datepicker>.bootstrap-datetimepicker-widget>.list-unstyled>li>div.datepicker .active {
   background-color: #ef804a !important;
 }
 
-div#sb-input-group-datepicker>.bootstrap-datetimepicker-widget table tr {
+#sb-input-group-datepicker>.bootstrap-datetimepicker-widget table tr {
   height: 1.4em;
 }
 
-div#sb-input-group-datepicker>.bootstrap-datetimepicker-widget table td {
+#sb-input-group-datepicker>.bootstrap-datetimepicker-widget table td {
   height: 1.4em !important;
   line-height: 1.4em !important;
 }
 
-div#sb-input-group-datepicker>.bootstrap-datetimepicker-widget table td.today {
+#sb-input-group-datepicker>.bootstrap-datetimepicker-widget table td.today {
   border-bottom-color: #ef804a !important;
 }
