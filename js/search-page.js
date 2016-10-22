@@ -112,7 +112,7 @@ $(function(){
 
     $('#results-container').css("min-height",($(window).height() - navBarHeight));
 
-    var maxTop = $('footer').offset().top - $(window).height() - 5; 
+    var maxTop = $('footer').offset().top - $(window).height() - 5 + 60; 
 
     map.css('height', mapHeight);
     container.css('left', left);
@@ -121,11 +121,11 @@ $(function(){
     $(document).scroll(function() {
         var scrollVal = $(document).scrollTop();
         
-        container.css('top', scrollVal);
+        container.css('top', scrollVal+60);
 
-        if(container.offset().top < 0)
+        if(container.offset().top < 60)
         {
-            container.css('top', 0 ); 
+            container.css('top', 60 ); 
         }
         
         if (scrollVal > maxTop ) {

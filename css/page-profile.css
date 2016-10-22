@@ -1,0 +1,145 @@
+
+html, body {
+    height: 100%;
+    background-color: #efefef;
+}
+
+.horizontal-center {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.vertical-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.profile-picture {
+    width: 10em;
+    height: 10em;
+}
+
+.bodyStyle {
+    background-color: #ef804a;
+}
+
+body {
+    padding-top: 90px;
+    background-color: #efefef;
+}
+
+#container-main {
+    height: 100%;
+}
+
+.header-text{
+    color: white;
+    text-decoration: none;
+    float: left;
+}
+
+.header-link:link {
+    color: white;
+    text-decoration: none;
+}
+
+.header-link:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.header-link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.header-link:active {
+    color: white;
+    text-decoration: none;
+}
+
+.height-full {
+    height: 900px;
+}
+
+.height-1-style {
+    height: 100%;
+}
+
+.height-3-style {
+    height: 33.33%;
+}
+
+.height-5-style {
+    height: 20%;
+}
+
+.height-7-style {
+    height: 14.28%;
+}
+
+.height-10-style {
+    height: 10%;
+}
+
+.vertical-50-translate {
+    transform: translateY(50%);
+}
+
+.title-logo {
+    float:left;
+}
+
+.lower-border {
+    border-color: rgb(255, 255, 255); 
+    border-width:3px; 
+    border-radius: 2px; 
+    border-style: none none solid none;
+}
+
+.upper-border {
+    border-color: rgb(255, 255, 255); 
+    border-width:3px; 
+    border-radius: 2px; 
+    border-style: solid none none none;
+}
+
+.upper-lower-border {
+    border-color: rgb(255, 255, 255); 
+    border-width:3px; 
+    border-radius: 2px; 
+    border-style: solid none solid none;
+}
+
+.white-text {
+    color: white;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.horizontal-center {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.vertical-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.horizontal-vertical-center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#tab-content-container {
+    margin-top: 3em;
+}

@@ -1,0 +1,142 @@
+@media (min-width: 1201px) and (max-width: 1700px) {
+
+    .offer-container {
+        display: inline-block;
+        float: left;
+        width: 25em;
+        margin-left: -webkit-calc((33% - 25em)/2);
+        margin-left: -moz-calc((33% - 25em)/2);
+        margin-left: calc((33% - 25em)/2);
+        margin-right: -webkit-calc((33% - 25em)/2);
+        margin-right: -moz-calc((33% - 25em)/2);
+        margin-right: calc((33% - 25em)/2);
+        border-radius: 5%;
+        background-color: #ef804a;
+        margin-bottom: 5em;
+    }
+
+    .active-meal-offers-area>.title,
+    .past-meal-offers-area>.title,
+    .pending-reservations-area>.title,
+    .accepted-reservations-area>.title,
+    .completed-reservations-area>.title {
+        margin-left: -webkit-calc((33% - 17em)/2);
+        margin-left: -moz-calc((33% - 17em)/2);
+        margin-left: calc((33% - 17em)/2);
+        margin-bottom: 3em; 
+        font-size: 16px;
+        font-weight: 700;
+        color: black; 
+        display: inline-block;
+        text-align: left;
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 1201px) {
+    .search-bar {
+        height: 4.3em;
+    }
+
+    #sb-chair-logo-img{
+        width: 3em;
+    }
+
+    #sb-menu-button,
+    #sb-dropdown-navigation,
+    #navbar-right-side-buttons>li>div>lable {
+       display: none !important;
+    }
+
+    .righ-side-navbar-container {
+        width: 13em;
+        height: 4em;
+        float: right;
+        border-left: 2px solid #999999;
+    }
+
+    .sb-form-container{
+        float: left;
+        width: 100%;
+        width: -webkit-calc(100% - 17em);
+        width: -moz-calc(100% - 17em);
+        width: calc(100% - 17em);
+        height: 4em;
+    }
+
+    #sb-form-group-seats {
+        width: 12%;
+        display: inline-block;
+        float: left;
+    }
+
+    #sb-form-group-location {
+        width: 40%;
+        display: inline-block;
+        float: left;
+    }
+
+    #sb-form-group-datepicker {
+        width: 20%;
+        display: inline-block;
+        float: left;
+    }
+
+    #sb-form-group-timepicker {
+        width: 27%;
+        display: inline-block;
+        float: left;
+    }
+
+    .sb-logo-img-container {
+        width: 4em;
+        height: 4em;
+        padding-left: 0.35em;
+        padding-top: 0.5em;
+        float: left;
+    }
+
+    #sb-navbar-container {
+        background-color: #ef804a; 
+        height: 4em;
+    }
+
+    .sb-navbar,
+    .navbar {
+        height: 4em;
+    }
+
+    #navbar-right-side-buttons {
+        width: 100%;
+        border: none;
+        margin-top: 0;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 1351px) and (max-width: 1700px) {
+
+    #results-container {
+        display: inline-block;
+        float: left;
+        width: 100%;
+        margin-bottom: 5em;
+        padding-right: 42em;
+    }
+
+    #results-container .result-item {
+        display: inline-block;
+        float: left;
+        width: 350px;
+        margin-left: -webkit-calc((50% - 350px)/2);
+        margin-left: -moz-calc((50% - 350px)/2);
+        margin-left: calc((50% - 350px)/2);
+        margin-right: -webkit-calc((50% - 350px)/2);
+        margin-right: -moz-calc((50% - 350px)/2);
+        margin-right: calc((50% - 350px)/2);
+        border-radius: 5%;
+        margin-bottom: 2.5em;
+        margin-top: 2.5em;
+    }
+}

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+
+        <meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
+        <meta content='website' property='og:type'>
+        <meta content='en' http-equiv='content-language'>
+        <meta content='summary' name='twitter:card'>
+        <!-- Additional meta tags for SEO, etc. -->
+
+        <title>PlusOneSeat - Fight Global Hunger Everytime You Eat</title>
+        <meta content='PlusOneSeat - Fight Global Hunger Everytime You Eat' property='og:title'>
+        <meta content='PlusOneSeat - Fight Global Hunger Everytime You Eat' name='twitter:title'>
+        <meta content='PlusOneSeat' name='author'>
+        <meta content='fight, global, hunger, everytime' name='keywords'>
+        <meta content='https://plusoneseat.sharetribe.com/' property='og:url'>
+        <meta content='https://plusoneseat.sharetribe.com' name='identifier-url'>
+        <meta content='PlusOneSeat' name='copyright'>
+        <meta content='https://plusoneseat.sharetribe.com/' name='twitter:url'>
+        <meta content='PlusOneSeat' property='og:site_name'>
+        <meta content='With every meal offer you join, donate that much money to end the global hunger. - Fight Global Hunger Everytime You Eat' name='description'>
+        <meta content='With every meal offer you join, donate that much money to end the global hunger. - Fight Global Hunger Everytime You Eat' property='og:description'>
+        <meta content='With every meal offer you join, donate that much money to end the global hunger. - Fight Global Hunger Everytime You Eat' name='twitter:description'>
+        <meta content='https://user-assets.sharetribe.com/images/communities/logos/24073/original/plusoneseat_logo-1.jpg?1463826097' property='og:image'>
+        <meta content='https://user-assets.sharetribe.com/images/communities/logos/24073/original/plusoneseat_logo-1.jpg?1463826097' name='twitter:image'>
+        <link href='https://plusoneseat.sharetribe.com/' rel='canonical'>
+        <meta content='en_US' property='og:locale'>
+        <meta content='@plusoneseat' name='twitter:site'>
+        <meta content='963087903805072' property='fb:app_id'>
+
+        <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/search-bar.css" rel="stylesheet">
+        <link href="../css/fontClasses.css" rel="stylesheet">
+        <link href="../css/page-my-profile.css" rel="stylesheet">
+        <link href="../css/page-footer.css" rel="stylesheet">
+        <link href="../css/screen-styles-extra-large.css" rel="stylesheet">
+        <link href="../css/screen-styles-large.css" rel="stylesheet">
+        <link href="../css/screen-styles-medium.css" rel="stylesheet">
+        <link href="../css/screen-styles-small.css" rel="stylesheet">        
+        <link href="../lib/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+        <link href="../font/MyFontsWebfontsKit.css" rel="stylesheet" type="text/css">
+
+        <script type="text/javascript" src="../lib/js/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/fb-pre-jellybean-fix.js"></script>
+        <script type="text/javascript" src="../js/search-bar.js"></script>
+        <script type="text/javascript" src="../lib/bower_components/moment/min/moment.min.js"></script>
+        <script type="text/javascript" src="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="../lib/location_picker/jquery.placepicker.js"></script>
+        <script type="text/javascript" src="../js/location-picker.js"></script>
+        <script type="text/javascript" src="../js/profile-page.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Hb7ZjcestOuK7U5luaDINFkCUCmU9YQ&sensor=true&amp;libraries=places"></script>
+    </head>
+    <body>
+
+        <nav id="header" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="sb-navbar-container">
+                    <div class="row search-bar">
+                        <div class="sb-navbar">
+                            <div class="sb-logo-img-container">
+                                <img id="sb-chair-logo-img" src="../img/logo/orange/chair.png">
+                            </div>
+                            <div class="sb-form-container GloberBold">
+                                <div class="form-group" id="sb-form-group-seats">
+                                    <div class='input-group sb-input-group' id='sb-input-group-seats'>
+                                        <span class="input-group-addon sb-input-group-addon">
+                                            <img id="sb-seats-chair-img" src="../img/icon/gray/chair.png">
+                                        </span>
+                                        <input type="number" placeholder="Seats" class="form-control sb-input" id="sb-input-seats">
+                                    </div>
+                                </div>
+                                <div class="form-group" id="sb-form-group-location">
+                                    <div class='input-group sb-input-group' id='sb-input-group-location'>
+                                        <span class="input-group-addon sb-input-group-addon">
+                                            <span class="glyphicon glyphicon-map-marker"></span>
+                                        </span>
+                                        <input type="text" placeholder="Location" class="form-control sb-input" id="sb-input-location">
+                                    </div>
+                                </div>
+                                <div class="form-group" id="sb-form-group-timepicker">
+                                    <div class='input-group sb-input-group date sb-time' id='sb-input-group-timepicker-start'>
+                                        <span class="input-group-addon sb-input-group-addon">
+                                            <span class="glyphicon glyphicon-time"></span>
+                                        </span>
+                                        <input type='text' placeholder="Start time" class="form-control sb-input" />
+                                    </div>
+                                    <div class='input-group sb-input-group date sb-time' id='sb-input-group-timepicker-end'>
+                                        <span class="input-group-addon sb-input-group-addon">
+                                            —
+                                        </span>
+                                        <input type='text' placeholder="End time" class="form-control sb-input" />
+                                    </div>
+                                </div>
+                                <div class="form-group GloberBold" id="sb-form-group-datepicker">
+                                    <div class='input-group sb-input-group date' id='sb-input-group-datepicker'>
+                                        <span class="input-group-addon sb-input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                        <input type='text' placeholder="Date" class="form-control sb-input" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="righ-side-navbar-container">                             
+                                <button type="button" class="navbar-toggle navbar-toggle-mozzila-fix sb-navbar-toggle" id="sb-menu-button" data-toggle="collapse" data-target="#sb-dropdown-navigation">
+                                    <span class="icon-bar sb-icon-bar"></span>
+                                    <span class="icon-bar sb-icon-bar"></span>
+                                    <span class="icon-bar sb-icon-bar"></span>
+                                  </button>
+                                <ul class="nav navbar-nav" id="navbar-right-side-buttons">
+                                    <li id="sb-navigation-button-group" class="navigation-button-cell">
+                                        <div class="navigation-button-container">
+                                            <span class="navigation-button-notify-badge badge">13</span>
+                                            <img class="navigation-button" src="../img/icon/gray/chef.png">
+                                            <lable class="navigation-label">Chef</lable>
+                                        </div>
+                                    </li>
+                                    <li id="sb-navigation-button-group" class="navigation-button-cell">
+                                        <div class="navigation-button-container">
+                                            <span class="navigation-button-notify-badge badge">13</span>
+                                            <img class="navigation-button " src="../img/icon/gray/messages.png">
+                                            <lable class="navigation-label">Messages</lable>
+                                        </div>
+                                    </li>
+                                    <li id="sb-navigation-button-group" class="navigation-user-button-cell">
+                                        <div class="navigation-button-container">
+                                            <img class="navigation-button img-circle" src="../img/user/10004154/profile.jpg">
+                                            <lable class="navigation-label">Milica</lable>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content-container">
+            <div class="left-container">
+                <div class="user-picture"></div>
+                <div class="user-info">                    
+                    <div class="name">Cagil</div>
+                    <div class="extra">Milan, Italy - Member since August 2016</div>
+                </div>
+                <div class="ratings">
+                    <div class="title">Ratings</div>
+                    <div class="value">
+                        <div class="chef">
+                            <div class="p1s-badge">
+                                <div class="rating">9.1</div>
+                                <div class="text">Overall as Chef</div>
+                            </div>
+                            <div class="details">
+                                <div class="border"></div>
+                                <div class="cell">
+                                    <div class="value">8.9</div>
+                                    <div class="name">Cooking</div>
+                                </div>
+                                <div class="cell">
+                                    <div class="value">8</div>
+                                    <div class="name">Social</div>
+                                </div>
+                                <div class="cell">
+                                    <div class="value">9</div>
+                                    <div class="name">Ambiance</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guest">
+                            <div class="p1s-badge">
+                                <div class="rating">9</div>
+                                <div class="text">Overall as Guest</div>
+                            </div>
+                            <div class="details">
+                                <div class="border"></div>
+                                <div class="cell">
+                                    <div class="value">8</div>
+                                    <div class="name">Social</div>
+                                </div>
+                                <div class="cell">
+                                    <div class="value">8.9</div>
+                                    <div class="name">Friendly</div>
+                                </div>
+                                <div class="cell">
+                                    <div class="value">9</div>
+                                    <div class="name">Endorse</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="badges">
+                    <div class="holder">
+                        <div class="p1s-badge horizontal-center">
+                            <div class="inner">
+                                <div class="chair"></div>
+                                <div class="value">4</div>
+                                <div class="text">Golden Seat</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="holder">
+                        <div class="p1s-badge horizontal-center">
+                            <div class="inner">
+                                <div class="chair"></div>
+                                <div class="value">4</div>
+                                <div class="text">Orange Seat</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="meals horizontal-center" id="other-meals-container">
+                    <div class="result-item">
+                        <div class="item-header">
+                            <div class="header-title vertical-center">Supper dupper XXL mega ultra potatoe</div>
+                            <div class="price vertical-center">$100</div>
+                        </div>
+                        <div class="meal-picture">
+                            <div class="user-picture"></div>
+                            <div class="rating">
+                                <div class="average">9</div>
+                                <div class="rating-title">Host Rate</div>
+                                <div class="rew-number">12 Reviews</div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="upper">
+                                <div class="user">
+                                    <div class="hosted"><p class="gray-out">Hosted by</p><p class="name">Martin</p></div>
+                                    <div class="location">Izmir, Turkey</div>
+                                </div>
+                                <div class="donation">
+                                    <div class="gray-out">Donations</div>
+                                    <div class="value">
+                                        <div class="chair"></div>
+                                        <div class="number">299</div>                                     
+                                        <div class="plus">+</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                            <div class="lower">
+                                <div class="cell cell-title">Meal Type</div>
+                                <div class="cell cell-title">Cuisine</div>
+                                <div class="cell cell-title">Main Dish Type</div>
+                                <div class="cell cell-title">Available Seats</div>
+                            </div>
+                            <div class="lower">
+                                <div class="cell value">Dinner</div>
+                                <div class="cell value">Turkish</div>
+                                <div class="cell value">Red Meat</div>
+                                <div class="cell value">7/8</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <div class="item-header">
+                            <div class="header-title vertical-center">Supper dupper XXL mega ultra potatoe</div>
+                            <div class="price vertical-center">$100</div>
+                        </div>
+                        <div class="meal-picture">
+                            <div class="user-picture"></div>
+                            <div class="rating">
+                                <div class="average">9</div>
+                                <div class="rating-title">Host Rate</div>
+                                <div class="rew-number">12 Reviews</div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="upper">
+                                <div class="user">
+                                    <div class="hosted"><p class="gray-out">Hosted by</p><p class="name">Martin</p></div>
+                                    <div class="location">Izmir, Turkey</div>
+                                </div>
+                                <div class="donation">
+                                    <div class="gray-out">Donations</div>
+                                    <div class="value">
+                                        <div class="chair"></div>
+                                        <div class="number">299</div>                                     
+                                        <div class="plus">+</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                            <div class="lower">
+                                <div class="cell cell-title">Meal Type</div>
+                                <div class="cell cell-title">Cuisine</div>
+                                <div class="cell cell-title">Main Dish Type</div>
+                                <div class="cell cell-title">Available Seats</div>
+                            </div>
+                            <div class="lower">
+                                <div class="cell value">Dinner</div>
+                                <div class="cell value">Turkish</div>
+                                <div class="cell value">Red Meat</div>
+                                <div class="cell value">7/8</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <div class="item-header">
+                            <div class="header-title vertical-center">Supper dupper XXL mega ultra potatoe</div>
+                            <div class="price vertical-center">$100</div>
+                        </div>
+                        <div class="meal-picture">
+                            <div class="user-picture"></div>
+                            <div class="rating">
+                                <div class="average">9</div>
+                                <div class="rating-title">Host Rate</div>
+                                <div class="rew-number">12 Reviews</div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="upper">
+                                <div class="user">
+                                    <div class="hosted"><p class="gray-out">Hosted by</p><p class="name">Martin</p></div>
+                                    <div class="location">Izmir, Turkey</div>
+                                </div>
+                                <div class="donation">
+                                    <div class="gray-out">Donations</div>
+                                    <div class="value">
+                                        <div class="chair"></div>
+                                        <div class="number">299</div>                                     
+                                        <div class="plus">+</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                            <div class="lower">
+                                <div class="cell cell-title">Meal Type</div>
+                                <div class="cell cell-title">Cuisine</div>
+                                <div class="cell cell-title">Main Dish Type</div>
+                                <div class="cell cell-title">Available Seats</div>
+                            </div>
+                            <div class="lower">
+                                <div class="cell value">Dinner</div>
+                                <div class="cell value">Turkish</div>
+                                <div class="cell value">Red Meat</div>
+                                <div class="cell value">7/8</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="right-container">
+                <div class="about">
+                    <div class="title">About</div>
+                    <div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id metus nec lorem malesuada placerat. Proin id mauris cursus, ultricies elit in, imperdiet elit. Morbi luctus varius nisl, eu luctus orci dictum efficitur. Sed mi sem, aliquet vel lacinia egestas, euismod et eros. Morbi vel ligula elit. Maecenas et ante purus. Sed vitae ex rhoncus, scelerisque lectus ac, posuere lacus. Morbi eget odio venenatis, pretium quam in, feugiat tortor. Proin sollicitudin, lacus vel rutrum maximus, est sem sodales augue, eget fermentum nisi ex commodo odio. Morbi ut consequat metus, at gravida purus. Sed vitae libero dapibus, placerat mi non, vehicula neque. Donec et aliquam sem. Aenean luctus diam et lobortis vehicula</div>
+                </div>
+                <div class="basic-info">
+                    <div class="title">Basic Info</div>
+                    <div class="content">
+                        <div class="cell">
+                            <div class="icon horizontal-center" id="hometown-icon"></div>
+                            <div class="subscript">Hometown</div>
+                            <div class="value">Izmir, Turkey</div>
+                        </div>
+                        <div class="cell">
+                            <div class="icon horizontal-center" id="birth-icon"></div>
+                            <div class="subscript">Birth</div>
+                            <div class="value">April 1987</div>
+                        </div>
+                        <div class="cell">
+                            <div class="icon horizontal-center" id="gender-icon"></div>
+                            <div class="subscript">Gender</div>
+                            <div class="value">Male</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detailed-info">
+                    <div class="title">Detailed Info</div>
+                    <div class="content">
+                        <div class="cell">
+                            <div class="icon horizontal-center" id="language-icon"></div>
+                            <div class="subscript">Language</div>
+                            <div class="item horizontal-center">
+                                <div class="language">English</div>
+                                <div class="value">(Fluent)</div>
+                            </div>
+                            <div class="item horizontal-center">
+                                <div class="language">Turkish</div>
+                                <div class="value">(Native)</div>
+                            </div> 
+                            <div class="item horizontal-center">
+                                <div class="language">Italian</div>
+                                <div class="value">(Fair)</div>
+                            </div>     
+                        </div>
+                        <div class="cell">
+                            <div class="icon horizontal-center" id="interests-icon"></div>
+                            <div class="subscript">Interests</div>
+                            <div class="value">
+                                <div class="left">
+                                    <div class="item">Art&Design</div>
+                                    <div class="item">Technology</div>
+                                    <div class="item">Entertaiment</div>
+                                </div>
+                                <div class="right">
+                                    <div class="item">Gastronomy</div>
+                                    <div class="item">Education</div>
+                                </div>           
+                            </div>            
+                        </div>
+                    </div>
+                </div>
+                <div class="education-work">
+                    <div class="title">Education/Work</div>
+                    <div class="content">
+                        <div class="cell">
+                            <div class="icon horizontal-center" id="education-icon"></div>
+                            <div class="subscript">Education</div>
+                            <div class="item">
+                                <div class="degree">Graphic Design Master</div>
+                                <div class="location">Turkey</div>
+                            </div>
+                            <div class="item">
+                                <div class="degree">Visual Brand Design Master</div>
+                                <div class="location">Domus Academy - Milan, Italy</div>
+                            </div> 
+                            <div class="item">
+                                <div class="degree">Graphic Design Bachelor</div>
+                                <div class="location">Bilkent University - Ankara, Turkey</div>
+                            </div>     
+                        </div>
+                        <div class="cell">
+                            <div class="icon horizontal-center" id="work-icon"></div>
+                            <div class="subscript">Work</div>
+                            <div class="item">
+                                <div class="degree">Graphic Design Lecturer</div>
+                                <div class="location">IED, Milan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews">
+                    <div class="title">Reviews</div>
+                    <div class="content">
+                        <div class="item">
+                            <div class="image"></div>
+                            <div class="content">
+                                <div class="name">Berk</div>
+                                <div class="extra">Izmir, Turkey - Member since August 2016</div>
+                                <div class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id metus nec lorem malesuada placerat. Proin id mauris cursus, ultricies elit in, imperdiet elit. Morbi luctus varius nisl, eu luctus orci dictum efficitur. Sed mi sem, aliquet vel lacinia egestas, euismod et eros. Morbi vel ligula elit. Maecenas et ante purus. Sed vitae ex rhoncus, scelerisque lectus ac, posuere lacus. Morbi eget odio venenatis, pretium quam in, feugiat tortor. Proin sollicitudin, lacus vel rutrum maximus, est sem sodales augue, eget fermentum nisi ex commodo odio. Morbi ut consequat metus, at gravida purus. Sed vitae libero dapibus, placerat mi non, vehicula neque. Donec et aliquam sem. Aenean luctus diam et lobortis vehicula.</div>
+                                <div class="meal">Supper dupper XMSLB whatever it may be</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image"></div>
+                            <div class="content">
+                                <div class="name">Berk</div>
+                                <div class="extra">Izmir, Turkey - Member since August 2016</div>
+                                <div class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id metus nec lorem malesuada placerat. Proin id mauris cursus, ultricies elit in, imperdiet elit. Morbi luctus varius nisl, eu luctus orci dictum efficitur. Sed mi sem, aliquet vel lacinia egestas, euismod et eros. Morbi vel ligula elit. Maecenas et ante purus. Sed vitae ex rhoncus, scelerisque lectus ac, posuere lacus. Morbi eget odio venenatis, pretium quam in, feugiat tortor. Proin sollicitudin, lacus vel rutrum maximus, est sem sodales augue, eget fermentum nisi ex commodo odio. Morbi ut consequat metus, at gravida purus. Sed vitae libero dapibus, placerat mi non, vehicula neque. Donec et aliquam sem. Aenean luctus diam et lobortis vehicula.</div>
+                                <div class="meal">Supper dupper XMSLB whatever it may be</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image"></div>
+                            <div class="content">
+                                <div class="name">Berk</div>
+                                <div class="extra">Izmir, Turkey - Member since August 2016</div>
+                                <div class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id metus nec lorem malesuada placerat. Proin id mauris cursus, ultricies elit in, imperdiet elit. Morbi luctus varius nisl, eu luctus orci dictum efficitur. Sed mi sem, aliquet vel lacinia egestas, euismod et eros. Morbi vel ligula elit. Maecenas et ante purus. Sed vitae ex rhoncus, scelerisque lectus ac, posuere lacus. Morbi eget odio venenatis, pretium quam in, feugiat tortor. Proin sollicitudin, lacus vel rutrum maximus, est sem sodales augue, eget fermentum nisi ex commodo odio. Morbi ut consequat metus, at gravida purus. Sed vitae libero dapibus, placerat mi non, vehicula neque. Donec et aliquam sem. Aenean luctus diam et lobortis vehicula.</div>
+                                <div class="meal">Supper dupper XMSLB whatever it may be</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+       
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="row">
+              <div class="col-xs-6 col-md-2" style="text-align:left">
+                <h4 class="GloberSemiBold">Company</h4>
+                <p class="GloberLight"><a class="plusOneLinkWhite" href="#">About</a></p>
+                <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Help</a></p>
+                <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Cooperation</a></p>
+                <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Privacy Policy</a></p>
+                <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Terms of Service</a></p>
+              </div>
+              <div class="col-xs-6 col-md-2" style="text-align:left">
+                <h4 class="GloberSemiBold">Community</h4>
+                <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Facebook</a></p>
+                <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Instagram</a></p>
+                <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Twitter</a></p>
+              </div>
+              <div class="col-xs-6 col-md-2" style="text-align:left">
+                <h4 class="GloberSemiBold">Donation</h4>
+                <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Partner</a></p>
+                <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Why Donate</a></p>
+                <p class="GloberLight"><a class="plusOneLinkWhite" href="#">Donation System</a></p>
+              </div>
+              <div class="col-xs-12 col-md-6 socialMediaContainer" style="text-align:left">
+                <h3 class="GloberSemiBold">Tuned In!</h3>
+                <p class="GloberLight">Ut non odio condimentum, ornare felis nec, pharetra lacus.</p>
+                <div class="row">
+                  <div class="col-xs-2 socMediaImgContainer">
+                    <img class="img-responsive center-block" src="../img/icon/white/facebook.png"/>
+                  </div>
+                  <div class="col-xs-2 socMediaImgContainer">
+                    <img class="img-responsive center-block" src="../img/icon/white/instagram.png"/>
+                  </div>
+                  <div class="col-xs-2 socMediaImgContainer">
+                    <img class="img-responsive center-block" src="../img/icon/white/twitter.png"/>
+                  </div>
+                  <div class="col-sm-6"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row trademark">
+              <p class="footer GloberLight style="text-align:center">PlusOneSeat © 2016</p>
+            </div>  
+        </footer>
+
+
+    </body>
+</html>
+
+
+<style>
+  #userImage { 
+  background: url("../img/donator.jpg") 50% 50% no-repeat;
+  background-size:cover; /* 50% 50% centers image in div */
+  width: 150px;
+  height: 150px;
+  /*opacity: 0.5*/
+  }
+  textarea {
+     resize: none;
+  }
+  .panel-body .addBtn{
+    display: flex;
+    align-items: center;
+    cursor:default;
+  }
+  .addBtn:hover{
+    background-color: #ccc;
+  }
+  .panel-body .row{
+    margin-bottom: 1em;
+  }
+  .panel-body p,
+  .panel-body p.col-xs-2{
+    padding: 0;
+  }
+  .panel-body input,
+  .panel-body textarea,
+  .panel-body select{
+    padding:0.5em;
+  }
+
+  .panel-body select{
+    margin-right: 0.5em;
+  }
+  .panel-body .row,
+ {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    padding: 0;
+  }
+  #edit-profile-container{
+    width: 70%;
+    margin:auto;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+  .edit-profile-panel .panel-heading{
+    background-color: grey;
+    color: white;
+  }
+  .edit-profile-panel .panel-body{
+    margin: 1em 4em;
+  }
+
+  #uploadBtn{
+    background-color:  #ef804a;   
+  }
+
+</style>

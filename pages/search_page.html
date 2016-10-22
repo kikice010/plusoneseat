@@ -30,25 +30,17 @@
         <meta content='963087903805072' property='fb:app_id'>
 
         <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../lib/slider/css/slider.css" rel="stylesheet">
-        <link href="../css/search-bar/search-bar.css" rel="stylesheet">
-        <link href="../css/search-bar/search-bar-large-srceen.css" rel="stylesheet">
-        <link href="../css/search-bar/search-bar-medium-screen.css" rel="stylesheet">
-        <link href="../css/search-bar/search-bar-small-screen.css" rel="stylesheet">
+        <link href="../css/search-bar.css" rel="stylesheet">
         <link href="../css/fontClasses.css" rel="stylesheet">
-        <link href="../css/profile-page/corner-badge.css" rel="stylesheet">
-        <link href="../css/profile-page/datetimepicker.css" rel="stylesheet">
-        <link href="../css/profile-page/profile-page.css" rel="stylesheet">
-        <link href="../css/profile-page/navigation-button.css" rel="stylesheet">
-        <link rel="stylesheet" href="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-        <link rel="stylesheet" type="text/css" href="../fonts/MyFontsWebfontsKit.css">
-        <link href="../css/footer.css" rel="stylesheet">
-
-        <link href="../css/search_page.css" rel="stylesheet">
-        <link href="../css/profile-page/your-meal-offers/extra-large-screen-styles.css" rel="stylesheet">
-        <link href="../css/profile-page/your-meal-offers/large-screen-styles.css" rel="stylesheet">
-        <link href="../css/profile-page/your-meal-offers/medium-screen-styles.css" rel="stylesheet">
-        <link href="../css/profile-page/your-meal-offers/small-screen-styles.css" rel="stylesheet">
+        <link href="../css/page-search.css" rel="stylesheet">
+        <link href="../css/page-footer.css" rel="stylesheet">
+        <link href="../css/screen-styles-extra-large.css" rel="stylesheet">
+        <link href="../css/screen-styles-large.css" rel="stylesheet">
+        <link href="../css/screen-styles-medium.css" rel="stylesheet">
+        <link href="../css/screen-styles-small.css" rel="stylesheet">        
+        <link href="../lib/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+        <link href="../font/MyFontsWebfontsKit.css" rel="stylesheet" type="text/css">
 
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA6Hb7ZjcestOuK7U5luaDINFkCUCmU9YQ&libraries=places"></script>
         <script type="text/javascript" src="../lib/js/jquery-2.2.4.min.js"></script>
@@ -58,7 +50,7 @@
         <script type="text/javascript" src="../lib/bower_components/moment/min/moment.min.js"></script>
         <script type="text/javascript" src="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="../lib/location_picker/jquery.placepicker.js"></script>
-        <script type="text/javascript" src="../lib/Custom-Google-Map-Marker/CustomGoogleMapMarker.js"></script>
+        <script type="text/javascript" src="../js/p1s.map.marker.js"></script>
         <script type="text/javascript" src="../js/location-picker.js"></script>
         <script type="text/javascript" src="../js/search-page.js"></script>
 
@@ -75,13 +67,13 @@
                     <div class="row search-bar">
                         <div class="sb-navbar">
                             <div class="sb-logo-img-container">
-                                <img id="sb-chair-logo-img" src="../img/brand-assets/logo/logo_orange.png">
+                                <img id="sb-chair-logo-img" src="../img/logo/orange/chair.png">
                             </div>
                             <div class="sb-form-container GloberBold">
                                 <div class="form-group" id="sb-form-group-seats">
                                     <div class='input-group sb-input-group' id='sb-input-group-seats'>
                                         <span class="input-group-addon sb-input-group-addon">
-                                            <img id="sb-seats-chair-img" src="../img/brand-assets/logo/logo_gray.png">
+                                            <img id="sb-seats-chair-img" src="../img/icon/gray/chair.png">
                                         </span>
                                         <input type="number" placeholder="Seats" class="form-control sb-input" id="sb-input-seats">
                                     </div>
@@ -127,20 +119,20 @@
                                     <li id="sb-navigation-button-group" class="navigation-button-cell">
                                         <div class="navigation-button-container">
                                             <span class="navigation-button-notify-badge badge">13</span>
-                                            <img class="navigation-button" src="../img/brand-assets/icons/cheff_icon.png">
+                                            <img class="navigation-button" src="../img/icon/gray/chef.png">
                                             <lable class="navigation-label">Chef</lable>
                                         </div>
                                     </li>
-                                    <li id="sb-navigation-button-group" class="navigation-button-cell">
+                                    <li id="sb-navigation-button-group" class="navigation-button-cell" data-toggle="modal" data-target="#myModal">
                                         <div class="navigation-button-container">
                                             <span class="navigation-button-notify-badge badge">13</span>
-                                            <img class="navigation-button " src="../img/brand-assets/icons/messages_icon.png">
+                                            <img class="navigation-button " src="../img/icon/gray/messages.png">
                                             <lable class="navigation-label">Messages</lable>
                                         </div>
                                     </li>
                                     <li id="sb-navigation-button-group" class="navigation-user-button-cell">
                                         <div class="navigation-button-container">
-                                            <img class="navigation-button img-circle" src="../img/donator.jpg">
+                                            <img class="navigation-button img-circle" src="../img/user/10004154/profile.jpg">
                                             <lable class="navigation-label">Milica</lable>
                                         </div>
                                     </li>
@@ -161,6 +153,27 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 
 
@@ -730,13 +743,13 @@
             <p class="GloberLight">Ut non odio condimentum, ornare felis nec, pharetra lacus.</p>
             <div class="row">
               <div class="col-xs-2 socMediaImgContainer">
-                <img class="img-responsive center-block" src="../img/facebook.png"/>
+                <img class="img-responsive center-block" src="../img/icon/white/facebook.png"/>
               </div>
               <div class="col-xs-2 socMediaImgContainer">
-                <img class="img-responsive center-block" src="../img/instagram.png"/>
+                <img class="img-responsive center-block" src="../img/icon/white/instagram.png"/>
               </div>
               <div class="col-xs-2 socMediaImgContainer">
-                <img class="img-responsive center-block" src="../img/twitter.png"/>
+                <img class="img-responsive center-block" src="../img/icon/white/twitter.png"/>
               </div>
               <div class="col-sm-6"></div>
             </div>

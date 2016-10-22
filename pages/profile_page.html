@@ -30,32 +30,21 @@
         <meta content='963087903805072' property='fb:app_id'>
 
         <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../lib/slider/css/slider.css" rel="stylesheet">
-        <link href="../css/search-bar/search-bar.css" rel="stylesheet">
-        <link href="../css/search-bar/search-bar-large-srceen.css" rel="stylesheet">
-        <link href="../css/search-bar/search-bar-medium-screen.css" rel="stylesheet">
-        <link href="../css/search-bar/search-bar-small-screen.css" rel="stylesheet">
+        <link href="../css/search-bar.css" rel="stylesheet">
         <link href="../css/fontClasses.css" rel="stylesheet">
-        <link href="../css/profile-page/corner-badge.css" rel="stylesheet">
-        <link href="../css/profile-page/datetimepicker.css" rel="stylesheet">
-        <link href="../css/profile-page/profile-page-navigation-pills.css" rel="stylesheet">
-        <link href="../css/profile-page/profile-page.css" rel="stylesheet">
-
-        <link href="../css/profile-page/your-meal-offers/extra-large-screen-styles.css" rel="stylesheet">
-        <link href="../css/profile-page/your-meal-offers/large-screen-styles.css" rel="stylesheet">
-        <link href="../css/profile-page/your-meal-offers/medium-screen-styles.css" rel="stylesheet">
-        <link href="../css/profile-page/your-meal-offers/small-screen-styles.css" rel="stylesheet">
-        <link href="../css/profile-page/your-meal-offers/styles.css" rel="stylesheet">
-    
-        <link rel="stylesheet" type="text/css" href="../css/edit_profile_page.css">
+        <link href="../css/page-profile.css" rel="stylesheet">
+        <link href="../css/page-footer.css" rel="stylesheet">
+        <link href="../css/pmp-tab-your-meal-offers.css" rel="stylesheet">
+        <link href="../css/pmp-tab-your-reservations.css" rel="stylesheet">
+        <link href="../css/pmp-tab-profile.css" rel="stylesheet">
+        <link href="../css/pmp-navigation-pills.css" rel="stylesheet">
+        <link href="../css/screen-styles-extra-large.css" rel="stylesheet">
+        <link href="../css/screen-styles-large.css" rel="stylesheet">
+        <link href="../css/screen-styles-medium.css" rel="stylesheet">
+        <link href="../css/screen-styles-small.css" rel="stylesheet">        
         <link href="../lib/bootstrap/css/font-awesome.min.css" rel="stylesheet">
-        
-
-
-        <link href="../css/profile-page/navigation-button.css" rel="stylesheet">
-        <link rel="stylesheet" href="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-        <link rel="stylesheet" type="text/css" href="../fonts/MyFontsWebfontsKit.css">
-        <link href="../css/footer.css" rel="stylesheet">
+        <link href="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+        <link href="../font/MyFontsWebfontsKit.css" rel="stylesheet" type="text/css">
 
         <script type="text/javascript" src="../lib/js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
@@ -76,13 +65,13 @@
                     <div class="row search-bar">
                         <div class="sb-navbar">
                             <div class="sb-logo-img-container">
-                                <img id="sb-chair-logo-img" src="../img/brand-assets/logo/logo_orange.png">
+                                <img id="sb-chair-logo-img" src="../img/logo/orange/chair.png">
                             </div>
                             <div class="sb-form-container GloberBold">
                                 <div class="form-group" id="sb-form-group-seats">
                                     <div class='input-group sb-input-group' id='sb-input-group-seats'>
                                         <span class="input-group-addon sb-input-group-addon">
-                                            <img id="sb-seats-chair-img" src="../img/brand-assets/logo/logo_gray.png">
+                                            <img id="sb-seats-chair-img" src="../img/icon/gray/chair.png">
                                         </span>
                                         <input type="number" placeholder="Seats" class="form-control sb-input" id="sb-input-seats">
                                     </div>
@@ -128,20 +117,20 @@
                                     <li id="sb-navigation-button-group" class="navigation-button-cell">
                                         <div class="navigation-button-container">
                                             <span class="navigation-button-notify-badge badge">13</span>
-                                            <img class="navigation-button" src="../img/brand-assets/icons/cheff_icon.png">
+                                            <img class="navigation-button" src="../img/icon/gray/chef.png">
                                             <lable class="navigation-label">Chef</lable>
                                         </div>
                                     </li>
                                     <li id="sb-navigation-button-group" class="navigation-button-cell">
                                         <div class="navigation-button-container">
                                             <span class="navigation-button-notify-badge badge">13</span>
-                                            <img class="navigation-button " src="../img/brand-assets/icons/messages_icon.png">
+                                            <img class="navigation-button " src="../img/icon/gray/messages.png">
                                             <lable class="navigation-label">Messages</lable>
                                         </div>
                                     </li>
                                     <li id="sb-navigation-button-group" class="navigation-user-button-cell">
                                         <div class="navigation-button-container">
-                                            <img class="navigation-button img-circle" src="../img/donator.jpg">
+                                            <img class="navigation-button img-circle" src="../img/user/10004154/profile.jpg">
                                             <lable class="navigation-label">Milica</lable>
                                         </div>
                                     </li>
@@ -158,6 +147,15 @@
                                  <input type="hidden" id="ignore_body_click" value="1">
                             </div>
                         </div>
+                    </div>
+                    <div id="pills-bar" class="row sb-pills">
+                        <ul class="nav nav-pills horizontal-center GloberRegular" >
+                            <li id="your-rates-reviews" class="hidden"><a id="your-rates-reviews-pill" data-toggle="pill" href="#your-rates-reviews-tab">Your Rates/Reviews</a></li>
+                            <li id="your-meal-offers" class="active"><a id="your-meal-offers-pill" data-toggle="pill" href="#your-meal-offers-tab">Your Meal Offers</a></li>
+                            <li id="your-reservations"><a id="your-reservations-pill" data-toggle="pill" href="#your-reservations-tab">Your Reservations</a></li>
+                            <li id="profile"><a id="profile-pill" data-toggle="pill" href="#profile-tab">Profile</a></li>
+                            <li id="settings"><a id="settings-pill" data-toggle="pill" href="#settings-tab">Settings</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -202,7 +200,7 @@
                                 <div class="cell"> 
                                     <p class="title">Donation</p>
                                     <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
+                                        <img class="image" src="../img/icon/gray/chair.png">  
                                     </p>
                                 </div>
                                 <div class="cell"> 
@@ -255,21 +253,21 @@
                                                 <div id="amo-sd-guests-1" class="guests tab-pane fade in active">
                                                     <div class="item">
                                                         <div class="image-holder">
-                                                            <img class="image vertical-center" src="../img/donator.jpg">
+                                                            <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                         </div>                                            
                                                         <p class="name">Milica</p>
                                                         <p class="location">Milan, Italy</p>                                 
                                                     </div>
                                                     <div class="item"> 
                                                         <div class="image-holder">
-                                                            <img class="image vertical-center" src="../img/donator.jpg">
+                                                            <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                         </div>
                                                         <p class="name">Milica</p>
                                                         <p class="location">Milan, Italy</p>                                  
                                                     </div>
                                                     <div class="item">
                                                         <div class="image-holder">
-                                                            <img class="image vertical-center" src="../img/donator.jpg">
+                                                            <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                         </div>
                                                         <p class="name">Milica</p>
                                                         <p class="location">Milan, Italy</p>                                   
@@ -277,7 +275,7 @@
                                                     <div class="item"> 
                                                         <span class="notify-badge badge">2</span>
                                                         <div class="image-holder pending">
-                                                            <img class="image vertical-center" src="../img/brand-assets/icons/question_mark.png">
+                                                            <img class="image vertical-center" src="../img/icon/gray/question_mark.png">
                                                         </div>
                                                         <p class="name"> </p>
                                                         <p class="location"> </p>                                  
@@ -287,7 +285,7 @@
                                                     <div class="item">
                                                         <div class="guest"> 
                                                             <div class="image-holder">
-                                                                <img class="image vertical-center" src="../img/donator.jpg">
+                                                                <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                             </div> 
                                                             <p class="name">Milica</p>
                                                             <p class="location">Milan, Italy</p>                                  
@@ -295,20 +293,20 @@
                                                         <div class="details">
                                                             <div class="cell">
                                                                 <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/chair_orange.png">
+                                                                    src="../img/icon/orange/chair.png">
                                                                 <p class="label-first">Seats</p>
                                                                 <p class="value">11</p>
                                                             </div>
                                                             <div class="cell">
                                                                 <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/hearth_orange.png">
+                                                                    src="../img/icon/orange/hearth_filled.png">
                                                                 <p class="label-first">Common</p>
                                                                 <p class="label-second">Interests</p>
                                                                 <p class="value">2</p>
                                                             </div>
                                                             <div class="cell">
                                                                 <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/bubble_orange.png">
+                                                                    src="../img/icon/orange/languages_filled.png">
                                                                 <p class="label-first">Common</p>
                                                                 <p class="label-second">Languages</p>
                                                                 <p class="value">5</p>
@@ -323,7 +321,7 @@
                                                     <div class="item">
                                                         <div class="guest"> 
                                                             <div class="image-holder">
-                                                                <img class="image vertical-center" src="../img/donator.jpg">
+                                                                <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                             </div>
                                                             <p class="name">Milica</p>
                                                             <p class="location">Milan, Italy</p>                                  
@@ -331,209 +329,20 @@
                                                         <div class="details">
                                                             <div class="cell">
                                                                 <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/chair_orange.png">
+                                                                    src="../img/icon/orange/chair.png">
                                                                 <p class="label-first">Seats</p>
                                                                 <p class="value">11</p>
                                                             </div>
                                                             <div class="cell">
                                                                 <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/hearth_orange.png">
+                                                                    src="../img/icon/orange/hearth_filled.png">
                                                                 <p class="label-first">Common</p>
                                                                 <p class="label-second">Interests</p>
                                                                 <p class="value">2</p>
                                                             </div>
                                                             <div class="cell">
                                                                 <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/bubble_orange.png">
-                                                                <p class="label-first">Common</p>
-                                                                <p class="label-second">Languages</p>
-                                                                <p class="value">5</p>
-                                                            </div>
-                                                        </div> 
-                                                        <div class="buttons">
-                                                            <button class="item-confirm">Confirm</button>
-                                                            <button class="item-decline">Decline</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div> 
-                            </div>    
-                        </div>
-                        <div class="offer-container">
-                            <div class="picture">
-                                <div class="controlls">
-                                    <span class="notify-badge badge">2</span>
-                                    <div class="button-group">
-                                        <button class="edit">Confirm</button>
-                                        <button class="cancel">Decline</button>
-                                    </div> 
-                                </div>                                
-                                <div class="time-date vertical-center"> 
-                                    <div>
-                                        <i class="fa fa-clock-o icon" aria-hidden="true"></i>
-                                        <p>19:45</p>
-                                    </div>
-                                    <div>
-                                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
-                                        <p>22/11/2002</p>
-                                    </div>
-                                </div>                            
-                            </div>
-                            <div class="info">
-                                <p class="title">Supper great amazing burger</p>
-                                <div class="cell"> 
-                                    <p class="title">Total Income</p>
-                                    <p class="main">€37.5</p>
-                                </div>
-                                <div class="cell"> 
-                                    <p class="title">Donation</p>
-                                    <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
-                                    </p>
-                                </div>
-                                <div class="cell"> 
-                                    <p class="title">Available Seats</p>
-                                    <p class="main">1/4</p>
-                                </div>
-                                <ul class="nav nav-pills detail-pills GloberRegular" >
-                                    <li ><a data-toggle="pill" href="#amo-income-details-2">see details</a></li>
-                                    <li ><a data-toggle="pill" href="#amo-donation-details-2">see details</a></li>
-                                    <li class="active"><a data-toggle="pill" href="#amo-seat-details-2">see details</a></li>
-                                </ul>
-                            </div>
-                            <div class="tabs">
-                                <div class="tab-content content">
-                                    <div id="amo-income-details-2" class="details-item tab-pane fade">
-                                        <div class="income-content">
-                                            <div class="item">Per seat <p>€10</p><p>x</p><p>1</p> <p class="result">€10</p> </div>
-                                            <div class="border"></div>
-                                            <div class="item">Service fee <p>10%</p><div class="question-mark">?</div> <p class="result">€1</p></div>
-                                            <div class="border"></div>
-                                            <div class="item">Donation <p>€2.5</p><p>x</p><p>1</p><div class="question-mark">?</div> <p class="result">€2.5</p></div>
-                                            <div class="border"></div>
-                                            <div class="item"><p>Total</p> <p class="result">€13.5</p></div>
-                                        </div>
-                                    </div>
-                                    <div id="amo-donation-details-2" class="details-item tab-pane fade">
-                                        <div class="donnations-content">
-                                            To get the <p>Orange Seat</p> rank all seats should be successfully booked. You can also invite your friends to this meal.
-                                            <br>
-                                            <p class="one-line">Invite your friends</p>
-                                            <br>
-                                            You will donate successfully even if this meal is not completely booked. 
-                                        </div>
-                                    </div>
-                                    <div id="amo-seat-details-2" class="details-item tab-pane fade in active">
-                                        <div class="tabs">
-                                            <ul class="nav nav-tabs">
-                                                <li class="guests active tab">
-                                                    <a data-toggle="tab" href="#amo-sd-guests-2">
-                                                        Guests<p class="number">(2)</p>
-                                                    </a>
-                                                </li>
-                                                <li class="requests tab">
-                                                    <a data-toggle="tab" href="#amo-sd-seat-requests-2">
-                                                        Seat Requests<p class="number">(2)</p>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div class="tab-content content">
-                                                <div id="amo-sd-guests-2" class="guests tab-pane fade in active">
-                                                    <div class="item">
-                                                        <div class="image-holder">
-                                                            <img class="image vertical-center" src="../img/donator.jpg">
-                                                        </div>                                            
-                                                        <p class="name">Milica</p>
-                                                        <p class="location">Milan, Italy</p>                                 
-                                                    </div>
-                                                    <div class="item"> 
-                                                        <div class="image-holder">
-                                                            <img class="image vertical-center" src="../img/donator.jpg">
-                                                        </div>
-                                                        <p class="name">Milica</p>
-                                                        <p class="location">Milan, Italy</p>                                  
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="image-holder">
-                                                            <img class="image vertical-center" src="../img/donator.jpg">
-                                                        </div>
-                                                        <p class="name">Milica</p>
-                                                        <p class="location">Milan, Italy</p>                                   
-                                                    </div> 
-                                                    <div class="item"> 
-                                                        <span class="notify-badge badge">2</span>
-                                                        <div class="image-holder pending">
-                                                            <img class="image vertical-center" src="../img/brand-assets/icons/question_mark.png">
-                                                        </div>
-                                                        <p class="name"> </p>
-                                                        <p class="location"> </p>                                  
-                                                    </div>      
-                                                </div>
-                                                <div id="amo-sd-seat-requests-2" class="requests tab-pane fade">
-                                                    <div class="item">
-                                                        <div class="guest"> 
-                                                            <div class="image-holder">
-                                                                <img class="image vertical-center" src="../img/donator.jpg">
-                                                            </div> 
-                                                            <p class="name">Milica</p>
-                                                            <p class="location">Milan, Italy</p>                                  
-                                                        </div>
-                                                        <div class="details">
-                                                            <div class="cell">
-                                                                <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/chair_orange.png">
-                                                                <p class="label-first">Seats</p>
-                                                                <p class="value">11</p>
-                                                            </div>
-                                                            <div class="cell">
-                                                                <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/hearth_orange.png">
-                                                                <p class="label-first">Common</p>
-                                                                <p class="label-second">Interests</p>
-                                                                <p class="value">2</p>
-                                                            </div>
-                                                            <div class="cell">
-                                                                <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/bubble_orange.png">
-                                                                <p class="label-first">Common</p>
-                                                                <p class="label-second">Languages</p>
-                                                                <p class="value">5</p>
-                                                            </div>
-                                                        </div> 
-                                                        <div class="buttons">
-                                                            <button class="item-confirm">Confirm</button>
-                                                            <button class="item-decline">Decline</button>
-                                                        </div>
-                                                    </div> 
-                                                    <div class="border-shorter gray-thin"></div>
-                                                    <div class="item">
-                                                        <div class="guest"> 
-                                                            <div class="image-holder">
-                                                                <img class="image vertical-center" src="../img/donator.jpg">
-                                                            </div>
-                                                            <p class="name">Milica</p>
-                                                            <p class="location">Milan, Italy</p>                                  
-                                                        </div>
-                                                        <div class="details">
-                                                            <div class="cell">
-                                                                <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/chair_orange.png">
-                                                                <p class="label-first">Seats</p>
-                                                                <p class="value">11</p>
-                                                            </div>
-                                                            <div class="cell">
-                                                                <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/hearth_orange.png">
-                                                                <p class="label-first">Common</p>
-                                                                <p class="label-second">Interests</p>
-                                                                <p class="value">2</p>
-                                                            </div>
-                                                            <div class="cell">
-                                                                <img class="image horizontal-center" 
-                                                                    src="../img/brand-assets/icons/bubble_orange.png">
+                                                                    src="../img/icon/orange/languages_filled.png">
                                                                 <p class="label-first">Common</p>
                                                                 <p class="label-second">Languages</p>
                                                                 <p class="value">5</p>
@@ -596,7 +405,7 @@
                                 <div class="cell"> 
                                     <p class="title">Donation</p>
                                     <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
+                                        <img class="image" src="../img/icon/gray/chair.png">  
                                     </p>
                                 </div>
                                 <div class="cell"> 
@@ -635,21 +444,21 @@
                                         <div class="guests-content">                                        
                                             <div class="item">
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>                                            
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                 
                                             </div>
                                             <div class="item"> 
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                  
                                             </div>
                                             <div class="item">
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                   
@@ -694,7 +503,7 @@
                                 <div class="cell"> 
                                     <p class="title">Donation</p>
                                     <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
+                                        <img class="image" src="../img/icon/gray/chair.png">  
                                     </p>
                                 </div>
                                 <div class="cell"> 
@@ -733,21 +542,21 @@
                                         <div class="guests-content">                                        
                                             <div class="item">
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>                                            
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                 
                                             </div>
                                             <div class="item"> 
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                  
                                             </div>
                                             <div class="item">
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                   
@@ -790,7 +599,7 @@
                                 <div class="cell"> 
                                     <p class="title">Donation</p>
                                     <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
+                                        <img class="image" src="../img/icon/gray/chair.png">  
                                     </p>
                                 </div>
                                 <div class="cell"> 
@@ -829,21 +638,21 @@
                                         <div class="guests-content">                                        
                                             <div class="item">
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>                                            
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                 
                                             </div>
                                             <div class="item"> 
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                  
                                             </div>
                                             <div class="item">
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                   
@@ -885,7 +694,7 @@
                                 <div class="cell"> 
                                     <p class="title">Donation</p>
                                     <p class="main">+1
-                                        <img class="image" src="../img/brand-assets/icons/chair_gray.png">  
+                                        <img class="image" src="../img/icon/gray/chair.png">  
                                     </p>
                                 </div>
                                 <div class="cell"> 
@@ -924,21 +733,21 @@
                                         <div class="guests-content">                                        
                                             <div class="item">
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>                                            
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                 
                                             </div>
                                             <div class="item"> 
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                  
                                             </div>
                                             <div class="item">
                                                 <div class="image-holder">
-                                                    <img class="image vertical-center" src="../img/donator.jpg">
+                                                    <img class="image vertical-center" src="../img/user/10004154/profile.jpg">
                                                 </div>
                                                 <p class="name">Milica</p>
                                                 <p class="location">Milan, Italy</p>                                   
@@ -958,6 +767,7 @@
                                 <div class="col-xs-2 userImage-holder">
                                     <div class="userImage userImage-back"></div>
                                     <div class="userImage userImage-front"></div>
+                                    <div class="userImage userImage-ring"></div>
                                 </div>
                                 <div class="col-xs-8">
                                     <p>Clear frontal face photos are an important way for hosts and guests to learn about each other. It's not much fun to host a landspace! Please upload a photo that clearly shows your face.</p>
@@ -1276,13 +1086,13 @@
             <p class="GloberLight">Ut non odio condimentum, ornare felis nec, pharetra lacus.</p>
             <div class="row">
               <div class="col-xs-2 socMediaImgContainer">
-                <img class="img-responsive center-block" src="../img/facebook.png"/>
+                <img class="img-responsive center-block" src="../img/icon/white/facebook.png"/>
               </div>
               <div class="col-xs-2 socMediaImgContainer">
-                <img class="img-responsive center-block" src="../img/instagram.png"/>
+                <img class="img-responsive center-block" src="../img/icon/white/instagram.png"/>
               </div>
               <div class="col-xs-2 socMediaImgContainer">
-                <img class="img-responsive center-block" src="../img/twitter.png"/>
+                <img class="img-responsive center-block" src="../img/icon/white/twitter.png"/>
               </div>
               <div class="col-sm-6"></div>
             </div>
@@ -1300,7 +1110,7 @@
 
 <style>
   #userImage { 
-  background: url("../img/donator.jpg") 50% 50% no-repeat;
+  background: url("../img/user/10004154/profile.jpg") 50% 50% no-repeat;
   background-size:cover; /* 50% 50% centers image in div */
   width: 150px;
   height: 150px;

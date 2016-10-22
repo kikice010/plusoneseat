@@ -1,0 +1,329 @@
+
+    .pending-reservations-area>.offer-container>.picture,
+    .acctive-reservations-area>.offer-container>.picture,
+    .completed-reservations-area>.offer-container>.picture {
+        width: 100%;
+        height: 14em;
+        background-image: url(../img/meal/10100142/4.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 2px solid white;
+    }
+
+    .pending-reservations-area>.offer-container>.picture>.notify-badge {
+        float: right;
+        position: relative;
+        margin-top: -1em;
+        margin-right: -1em;
+        border: none;
+        background-color: #eb4a4a;
+        color: white;
+        padding: 10px 9px;
+    }
+
+    .completed-reservations-area>.offer-container>.picture>.add-offer-button {
+        height: 5em;
+        width: 5em;
+        background-color: #ef804a;
+        color: white;
+        float: right;
+    }
+
+    .completed-reservations-area>.offer-container>.picture>.add-offer-button>.plus {
+        width: 100%;
+        text-align: center;
+        font-size: 40pt;
+        margin-top: -0.05em;
+    }
+
+    .offer-container>.info {
+        width: 100%;
+        border: 2px solid white;
+        display: inline-block;
+    }
+
+    .active-meal-offers-area>.offer-container>.info {
+        background-color: #ef804a;
+    }
+
+    .past-meal-offers-area>.offer-container>.info {
+        background-color: #848484;
+    }
+
+    .pending-reservations-area>.offer-container>.info>.title,
+    .completed-reservations-area>.offer-container>.info>.title {
+        width: 100%;
+        width: -webkit-calc(100% - 20px);
+        width: -moz-calc(100% - 20px);
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 3em;
+        color: white;
+        text-align: center;
+        border-bottom: 1px solid white;
+    }
+
+    .pending-reservations-area>.offer-container>.info>.cell,
+    .completed-reservations-area>.offer-container>.info>.cell {
+        width: 33%;
+        float: left;
+    }
+
+    .pending-reservations-area>.offer-container>.info>.cell>.title,
+    .completed-reservations-area>.offer-container>.info>.cell>.title {
+        color: white;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    .pending-reservations-area>.offer-container>.info>.cell>.main,
+    .completed-reservations-area>.offer-container>.info>.cell>.main {
+        color: white;
+        text-align: center;
+        font-size: xx-large;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    .pending-reservations-area>.offer-container>.info>.cell>.main>.image,
+    .completed-reservations-area>.offer-container>.info>.cell>.main>.image {
+        height: 1.3em;
+        margin-top: -7px;
+        margin-left: -8px;
+    }
+
+    .pending-reservations-area>.offer-container>.info>.cell>.link,
+    .completed-reservations-area>.offer-container>.info>.cell>.link {
+        color: white;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    .pending-reservations-area>.offer-container>.info>.cell>.link>a,
+    .completed-reservations-area>.offer-container>.info>.cell>.link>a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.nav {
+        
+        border: 2px solid white;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.nav>.guests {
+        width: 39%;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.nav>.requests {
+        width: 61%;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.nav>.tab {
+        font-size: 16pt;
+        background-color: #efefef;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.nav>.active {
+        background-color: white !important;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.nav>.tab>a {
+        color: black !important;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.nav>.tab>a>.number {
+        margin: 0;
+        display: inline-block;
+        color: #BCBCBC;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content {
+        height: 21em;
+        overflow: auto;
+        background-color: white;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.guests {
+        width: 100%;
+        background-color: white;
+        padding-left: 1.5em;
+        padding-top: 2.5em; 
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.guests>.item {
+        display: inline-block;
+        float: left;
+        margin: 0.5em;
+        padding: 0px !important;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.guests>.item>.image-holder {
+        width: 6em;
+        height: 6em;
+        border-radius: 50%;
+        display: inline-block;
+        border: 0.1em solid #BCBCBC; 
+        overflow: hidden; 
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.guests>.item>.image-holder>.image {
+        width: 5.8em;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.guests>.item>.pending {
+        margin-left: -2em;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.guests>.item>.notify-badge{
+        position: relative;
+        background: #eb4a4a;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 12px;
+        height: 24px;
+        width: 24px;
+        color: white;
+        padding: 6px 0px;
+        left: 5em;
+        top: -5.7em;
+        z-index: 1001;
+        border: none;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.guests>.item>.name {
+        color: #ef804a;
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.guests>.item>.location {
+        color: black;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests {
+        width: 100%;
+       
+        background-color: white;
+    }
+
+    .active-meal-offers-area>.offer-container>.tabs>.content>.requests>.item{
+        display: inline-block;
+        width: 100%;
+        padding-left: 15px;
+        margin-bottom: 1em;
+        padding-top: 2.5em;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.guest {
+        display: inline-block;
+        float: left;
+        margin: 0.5em;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.guest>.image {
+        width: 6em;
+        height: 6em;
+        border-radius: 50%;
+        display: inline-block;
+        border: 2px solid #BCBCBC;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.guest>.name {
+        color: #ef804a;
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.guest>.location {
+        color: black;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.details {
+        width: 15em;
+        display: inline-block;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.details>.cell {
+        width: 5em;
+        float:left;
+        display: inline-block;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.details>.cell>.image {
+        margin-bottom: 2px;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.details>.cell>.label-first {
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        color: #ef804a;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.details>.cell>.label-second {
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        color: #ef804a;
+        margin-top: -3px;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.details>.cell>.value {
+        text-align: center;
+        font-size: xx-large;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.buttons {
+        display: inline-block;
+        padding-left: 20px;
+        width: 15em;
+        margin-top: -1em;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.buttons>.item-confirm {
+        width: 49%;
+        height: 2em;
+        background-color: #ef804a;
+        color: white;
+        border: 1px solid bisque;
+    }
+
+    .pending-reservations-area>.offer-container>.tabs>.content>.requests>.item>.buttons>.item-decline {
+        width: 48%;
+        height: 2em;
+        background-color: #BCBCBC;
+        color: black;
+        border: 1px solid bisque;
+    }
+
+    .completed-reservations-area {
+        border-top: 2px solid #BCBCBC;
+        padding-top: 5em;
+    }
+
+    .completed-reservations-area>.offer-container{
+        background-color: #848484;
+    }

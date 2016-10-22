@@ -11,20 +11,113 @@
 
   <title>PlusOneSeat - Fight Global Hunger Everytime You Eat</title>
 
-<link href="../lib/bootstrap/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../font/MyFontsWebfontsKit.css">
-  <link href="../css/footer.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../css/fontClasses.css">
-
   <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../css/create_meal_page.css">
+  <link href="../css/search-bar.css" rel="stylesheet">
+  <link href="../css/fontClasses.css" rel="stylesheet">
+  <link href="../css/page-create-meal.css" rel="stylesheet">
+  <link href="../css/page-footer.css" rel="stylesheet">
+  <link href="../css/screen-styles-extra-large.css" rel="stylesheet">
+  <link href="../css/screen-styles-large.css" rel="stylesheet">
+  <link href="../css/screen-styles-medium.css" rel="stylesheet">
+  <link href="../css/screen-styles-small.css" rel="stylesheet">        
+  <link href="../lib/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+  <link href="../font/MyFontsWebfontsKit.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" type="text/css" href="../css/fontClasses.css">
 
   <link rel="stylesheet" type="text/css" href="../css/calendar.css" />
   <link rel="stylesheet" type="text/css" href="../css/custom_2.css" />
   <script src="../js/modernizr.custom.63321.js"></script>
+
+
   
 </head>
 <body>
+
+<nav id="header" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="sb-navbar-container">
+                    <div class="row search-bar">
+                        <div class="sb-navbar">
+                            <div class="sb-logo-img-container">
+                                <img id="sb-chair-logo-img" src="../img/logo/orange/chair.png">
+                            </div>
+                            <div class="sb-form-container GloberBold">
+                                <div class="form-group" id="sb-form-group-seats">
+                                    <div class='input-group sb-input-group' id='sb-input-group-seats'>
+                                        <span class="input-group-addon sb-input-group-addon">
+                                            <img id="sb-seats-chair-img" src="../img/icon/gray/chair.png">
+                                        </span>
+                                        <input type="number" placeholder="Seats" class="form-control sb-input" id="sb-input-seats">
+                                    </div>
+                                </div>
+                                <div class="form-group" id="sb-form-group-location">
+                                    <div class='input-group sb-input-group' id='sb-input-group-location'>
+                                        <span class="input-group-addon sb-input-group-addon">
+                                            <span class="glyphicon glyphicon-map-marker"></span>
+                                        </span>
+                                        <input type="text" placeholder="Location" class="form-control sb-input" id="sb-input-location">
+                                    </div>
+                                </div>
+                                <div class="form-group" id="sb-form-group-timepicker">
+                                    <div class='input-group sb-input-group date sb-time' id='sb-input-group-timepicker-start'>
+                                        <span class="input-group-addon sb-input-group-addon">
+                                            <span class="glyphicon glyphicon-time"></span>
+                                        </span>
+                                        <input type='text' placeholder="Start time" class="form-control sb-input" />
+                                    </div>
+                                    <div class='input-group sb-input-group date sb-time' id='sb-input-group-timepicker-end'>
+                                        <span class="input-group-addon sb-input-group-addon">
+                                            —
+                                        </span>
+                                        <input type='text' placeholder="End time" class="form-control sb-input" />
+                                    </div>
+                                </div>
+                                <div class="form-group GloberBold" id="sb-form-group-datepicker">
+                                    <div class='input-group sb-input-group date' id='sb-input-group-datepicker'>
+                                        <span class="input-group-addon sb-input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                        <input type='text' placeholder="Date" class="form-control sb-input" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="righ-side-navbar-container">                             
+                                <button type="button" class="navbar-toggle navbar-toggle-mozzila-fix sb-navbar-toggle" id="sb-menu-button" data-toggle="collapse" data-target="#sb-dropdown-navigation">
+                                    <span class="icon-bar sb-icon-bar"></span>
+                                    <span class="icon-bar sb-icon-bar"></span>
+                                    <span class="icon-bar sb-icon-bar"></span>
+                                  </button>
+                                <ul class="nav navbar-nav" id="navbar-right-side-buttons">
+                                    <li id="sb-navigation-button-group" class="navigation-button-cell">
+                                        <div class="navigation-button-container">
+                                            <span class="navigation-button-notify-badge badge">13</span>
+                                            <img class="navigation-button" src="../img/icon/gray/chef.png">
+                                            <lable class="navigation-label">Chef</lable>
+                                        </div>
+                                    </li>
+                                    <li id="sb-navigation-button-group" class="navigation-button-cell">
+                                        <div class="navigation-button-container">
+                                            <span class="navigation-button-notify-badge badge">13</span>
+                                            <img class="navigation-button " src="../img/icon/gray/messages.png">
+                                            <lable class="navigation-label">Messages</lable>
+                                        </div>
+                                    </li>
+                                    <li id="sb-navigation-button-group" class="navigation-user-button-cell">
+                                        <div class="navigation-button-container">
+                                            <img class="navigation-button img-circle" src="../img/user/10004154/profile.jpg">
+                                            <lable class="navigation-label">Milica</lable>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
 
 <div class="container" id="create-meal-container">
   <div class="col-xs-2">
@@ -267,13 +360,13 @@
         <p class="GloberLight">Ut non odio condimentum, ornare felis nec, pharetra lacus.</p>
         <div class="row">
           <div class="col-xs-2 socMediaImgContainer">
-            <img class="img-responsive center-block" src="../img/facebook.png"/>
+            <img class="img-responsive center-block" src="../img/icon/white/facebook.png"/>
           </div>
           <div class="col-xs-2 socMediaImgContainer">
-            <img class="img-responsive center-block" src="../img/instagram.png"/>
+            <img class="img-responsive center-block" src="../img/icon/white/instagram.png"/>
           </div>
           <div class="col-xs-2 socMediaImgContainer">
-            <img class="img-responsive center-block" src="../img/twitter.png"/>
+            <img class="img-responsive center-block" src="../img/icon/white/twitter.png"/>
           </div>
           <div class="col-sm-6"></div>
         </div>

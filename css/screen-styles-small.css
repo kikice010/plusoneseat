@@ -1,0 +1,172 @@
+@media  (max-width: 850px) {
+
+    .offer-container {
+        display: inline-block;
+        float: left;
+        width: 25em;
+        margin-left: -webkit-calc((100% - 25em)/2);
+        margin-left: -moz-calc((100% - 25em)/2);
+        margin-left: calc((100% - 25em)/2);
+        margin-right: -webkit-calc((100% - 25em)/2);
+        margin-right: -moz-calc((100% - 25em)/2);
+        margin-right: calc((100% - 25em)/2);
+        border-radius: 5%;
+        margin-bottom: 5em;
+    }
+
+    .active-meal-offers-area>.title,
+    .past-meal-offers-area>.title,
+    .pending-reservations-area>.title,
+    .accepted-reservations-area>.title,
+    .completed-reservations-area>.title {
+        margin-left: -webkit-calc((100% - 16em)/2);
+        margin-left: -moz-calc((100% - 16em)/2);
+        margin-left: calc((100% - 16em)/2);
+        margin-bottom: 3em; 
+        font-size: 16pt;
+        font-weight: 700;
+        color: black; 
+        display: inline-block;
+        text-align: left;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 710px) {
+
+    #floating-container {
+        display: none;
+    }
+
+    #results-container {
+        display: inline-block;
+        float: left;
+        width: 100%;
+        margin-bottom: 5em;
+    }
+
+     #results-container .result-item {
+        display: inline-block;
+        float: left;
+        width: 350px;
+        margin-left: -webkit-calc((100% - 350px)/2);
+        margin-left: -moz-calc((100% - 350px)/2);
+        margin-left: calc((100% - 350px)/2);
+        margin-right: -webkit-calc((100% - 350px)/2);
+        margin-right: -moz-calc((100% - 350px)/2);
+        margin-right: calc((100% - 350px)/2);
+        border-radius: 5%;
+        margin-bottom: 2.5em;
+        margin-top: 2.5em;
+    }
+}
+
+@media (max-width: 600px) {
+    .search-bar {
+        height: 4.3em;
+    }
+
+    #sb-chair-logo-img{
+        width: 3em;
+    }
+
+    #sb-menu-button {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        background-color: white;
+        border-radius: 0;
+    }
+
+    .righ-side-navbar-container {
+        width: 4em;
+        height: 4em;
+        float: right;
+        border-left: 2px solid #999999;
+    }
+
+    .sb-icon-bar {
+        width: 2.4em !important;
+        background-color: #ef804a !important;
+        border-radius: 30% !important;
+        height: 4px !important;
+    }
+
+    .sb-form-container{
+        float: left;
+        width: 100%;
+        width: -webkit-calc(100% - 8em);
+        width: -moz-calc(100% - 8em);
+        width: calc(100% - 8em);
+        height: 4em;
+    }
+
+    #sb-form-group-location {
+        width: 100%;
+        display: inline-block;
+    }
+
+    .sb-logo-img-container {
+        width: 4em;
+        height: 4em;
+        padding-left: 0.35em;
+        padding-top: 0.5em;
+        float: left;
+    }
+
+    #sb-dropdown-navigation {
+        background-color: #ef804a;
+        position: relative;
+        width: 50%;
+        float: right;
+        margin-right: -3px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #sb-dropdown-navigation>ul {
+        list-style-type: none;
+        padding-left: 0px;
+        width: 100%;
+    }
+
+    #sb-dropdown-navigation>ul>li {
+        float: right;
+        width: 100%;
+        padding-right: 23px;
+    }
+
+    #sb-dropdown-navigation>ul>li>a {
+        float: right;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    #sb-navbar-container {
+        background-color: #ef804a; 
+        height: 4em;
+    }
+
+    .sb-navbar,
+    .navbar {
+        height: 4em;
+    }
+
+    .sb-menu-button-active {
+        background-color: #ef804a !important;
+    }
+
+    .sb-menu-button-active>span {
+        background-color: white !important;
+    }
+
+    #sb-form-group-datepicker,
+    #sb-form-group-datepicker,
+    #sb-form-group-timepicker,
+    #sb-form-group-seats,
+    #navbar-right-side-buttons,
+    #pills-bar   {
+        display: none !important;
+    }
+}

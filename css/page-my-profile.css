@@ -1,0 +1,629 @@
+    .content-container {
+        width: 100%;
+        display: table;
+        position: relative;
+        background-color: #efefef;
+    }
+
+    #sb-input-group-location>.input-group>.input-group-btn {
+        display: none !important;
+    }
+
+    #other-meals-container>.result-item {
+        background-color: #ef804a;
+        border-radius: 0%;
+        margin-bottom: 2.5em;
+    }
+
+    #other-meals-container {
+        width: 350px;
+        padding-top: 50px;
+    }
+
+    #other-meals-container>.golden {
+        background-color: #ffc500 !important;
+    }
+
+    #other-meals-container>.golden>.item-header{
+        text-shadow: 0px 2px 4px black;
+    }
+
+    #other-meals-container>.result-item>.item-header {
+        width: 100%;
+        height: 3em;
+        vertical-align: middle;
+    }
+
+    #other-meals-container>.result-item>.item-header>.header-title {
+        font-size: 12px;
+        color: white;
+        float: left;
+        padding-left: 14px;
+        width: 74%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    #other-meals-container>.result-item>.item-header>.price {
+        font-size: 30px;
+        float: right;
+        padding-right: 10px;
+        color: white;
+        font-weight: 700;
+    }
+
+    #other-meals-container>.result-item>.meal-picture {
+        width: 100%;
+        height: 12em;
+        background-image: url(../img/meal/10100142/2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 1001;
+        display: inline-flex;   
+    }
+
+    #other-meals-container>.result-item>.meal-picture>.user-picture {
+        width: 6em;
+        height: 6em;
+        background: url(../img/user/10004154/profile.jpg) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 4px solid white;
+        margin-left: -webkit-calc((100% - 6em)/2);
+        margin-left: -moz-calc((100% - 6em)/2);
+        margin-left: calc((100% - 6em)/2);
+        margin-top: 3em;
+        border-radius: 50%;
+    }
+
+    #other-meals-container>.result-item>.meal-picture>.rating {
+        width: 4.5em;
+        height: 4.5em;
+        background: url(../img/badge/chef.png) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: 1em;
+        position: relative;
+        top: 9em;
+        left: -14.7em;
+    }
+
+    #other-meals-container>.result-item>.meal-picture>.rating>.average {
+        font-size: 24px;
+        font-weight: 700;
+        margin-left: 1em;
+        padding-top: 0.5em;
+    }
+
+    #other-meals-container>.result-item>.meal-picture>.rating>.rating-title {
+        margin-left: 0.8em;
+        font-size: 10px;
+    }
+
+    #other-meals-container>.result-item>.meal-picture>.rating>.rew-number {
+        margin-top: 0.1em;
+        font-size: 12px;
+        color: #848484;
+    }
+
+    #other-meals-container>.result-item>.meal-picture>.upper {
+        background: white;
+        width: 100%;
+    }
+
+    #other-meals-container>.result-item>.info {
+        background-color: white;
+    }
+
+    #other-meals-container>.result-item>.info>.upper>.user {
+        width: 47%;
+        float: left;
+        margin-left: 24%;
+        padding-top: 5px;
+    }
+
+    #other-meals-container>.result-item>.info>.upper>.user>.hosted {
+        width: 100%;
+        margin-top: 6px;
+    }
+
+    #other-meals-container>.result-item>.info>.upper>.user>.hosted>.gray-out {
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        float: left;
+        color: #848484;
+        padding-right: 5px;
+    }
+
+    #other-meals-container>.result-item>.info>.upper>.user>.hosted>.name {
+        font-size: 14px;
+        font-weight: 600;
+        float: left;
+        margin-top: -1px;
+        margin-bottom: 2px;
+    }
+
+    #other-meals-container>.result-item>.info>.upper>.user>.location {
+        width: 100%;
+        clear: left;
+    }
+
+    #other-meals-container>.result-item>.info>.upper {
+        position: relative;
+        z-index: 1000;
+        height: 3.5em;
+    }
+
+    #other-meals-container>.result-item>.info>.upper>.donation {
+        width: 23%;
+        float: right;
+        display: inline-block;
+        padding-top: 5px;
+    }
+
+    #other-meals-container>.result-item>.info>.upper>.donation>.gray-out {
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        color: #848484;
+        padding-right: 15px;
+        float: right;
+        padding-top: 2px; 
+    }
+
+    #other-meals-container>.result-item>.info>.upper>.donation>.value {
+        font-weight: 700;
+        color: #ef804a;
+        display: inline-block;
+        float: right;
+        font-size: 26px;
+        padding-right: 8px;
+        position: absolute;
+        width: 40%;
+        top: 0.7em;
+        left: 8em;
+    }
+
+    #other-meals-container>.result-item>.info>.upper>.donation>.value>.plus {
+        font-size: 20px;
+        float: right;
+    }
+
+    #other-meals-container>.result-item>.info>.upper>.donation>.value>.number {
+        font-size: 26px;
+        float: right;
+    }
+
+    #other-meals-container>.result-item>.info>.upper>.donation>.value>.chair {
+        height: 1em;
+        width: 1em;
+        background: url(../img/icon/orange/chair.png) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: 0.3em;
+        float: right;
+    }
+
+    #other-meals-container>.result-item>.info>.separator {
+        height: 2px;
+        background-color: #eee;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #other-meals-container>.result-item>.info>.lower {
+        padding-left: 15px;
+        padding-right: 5px;
+        display: inline-block;
+        background-color: white;
+        width: 100%;
+    }
+
+    #other-meals-container>.result-item>.info>.lower>.cell {
+        width: 25%;
+        float: left;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    #other-meals-container>.result-item>.info>.lower>.cell-title {
+        font-size: 12px;
+        color: #848484;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #other-meals-container>.result-item>.info>.lower>.value {
+        font-size: 16px;
+        color: black;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .left-container {
+        padding-left: 30px;
+        padding-right: 30px;
+        display: table-cell;
+        padding-top: 30px;
+    }
+
+    .left-container>.user-picture {
+        width: 10em;
+        height: 10em;
+        background: url(../img/user/10004154/profile.jpg) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        display: inherit;
+        position: relative;
+        left: 8em;
+    }
+
+    .left-container>.user-info>.name {
+        font-size: 40px;
+        font-weight: 600;
+        color: #ef804a;
+        text-align: center;
+    }
+
+    .left-container>.user-info>.extra {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .left-container>.ratings {
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #848484;
+        padding-top: 40px;
+    }
+
+    .left-container>.ratings>.title {
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        border-bottom: 2px solid #848484;
+        padding-bottom: 5px;
+    }
+
+    .left-container>.ratings>.value>div {
+        float: left;
+        width: 50%;
+    }
+
+    .left-container>.ratings>.value>div>.p1s-badge {
+        width: 100%;
+        height: 7em;
+        background: url(../img/badge/chef.png) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: 1em;
+        position: relative;
+    }
+
+    .left-container>.ratings>.value>.guest>.p1s-badge {
+        background: url(../img/badge/guest.png) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .left-container>.ratings>.value>div>.p1s-badge>.rating {
+        font-size: 40px;
+        font-weight: 600;
+        position: relative;
+        top: 10px;
+        text-align: center;
+    }
+
+    .left-container>.ratings>.value>div>.p1s-badge>.text{
+        text-align: center;
+        margin-top: 20px;
+        font-size: 13px;
+    }
+
+    .left-container>.ratings>.value>div>.details {
+        padding: 10px;
+    }
+
+    .left-container>.ratings>.value>div>.details>.border {
+        height: 1px;
+        background-color: #848484;
+        border-left: 5px solid #efefef;
+        border-right: 5px solid #efefef;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .left-container>.ratings>.value>div>.details>.cell {
+        width: 33%;
+        float: left;
+        text-align: center;
+    }
+
+    .left-container>.ratings>.value>div>.details>.cell>.name{
+        font-size: 10px;
+        font-weight: 900;
+    }
+
+    .left-container>.ratings>.value>div>.details>.cell>.value{
+        font-size: 20px;
+    }
+
+    .left-container>.badges {
+        width: 100%;
+        display: -webkit-box;
+        border-bottom: 2px solid #848484;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .left-container>.badges>.holder {
+        width: 50%;
+        float: left;
+    }
+
+    .left-container>.badges>.holder>.p1s-badge {
+        width: 90px;
+        height: 150px;
+        background-color: white;
+        border: 3px solid;
+        border-radius: 34px;
+        padding: 1px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1005;
+    }
+
+    .left-container>.badges>.holder>.p1s-badge>.inner {
+        width: 82px;
+        height: 142px;
+        background-color: #fad125;
+        border: 3px solid;
+        border-radius: 30px;
+    }
+
+    .left-container>.badges>.holder>.p1s-badge>.inner>.chair {
+        width: 3.5em;
+        height: 3.5em;
+        background: url(../img/icon/orange/chair.png) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        top: 0.5em;
+        -webkit-filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1);
+        margin: 0 auto;
+    }
+
+    .left-container>.badges>.holder>.p1s-badge>.inner>.value {
+        color: white;
+        text-align: center;
+        font-weight: 700;
+        font-size: 21px;
+        padding-top: 10px;
+    }
+
+    .left-container>.badges>.holder>.p1s-badge>.inner>.text {
+        color: white;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .left-container>.badges>.holder+.holder>.p1s-badge>.inner{
+        background-color: #ef804a;
+    }
+
+    .right-container {
+        width: 100%;
+        width: -webkit-calc(100% - 410px);
+        width: -moz-calc(100% - 410px);
+        width: calc(100% - 410px);
+        background-color: white;
+        display: table-cell;
+        padding-top: 49px;
+    }
+
+    .right-container>div {
+        padding-top: 60px;
+        padding-left: 100px;
+        padding-top: 10px;
+    }
+
+    .right-container>div>.title {
+        width: 100px;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .right-container>div>.content {
+        padding-left: 100px;
+        text-align: justify;
+        padding-top: 20px;
+        width: 100%;
+        width: -webkit-calc(100% - 190px);
+        width: -moz-calc(100% - 190px);
+        width: calc(100% - 190px);
+        border-bottom: 2px solid #848484;
+        padding-bottom: 34px;
+        display: inline-block;
+    }
+
+    .right-container>div>.content>.cell {
+        width: 33%;
+        float: left;
+        text-align: center;
+    }
+
+    .right-container>.basic-info+div>.content>.cell,
+    .right-container>.detailed-info+div>.content>.cell {
+        width: 50%;
+        float: left;
+        text-align: center;
+    }
+
+    .right-container>div>.content>.cell>.icon {
+        background-size: contain !important;
+        height: 4em;
+        width: 4em;
+        margin: 0 auto;
+    }
+
+    #hometown-icon {
+        background: url(../img/icon/gray/hometown.png) 50% 50% no-repeat;
+    }
+
+    #birth-icon {
+        background: url(../img/icon/gray/birthday.png) 50% 50% no-repeat;
+    }
+
+    #gender-icon {
+        background: url(../img/icon/gray/gender.png) 50% 50% no-repeat;
+    }
+
+    #language-icon {
+        background: url(../img/icon/gray/hometown.png) 50% 50% no-repeat;
+    }
+
+    #interests-icon {
+        background: url(../img/icon/gray/birthday.png) 50% 50% no-repeat;
+    }
+
+    #education-icon {
+        background: url(../img/icon/gray/gender.png) 50% 50% no-repeat;
+    }
+
+    #work-icon {
+        background: url(../img/icon/gray/gender.png) 50% 50% no-repeat;
+    }
+
+
+    .right-container>.basic-info>.content>.cell>.value {
+        font-size: 18px;
+        padding-top: 8px;
+    }
+
+    .right-container>div>.content>.cell>#language-icon+.subscript,
+    .right-container>div>.content>.cell>#interests-icon+.subscript{
+        margin-bottom: 20px;
+    }
+
+    .right-container>div>.content>.cell>.item {
+        padding: 0 !important;
+        display: table;
+    }
+
+    .right-container>div>.content>.cell>.item>div {
+        float: left;
+        font-size: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-weight: 600;
+    }
+
+    .right-container>div>.content>.cell>.item>div+.value {
+        float: left;
+        font-size: 13px;
+        padding-top: 8px;
+        font-weight: 500;
+    }
+
+    .right-container>div>.content>.cell>.value {
+        display: table;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .right-container>div>.content>.cell>.value>.left {
+        width: 50%;
+        border-right: 1px solid #ef804a;
+        display: table-cell;
+    }
+
+    .right-container>div>.content>.cell>.value>.right {
+        width: 50%;
+        border-left: 1px solid #ef804a;
+        display: table-cell;
+    }
+
+    .right-container>div>.content>.cell>.value>div>.item {
+        padding: 0px;
+        padding-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .right-container>.education-work>.content>.cell>.item {
+        width: 100%;
+    }
+
+    .right-container>.education-work>.content>.cell>.item>.degree {
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+        padding: 0;
+        padding-top: 5px;
+    }
+
+    .right-container>.education-work>.content>.cell>.item>.location {
+        width: 100%;
+        font-size: 14px;
+        color: #848484;
+        font-weight: 500;
+        padding: 0;
+        padding-bottom: 5px;
+    }
+
+    .right-container>.reviews>.content>.item {
+        margin-top: 20px;
+    }
+
+    .right-container>.reviews>.content>.item>.image {
+        width: 5em;
+        height: 5em;
+        background: url(../img/user/10004154/profile.jpg) 50% 50% no-repeat;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        left: -6em;
+        border-radius: 50%;
+    }
+
+    .right-container>.reviews>.content>.item>.content {
+        margin-top: -5em;
+    }
+
+    .right-container>.reviews>.content>.item>.content>.name{
+        font-size: 18px;
+        font-weight: 600;
+        color: #ef804a;
+    }
+
+    .right-container>.reviews>.content>.item>.content>.extra{
+        padding-bottom: 15px;
+        padding-top: 5px;
+        font-size: 12px;
+    }
+
+    .right-container>.reviews>.content>.item>.content>.meal{
+        padding-top: 15px;
+        color: #ef804a;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .right-container>.reviews {
+        border-bottom: none;
+        padding-bottom: 100px;
+    }
+
+    .right-container>.reviews>.content {
+        border-bottom: none;
+    }
