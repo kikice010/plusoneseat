@@ -12,14 +12,19 @@ class UserManager {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
-        $sql_insert = $db_instance->prepare("INSERT INTO user (name, surname, email, password,location) "
-                . "VALUES(?, ?, ?, ?, ?);");
-        $name = $user->getName();
-        $surname = $user->getSurname();
+        $sql_insert = $db_instance->prepare("INSERT INTO user (firstname, lastname, email, password,country,description,gender,birthday,birth_location,city) "
+                . "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);");
+        $firstname = $user->getName();
+        $lastname = $user->getSurname();
         $email = $user->getEmail();
         $password = $user->getPassword();
-        $location = $user->getLocationID();
-        $sql_insert->bind_param("ssssi", $name, $surname, $email, $password, $location);
+        $country = $user->getCountry();
+        $city = $user->getCity();
+        $description = $user->getDescription();
+        $gender = $user->getGender();
+        $birthday = $user->getBirthday();
+        $birth_location = $user->getBirthlocation();
+        $sql_insert->bind_param("ssssssdss", $firstname, $lastname, $email, $password, $country,$description,$gender,$birthday,$birth_location,$city);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
@@ -38,20 +43,20 @@ class UserManager {
         $db_instance->closeConnection();
     }
 
-    public static function getUser($email) {
+    public static function getUser($id) {
         $db_instance = DBManager::getInstance();
         $db_instance->connect();
 
-        if($email!=null) {
-            $query = "SELECT id, name, surname, email, password, location FROM user WHERE email = ?;";
+        if($id!=null) {
+            $query = "SELECT * FROM user WHERE id = ?;";
         } else {
-            $query = "SELECT id, name, surname, email, password, location FROM user;";
+            $query = "SELECT * FROM user;";
         }
 
         $sql_select = $db_instance->prepare($query);
 
-        if($email!=null) {
-            $sql_select->bind_param("s", $email);
+        if($id!=null) {
+            $sql_select->bind_param("s", $id);
         } 
 
         $db_instance->executeStatement();
@@ -79,16 +84,21 @@ class UserManager {
         $statement = $db_instance->getStatement();
         
         $id = null;
-        $name = null;
-        $surname = null;
+        $firstname = null;
+        $lastname = null;
         $email = null;
         $password = null;
-        $location = null;
-        $statement->bind_result($id, $name, $surname, $email, $password, $location);
+        $country = null;
+        $city = null;
+        $description = null;
+        $gender = null;
+        $birthday = null;
+        $birth_location = null;
+        $statement->bind_result($id, $firstname, $lastname, $email, $password, $country,$description,$gender,$birthday,$birth_location,$city);
         $db_instance->executeStatement();
         
         while($db_instance->fetchResult()){
-            $tupple = new User($id, $name, $surname, $email, $password, $location);
+            $tupple = new User($id,$firstname, $lastname, $email, $password, $country,$description,$gender,$birthday,$birth_location,$city);
             array_push($result, $tupple);
         }
         

@@ -12,3 +12,4 @@ class UserPicture {
         $this->user = $user;
     }
 }
+?>
