@@ -16,7 +16,7 @@ class User {
     var $birthday;
     var $birth_location;
     
-    function __construct($id, $firstname, $lastname, $email, $password, $country, $city, $description, $gender, $birthday, $birth_location){
+    function __construct($id, $firstname, $lastname, $email, $password, $country, $description, $gender, $birthday, $birth_location, $city){
         $this->id = $id;
         $this->firstname = $firstname;
         $this->lastname = $lastname;

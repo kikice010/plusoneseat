@@ -5,9 +5,15 @@ require __SWIFT_MAILER__;
 require_once __ENTITIES__.'User.php';
 require_once __ENTITIES__.'UserEducation.php';
 require_once __ENTITIES__.'UserWork.php';
+require_once __ENTITIES__.'Interest.php';
+require_once __ENTITIES__.'Language.php';
+require_once __ENTITIES__.'Country.php';
 require_once __DB_CONNECTION__.'UserManager.php';
 require_once __DB_CONNECTION__.'UserEducationManager.php';
 require_once __DB_CONNECTION__.'UserWorkManager.php';
+require_once __DB_CONNECTION__.'UserInterestManager.php';
+require_once __DB_CONNECTION__.'UserLanguageManager.php';
+require_once __DB_CONNECTION__.'UserPhonenumberManager.php';
 
 $method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
 
@@ -15,9 +21,9 @@ switch ($method) {
   case 'GET':
     
     //Save mail address in the database
-    $email = filter_input(INPUT_GET, "email");
-    $user = new User(-1, null, null, $email, null, null,null, null,null, null,null);
-    $returned_user = UserManager::getUserByEmail($user);
+    $id = filter_input(INPUT_GET, "id_user");
+    //$user = new User($id, null, null, null, null, null,null, null,null, null,null);
+    $returned_user = UserManager::getUser($id);
 
 
     //echo json_encode($returned_user[0]);
@@ -26,12 +32,18 @@ switch ($method) {
     {
             $returned_education = UserEducationManager::getAllEducationForUser($returned_user[0]);
             $returned_work = UserWorkManager::getAllWorkForUser($returned_user[0]);
+            $returned_interests = UserInterestManager::getAllInterestsForUser($returned_user[0]);
+            $returned_languages = UserLanguageManager::getAllLanguagesForUser($returned_user[0]);
+            $returned_phonenumbers = UserPhonenumberManager::getAllPhonenumberForUser($returned_user[0]);
             // echo json_encode(strcmp($returned_password,$password));
             $result['success'] = 1;
             $result['message'] = 'User fetched.';
             $result['user'] = $returned_user[0];
             $result['user_education'] = $returned_education;
             $result['user_work'] = $returned_work;
+            $result['user_interests'] = $returned_interests;
+            $result['user_languages'] = $returned_languages;
+            $result['user_phonenumbers'] = $returned_phonenumbers;
             echo json_encode($result);
   
     }
