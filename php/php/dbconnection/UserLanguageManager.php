@@ -22,13 +22,14 @@ class UserLanguageManager {
         $db_instance->closeConnection();
     }
     
-    public function deleteUserLanguage($id_language,$user_id) {
+    public function deleteUserLanguages($user) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_delete = $db_instance->prepare("DELETE FROM user_languages "
-                . "WHERE id_user = ? AND id_language = ?;");
-        $sql_delete->bind_params("ii", $user_id, $id_language);
+                . "WHERE id_user = ?;");
+        $user_id = $user->getId();
+        $sql_delete->bind_params("i", $user_id);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();

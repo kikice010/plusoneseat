@@ -14,7 +14,7 @@ switch ($method) {
     $email = filter_input(INPUT_POST, "email");
     $password = filter_input(INPUT_POST, "password");
 
-    $user = new User(-1, null, null, $email, $password, null);
+    $user = new User(-1, null, null, $email, $password, null, null, null, null, null, null);
     $returned_user = UserManager::getUserByEmail($user);
 
     if(count($returned_user)==0)

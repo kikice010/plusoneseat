@@ -29,6 +29,30 @@ class UserManager {
         $db_instance->closeStatement();
         $db_instance->closeConnection();
     }
+
+    public static function updateUser($user){
+        $db_instance = DBManager::getInstance();
+        
+        $db_instance->connect();
+
+        $firstname = $user->getName();
+        $lastname = $user->getSurname();
+        $email = $user->getEmail();
+        $password = $user->getPassword();
+        $country = $user->getCountry();
+        $city = $user->getCity();
+        $description = $user->getDescription();
+        $gender = $user->getGender();
+        $birthday = $user->getBirthday();
+        $birth_location = $user->getBirthlocation();
+
+        $sql_insert = $db_instance->prepare("UPDATE user SET firstname = ?, lastname = ?, email = ?, country = ?,description = ?,gender = ?,birthday = ?,birth_location = ?, city = ? "
+                . "WHERE email = ?;");
+        $sql_insert->bind_param("ssssssssss", $firstname, $lastname, $email, $country,$description,$gender,$birthday,$birth_location,$city,$email);
+        $db_instance->executeStatement();
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+    }
     
     public static function deleteUser($user) {
         $db_instance = DBManager::getInstance();
@@ -68,8 +92,27 @@ class UserManager {
     }
 
     public static function getUserByEmail($user) {
+        $db_instance = DBManager::getInstance();
+        $db_instance->connect();
         $email = $user->getEmail();
-        return UserManager::getUser($email);
+        if($email!=null) {
+            $query = "SELECT * FROM user WHERE email = ?;";
+        } else {
+            $query = "SELECT * FROM user;";
+        }
+
+        $sql_select = $db_instance->prepare($query);
+
+        if($email!=null) {
+            $sql_select->bind_param("s", $email);
+        } 
+
+        $db_instance->executeStatement();
+        $result = UserManager::fetchUsers();
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+
+        return $result[0];
     }
 
     public static function getAllUsers() {

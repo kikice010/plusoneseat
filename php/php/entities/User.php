@@ -45,7 +45,7 @@ class User {
     }
 
     public function getSurname(){
-        return $this->surname;
+        return $this->lastname;
     }
 
     public function getEmail(){

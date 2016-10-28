@@ -28,4 +28,28 @@ class LanguageManager {
         
         return $result;
     }
+
+    public static function fetchLanguageID($language){
+        $db_instance = DBManager::getInstance();
+        $db_instance->connect();
+
+        if($id!=null) {
+            $query = "SELECT id FROM languages WHERE name like ?;";
+        } else {
+            $query = "SELECT id FROM languages;";
+        }
+
+        $sql_select = $db_instance->prepare($query);
+
+        if($id!=null) {
+            $sql_select->bind_param("s", $language);
+        } 
+
+        $db_instance->executeStatement();
+        $result = $db_instance->fetchResult();
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+
+        return $result;
+    }
 }

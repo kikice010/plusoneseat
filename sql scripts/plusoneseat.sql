@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2016 at 01:54 PM
+-- Generation Time: Oct 28, 2016 at 06:29 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -862,7 +862,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `password`, `country`, `description`, `gender`, `birthday`, `birth_location`, `city`) VALUES
-(1, 'Milica', 'Jovanovic', 'kikice010@gmail.com', 'kikice', 'Italy', 'Bella ragazza :P', 'Female', '2014-07-01', 'Pirot, Serbia', 'Milano');
+(1, 'Milica', 'bla', 'kikice010@gmail.com', 'kikice', 'Italy', 'Bella ragazza :P', 'Female', '2014-07-01', 'Pirot, Serbia', 'Milano');
 
 -- --------------------------------------------------------
 
@@ -971,7 +971,7 @@ CREATE TABLE IF NOT EXISTS `user_phonenumbers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   `country_code` int(11) NOT NULL,
-  `number` varchar(10) NOT NULL,
+  `phonenumber` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`),
   KEY `country_code` (`country_code`),
@@ -982,7 +982,7 @@ CREATE TABLE IF NOT EXISTS `user_phonenumbers` (
 -- Dumping data for table `user_phonenumbers`
 --
 
-INSERT INTO `user_phonenumbers` (`id`, `id_user`, `country_code`, `number`) VALUES
+INSERT INTO `user_phonenumbers` (`id`, `id_user`, `country_code`, `phonenumber`) VALUES
 (1, 1, 1, '55555555'),
 (2, 1, 1, '11111111');
 
