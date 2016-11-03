@@ -1,6 +1,7 @@
 <?php
 require_once 'constants.php';
-require_once __ENTITIES__."Country.php";
+//require_once __ENTITIES__."Country.php";
+require_once __ENTITIES__."UserPhonenumbers.php";
 
 /**
  * Description of TagManager
@@ -14,16 +15,21 @@ class CountryManager {
         
         $result = array();
         $statement = $db_instance->getStatement();
-        
+        //echo $statement;
         $id = null;
-        $name = null;
-        $phonecode = null;
+        $nicename = null;
+        $country_code = null;
+        $number = null;
         $tupple = null;
-        $statement->bind_result($id, $name, $phonecode);
+
+
+
+        $statement->bind_result($id,$nicename,$country_code,$number);
         $db_instance->executeStatement();
         
         while($db_instance->fetchResult()){
-            $tupple = new UserPhonenumbers($id, $name, $phonecode);
+
+            $tupple = new UserPhonenumbers($id,$nicename, $country_code, $number);
             array_push($result, $tupple);
         }
         

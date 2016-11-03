@@ -38,7 +38,7 @@ class UserPhonenumberManager {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
-        $sql_select = $db_instance->prepare("SELECT UP.country_code, C.phonecode, UP.phonenumber "
+        $sql_select = $db_instance->prepare("SELECT UP.id_user, C.nicename, C.phonecode, UP.phonenumber "
                 . "FROM country C INNER JOIN user_phonenumbers UP "
                 . "ON UP.country_code = C.id   "
                 . "WHERE UP.id_user = ?;");
