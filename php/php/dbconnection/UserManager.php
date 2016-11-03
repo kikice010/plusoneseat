@@ -13,7 +13,7 @@ class UserManager {
         
         $db_instance->connect();
         $sql_insert = $db_instance->prepare("INSERT INTO user (firstname, lastname, email, password,country,description,gender,birthday,birth_location,city) "
-                . "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);");
+                . "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?,?);");
         $firstname = $user->getName();
         $lastname = $user->getSurname();
         $email = $user->getEmail();
@@ -24,7 +24,7 @@ class UserManager {
         $gender = $user->getGender();
         $birthday = $user->getBirthday();
         $birth_location = $user->getBirthlocation();
-        $sql_insert->bind_param("ssssssdss", $firstname, $lastname, $email, $password, $country,$description,$gender,$birthday,$birth_location,$city);
+        $sql_insert->bind_param("ssssssssss", $firstname, $lastname, $email, $password, $country,$description,$gender,$birthday,$birth_location,$city);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
@@ -112,7 +112,7 @@ class UserManager {
         $db_instance->closeStatement();
         $db_instance->closeConnection();
 
-        return $result[0];
+        return $result;
     }
 
     public static function getAllUsers() {
