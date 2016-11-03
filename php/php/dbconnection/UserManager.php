@@ -61,6 +61,7 @@ class UserManager {
         $sql_delete = $db_instance->prepare("DELETE FROM user "
                 . "WHERE id = ?;");
         $id = $user->getId();
+        //echo json_encode($id);
         $sql_delete->bind_param("i", $id);
         $db_instance->executeStatement();
         $db_instance->closeStatement();

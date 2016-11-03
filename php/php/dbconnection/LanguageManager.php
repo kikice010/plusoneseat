@@ -32,24 +32,31 @@ class LanguageManager {
     public static function fetchLanguageID($language){
         $db_instance = DBManager::getInstance();
         $db_instance->connect();
-
-        if($id!=null) {
-            $query = "SELECT id FROM languages WHERE name like ?;";
+        $id = null;
+        $name = null;
+        $result = array();
+       
+        if($language!=null) {
+            $query = "SELECT id FROM languages WHERE name LIKE ?;";
         } else {
             $query = "SELECT id FROM languages;";
         }
 
         $sql_select = $db_instance->prepare($query);
 
-        if($id!=null) {
+        if($language!=null) {
             $sql_select->bind_param("s", $language);
         } 
-
+        $statement = $db_instance->getStatement();
+        $statement->bind_result($id);
         $db_instance->executeStatement();
-        $result = $db_instance->fetchResult();
+        while($db_instance->fetchResult()){
+            $tupple = $id;
+            array_push($result, $tupple);
+        }
         $db_instance->closeStatement();
         $db_instance->closeConnection();
 
-        return $result;
+        return $result[0];
     }
 }

@@ -71,8 +71,6 @@ function logIn() {
 	};
 
 
-
-
 function postRequest(url,params,callback_function,callback_error){
 
  $.ajax({

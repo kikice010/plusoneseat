@@ -18,29 +18,37 @@ require_once __DB_CONNECTION__.'UserPhonenumberManager.php';
 $method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
 
 switch ($method) {
-  case 'GET':
+  case 'POST':
     
     //Save mail address in the database
-    $id = filter_input(INPUT_GET, "id_user");
-    $firstname = filter_input(INPUT_GET, "firstname");
-    $lastname = filter_input(INPUT_GET, "lastname");
-    $email = filter_input(INPUT_GET, "email");
-    $country = filter_input(INPUT_GET, "country");
-    $city = filter_input(INPUT_GET, "city");
-    $description = filter_input(INPUT_GET, "description");
-    $gender = filter_input(INPUT_GET, "gender");
-    $birthday = filter_input(INPUT_GET, "birthday");
-    $birth_location = filter_input(INPUT_GET, "birth_location");
-    $user = new User($id, $firstname, $lastname, $email, null, $country, $city,$description, $gender,$birthday, $birth_location);
-    
-    UserManager::updateUser($new_user);
+    $json = filter_input(INPUT_POST, "json");
+    $obj = json_decode($json,true);
+    //echo json_encode($obj);
+    $id = $obj['id'];
+    //echo json_encode($id);
+    $firstname = $obj['firstname'];
+    $lastname = $obj['lastname'];
+    $email = $obj['email'];
+    $country = $obj['country'];
+    $city = $obj['city'];
+    $description = $obj['description'];
+    $gender = $obj['gender'];
+    $birthday = $obj['birthday'];
+    $birth_location = $obj['birth_location'];
+    $user = new User($id, $firstname, $lastname, $email, null, $country, $description, $gender, $birthday, $birth_location, $city);
 
-    $languages = filter_input(INPUT_GET, "lagunages");
+    UserManager::updateUser($user);
+    //echo json_encode($id);
+    $languages = $obj['user_languages'];
 
     UserLanguageManager::deleteUserLanguages($user);
-
+    //echo json_encode($languages);
     foreach ($languages as $value){
-        $id_language = LanguageManager::fetchLanguageID($value["name"]);
+        //echo json_encode($value);
+        $id_language = LanguageManager::fetchLanguageID($value["language"]);
+        echo json_encode($id_language);
+        echo json_encode($id);
+        echo json_encode($value['level']);
         UserLanguageManager::insertUserLanguage($id_language,$id,$value["level"]);
     }
 }

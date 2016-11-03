@@ -10,26 +10,27 @@ require_once __DB_CONNECTION__.'LanguageManager.php';
  */
 class UserLanguageManager {
     
-    public function insertUserLanguage($id_language,$user_id,$level){
+    public static function insertUserLanguage($id_language,$user_id,$level){
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_insert = $db_instance->prepare("INSERT INTO user_languages (id_user, id_language, level) "
-                . "VALUES(?, ?);");
-                $sql_insert->bind_params("iis", $user_id, $id_language, $level);
+                . "VALUES(?, ?,?);");
+        $sql_insert->bind_param("iis", $user_id, $id_language, $level);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
     }
     
-    public function deleteUserLanguages($user) {
+    public static function deleteUserLanguages($user) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_delete = $db_instance->prepare("DELETE FROM user_languages "
                 . "WHERE id_user = ?;");
         $user_id = $user->getId();
-        $sql_delete->bind_params("i", $user_id);
+        //echo json_encode($user_id);
+        $sql_delete->bind_param("i", $user_id);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
