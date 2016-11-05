@@ -8,26 +8,26 @@ require_once __DB_CONNECTION__."DBManager.php";
  * @author admin
  */
 class UserWorkManager {
-    public function insertUserWork($user,$job,$city,$country){
+    public static function insertUserWork($user,$job,$city,$country){
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_insert = $db_instance->prepare("INSERT INTO user_work (id_user, job, city, country) VALUES(?, ?, ?, ?);");
         $id_user = $user->getID();
-        $sql_insert->bind_params("isss", $id_user, $job, $city, $country);
+        $sql_insert->bind_param("isss", $id_user, $job, $city, $country);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
     }
     
-    public function deleteUserWork($user) {
+    public static function deleteUserWork($user) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_delete = $db_instance->prepare("DELETE FROM user_work "
                 . "WHERE id_user = ?;");
         $user_id = $user->getID();
-        $sql_delete->bind_params("i", $user_id);
+        $sql_delete->bind_param("i", $user_id);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();

@@ -3,11 +3,6 @@
 require_once 'constants.php';
 require __SWIFT_MAILER__;
 require_once __ENTITIES__.'User.php';
-require_once __ENTITIES__.'UserEducation.php';
-require_once __ENTITIES__.'UserWork.php';
-require_once __ENTITIES__.'Interest.php';
-require_once __ENTITIES__.'Language.php';
-require_once __ENTITIES__.'Country.php';
 require_once __DB_CONNECTION__.'UserManager.php';
 require_once __DB_CONNECTION__.'UserEducationManager.php';
 require_once __DB_CONNECTION__.'UserWorkManager.php';
@@ -40,17 +35,35 @@ switch ($method) {
     UserManager::updateUser($user);
     //echo json_encode($id);
     $languages = $obj['user_languages'];
+    $user_education = $obj['user_education'];
+    $user_work = $obj['user_work'];
+    $user_interests = $obj['user_interests'];
+    $user_phonenumbers = $obj['user_phonenumbers'];
 
     UserLanguageManager::deleteUserLanguages($user);
+    UserEducationManager::deleteUserEducation($user);
+    UserInterestManager::deleteAllUserInterests($user);
+    UserWorkManager::deleteUserWork($user);
+    UserPhonenumberManager::deleteAllUserPhonenumbers($user);
     //echo json_encode($languages);
     foreach ($languages as $value){
         //echo json_encode($value);
         $id_language = LanguageManager::fetchLanguageID($value["language"]);
-        echo json_encode($id_language);
-        echo json_encode($id);
-        echo json_encode($value['level']);
         UserLanguageManager::insertUserLanguage($id_language,$id,$value["level"]);
     }
+    foreach ($user_education as $value){
+        UserEducationManager::insertUserEducation($user,$value["university"],$value["degree"]);
+    }
+    foreach ($user_interests as $value){  
+        UserInterestManager::insertUserInterest($value["id"],$id);
+    }
+    foreach ($user_work as $value){  
+        UserWorkManager::insertUserWork($user,$value["job"],$value["city"],$value["country"]);
+    }
+    foreach ($user_phonenumbers as $value){  
+        UserPhonenumberManager::insertUserPhonenumber($value["country_code"],$id,$value["number"]);
+    }
+    
 }
 
 

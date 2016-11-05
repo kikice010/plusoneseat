@@ -9,27 +9,27 @@ require_once __DB_CONNECTION__."DBManager.php";
  */
 class UserEducationManager {
     
-    public function insertUserEducation($user,$university,$degree){
+    public static function insertUserEducation($user,$university,$degree){
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_insert = $db_instance->prepare("INSERT INTO user_education (id_user, degree, university) "
                 . "VALUES(?, ?, ?);");
         $user_id = $user->getID();
-        $sql_insert->bind_params("iss", $user_id, $degree, $university);
+        $sql_insert->bind_param("iss", $user_id, $degree, $university);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
     }
     
-    public function deleteUserEducation($user) {
+    public static function deleteUserEducation($user) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_delete = $db_instance->prepare("DELETE FROM user_education "
                 . "WHERE id_user = ?;");
         $user_id = $user->getID();
-        $sql_delete->bind_params("i", $user_id);
+        $sql_delete->bind_param("i", $user_id);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();

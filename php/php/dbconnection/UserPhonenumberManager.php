@@ -10,25 +10,38 @@ require_once __DB_CONNECTION__.'CountryManager.php';
  */
 class UserPhonenumberManager {
     
-    public function insertUserPhonenumber($country_code,$user_id,$number){
+    public static function insertUserPhonenumber($country_code,$user_id,$number){
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_insert = $db_instance->prepare("INSERT INTO user_phonenumbers (id_user, country_code, phonenumber) "
                 . "VALUES(?, ?, ?);");
-                $sql_insert->bind_params("iis", $user_id, $country_code, $number);
+                $sql_insert->bind_param("iis", $user_id, $country_code, $number);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
     }
     
-    public function deleteUserPhonenumber($country_code,$user_id) {
+    public static function deleteUserPhonenumber($country_code,$user_id) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_delete = $db_instance->prepare("DELETE FROM user_phonenumbers "
                 . "WHERE id_user = ? AND country_code = ?;");
-        $sql_delete->bind_params("ii", $user_id, $country_code);
+        $sql_delete->bind_param("ii", $user_id, $country_code);
+        $db_instance->executeStatement();
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+    }
+
+    public static function deleteAllUserPhonenumbers($user) {
+        $db_instance = DBManager::getInstance();
+        
+        $db_instance->connect();
+        $sql_delete = $db_instance->prepare("DELETE FROM user_phonenumbers "
+                . "WHERE id_user = ?;");
+        $user_id = $user->getId();
+        $sql_delete->bind_param("i", $user_id);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
