@@ -1,71 +1,72 @@
 <?php
 require_once 'constants.php';
-require_once __ENTITIES__."Course.php";
+require_once __ENTITIES__."Drink.php";
 require_once __DB_CONNECTION__."DBManager.php";
 
 /**
  * Description of CourseManager
  * @author admin
  */
-class CourseManager {
+class MealDrinkManager {
     
-    public static function insertCourse($course){
+    public static function insertMealDrink($meal_drink){
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
-        $sql_insert = $db_instance->prepare("INSERT INTO course (id_meal_offer, course_type) "
-                . "VALUES(?, ?, ?);");
-        $id_meal_offer = $course->getIdMealOffer();
-        $course_type = $course->getCourseType();
-        $sql_insert->bind_param("is", $id_meal_offer, $course_type);
+        $sql_insert = $db_instance->prepare("INSERT INTO meal_drinks (id_meal_offer,id_drink) "
+                . "VALUES(?, ?);");
+
+        $id_meal_offer = $meal_drink->getIdMealOffer();
+        $id_drink = $meal_drink->getDrink();
+        
+        $sql_insert->bind_param("ii", $id_meal_offer, $id_drink);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
     }
     
-    public static function deleteCourse($course) {
+    public static function deleteMealDrink($meal_drink) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
-        $sql_delete = $db_instance->prepare("DELETE FROM course "
+        $sql_delete = $db_instance->prepare("DELETE FROM meal_drinks "
                 . "WHERE id = ?;");
-        $id = $course->getId();
+        $id = $meal_drink->getId();
         $sql_delete->bind_param("i", $id);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
     }
-    
-    public static function getAllCoursesForMealOffer($meal_offer) {
+
+    public static function getMealDrinkByIdMealOffer($meal_drink) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_select = $db_instance->prepare("SELECT * "
-                . "FROM course WHERE id_meal_offer = ?;");
-        $id_meal_offer = $meal_offer->getId();
-        $sql_select->bind_param("i", $id_meal_offer);
-        $result = CourseManager::fetchCourses();
+                . "FROM meal_drinks WHERE id_meal_offer = ?;");
+        $sql_select->bind_param("i", $meal_drink);
+        $result = MealDrinkManager::fetchDrinks();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
         
+        //echo json_encode($result, JSON_PRETTY_PRINT);
         return json_encode($result, JSON_PRETTY_PRINT);
     }
     
-    public static function fetchCourses(){
+    public static function fetchDrinks(){
         $db_instance = DBManager::getInstance();
         
         $result = array();
         $statement = $db_instance->getStatement();
-        
-        $id = null;
+        $id = null
         $id_meal_offer = null;
-        $course_type = null;
+        $id_drink = null;
         $tupple = null;
-        $statement->bind_result($id, $id_meal_offer, $course_type);
+        $statement->bind_result($id ,$id_meal_offer, $id_drink);
         $db_instance->executeStatement();
         
         while($db_instance->fetchResult()){
-            $tupple = new Course($id, $id_meal_offer, $course_type);
+            $tupple = new MealDrink($id ,$id_meal_offer, $id_drink);
             array_push($result, $tupple);
         }
         

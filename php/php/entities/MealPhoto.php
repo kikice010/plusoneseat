@@ -3,15 +3,15 @@
  * Description of course
  * @author admin
  */
-class Course {
+class MealPhoto {
     var $id;
     var $id_meal_offer;
-    var $course_type;
+    var $photo;
     
-    function __construct($id, $id_meal_offer, $course_type){
+    function __construct($id, $id_meal_offer, $photo){
         $this->id = $id;
         $this->id_meal_offer = $id_meal_offer;
-        $this->course_type = $course_type;
+        $this->photo = $photo;
     }
     
     public function getId(){
@@ -22,8 +22,8 @@ class Course {
         return $this->id_meal_offer;
     }
     
-    public function getCourseType(){
-        return $this->course_type;
+    public function getPhoto(){
+        return $this->photo;
     }
     
 
