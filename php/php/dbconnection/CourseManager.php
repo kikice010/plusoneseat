@@ -9,14 +9,12 @@ require_once __DB_CONNECTION__."DBManager.php";
  */
 class CourseManager {
     
-    public static function insertCourse($course){
+    public static function insertCourse($id_meal_offer,$course_type){
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_insert = $db_instance->prepare("INSERT INTO course (id_meal_offer, course_type) "
-                . "VALUES(?, ?, ?);");
-        $id_meal_offer = $course->getIdMealOffer();
-        $course_type = $course->getCourseType();
+                . "VALUES(?, ?);");
         $sql_insert->bind_param("is", $id_meal_offer, $course_type);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
@@ -34,6 +32,32 @@ class CourseManager {
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
+    }
+
+    public static function getCourseId($id_meal_offer,$course_type) {
+        $db_instance = DBManager::getInstance();
+        
+        $db_instance->connect();
+        $sql_select = $db_instance->prepare("SELECT id "
+                . "FROM course WHERE id_meal_offer = ? AND course_type LIKE ?;");
+        $sql_select->bind_param("is", $id_meal_offer,$course_type);
+        $statement = $db_instance->getStatement();
+        
+        $id = null;
+        $result = array();
+
+        $statement->bind_result($id);
+
+        $db_instance->executeStatement();
+        
+        while($db_instance->fetchResult()){
+            array_push($result, $id);
+        }
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+        
+        
+        return $result;
     }
     
     public static function getAllCoursesForMealOffer($meal_offer) {

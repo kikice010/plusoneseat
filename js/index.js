@@ -57,16 +57,17 @@ function signUp() {
 	};
 
 function logIn() {
-	    var email = $("#emailfield").val();
-	    var password = $("#passwordfield").val();
-	    if(email !== "" && password!== ""){ 	
-	    	postrequest("./php/php/api/login.php",{'email':email, 'password':password},callbackfunction,seterrormessage);
+	    // var email = $("#emailfield").val();
+	    // var password = $("#passwordfield").val();
+	    // if(email !== "" && password!== ""){ 	
+	    // 	postrequest("./php/php/api/login.php",{'email':email, 'password':password},callbackfunction,seterrormessage);
 
-	    }
-	    else{
-	    	$(".labelerror").text("please fill in empty fields");
-	    	$(".labelerror").fadein().delay(500).fadeout();
-	    }     
+	    // }
+	    // else{
+	    // 	$(".labelerror").text("please fill in empty fields");
+	    // 	$(".labelerror").fadein().delay(500).fadeout();
+	    // }     
+	    postRequest("./php/php/api/createMeal.php",{"json":JSON.stringify({"type" : "Breakfast","name": "Firts meal","description" : "Some description of the meal","seats" : {"min" : "1","max" : "3"},"cuisine" : {"continent" : "Asia","country" : "Japan"},"drinks": ["Wine","Water"],"course_option" : "Starter/Desert | Main Course","courses" : [{"type" : "Starter","dishes" : [{"dish_name" : "Salad","dish_type" : "Vegetables","main_dish" : false,"ingredients" : "cucumber, tomato, oil"},{"dish_name" : "Bruschetti","dish_type" : "Vegetables","main_dish" : false,"ingredients" : "cucumber, tomato, oil, bread"}]},{"type" : "Main","dishes" : [{"dish_name" : "Sarma","dish_type" : "Red Meat","main_dish" : true,"ingredients" : "cabage, meat"},{"dish_name" : "Soup","dish_type" : "Vegetables","main_dish" : true,"ingredients" : "tomato, oil, bread crumbs"}]}],"photos" : ['base64string', 'base64string'],	"price" : {"seat" : 10.5,"currency" : "euro","donations" : 2,"type" : "orange"},"date" : "15/05/2017","start_time" : "21:20","end_time" : "23:20"})},callbackFunction,setErrorMessage); 
 
 	};
 

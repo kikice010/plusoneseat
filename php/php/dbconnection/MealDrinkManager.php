@@ -58,7 +58,7 @@ class MealDrinkManager {
         
         $result = array();
         $statement = $db_instance->getStatement();
-        $id = null
+        $id = null;
         $id_meal_offer = null;
         $id_drink = null;
         $tupple = null;

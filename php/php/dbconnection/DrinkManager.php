@@ -8,6 +8,31 @@ require_once __DB_CONNECTION__."DBManager.php";
  * @author admin
  */
 class DrinkManager {
+    public static function getDrinkByName($name) {
+        $db_instance = DBManager::getInstance();
+        
+        $db_instance->connect();
+        $sql_select = $db_instance->prepare("SELECT id "
+                . "FROM drink WHERE name LIKE ?;");
+        $sql_select->bind_param("s", $name);
+         $statement = $db_instance->getStatement();
+
+         $result = array();
+        $id = null;
+        $statement->bind_result($id);
+
+        $db_instance->executeStatement();
+        
+        while($db_instance->fetchResult()){
+
+           
+            array_push($result, $id);
+        }
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+        return $result[0];
+
+    }
     
     public static function getAllDrinks() {
         $db_instance = DBManager::getInstance();

@@ -13,4 +13,9 @@ class Country {
         $this->name = $name;
         $this->phonecode = $phonecode;
     }
+
+     public function getId(){
+        return $this->id;
+    }
 }
+?>

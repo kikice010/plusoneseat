@@ -7,9 +7,9 @@ require_once __DB_CONNECTION__."DBManager.php";
  * Description of CourseManager
  * @author admin
  */
-class CourseManager {
+class MealPhotoManager {
     
-    public static function insertCourse($meal_photo){
+    public static function insertMealPhoto($meal_photo){
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
@@ -23,7 +23,7 @@ class CourseManager {
         $db_instance->closeConnection();
     }
     
-    public static function deleteCourse($meal_photo) {
+    public static function deleteMealPhoto($meal_photo) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();

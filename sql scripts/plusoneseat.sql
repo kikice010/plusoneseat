@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2016 at 06:29 PM
+-- Generation Time: Nov 12, 2016 at 04:29 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
 
 DROP TABLE IF EXISTS `continents`;
 CREATE TABLE IF NOT EXISTS `continents` (
-  `code` char(2) NOT NULL COMMENT 'Continent code',
+  `code` varchar(2) NOT NULL COMMENT 'Continent code',
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -354,7 +354,7 @@ CREATE TABLE IF NOT EXISTS `course` (
   `course_type` varchar(30) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_meal_offer` (`id_meal_offer`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -387,15 +387,16 @@ INSERT INTO `course_option` (`id`, `course_option`) VALUES
 
 DROP TABLE IF EXISTS `dish`;
 CREATE TABLE IF NOT EXISTS `dish` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_course` int(11) NOT NULL,
   `id_dish_type` int(11) NOT NULL,
   `ingredients` varchar(100) NOT NULL,
   `main_dish` tinyint(1) NOT NULL,
   `dish_name` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`),
   KEY `id_course` (`id_course`),
   KEY `id_dish_type` (`id_dish_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -430,7 +431,7 @@ INSERT INTO `dish_type` (`id`, `name`) VALUES
 DROP TABLE IF EXISTS `drink`;
 CREATE TABLE IF NOT EXISTS `drink` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `drink_name` varchar(20) NOT NULL,
+  `name` varchar(20) NOT NULL,
   `alcoholic` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
@@ -439,7 +440,7 @@ CREATE TABLE IF NOT EXISTS `drink` (
 -- Dumping data for table `drink`
 --
 
-INSERT INTO `drink` (`id`, `drink_name`, `alcoholic`) VALUES
+INSERT INTO `drink` (`id`, `name`, `alcoholic`) VALUES
 (1, 'Beer', 0),
 (2, 'Wine', 0),
 (3, 'High-Alcoho', 0),
@@ -651,7 +652,7 @@ CREATE TABLE IF NOT EXISTS `meal_drinks` (
   PRIMARY KEY (`id`),
   KEY `id_meal_offer` (`id_meal_offer`),
   KEY `id_drink` (`id_drink`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -662,33 +663,27 @@ CREATE TABLE IF NOT EXISTS `meal_drinks` (
 DROP TABLE IF EXISTS `meal_offer`;
 CREATE TABLE IF NOT EXISTS `meal_offer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `meal_type` int(11) NOT NULL,
+  `meal_type` varchar(20) NOT NULL,
   `meal_name` varchar(100) NOT NULL,
-  `continent_id` char(2) NOT NULL,
+  `continent_id` varchar(2) NOT NULL,
   `country_id` int(11) NOT NULL,
   `description` varchar(300) DEFAULT NULL,
   `min_seats` int(11) NOT NULL,
   `max_seats` int(11) NOT NULL,
   `price_per_seat` float NOT NULL,
-  `date` date NOT NULL,
-  `start_time` time NOT NULL,
+  `meal_date` varchar(20) NOT NULL,
+  `start_time` varchar(10) NOT NULL,
   `course_option` int(11) NOT NULL,
-  `end_time` time NOT NULL,
+  `end_time` varchar(10) NOT NULL,
   `donation_type` varchar(20) NOT NULL,
   `number_of_donations` int(11) NOT NULL,
+  `currency` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `continent_id` (`continent_id`,`country_id`,`course_option`),
-  KEY `continent_id_2` (`continent_id`),
   KEY `country_id` (`country_id`),
   KEY `course_option` (`course_option`),
-  KEY `continent_id_3` (`continent_id`,`country_id`,`course_option`),
   KEY `meal_type` (`meal_type`),
-  KEY `course_option_2` (`course_option`),
-  KEY `continent_id_4` (`continent_id`),
-  KEY `country_id_2` (`country_id`),
-  KEY `meal_type_2` (`meal_type`),
-  KEY `course_option_3` (`course_option`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `continent_id` (`continent_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -703,7 +698,7 @@ CREATE TABLE IF NOT EXISTS `meal_photos` (
   `photo` varchar(500) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_meal_offer` (`id_meal_offer`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -849,20 +844,21 @@ CREATE TABLE IF NOT EXISTS `user` (
   `gender` varchar(10) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `birth_location` varchar(50) DEFAULT NULL,
-  `city` varchar(25) NOT NULL,
+  `city` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `location_idx` (`country`),
   KEY `location` (`country`),
   KEY `birth_location` (`birth_location`),
   KEY `country` (`country`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `password`, `country`, `description`, `gender`, `birthday`, `birth_location`, `city`) VALUES
-(1, 'Milica', 'bla', 'kikice010@gmail.com', 'kikice', 'Italy', 'Bella ragazza :P', 'Female', '2014-07-01', 'Pirot, Serbia', 'Milano');
+(1, 'Milica', 'Jovanovic', 'kikice010@gmail.com', 'kikice', 'Italy', 'Bella ragazza :P', 'Female', '2014-07-01', 'Pirot, Serbia', 'Milano'),
+(2, NULL, NULL, 'plusoneseat', 'p1s', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -878,15 +874,14 @@ CREATE TABLE IF NOT EXISTS `user_education` (
   `university` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user_education`
 --
 
 INSERT INTO `user_education` (`id`, `id_user`, `degree`, `university`) VALUES
-(1, 1, 'Master', 'Politecnico di Milano'),
-(2, 1, 'Bachelor', 'University of Electronics');
+(9, 1, 'Master', 'Politecnico di Torino');
 
 -- --------------------------------------------------------
 
@@ -919,15 +914,15 @@ CREATE TABLE IF NOT EXISTS `user_interests` (
   KEY `id_interests` (`id_interests`),
   KEY `id_interests_2` (`id_interests`),
   KEY `id_interests_3` (`id_interests`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user_interests`
 --
 
 INSERT INTO `user_interests` (`id`, `id_user`, `id_interests`) VALUES
-(1, 1, 1),
-(2, 1, 2);
+(9, 1, 3),
+(10, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -951,14 +946,14 @@ CREATE TABLE IF NOT EXISTS `user_languages` (
   KEY `id_language_5` (`id_language`),
   KEY `id_language_6` (`id_language`),
   KEY `id_language_7` (`id_language`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user_languages`
 --
 
 INSERT INTO `user_languages` (`id`, `id_user`, `id_language`, `level`) VALUES
-(1, 1, 31, 'Intermediate');
+(12, 1, 32, 'Basic');
 
 -- --------------------------------------------------------
 
@@ -976,15 +971,15 @@ CREATE TABLE IF NOT EXISTS `user_phonenumbers` (
   KEY `id_user` (`id_user`),
   KEY `country_code` (`country_code`),
   KEY `country_code_2` (`country_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user_phonenumbers`
 --
 
 INSERT INTO `user_phonenumbers` (`id`, `id_user`, `country_code`, `phonenumber`) VALUES
-(1, 1, 1, '55555555'),
-(2, 1, 1, '11111111');
+(5, 1, 93, '55555555'),
+(6, 1, 93, '333');
 
 -- --------------------------------------------------------
 
@@ -1002,14 +997,14 @@ CREATE TABLE IF NOT EXISTS `user_work` (
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`),
   KEY `id_user_2` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user_work`
 --
 
 INSERT INTO `user_work` (`id`, `id_user`, `job`, `city`, `country`) VALUES
-(1, 1, 'Software Developer', 'Milan', 'Italy');
+(4, 1, 'Software Developer', 'Torino', 'Italy');
 
 --
 -- Constraints for dumped tables
@@ -1061,10 +1056,9 @@ ALTER TABLE `meal_drinks`
 -- Constraints for table `meal_offer`
 --
 ALTER TABLE `meal_offer`
-  ADD CONSTRAINT `meal_offer_ibfk_1` FOREIGN KEY (`continent_id`) REFERENCES `continents` (`code`),
-  ADD CONSTRAINT `meal_offer_ibfk_3` FOREIGN KEY (`course_option`) REFERENCES `course_option` (`id`),
-  ADD CONSTRAINT `meal_offer_ibfk_4` FOREIGN KEY (`meal_type`) REFERENCES `meal_type` (`id`),
-  ADD CONSTRAINT `meal_offer_ibfk_5` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`);
+  ADD CONSTRAINT `meal_offer_ibfk_1` FOREIGN KEY (`continent_id`) REFERENCES `continents` (`code`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `meal_offer_ibfk_3` FOREIGN KEY (`course_option`) REFERENCES `course_option` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `meal_offer_ibfk_5` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `meal_photos`

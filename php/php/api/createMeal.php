@@ -2,56 +2,75 @@
 // Swift Mailer Library
 require_once 'constants.php';
 require __SWIFT_MAILER__;
-require_once __ENTITIES__.'User.php';
-require_once __ENTITIES__.'UserEducation.php';
-require_once __ENTITIES__.'UserWork.php';
-require_once __ENTITIES__.'Interest.php';
-require_once __ENTITIES__.'Language.php';
-require_once __ENTITIES__.'Country.php';
-require_once __DB_CONNECTION__.'UserManager.php';
-require_once __DB_CONNECTION__.'UserEducationManager.php';
-require_once __DB_CONNECTION__.'UserWorkManager.php';
-require_once __DB_CONNECTION__.'UserInterestManager.php';
-require_once __DB_CONNECTION__.'UserLanguageManager.php';
-require_once __DB_CONNECTION__.'UserPhonenumberManager.php';
+require_once __ENTITIES__.'MealOffer.php';
+require_once __ENTITIES__.'MealDrink.php';
+require_once __ENTITIES__.'Dish.php';
+require_once __DB_CONNECTION__.'MealOfferManager.php';
+require_once __DB_CONNECTION__.'MealDrinkManager.php';
+require_once __DB_CONNECTION__.'MealPhotoManager.php';
+require_once __DB_CONNECTION__.'CourseManager.php';
+require_once __DB_CONNECTION__.'CourseOptionManager.php';
+require_once __DB_CONNECTION__.'DrinkManager.php';
+require_once __DB_CONNECTION__.'DishManager.php';
+require_once __DB_CONNECTION__.'DishTypeManager.php';
+require_once __DB_CONNECTION__.'CountryManager.php';
+require_once __DB_CONNECTION__.'ContinentManager.php';
 
 $method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
 
 switch ($method) {
-  case 'GET':
+  case 'POST':
+
+    $json = filter_input(INPUT_POST, "json");
+    $obj = json_decode($json,true);
+    $meal_type = $obj['type'];
+    $meal_name = $obj['name'];
+    $description = $obj['description'];
+    $seats = $obj['seats']; // has min and max seats
+    $cuisine = $obj['cuisine']; //has continent and country
+    $drinks = $obj['drinks'];
+    $course_option = $obj['course_option']; 
+    $courses = $obj['courses']; //check again
+    $photos = $obj['photos'];
+    $price = $obj['price']; //complex type, price per seat, currency, number of donations and type of donations
+    $date = $obj['date'];
+    $start_time = $obj['start_time'];
+    $end_time = $obj['end_time'];
+
+    $continent = ContinentManager::getContinentByName($cuisine["continent"]);
+    $continent_id = $continent->getId();
+    echo json_encode($continent_id);
+    $country = CountryManager::getCountryByName($cuisine["country"]);
+    $country_id = $country->getId();
+    $course_option_id = CourseOptionManager::getCourseOptionByName($course_option);
     
-    //Save mail address in the database
-    $id = filter_input(INPUT_GET, "id_user");
-    //$user = new User($id, null, null, null, null, null,null, null,null, null,null);
-    $returned_user = UserManager::getUser($id);
-
-
-    //echo json_encode($returned_user[0]);
-
-    if(count($returned_user)>0)
-    {
-            $returned_education = UserEducationManager::getAllEducationForUser($returned_user[0]);
-            $returned_work = UserWorkManager::getAllWorkForUser($returned_user[0]);
-            $returned_interests = UserInterestManager::getAllInterestsForUser($returned_user[0]);
-            $returned_languages = UserLanguageManager::getAllLanguagesForUser($returned_user[0]);
-            $returned_phonenumbers = UserPhonenumberManager::getAllPhonenumberForUser($returned_user[0]);
-            // echo json_encode(strcmp($returned_password,$password));
-            $result['success'] = 1;
-            $result['message'] = 'User fetched.';
-            $result['user'] = $returned_user[0];
-            $result['user_education'] = $returned_education;
-            $result['user_work'] = $returned_work;
-            $result['user_interests'] = $returned_interests;
-            $result['user_languages'] = $returned_languages;
-            $result['user_phonenumbers'] = $returned_phonenumbers;
-            echo json_encode($result);
+    $meal_offer = new MealOffer(null,$meal_type,$meal_name,$continent_id,$country_id,$description,$seats["min"],$seats["max"],$price["seat"],$date,$start_time,$course_option_id,$end_time,$price["type"],$price["donations"],$price["currency"]);
   
+    MealOfferManager::insertMealOffer($meal_offer);
+    $id_meal_offer = MealOfferManager::getMealOfferId($meal_offer);
+
+    //echo json_encode($languages);
+    foreach ($drinks as $value){
+        //echo json_encode($value);
+        $drink = DrinkManager::getDrinkByName($value);
+        $meal_drink = new MealDrink(null, $id_meal_offer, $drink);
+        MealDrinkManager::insertMealDrink($meal_drink);
     }
-    else {
-        $result['success'] = 0;
-        $result['message'] = 'Login failed. Password or email not correct. Please check your input.';
-        echo json_encode($result);
+    foreach ($photos as $value){
+        $meal_photo = new MealPhoto(null, $id_meal_offer, $value);
+        MealPhotoManager::insertMealPhoto($meal_photo);
     }
+
+    foreach ($courses as $value){  
+        CourseManager::insertCourse($id_meal_offer,$value["type"]);
+        foreach ($value["dishes"] as $dish){ 
+            $id_course = CourseManager::getCourseId($id_meal_offer,$value["type"]);
+            $id_dish_type = DishTypeManager::getDishTypeByName($dish["dish_type"]);
+            $newDish = new Dish(null,$id_course,$id_dish_type,$dish["ingredients"],$dish["main_dish"],$dish["dish_name"]);
+            DishManager::insertDish($newDish);
+        }
+    }
+    
 }
 
 

@@ -19,9 +19,10 @@ class MealOffer {
     var $end_time;
     var $donation_type;
     var $number_of_donations;
+    var $currency;
     // var $host;
     
-    function __construct($id,$meal_type,$meal_name,$continent,$country,$description,$min_seat,$max_seat,$price,$date,$start_time,$course_option,$end_time,$donation_type,$number_of_donations){
+    function __construct($id,$meal_type,$meal_name,$continent,$country,$description,$min_seat,$max_seat,$price,$date,$start_time,$course_option,$end_time,$donation_type,$number_of_donations,$currency){
         $this->id = $id;
         $this->meal_type = $meal_type;
         $this->meal_name = $meal_name;
@@ -37,6 +38,8 @@ class MealOffer {
         $this->end_time = $end_time;
         $this->donation_type = $donation_type;
         $this->number_of_donations = $number_of_donations;
+        $this->currency = $currency;
+
 
     }
 
@@ -97,6 +100,10 @@ class MealOffer {
     
     public function getNumberOfDonations(){
         return $this->number_of_donations;
+    }
+
+    public function getCurrency(){
+        return $this->currency;
     }
     
 }

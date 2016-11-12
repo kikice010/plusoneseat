@@ -16,7 +16,7 @@ class DishManager {
         $sql_insert = $db_instance->prepare("INSERT INTO dish (id_course, id_dish_type, ingredients,main_dish,dish_name) "
                 . "VALUES(?, ?, ?,?, ?);");
 
-        $id_course = $dish->getIdMealgetIdCourseType();
+        $id_course = $dish->getIdCourse();
         $id_dish_type = $dish->getMealIdDishType();
         $ingredients = $dish->getIngredients();
         $main_dish = $dish->getMainDish();
@@ -61,7 +61,7 @@ class DishManager {
         
         $result = array();
         $statement = $db_instance->getStatement();
-        $id = null
+        $id = null;
         $id_course = null;
         $id_dish_type = null;
         $ingredients = null;
