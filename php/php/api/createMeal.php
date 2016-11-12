@@ -23,6 +23,7 @@ switch ($method) {
 
     $json = filter_input(INPUT_POST, "json");
     $obj = json_decode($json,true);
+    $host_id = $obj['host'];
     $meal_type = $obj['type'];
     $meal_name = $obj['name'];
     $description = $obj['description'];
@@ -39,21 +40,24 @@ switch ($method) {
 
     $continent = ContinentManager::getContinentByName($cuisine["continent"]);
     $continent_id = $continent->getId();
-    echo json_encode($continent_id);
+    //echo json_encode($continent_id);
     $country = CountryManager::getCountryByName($cuisine["country"]);
     $country_id = $country->getId();
     $course_option_id = CourseOptionManager::getCourseOptionByName($course_option);
     
-    $meal_offer = new MealOffer(null,$meal_type,$meal_name,$continent_id,$country_id,$description,$seats["min"],$seats["max"],$price["seat"],$date,$start_time,$course_option_id,$end_time,$price["type"],$price["donations"],$price["currency"]);
+    $meal_offer = new MealOffer(null,$host_id,$meal_type,$meal_name,$continent_id,$country_id,$description,$seats["min"],$seats["max"],$price["seat"],$date,$start_time,$course_option_id,$end_time,$price["type"],$price["donations"],$price["currency"],$host_id);
   
+    //echo json_encode($meal_offer);
     MealOfferManager::insertMealOffer($meal_offer);
     $id_meal_offer = MealOfferManager::getMealOfferId($meal_offer);
 
-    //echo json_encode($languages);
+    
     foreach ($drinks as $value){
         //echo json_encode($value);
         $drink = DrinkManager::getDrinkByName($value);
+        
         $meal_drink = new MealDrink(null, $id_meal_offer, $drink);
+        //echo json_encode($meal_drink);
         MealDrinkManager::insertMealDrink($meal_drink);
     }
     foreach ($photos as $value){
@@ -67,6 +71,7 @@ switch ($method) {
             $id_course = CourseManager::getCourseId($id_meal_offer,$value["type"]);
             $id_dish_type = DishTypeManager::getDishTypeByName($dish["dish_type"]);
             $newDish = new Dish(null,$id_course,$id_dish_type,$dish["ingredients"],$dish["main_dish"],$dish["dish_name"]);
+            //echo json_encode($newDish);
             DishManager::insertDish($newDish);
         }
     }

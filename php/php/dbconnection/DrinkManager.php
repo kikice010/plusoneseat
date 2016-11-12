@@ -30,6 +30,7 @@ class DrinkManager {
         }
         $db_instance->closeStatement();
         $db_instance->closeConnection();
+        echo json_encode($result[0]);
         return $result[0];
 
     }

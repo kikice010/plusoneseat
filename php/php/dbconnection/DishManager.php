@@ -21,8 +21,8 @@ class DishManager {
         $ingredients = $dish->getIngredients();
         $main_dish = $dish->getMainDish();
         $dish_name = $dish->getDishName();
-        
-        $sql_insert->bind_param("iisis", $id_course, $id_dish_type, $ingredients, $main_dish, $dish_name);
+        echo json_encode($id_course);
+        $sql_insert->bind_param("iisis", $id_course[0], $id_dish_type, $ingredients, $main_dish, $dish_name);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();

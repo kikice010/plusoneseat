@@ -13,8 +13,9 @@ class MealOfferManager {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
-        $sql_insert = $db_instance->prepare("INSERT INTO meal_offer (meal_type, meal_name, continent_id,country_id,description,min_seats, max_seats, price_per_seat,meal_date,start_time, course_option, end_time,donation_type,number_of_donations, currency) "
-                . "VALUES(?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?);");
+        $sql_insert = $db_instance->prepare("INSERT INTO meal_offer (host_id,meal_type, meal_name, continent_id,country_id,description,min_seats, max_seats, price_per_seat,meal_date,start_time, course_option, end_time,donation_type,number_of_donations, currency) "
+                . "VALUES(?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?);");
+        $host_id = $meal_offer->getHostId();
         $meal_type = $meal_offer->getIdMealType();
         $meal_name = $meal_offer->getMealName();
         $continent = $meal_offer->getContinent();
@@ -30,7 +31,7 @@ class MealOfferManager {
         $donation_type = $meal_offer->getDonationType();
         $number_of_donations = $meal_offer->getNumberOfDonations();
         $currency = $meal_offer->getCurrency();
-        $sql_insert->bind_param("ssiisiidssissis", $meal_type, $meal_name, $continent, $country, $description, $min_seat, $max_seat, $price, $date, $start_time, $course_option, $end_time, $donation_type, $number_of_donations,$currency);
+        $sql_insert->bind_param("isssisiidssissis", $host_id,$meal_type, $meal_name, $continent, $country, $description, $min_seat, $max_seat, $price, $date, $start_time, $course_option, $end_time, $donation_type, $number_of_donations,$currency);
         $db_instance->executeStatement();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
@@ -53,7 +54,8 @@ class MealOfferManager {
         
         $db_instance->connect();
         $sql_select = $db_instance->prepare("SELECT id "
-                . "FROM meal_offer WHERE meal_type LIKE ? AND meal_name LIKE ? AND continent_id LIKE ? AND country_id = ? AND description LIKE ? AND min_seats = ? AND max_seats= ? AND  price_per_seat = ? AND meal_date LIKE ? AND start_time LIKE ? AND course_option = ?;");
+                . "FROM meal_offer WHERE host_id = ? AND meal_type LIKE ? AND meal_name LIKE ? AND continent_id LIKE ? AND country_id = ? AND description LIKE ? AND min_seats = ? AND max_seats= ? AND  price_per_seat = ? AND meal_date LIKE ? AND start_time LIKE ? AND course_option = ?;");
+        $host_id = $meal_offer->getHostId();
         $meal_type = $meal_offer->getIdMealType();
         $meal_name = $meal_offer->getMealName();
         $continent = $meal_offer->getContinent();
@@ -66,7 +68,7 @@ class MealOfferManager {
         $start_time = $meal_offer->getStartTime();
         $course_option = $meal_offer->getCourseOption();
 
-        $sql_select->bind_param("ssiisiidssi", $meal_type, $meal_name, $continent, $country, $description, $min_seat, $max_seat, $price, $date, $start_time, $course_option);
+        $sql_select->bind_param("isssisiidssi", $host_id, $meal_type, $meal_name, $continent, $country, $description, $min_seat, $max_seat, $price, $date, $start_time, $course_option);
 
         $result = array();
         $id = null;
@@ -80,12 +82,8 @@ class MealOfferManager {
             array_push($result, $id);
         }
         
-        return $result;
-        $db_instance->closeStatement();
-        $db_instance->closeConnection();
+        return $result[0];
         
-        //echo json_encode($result, JSON_PRETTY_PRINT);
-        return json_encode($result, JSON_PRETTY_PRINT);
     }
     //not finished!
     public static function getMealOfferById($id) {
@@ -109,6 +107,7 @@ class MealOfferManager {
         $result = array();
         $statement = $db_instance->getStatement();
         
+        $host_id = null;
         $meal_type = null;
         $meal_name = null;
         $continent = null;
@@ -125,11 +124,11 @@ class MealOfferManager {
         $number_of_donations = null;
         $currency = null;
         $tupple = null;
-        $statement->bind_result($meal_type, $meal_name, $continent, $country, $description, $min_seat, $max_seat, $price, $date, $start_time, $course_option, $end_time, $donation_type, $number_of_donations,$currency);
+        $statement->bind_result($host_id,$meal_type, $meal_name, $continent, $country, $description, $min_seat, $max_seat, $price, $date, $start_time, $course_option, $end_time, $donation_type, $number_of_donations,$currency);
         $db_instance->executeStatement();
         
         while($db_instance->fetchResult()){
-            $tupple = new MealOffer(null,$meal_type, $meal_name, $continent, $country, $description, $min_seat, $max_seat, $price, $date, $start_time, $course_option, $end_time, $donation_type, $number_of_donations,$currency);
+            $tupple = new MealOffer(null,$host_id,$meal_type, $meal_name, $continent, $country, $description, $min_seat, $max_seat, $price, $date, $start_time, $course_option, $end_time, $donation_type, $number_of_donations,$currency);
             array_push($result, $tupple);
         }
         

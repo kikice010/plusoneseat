@@ -5,6 +5,7 @@
  */
 class MealOffer {
     var $id;
+    var $host_id;
     var $meal_type;
     var $meal_name;
     var $continent;
@@ -22,8 +23,9 @@ class MealOffer {
     var $currency;
     // var $host;
     
-    function __construct($id,$meal_type,$meal_name,$continent,$country,$description,$min_seat,$max_seat,$price,$date,$start_time,$course_option,$end_time,$donation_type,$number_of_donations,$currency){
+    function __construct($id,$host_id,$meal_type,$meal_name,$continent,$country,$description,$min_seat,$max_seat,$price,$date,$start_time,$course_option,$end_time,$donation_type,$number_of_donations,$currency){
         $this->id = $id;
+        $this->host_id = $host_id;
         $this->meal_type = $meal_type;
         $this->meal_name = $meal_name;
         $this->continent = $continent;
@@ -46,6 +48,11 @@ class MealOffer {
     public function getId(){
         return $this->id;
     }
+
+    public function getHostId(){
+        return $this->host_id;
+    }
+    
     
     public function getIdMealType(){
         return $this->meal_type;
