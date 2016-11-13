@@ -30,9 +30,22 @@ class DrinkManager {
         }
         $db_instance->closeStatement();
         $db_instance->closeConnection();
-        echo json_encode($result[0]);
+        //echo json_encode($result[0]);
         return $result[0];
 
+    }
+    public static function getDrinkById($id) {
+        $db_instance = DBManager::getInstance();
+        
+        $db_instance->connect();
+        $sql_select = $db_instance->prepare("SELECT * "
+                . "FROM drink WHERE id = ?;");
+        $sql_select->bind_param("i", $id);
+        $result = DrinkManager::fetchDrinks();
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+        
+        return $result;
     }
     
     public static function getAllDrinks() {

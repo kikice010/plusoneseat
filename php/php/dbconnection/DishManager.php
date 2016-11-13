@@ -46,14 +46,14 @@ class DishManager {
         
         $db_instance->connect();
         $sql_select = $db_instance->prepare("SELECT * "
-                . "FROM dish WHERE id = ?;");
+                . "FROM dish WHERE id_course = ?;");
         $sql_select->bind_param("i", $id);
-        $result = fetchCourses();
+        $result = DishManager::fetchDish();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
         
         //echo json_encode($result, JSON_PRETTY_PRINT);
-        return json_encode($result, JSON_PRETTY_PRINT);
+        return $result;
     }
     
     public static function fetchDish(){

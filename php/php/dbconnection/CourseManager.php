@@ -66,13 +66,13 @@ class CourseManager {
         $db_instance->connect();
         $sql_select = $db_instance->prepare("SELECT * "
                 . "FROM course WHERE id_meal_offer = ?;");
-        $id_meal_offer = $meal_offer->getId();
-        $sql_select->bind_param("i", $id_meal_offer);
+        //$id_meal_offer = $meal_offer->getId();
+        $sql_select->bind_param("i", $meal_offer);
         $result = CourseManager::fetchCourses();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
         
-        return json_encode($result, JSON_PRETTY_PRINT);
+        return $result;
     }
     
     public static function fetchCourses(){

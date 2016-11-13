@@ -36,19 +36,20 @@ class MealPhotoManager {
         $db_instance->closeConnection();
     }
     
-    public static function getAllPhotosForMealOffer($meal_offer) {
+    public static function getAllPhotosForMealOffer($id_meal_offer) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_select = $db_instance->prepare("SELECT * "
                 . "FROM meal_photos WHERE id_meal_offer = ?;");
-        $id_meal_offer = $meal_offer->getId();
+        //$id_meal_offer = $meal_offer->getId();
+        //echo json_encode($id_meal_offer);
         $sql_select->bind_param("i", $id_meal_offer);
         $result = MealPhotoManager::fetchPhotos();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
         
-        return json_encode($result, JSON_PRETTY_PRINT);
+        return $result;
     }
     
     public static function fetchPhotos(){
@@ -67,6 +68,7 @@ class MealPhotoManager {
         while($db_instance->fetchResult()){
             $tupple = new MealPhoto($id, $id_meal_offer, $photo);
             array_push($result, $tupple);
+            //echo json_encode($photo);
         }
         
         return $result;

@@ -33,6 +33,20 @@ class DishTypeManager {
         
         return $result;
     }
+
+    public static function getDishTypesById($id) {
+        $db_instance = DBManager::getInstance();
+        
+        $db_instance->connect();
+        $sql_select = $db_instance->prepare("SELECT * "
+                . "FROM dish_type WHERE id = ?;");
+        $sql_select->bind_param("i", $id);
+        $result = DishTypeManager::fetchDishTypes();
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+        
+        return $result;
+    }
     
     public static function getAllDishTypes() {
         $db_instance = DBManager::getInstance();

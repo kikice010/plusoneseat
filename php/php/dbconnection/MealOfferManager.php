@@ -86,19 +86,18 @@ class MealOfferManager {
         
     }
     //not finished!
-    public static function getMealOfferById($id) {
+    public static function getMealOffersByHost($id) {
         $db_instance = DBManager::getInstance();
         
         $db_instance->connect();
         $sql_select = $db_instance->prepare("SELECT * "
-                . "FROM meal_offer WHERE id = ?;");
+                . "FROM meal_offer WHERE host_id = ?;");
         $sql_select->bind_param("i", $id);
-        $result = fetchCourses();
+        $result = MealOfferManager::fetchMealOffer();
         $db_instance->closeStatement();
         $db_instance->closeConnection();
         
-        //echo json_encode($result, JSON_PRETTY_PRINT);
-        return json_encode($result, JSON_PRETTY_PRINT);
+        return $result;
     }
     
     public static function fetchMealOffer(){
@@ -107,6 +106,7 @@ class MealOfferManager {
         $result = array();
         $statement = $db_instance->getStatement();
         
+        $id = null;
         $host_id = null;
         $meal_type = null;
         $meal_name = null;
@@ -124,11 +124,11 @@ class MealOfferManager {
         $number_of_donations = null;
         $currency = null;
         $tupple = null;
-        $statement->bind_result($host_id,$meal_type, $meal_name, $continent, $country, $description, $min_seat, $max_seat, $price, $date, $start_time, $course_option, $end_time, $donation_type, $number_of_donations,$currency);
+        $statement->bind_result($id,$meal_type,$meal_name,$continent,$country,$description,$min_seat,$max_seat,$price,$date,$start_time,$course_option,$end_time,$donation_type,$number_of_donations,$currency,$host_id);
         $db_instance->executeStatement();
         
         while($db_instance->fetchResult()){
-            $tupple = new MealOffer(null,$host_id,$meal_type, $meal_name, $continent, $country, $description, $min_seat, $max_seat, $price, $date, $start_time, $course_option, $end_time, $donation_type, $number_of_donations,$currency);
+            $tupple = new MealOffer($id,$host_id,$meal_type,$meal_name,$continent,$country,$description,$min_seat,$max_seat,$price,$date,$start_time,$course_option,$end_time,$donation_type,$number_of_donations,$currency);
             array_push($result, $tupple);
         }
         

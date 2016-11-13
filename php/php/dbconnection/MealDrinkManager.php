@@ -50,7 +50,7 @@ class MealDrinkManager {
         $db_instance->closeConnection();
         
         //echo json_encode($result, JSON_PRETTY_PRINT);
-        return json_encode($result, JSON_PRETTY_PRINT);
+        return $result;
     }
     
     public static function fetchDrinks(){

@@ -9,6 +9,33 @@ require_once __ENTITIES__."UserPhonenumbers.php";
  * @author mcolic
  */
 class CountryManager {
+    public static function getCountryById($id) {
+        $db_instance = DBManager::getInstance();
+        
+        $db_instance->connect();
+
+        $result = array();
+        $nicename = null;
+        //$tupple = null;
+
+        $sql_select = $db_instance->prepare("SELECT nicename "
+                . "FROM country WHERE id = ?;");
+        $sql_select->bind_param("i", $id);
+       
+        $statement = $db_instance->getStatement();
+        $statement->bind_result($nicename);
+
+        $db_instance->executeStatement();
+        
+        while($db_instance->fetchResult()){
+
+            array_push($result, $nicename);
+        }
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+        
+        return $result[0];
+    }
     public static function getCountryByName($name) {
         $db_instance = DBManager::getInstance();
         

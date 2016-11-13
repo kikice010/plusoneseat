@@ -7,7 +7,20 @@ require_once __ENTITIES__."Continent.php";
  * @author mcolic
  */
 class ContinentManager {
-    
+    public static function getContinentByCode($code) {
+        $db_instance = DBManager::getInstance();
+        
+        $db_instance->connect();
+        $sql_select = $db_instance->prepare("SELECT * "
+                . "FROM continents WHERE code LIKE ?;");
+        $sql_select->bind_param("s", $code);
+        $result = ContinentManager::fetchContinent();
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+        
+        return $result[0];
+    }
+
     public static function getContinentByName($name) {
         $db_instance = DBManager::getInstance();
         
