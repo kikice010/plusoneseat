@@ -1,0 +1,182 @@
+#messages-modal>.modal-dialog {
+	width: -webkit-calc(100% - 60px);
+    width: -moz-calc(100% - 60px);
+    width: calc(100% - 60px);
+    height: -webkit-calc(100% - 60px);
+    height: -moz-calc(100% - 60px);
+    height: calc(100% - 60px);
+    margin: 30px auto;
+}
+
+.p1s-scrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.p1s-scrollbar::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.p1s-scrollbar::-webkit-scrollbar-thumb
+{
+	background-color: #aaaaaa;
+}
+
+.bubble-effect {
+	height: 30px;
+    width: 30px;
+    position: relative;
+    clear: both;
+}
+
+.sent+.bubble-effect {
+	background: white;
+    float: left;
+    left: -30px;
+    top: -45px;
+}
+
+.received+.bubble-effect {
+	background: #dcf8c6;
+    float: right;
+    left: 30px;
+    top: -45px;
+}
+
+.bubble-effect>.inner {
+	background: #ddd;
+    height: 30px;
+    width: 30px;
+}
+
+.sent+.bubble-effect>.inner {
+	border-radius: 0 0 30px 0px;
+}
+
+.received+.bubble-effect>.inner {
+	border-radius: 0 0 0px 30px;	
+}
+
+#messages-modal>.modal-dialog>.modal-content {
+	height: 100%;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-header {
+	background-color: #ef804a;
+	color: white;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-header>.icon {
+	background: url(../img/icon/gray/messages.png) 50% 50% no-repeat;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 25px;
+    width: 30px;
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+    margin-right: 10px;
+    float: left;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-header>.close {
+	color: white;
+	opacity: 0.6;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-header>.close:hover {
+	color: white;
+	opacity: 1;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-body {
+	height: -webkit-calc(100% - 120px);
+    height: -moz-calc(100% - 120px);
+    height: calc(100% - 120px);
+    padding: 0;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-body>.conversations {
+	float: left;
+    width: 300px;
+    border-right: 3px solid #efefef;
+    height: 100%;
+    background: #efefef;
+    overflow: auto;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-body>.conversations>.item {
+	height: 75px;
+    background: #ef804a;
+    color: white;
+    font-size: 20px;
+    border: 2px solid #efefef;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-body>.conversations>.item>.image {
+	background: url(../img/user/10004154/profile.jpg) 50% 50% no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60px;
+    width: 60px;
+    float: left;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 5px;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-body>.conversations>.item>.name {
+	line-height: 70px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-body>.messages {
+	width: -webkit-calc(100% - 300px);
+    width: -moz-calc(100% - 300px);
+    width: calc(100% - 300px);
+    height: 100%;
+    float: left;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-body>.messages>div {
+	height: 100%;
+	padding-left: 15%;
+	padding-right: 15%;
+	background-color: #dddddd;
+	overflow: auto;
+	padding-top: 50px;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-body>.messages>div>.sent {
+	display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: -25px;
+    float: left;
+    clear: both;
+    max-width: 300px;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-body>.messages>div>.received {
+	display: inline-block;
+    background-color: #dcf8c6;
+    border-radius: 10px;
+    margin-top: -25px;
+    float: right;
+    clear: both;
+    max-width: 300px;
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-body>.messages>div>div>.content {
+	font-size: 20px;
+    padding: 10px;	
+}
+
+#messages-modal>.modal-dialog>.modal-content>.modal-body>.messages>div>div>.time {
+	font-size: 10px;
+    float: right;
+    padding-right: 10px;	
+}
