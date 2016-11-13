@@ -50,7 +50,7 @@
         <script type="text/javascript" src="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="../lib/location_picker/jquery.placepicker.js"></script>
         <script type="text/javascript" src="../js/location-picker.js"></script>
-        <script type="text/javascript" src="../js/profile-page.js"></script>
+        <script type="text/javascript" src="../js/my-profile-page.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Hb7ZjcestOuK7U5luaDINFkCUCmU9YQ&sensor=true&amp;libraries=places"></script>
     </head>
     <body>
@@ -143,8 +143,8 @@
             <div class="left-container">
                 <div class="user-picture"></div>
                 <div class="user-info">                    
-                    <div class="name">Cagil</div>
-                    <div class="extra">Milan, Italy - Member since August 2016</div>
+                    <div id="user-name" class="name">Cagil</div>
+                    <div id="user-location" class="extra">Milan, Italy - Member since August 2016</div>
                 </div>
                 <div class="ratings">
                     <div class="title">Ratings</div>
@@ -349,7 +349,7 @@
             <div class="right-container">
                 <div class="about">
                     <div class="title">About</div>
-                    <div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id metus nec lorem malesuada placerat. Proin id mauris cursus, ultricies elit in, imperdiet elit. Morbi luctus varius nisl, eu luctus orci dictum efficitur. Sed mi sem, aliquet vel lacinia egestas, euismod et eros. Morbi vel ligula elit. Maecenas et ante purus. Sed vitae ex rhoncus, scelerisque lectus ac, posuere lacus. Morbi eget odio venenatis, pretium quam in, feugiat tortor. Proin sollicitudin, lacus vel rutrum maximus, est sem sodales augue, eget fermentum nisi ex commodo odio. Morbi ut consequat metus, at gravida purus. Sed vitae libero dapibus, placerat mi non, vehicula neque. Donec et aliquam sem. Aenean luctus diam et lobortis vehicula</div>
+                    <div id="user-about" class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id metus nec lorem malesuada placerat. Proin id mauris cursus, ultricies elit in, imperdiet elit. Morbi luctus varius nisl, eu luctus orci dictum efficitur. Sed mi sem, aliquet vel lacinia egestas, euismod et eros. Morbi vel ligula elit. Maecenas et ante purus. Sed vitae ex rhoncus, scelerisque lectus ac, posuere lacus. Morbi eget odio venenatis, pretium quam in, feugiat tortor. Proin sollicitudin, lacus vel rutrum maximus, est sem sodales augue, eget fermentum nisi ex commodo odio. Morbi ut consequat metus, at gravida purus. Sed vitae libero dapibus, placerat mi non, vehicula neque. Donec et aliquam sem. Aenean luctus diam et lobortis vehicula</div>
                 </div>
                 <div class="basic-info">
                     <div class="title">Basic Info</div>
@@ -357,51 +357,34 @@
                         <div class="cell">
                             <div class="icon horizontal-center" id="hometown-icon"></div>
                             <div class="subscript">Hometown</div>
-                            <div class="value">Izmir, Turkey</div>
+                            <div id="user-home-town" class="value">Izmir, Turkey</div>
                         </div>
                         <div class="cell">
                             <div class="icon horizontal-center" id="birth-icon"></div>
                             <div class="subscript">Birth</div>
-                            <div class="value">April 1987</div>
+                            <div id="user-birthday" class="value">April 1987</div>
                         </div>
                         <div class="cell">
                             <div class="icon horizontal-center" id="gender-icon"></div>
                             <div class="subscript">Gender</div>
-                            <div class="value">Male</div>
+                            <div id="user-gender" class="value">Male</div>
                         </div>
                     </div>
                 </div>
                 <div class="detailed-info">
                     <div class="title">Detailed Info</div>
                     <div class="content">
-                        <div class="cell">
+                        <div id="user-languages" class="cell">
                             <div class="icon horizontal-center" id="language-icon"></div>
-                            <div class="subscript">Language</div>
-                            <div class="item horizontal-center">
-                                <div class="language">English</div>
-                                <div class="value">(Fluent)</div>
-                            </div>
-                            <div class="item horizontal-center">
-                                <div class="language">Turkish</div>
-                                <div class="value">(Native)</div>
-                            </div> 
-                            <div class="item horizontal-center">
-                                <div class="language">Italian</div>
-                                <div class="value">(Fair)</div>
-                            </div>     
+                            <div class="subscript">Language</div>    
                         </div>
                         <div class="cell">
                             <div class="icon horizontal-center" id="interests-icon"></div>
                             <div class="subscript">Interests</div>
                             <div class="value">
-                                <div class="left">
-                                    <div class="item">Art&Design</div>
-                                    <div class="item">Technology</div>
-                                    <div class="item">Entertaiment</div>
+                                <div id="user-interests-left" class="left">
                                 </div>
-                                <div class="right">
-                                    <div class="item">Gastronomy</div>
-                                    <div class="item">Education</div>
+                                <div id="user-interests-right" class="right">
                                 </div>           
                             </div>            
                         </div>
@@ -410,27 +393,15 @@
                 <div class="education-work">
                     <div class="title">Education/Work</div>
                     <div class="content">
-                        <div class="cell">
+                        <div id="user-education" class="cell">
                             <div class="icon horizontal-center" id="education-icon"></div>
-                            <div class="subscript">Education</div>
-                            <div class="item">
-                                <div class="degree">Graphic Design Master</div>
-                                <div class="location">Turkey</div>
-                            </div>
-                            <div class="item">
-                                <div class="degree">Visual Brand Design Master</div>
-                                <div class="location">Domus Academy - Milan, Italy</div>
-                            </div> 
-                            <div class="item">
-                                <div class="degree">Graphic Design Bachelor</div>
-                                <div class="location">Bilkent University - Ankara, Turkey</div>
-                            </div>     
+                            <div class="subscript">Education</div>    
                         </div>
-                        <div class="cell">
+                        <div id="user-work" class="cell">
                             <div class="icon horizontal-center" id="work-icon"></div>
                             <div class="subscript">Work</div>
                             <div class="item">
-                                <div class="degree">Graphic Design Lecturer</div>
+                                <div class="position">Graphic Design Lecturer</div>
                                 <div class="location">IED, Milan</div>
                             </div>
                         </div>

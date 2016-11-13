@@ -14,13 +14,26 @@ $(function () {
     $('#sb-input-group-timepicker-end').datetimepicker({
         format: 'LT',
         stepping: 15,
-        debug: true
+        debug: true,
+        useCurrent: false
     });
     $('#sb-input-group-timepicker').datetimepicker({
         format: 'LT',
         stepping: 15,
         debug: true
     });
+
+    $('#sb-input-group-timepicker-start').on("dp.change", function (e) {
+        var start = $('#sb-input-group-timepicker-start').data("DateTimePicker");
+        var end = $('#sb-input-group-timepicker-end').data("DateTimePicker");
+        end.minDate(e.date);
+    });
+    $('#sb-input-group-timepicker-end').on("dp.change", function (e) {
+        var start = $('#sb-input-group-timepicker-start').data("DateTimePicker");
+        var end = $('#sb-input-group-timepicker-end').data("DateTimePicker");
+        start.maxDate(e.date);
+    });
+    
 });
 
 $(function () {

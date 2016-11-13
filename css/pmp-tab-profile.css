@@ -170,3 +170,136 @@
     .lite-orange-check{
         background-image:url(http://csscheckbox.com/checkboxes/lite-orange-check.png);
     }
+
+    #tab-content-container {
+        margin-top: 3em;
+    }
+
+    #educationSelectionContainer {
+        margin-top: -35px;
+    }
+
+    #educationSelectionContainer>label {
+        float: left;
+        position: relative;
+        top: 35px;
+    }
+
+    #educationSelectionContainer>input[type=text] {
+        margin-top: 10px;
+    }
+
+    #workSelectionContainer>label {
+        float: left;
+        position: relative;
+        top: 35px;
+    }
+
+    #workSelectionContainer>input[type=text] {
+        margin-top: 10px;
+    }
+
+    .user-description {
+        position: relative;
+        height: 150px;
+    }
+
+    .user-description>.buttons {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .submit-buttons>button {
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: 20px; 
+    }
+
+    .submit-buttons>.save-button {
+        background-color: #ef804a;
+    }
+
+    .submit-buttons>.view-profile-button {
+        background-color: #808080;
+        border-color: #ddd;
+    }
+
+    #phoneSelectionContainer>input+select {
+        clear: left;
+        margin-left: 16.67%;
+        margin-top: 10px;
+    }
+    #field-phone-1 {
+        margin-top: 0px !important;
+    }
+
+    #phoneSelectionContainer>input {
+        height: 35px;
+        margin-top: 10px;
+    }
+
+    #interestsSelectionContainer>* {
+        margin-top: 10px;
+    }
+
+    #educationSelectionContainer>.p1s-close,
+    #workSelectionContainer>.p1s-close {
+        position: relative;
+        top: -40px;
+        font-size: 40px;
+    }
+
+    #educationSelectionContainer>input,
+    #workSelectionContainer>input {
+        margin-left: 16.67%;
+        width: 80%;
+    }
+
+    #field-interests-group,
+    #field-phones-group,
+    #field-languages-group {
+        margin-top: -30px;
+        padding: 0;
+    }
+
+    #field-interests-group>select {
+        width: 45%;
+        float: left;
+    }
+
+    #field-interests-group>.p1s-close,
+    #field-phones-group>.p1s-close,
+    #field-languages-group>.p1s-close {
+        float: left;
+        font-size: 40px;
+        display: inline-block;
+        position: relative;
+        top: -1px;
+        margin-right: 7px;
+    }
+
+    #field-phones-group>select,
+    #field-languages-group>select {
+        width: 30%;
+        clear: left;
+        float: left;
+    }
+
+    #field-languages-group>select+select {
+        margin-right: 0.5em;
+        clear: none;
+    }
+
+    #field-phones-group>input {
+        width: 30%;
+        float: left;
+        margin-right: 0.5em;
+    }
+
+    .edit-profile-panel select {
+        height: 38px;
+    }
+
+    .edit-profile-panel input {
+        height: 38px;
+    }

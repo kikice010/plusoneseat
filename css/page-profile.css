@@ -4,18 +4,6 @@ html, body {
     background-color: #efefef;
 }
 
-.horizontal-center {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.vertical-center {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
 .profile-picture {
     width: 10em;
     height: 10em;
@@ -58,34 +46,6 @@ body {
 .header-link:active {
     color: white;
     text-decoration: none;
-}
-
-.height-full {
-    height: 900px;
-}
-
-.height-1-style {
-    height: 100%;
-}
-
-.height-3-style {
-    height: 33.33%;
-}
-
-.height-5-style {
-    height: 20%;
-}
-
-.height-7-style {
-    height: 14.28%;
-}
-
-.height-10-style {
-    height: 10%;
-}
-
-.vertical-50-translate {
-    transform: translateY(50%);
 }
 
 .title-logo {
@@ -138,8 +98,4 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-#tab-content-container {
-    margin-top: 3em;
 }

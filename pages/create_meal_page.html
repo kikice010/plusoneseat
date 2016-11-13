@@ -23,13 +23,8 @@
   <link href="../lib/bootstrap/css/font-awesome.min.css" rel="stylesheet">
   <link href="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
   <link href="../font/MyFontsWebfontsKit.css" rel="stylesheet" type="text/css">
-
-  <link rel="stylesheet" type="text/css" href="../css/fontClasses.css">
-
   <link rel="stylesheet" type="text/css" href="../css/calendar.css" />
   <link rel="stylesheet" type="text/css" href="../css/custom_2.css" />
-  <script src="../js/modernizr.custom.63321.js"></script>
-
 
   
 </head>
@@ -136,108 +131,70 @@
             <div class="row" id="genderSelectionContiner">
               <label  class="col-xs-2">Meal Type</label>
               <select class="col-xs-2" id="mealTypeSelection">
-                <option>1</option>
-                <option>2</option>
               </select>
             </div>
             <div class="row" id="birthdaySelectionContainer">
               <label class="col-xs-2">Cuisine</label>
               <select class="col-xs-2" id="cuisineContinentSelection">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
+                <option value="Africa">Africa</option>
+                <option value="Antarctica">Antarctica</option>
+                <option value="Asia">Asia</option>
+                <option value="Australia">Australia</option>
+                <option value="Europe">Europe</option>
+                <option value="North America">North America</option>
+                <option value="South America">South America</option>
               </select>
               <select class="col-xs-2" id="cuisineCountrySelection">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
               </select>
             </div>
             <div class="row">
-              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+              <p class="col-xs-offset-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor accumsan mattis. Aliquam a eros nec nunc aliquam egestas. Curabitur porta, ex in viverra mollis, risus nunc rutrum dolor, ac euismod neque massa eu tortor. In tincidunt molestie neque, a convallis nisl efficitur nec.</p>
             </div>
             
             <div class="row">
               <label class="col-xs-2">Your Meal Name</label>
-              <input type="text" class="col-xs-10" name="mealNameField">
+              <input type="text" class="col-xs-10" id="mealNameField">
             </div>
             <div class="row">
-              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+              <p class="col-xs-offset-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor accumsan mattis. Aliquam a eros nec nunc aliquam egestas. Curabitur porta, ex in viverra mollis, risus nunc rutrum dolor, ac euismod neque massa eu tortor. In tincidunt molestie neque, a convallis nisl efficitur nec.</p>
             </div>
             <div class="row">
               <label class="col-xs-2">Course Options</label>
               <select class="col-xs-10" id="courseOptionsSelection">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
               </select>
             </div>
             <div class="row">
-              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+              <p class="col-xs-offset-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor accumsan mattis. Aliquam a eros nec nunc aliquam egestas. Curabitur porta, ex in viverra mollis, risus nunc rutrum dolor, ac euismod neque massa eu tortor. In tincidunt molestie neque, a convallis nisl efficitur nec.</p>
             </div>
         </div>
       </div>
 
       <div class="panel panel-default edit-profile-panel">
         <div class="panel-heading">Menu</div>
-        <div class="panel-body">
-            <p>When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
-            <div class="row">
-              <label class="col-xs-2">Single Course</label>
-              <input type="text" class="col-xs-10" name="singleCourseField" placeholder="Dish Name">
-              <!-- <div class="row"> -->
-                <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
-              <!-- </div> -->
-              
-              <input type="text" class="col-xs-10 col-xs-offset-2" name="ingredientsNameField" placeholder="Ingredients">
-              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
-              <div class="col-xs-3 col-xs-offset-2 addBtn" id="phoneNumberBtn" >
-                <span style="font-size: 3em; margin-right:0.2em;">+</span>Add a phone number
-              </div>
-              
-            </div>
-            <div class="row">
-              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
-            </div>
-            
+        <div class="panel-body" id="menu-content-section">          
         </div>
       </div>
 
       <div class="panel panel-default edit-profile-panel">
         <div class="panel-heading">Details</div>
         <div class="panel-body">
-          <p>When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor accumsan mattis. Aliquam a eros nec nunc aliquam egestas. Curabitur porta, ex in viverra mollis, risus nunc rutrum dolor, ac euismod neque massa eu tortor. In tincidunt molestie neque, a convallis nisl efficitur nec.</p>
           <div class="row">
             <label class="col-xs-2">Description</label>
             <textarea id="descriptionCourseField" class="col-xs-10" rows="7" cols="50" maxlength="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. </textarea> 
-            <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+            <p class="col-xs-offset-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor accumsan mattis. Aliquam a eros nec nunc aliquam egestas. Curabitur porta, ex in viverra mollis, risus nunc rutrum dolor, ac euismod neque massa eu tortor. In tincidunt molestie neque, a convallis nisl efficitur nec.</p>
 
           </div>
           <div class="row" id="numberSeatsSelectionContainer">
               <label class="col-xs-2">Seats</label>
-              <select class="col-xs-2" id="minnumberSeatsSelection">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-              <select class="col-xs-2" id="maxnumberSeatsSelection">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
+              <input type="number" placeholder="Min. Seats" class="form-control sb-input" id="min-seats-input">
+              <input type="number" placeholder="Max. Seats" class="form-control sb-input" id="max-seats-input">
             </div>
             <div class="row">
-              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+              <p class="col-xs-offset-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor accumsan mattis. Aliquam a eros nec nunc aliquam egestas. Curabitur porta, ex in viverra mollis, risus nunc rutrum dolor, ac euismod neque massa eu tortor. In tincidunt molestie neque, a convallis nisl efficitur nec.</p>
             </div>
         </div>
       </div>
-      <button type="button" class="btn btn-warning" id="saveBtn">Save</button>
-         <button type="button" class="btn btn-default">View Meal Offer</button>
     </div>
     
 
@@ -245,19 +202,21 @@
       <div class="panel panel-default edit-profile-panel">
         <div class="panel-heading ">Photos</div>
         <div class="panel-body">
-          <p>When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
-          <div class="row">
+          <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="row" id="meal-pictures-container">
+            <div id="uploaded-pictures">              
+            </div>
             <div class="well uploadBtn">
-              <div  id="paymentBtn" style=" text-align:center;">
-                <img src="../img/plus.png" height=90px></img><br><span style="font-size:13px;">Upload a photo</span>
+              <div  id="picture-upload-button" style=" text-align:center;">
+                <input id="picture-file-input" type="file" />
+                <div class="plus">+</div>
+                <span class="text">Upload a photo</span>
               </div>
             </div>
           </div>
             
         </div>
       </div>
-      <button type="button" class="btn btn-warning" id="saveBtn">Save</button>
-      <button type="button" class="btn btn-default">View Meal Offer</button>
     </div>
 
     <div class="col-xs-10 tab-pane" role="tabpanel"  id="tabPricing">
@@ -266,33 +225,26 @@
         <div class="panel-body">
           <div class="row">
               <label class="col-xs-2">Per seat</label>
-              <input type="text" class="col-xs-1" name="perSeatField" placeholder="€">
+              <input type="text" class="col-xs-1" id="perSeatField" placeholder="€">
             </div>
             <div class="row">
-              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+              <p class="col-xs-offset-2">orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div class="row">
               <label class="col-xs-2">Donation</label>
               <select class="col-xs-2" id="DonationSelection">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
+                <option value="golden">Golden</option>
+                <option value="orange">Orange</option>
               </select>
             </div>
             <div class="row">
-              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+              <p class="col-xs-offset-2">orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div class="row">
-              <select class="col-xs-2 col-xs-offset-2" id="numberDonationSelection">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
+              <input type="number" placeholder="Donated Seats" class="form-control sb-input" id="donations-input">
             </div>
             <div class="row">
-              <p class="col-xs-offset-2">When you receive a payment for a reservation, we call that payment to you a "payout". Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout option</p>
+              <p class="col-xs-offset-2">orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <hr/>
             <div class="row" style="text-align:center">
@@ -302,8 +254,6 @@
             </div>
         </div>
       </div>
-      <button type="button" class="btn btn-warning" id="saveBtn">Save</button>
-      <button type="button" class="btn btn-default">View Meal Offer</button>
     </div>
 
 
@@ -311,21 +261,28 @@
       <div class="panel panel-default edit-profile-panel">
         <div class="panel-heading ">Available Dates</div>
         <div class="panel-body">
-          <div class="custom-calendar-wrap">
-          <div id="custom-inner" class="custom-inner">
-            <div class="custom-header clearfix">
-              <nav>
-                <span id="custom-prev" class="custom-prev"></span>
-                <span id="custom-next" class="custom-next"></span>
-              </nav>
-              <h2 id="custom-month" class="custom-month"></h2>
-              <h3 id="custom-year" class="custom-year"></h3>
+          <div class='input-group sb-input-group date' id='create-meal-input-group-datepicker'>
+          </div>
+          <div class='hours-container'>
+            <label class="col-xs-2">Hours</label>
+            <div class='input-group sb-input-group date sb-time' id='create-meal-input-group-timepicker-start'>
+                <span class="input-group-addon sb-input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                </span>
+                <input type='text' placeholder="Start time" class="form-control sb-input" />
             </div>
-            <div id="calendar" class="fc-calendar-container"></div>
+            <div class='input-group sb-input-group date sb-time' id='create-meal-input-group-timepicker-end'>
+                <span class="input-group-addon sb-input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                </span>
+                <input type='text' placeholder="End time" class="form-control sb-input" />
+            </div>
           </div>
         </div>
-        </div>
       </div>
+    </div>
+
+    <div class="col-xs-offset-2" style="padding: 15px;">
       <button type="button" class="btn btn-warning" id="saveBtn">Save</button>
       <button type="button" class="btn btn-default">View Meal Offer</button>
     </div>
@@ -384,7 +341,16 @@
 <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/jquery.calendario.js"></script>
 <script type="text/javascript" src="../js/data.js"></script>
-
+<script type="text/javascript" src="../js/modernizr.custom.63321.js"></script>
+<script type="text/javascript" src="../js/fb-pre-jellybean-fix.js"></script>
+<script type="text/javascript" src="../js/search-bar.js"></script>
+<script type="text/javascript" src="../lib/bower_components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../lib/location_picker/jquery.placepicker.js"></script>
+<script type="text/javascript" src="../js/location-picker.js"></script>
+<script type="text/javascript" src="../js/postRequest.js"></script>
+<script type="text/javascript" src="../js/create-meal-page.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Hb7ZjcestOuK7U5luaDINFkCUCmU9YQ&sensor=true&amp;libraries=places"></script>
 <script>
   $('#navTabs a').click(function (e) {
   e.preventDefault()

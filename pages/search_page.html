@@ -31,6 +31,7 @@
 
         <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/search-bar.css" rel="stylesheet">
+        <link href="../css/modal-messages.css" rel="stylesheet">
         <link href="../css/fontClasses.css" rel="stylesheet">
         <link href="../css/page-search.css" rel="stylesheet">
         <link href="../css/page-footer.css" rel="stylesheet">
@@ -123,7 +124,7 @@
                                             <lable class="navigation-label">Chef</lable>
                                         </div>
                                     </li>
-                                    <li id="sb-navigation-button-group" class="navigation-button-cell" data-toggle="modal" data-target="#myModal">
+                                    <li id="sb-navigation-button-group" class="navigation-button-cell" data-toggle="modal" data-target="#messages-modal">
                                         <div class="navigation-button-container">
                                             <span class="navigation-button-notify-badge badge">13</span>
                                             <img class="navigation-button " src="../img/icon/gray/messages.png">
@@ -155,17 +156,165 @@
         </nav>
 
         <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
+        <div id="messages-modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <div class="icon"></div>
+                        <h4 class="modal-title">Messages</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Some text in the modal.</p>
+                        <div class="conversations p1s-scrollbar">
+                            <div class="item" data-toggle="pill" href="#converstation-1">
+                                <div class="image"></div>
+                                <div class="name">Milica</div>
+                            </div>
+                            <div class="item" data-toggle="pill" href="#converstation-2">
+                                <div class="image"></div>
+                                <div class="name">Cagil</div>
+                            </div>
+                            <div class="item" data-toggle="pill" href="#converstation-3">
+                                <div class="image"></div>
+                                <div class="name">Umur</div>
+                            </div>
+                            <div class="item" data-toggle="pill" href="#converstation-1">
+                                <div class="image"></div>
+                                <div class="name">Milica</div>
+                            </div>
+                            <div class="item" data-toggle="pill" href="#converstation-2">
+                                <div class="image"></div>
+                                <div class="name">Cagil</div>
+                            </div>
+                            <div class="item" data-toggle="pill" href="#converstation-3">
+                                <div class="image"></div>
+                                <div class="name">Umur</div>
+                            </div>
+                            <div class="item" data-toggle="pill" href="#converstation-1">
+                                <div class="image"></div>
+                                <div class="name">Milica</div>
+                            </div>
+                            <div class="item" data-toggle="pill" href="#converstation-2">
+                                <div class="image"></div>
+                                <div class="name">Cagil</div>
+                            </div>
+                            <div class="item" data-toggle="pill" href="#converstation-3">
+                                <div class="image"></div>
+                                <div class="name">Umur</div>
+                            </div>
+                            <div class="item" data-toggle="pill" href="#converstation-1">
+                                <div class="image"></div>
+                                <div class="name">Milica</div>
+                            </div>
+                            <div class="item" data-toggle="pill" href="#converstation-2">
+                                <div class="image"></div>
+                                <div class="name">Cagil</div>
+                            </div>
+                            <div class="item" data-toggle="pill" href="#converstation-3">
+                                <div class="image"></div>
+                                <div class="name">Umur</div>
+                            </div>
+                        </div>
+                        <div class="messages tab-content">
+                            <div id="converstation-1" class="tab-pane fade p1s-scrollbar">
+                                <div class="sent">
+                                    <div class="content">blablbaababab dsgara frrrrr</div>
+                                    <div class="time">22/10/2015-22:45</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                                <div class="sent">
+                                    <div class="content">blablbaababab  frrrrr</div>
+                                    <div class="time">22/10/2015-23:45</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                                <div class="received">
+                                    <div class="content"> dsgara frrrrr</div>
+                                    <div class="time">22/10/2015-23:47</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                                <div class="received">
+                                    <div class="content"> dsgara frrrrr</div>
+                                    <div class="time">22/10/2015-23:47</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                                <div class="sent">
+                                    <div class="content">blablbaababab dsgara frrrrr</div>
+                                    <div class="time">22/10/2015-22:45</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                                <div class="sent">
+                                    <div class="content">blablbaababab  frrrrr</div>
+                                    <div class="time">22/10/2015-23:45</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                                <div class="received">
+                                    <div class="content"> dsgara frrrrr</div>
+                                    <div class="time">22/10/2015-23:47</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                                <div class="received">
+                                    <div class="content"> dsgara frrrrr</div>
+                                    <div class="time">22/10/2015-23:47</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                                <div class="sent">
+                                    <div class="content">blablbaababab dsgara frrrrr</div>
+                                    <div class="time">22/10/2015-22:45</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                                <div class="sent">
+                                    <div class="content">blablbaababab  frrrrr</div>
+                                    <div class="time">22/10/2015-23:45</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                                <div class="received">
+                                    <div class="content"> dsgara frrrrr</div>
+                                    <div class="time">22/10/2015-23:47</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                                <div class="received">
+                                    <div class="content"> dsgara frrrrr</div>
+                                    <div class="time">22/10/2015-23:47</div>
+                                </div>
+                                <div class="bubble-effect">
+                                    <div class="inner"></div>
+                                </div>
+                            </div>
+                            <div id="converstation-2" class="tab-pane fade p1s-scrollbar">
+                                <div class="sent">
+                                    <div class="content">blablbaababab dsgara frrrrr</div>
+                                    <div class="time">22/10/2015-22:45</div>
+                                </div>
+                                <div class="received">
+                                    <div class="content"> dsgara frrrrr</div>
+                                    <div class="time">22/10/2015-23:47</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
