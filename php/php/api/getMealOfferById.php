@@ -22,12 +22,10 @@ switch ($method) {
     
     //Save mail address in the database
     $id = filter_input(INPUT_GET, "id");
-    $res = MealOfferManager::getMealOffersByHost($id);
-    //echo json_encode($res);
-    $result = array();
-    foreach ($res as $returned_meal){
+    $res = MealOfferManager::getMealOffersById($id);
+    $returned_meal = $res[0];
         $obj = null;
-        //echo json_encode($returned_meal->meal_type);
+        //echo json_encode($returned_meal);
         $obj['host'] = $returned_meal->host_id;
         $obj['type'] = $returned_meal->meal_type;
         $obj['name'] = $returned_meal->meal_name;
@@ -85,10 +83,8 @@ switch ($method) {
              array_push($obj['courses'], $tupple); 
             
         }
-        array_push($result, $obj); 
-    }
 
-    echo json_encode($result);
+    echo json_encode($obj);
 }
 
 

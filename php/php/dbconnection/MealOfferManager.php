@@ -85,6 +85,19 @@ class MealOfferManager {
         return $result[0];
         
     }
+    public static function getMealOffersById($id) {
+        $db_instance = DBManager::getInstance();
+        
+        $db_instance->connect();
+        $sql_select = $db_instance->prepare("SELECT * "
+                . "FROM meal_offer WHERE id = ?;");
+        $sql_select->bind_param("i", $id);
+        $result = MealOfferManager::fetchMealOffer();
+        $db_instance->closeStatement();
+        $db_instance->closeConnection();
+        
+        return $result;
+    }
     //not finished!
     public static function getMealOffersByHost($id) {
         $db_instance = DBManager::getInstance();
