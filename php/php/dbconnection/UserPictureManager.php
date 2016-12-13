@@ -2,6 +2,7 @@
 require_once 'constants.php';
 require_once __ENTITIES__."UserPicture.php";
 require_once __DB_CONNECTION__."DBManager.php";
+require_once __DB_CONNECTION__."PictureManager.php";
 
 /**
  * Description of EventPictureManager
@@ -51,7 +52,7 @@ class UserPictureManager {
         $db_instance->closeStatement();
         $db_instance->closeConnection();
         
-        echo json_encode($result, JSON_PRETTY_PRINT);
-        return json_encode($result, JSON_PRETTY_PRINT);
+       
+        return $result;
     }
 }

@@ -147,4 +147,28 @@ class MealOfferManager {
         
         return $result;
     }
+
+    public static function getTop4HostIds(){
+        $db_instance = DBManager::getInstance();
+        
+        $db_instance->connect();
+        $sql_select = $db_instance->prepare("SELECT host_id, SUM(number_of_donations) as number_of_donations_per_host FROM meal_offer GROUP BY host_id ORDER BY number_of_donations_per_host DESC Limit 4");
+        
+        $result = array();
+        $id = null;
+        $number_of_donations = null;
+        $statement = $db_instance->getStatement();
+        $statement->bind_result($id,$number_of_donations);
+
+        $db_instance->executeStatement();
+        
+        while($db_instance->fetchResult()){
+            $tupple["host_id"] =  $id;
+            $tupple["num"] = $number_of_donations;
+            array_push($result, $tupple);
+        }
+        
+        return $result;
+
+    }
 }

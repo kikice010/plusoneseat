@@ -1,12 +1,13 @@
 <?php
 require_once 'constants.php';
 require_once __ENTITIES__."Picture.php";
+require_once __DB_CONNECTION__."DBManager.php";
 
 /**
  * Description of TagManager
  * @author mcolic
  */
-class TagManager {
+class PictureManager {
     
     public static function insertPicture($picture){
         $db_instance = DBManager::getInstance();
@@ -47,7 +48,7 @@ class TagManager {
         $db_instance->executeStatement();
         
         while($db_instance->fetchResult()){
-            $tupple = new Tag($id, $file_location);
+            $tupple = new Picture($id, $file_location);
             array_push($result, $tupple);
         }
         

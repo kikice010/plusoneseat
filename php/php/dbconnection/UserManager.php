@@ -89,7 +89,7 @@ class UserManager {
         $db_instance->closeStatement();
         $db_instance->closeConnection();
 
-        return $result;
+        return $result[0];
     }
 
     public static function getUserByEmail($user) {
