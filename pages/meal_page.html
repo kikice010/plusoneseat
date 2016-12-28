@@ -50,7 +50,7 @@
         <script type="text/javascript" src="../lib/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="../lib/location_picker/jquery.placepicker.js"></script>
         <script type="text/javascript" src="../js/location-picker.js"></script>
-        <script type="text/javascript" src="../js/profile-page.js"></script>
+        <script type="text/javascript" src="../js/meal-page.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Hb7ZjcestOuK7U5luaDINFkCUCmU9YQ&sensor=true&amp;libraries=places"></script>
     </head>
     <body>
@@ -141,81 +141,99 @@
 
         <div class="content-container">
             <div class="upper-container">
-                <div class="menu">
-                    <div class="first-line">
-                        <div class="cube left-up"></div>
-                        <div class="cube left-mid"></div>
-                        <div class="cube left-down"></div>
-                        <div class="cube right-up"></div>
-                        <div class="cube right-mid"></div>
-                        <div class="cube right-down"></div>
-                        <div class="value">Suppper dupper mad hat dinner party</div>
+                <div class="left-column">
+                    <div class="menu-drinks">
+                        <div class="left-upper corner"></div>
+                        <div class="right-upper corner"></div>
+                        <div class="left-lower corner"></div>
+                        <div class="right-lower corner"></div>
+                        <div class="content">
+                            
+                        </div>
                     </div>
-                    <div class="second-line">
-
+                </div>
+                <div class="middle-column">
+                    <div class="menu">
+                        <div class="first-line">
+                            <div class="inner">
+                                <div class="cube left-up"></div>
+                                <div class="cube left-mid"></div>
+                                <div class="cube left-down"></div>
+                                <div class="cube right-up"></div>
+                                <div class="cube right-mid"></div>
+                                <div class="cube right-down"></div>
+                                <div class="value">Suppper dupper mad hat dinner party</div>
+                            </div>
+                        </div>
+                        <div class="second-line">
+                        </div>
+                        <div class="third-line">
+                            <div class="inner">
+                                <div class="cube left-up"></div>
+                                <div class="cube left-mid"></div>
+                                <div class="cube left-down"></div>
+                                <div class="middle"></div>
+                                <div class="cube right-up"></div>
+                                <div class="cube right-mid"></div>
+                                <div class="cube right-down"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="third-line">
-                        <div class="cube left-up"></div>
-                        <div class="cube left-mid"></div>
-                        <div class="cube left-down"></div>
-                        <div class="middle"></div>
-                        <div class="cube right-up"></div>
-                        <div class="cube right-mid"></div>
-                        <div class="cube right-down"></div>
+                </div>
+                <div class="right-column">
+                    <div class="meal-box">
+                            <div class="header">
+                                <div class="text">per seat</div>
+                                <div class="price">$10</div>
+                            </div>
+                            <div class="inputs">
+                                <div class="form-group" id="mb-form-group-seats">
+                                    <div class='input-group mb-input-group' id='mb-input-group-seats'>
+                                        <span class="input-group-addon mb-input-group-addon">
+                                            <img id="mb-seats-chair-img" src="../img/icon/gray/chair.png">
+                                        </span>
+                                        <input type="number" placeholder="Seats" class="form-control mb-input" id="mb-input-seats">
+                                    </div>
+                                </div>
+                                <div class="form-group GloberBold" id="mb-form-group-datepicker">
+                                    <div class='input-group mb-input-group date' id='mb-input-group-datepicker'>
+                                        <span class="input-group-addon mb-input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                        <input type='text' placeholder="Date" class="form-control mb-input" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="row-p1s">
+                                    <div class="text">Per seat</div>
+                                    <div class="price">$10</div>
+                                    <div class="number">x 1</div>
+                                    <div class="total">$10</div>
+                                </div>
+                                <div class="row-p1s">
+                                    <div class="text">Service fee</div>
+                                    <div class="price">10%</div>
+                                    <div class="question"></div>
+                                    <div class="total">$1</div>
+                                </div>
+                                <div class="row-p1s">
+                                    <div class="text">Donation</div>
+                                    <div class="price">$2.5</div>
+                                    <div class="number">x 1</div>
+                                    <div class="question"></div>
+                                    <div class="total">$2.5</div>
+                                </div>
+                                <div class="row-p1s">
+                                    <div class="text bold">Total</div>
+                                    <div class="total">$13.50</div>
+                                </div>
+                            </div>
+                            <div class="button">Take a Seat</div>
                     </div>
                 </div>
                 <div class="meal-bar">
                     <div class="empty-box"></div>
-                    <div class="meal-box">
-                        <div class="header">
-                            <div class="text">per seat</div>
-                            <div class="price">$10</div>
-                        </div>
-                        <div class="inputs">
-                            <div class="form-group" id="mb-form-group-seats">
-                                <div class='input-group mb-input-group' id='mb-input-group-seats'>
-                                    <span class="input-group-addon mb-input-group-addon">
-                                        <img id="mb-seats-chair-img" src="../img/icon/gray/chair.png">
-                                    </span>
-                                    <input type="number" placeholder="Seats" class="form-control mb-input" id="mb-input-seats">
-                                </div>
-                            </div>
-                            <div class="form-group GloberBold" id="mb-form-group-datepicker">
-                                <div class='input-group mb-input-group date' id='mb-input-group-datepicker'>
-                                    <span class="input-group-addon mb-input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                    <input type='text' placeholder="Date" class="form-control mb-input" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info">
-                            <div class="row-p1s">
-                                <div class="text">Per seat</div>
-                                <div class="price">$10</div>
-                                <div class="number">x1</div>
-                                <div class="total">$10</div>
-                            </div>
-                            <div class="row-p1s">
-                                <div class="text">Service fee</div>
-                                <div class="price">10%</div>
-                                <div class="question"></div>
-                                <div class="total">$1</div>
-                            </div>
-                            <div class="row-p1s">
-                                <div class="text">Donation</div>
-                                <div class="price">$2.5</div>
-                                <div class="number">x1</div>
-                                <div class="question"></div>
-                                <div class="total">$2.5</div>
-                            </div>
-                            <div class="row-p1s">
-                                <div class="text bold">Total</div>
-                                <div class="total">$13.50</div>
-                            </div>
-                        </div>
-                        <div class="button">Take a Seat</div>
-                    </div>
                     <div class="info">
                         <div class="cell">
                             <div class="title">Meal Type</div>

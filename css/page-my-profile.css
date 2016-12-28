@@ -60,7 +60,7 @@
         height: 12em;
         background-image: url(../img/meal/10100142/2.png);
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 100% !important;
         position: relative;
         z-index: 1001;
         display: inline-flex;   
@@ -106,8 +106,9 @@
 
     #other-meals-container>.result-item>.meal-picture>.rating>.rew-number {
         margin-top: 0.1em;
-        font-size: 12px;
+        font-size: 9px;
         color: #848484;
+        text-align: center;
     }
 
     #other-meals-container>.result-item>.meal-picture>.upper {

@@ -32,7 +32,7 @@ $(document).ready(function() {
         $.p1s.createmeal.data.meal_types = $.parseJSON('[{"type_name":"Breakfast","id":"1"}, {"type_name":"Brunch","id":"2"}, {"type_name":"Lunch","id":"3"}, {"type_name":"Dinner","id":"4"}]');
     } 
     if (typeof $.p1s.createmeal.data.dish_types === 'undefined') {
-        $.p1s.createmeal.data.dish_types = $.parseJSON('[{"id":"1","name":"Red Meat"}, {"id":"2","name":"White Meat"}, {"id":"3","name":"Seafood"}, {"id":"4","name":"Vegetables"}, {"id":"5","name":"Fabaceae"}]');
+        $.p1s.createmeal.data.dish_types = $.parseJSON('[{"id":"1","name":"Red Meat","parent":"","has_children":"1"}, {"id":"2","name":"White Meat","parent":"","has_children":"1"}, {"id":"3","name":"Seafood","parent":"","has_children":"0"}, {"id":"4","name":"Vegetables","parent":"","has_children":"0"}, {"id":"5","name":"Fabaceae","parent":"","has_children":"0"}, {"id":"6","name":"Veal","parent":"Red Meat","has_children":"0"}, {"id":"7","name":"Lamb","parent":"Red Meat","has_children":"0"}, {"id":"8","name":"Beef","parent":"Red Meat","has_children":"0"}, {"id":"9","name":"Any","parent":"Red Meat","has_children":"0"}, {"id":"10","name":"Pork","parent":"White Meat","has_children":"0"}, {"id":"11","name":"Fish","parent":"White Meat","has_children":"0"}, {"id":"12","name":"Poultry","parent":"White Meat","has_children":"1"}, {"id":"13","name":"Chicken","parent":"Poultry","has_children":"0"}, {"id":"14","name":"Turkey","parent":"Poultry","has_children":"0"}, {"id":"15","name":"Geese","parent":"Poultry","has_children":"0"}, {"id":"16","name":"Duck","parent":"Poultry","has_children":"0"}]');
     } 
     if (typeof $.p1s.createmeal.data.numberof === 'undefined') {
         $.p1s.createmeal.data.numberof = {};
@@ -52,10 +52,11 @@ $(document).ready(function() {
     $("#cuisineContinentSelection").val("Europe");
     $("#cuisineContinentSelection").change();
     $("#cuisineCountrySelection").val("Italy");
-    $("#courseOptionsSelection").val(3);
+    $("#courseOptionsSelection").val("Starter | Main Course | Desert");
     $("#courseOptionsSelection").change();
     $("#min-seats-input").val(1);
     $("#max-seats-input").val(4);
+    $("#DonationSelection").change();
 
 
     function prepareMealTypeDOM() {
@@ -179,6 +180,7 @@ $("#courseOptionsSelection").change(function() {
     }
     container.html(inner_html);
     addButtonListeners(selected);
+    addTagInputListeners(selected);
 });
 
 function generateInputContainer(id_prefix) {
@@ -186,7 +188,8 @@ function generateInputContainer(id_prefix) {
     var ingredients_p = "<p>Sed venenatis facilisis quam, sit amet egestas risus euismod vitae. Nullam ac risus pretium mauris varius hendrerit. Sed mauris erat, molestie ultricies vulputate et, volutpat sit amet quam. Etiam ipsum quam, semper ut est vulputate, lacinia consequat ante.</p>";
     var add_button_p = "<p class='col-xs-offset-2 col-xs-10'>Praesent consectetur laoreet metus, vel fringilla diam malesuada in. Vivamus aliquam urna odio, sit amet tempor tellus ultricies eget. Proin bibendum sodales mattis.</p>";
     var dish_type_select = generateDishTypeSelect(id_prefix);
-    var input_container = "<div class='col-xs-10 input-container' id='" + id_prefix + "-input-container'><input type='text' class='" + id_prefix + "-dish-name' id='"+id_prefix+"-dish-1' placeholder='Dish Name'>" + dish_type_select + name_p + "<textarea class='"+id_prefix+"-ingredients'id='"+id_prefix+"-ingredients-1' placeholder='Ingredients'/>" + ingredients_p + "</div><div class='col-xs-3 col-xs-offset-2 addBtn' id='" + id_prefix + "-add-dish-button' ><span style='font-size: 3em; margin-right:0.2em;'>+</span>Add a dish</div>" + add_button_p;
+    
+    var input_container = "<div class='col-xs-10 input-container' id='" + id_prefix + "-input-container'><input type='text' class='" + id_prefix + "-dish-name' id='"+id_prefix+"-dish-1' placeholder='Dish Name'>" + dish_type_select + name_p + "<div class='tags-input-field " + id_prefix + "-ingredients' id='"+id_prefix+"-tags-input-field-ingredients-1'><div class='tags'></div><input type='text'/></div>"+ ingredients_p + "</div><div class='col-xs-3 col-xs-offset-2 addBtn' id='" + id_prefix + "-add-dish-button' ><span style='font-size: 3em; margin-right:0.2em;'>+</span>Add a dish</div>" + add_button_p;
     return input_container;
 };
 
@@ -210,32 +213,85 @@ function addButtonListeners(selected) {
     if(selected>=1) {
         $("#starter-add-dish-button").click(function() {
             $.p1s.createmeal.data.numberof.starter++;
-            var new_input = "<input type='text' class='starter-dish-name' id='starter-dish-" + $.p1s.createmeal.data.numberof.starter + "' placeholder='Dish Name'>" + generateDishTypeSelect("starter") + name_p + "<textarea class='starter-ingredients' id='starter-ingredients-"+$.p1s.createmeal.data.numberof.starter+"' placeholder='Ingredients'/><p>"+ingredients_p+"</p>";
+            var new_input = "<input type='text' class='starter-dish-name' id='starter-dish-" + $.p1s.createmeal.data.numberof.starter + "' placeholder='Dish Name'>" + generateDishTypeSelect("starter") + name_p + "<div class='tags-input-field starter-ingredients' id='starter-tags-input-field-ingredients-"+ $.p1s.createmeal.data.numberof.starter +"'><div class='tags'></div><input type='text'/></div>"+ ingredients_p+"</p>";
             $("#starter-input-container").append(new_input);
+            $("#starter-tags-input-field-ingredients-"+$.p1s.createmeal.data.numberof.starter+">input").keyup(keyupTagInput);
         });
     }
     if(selected>=2) {
         $("#main-add-dish-button").click(function() {
             $.p1s.createmeal.data.numberof.main++;
-            var new_input = "<input type='text' class='main-dish-name' id='main-dish-" + $.p1s.createmeal.data.numberof.main + "' placeholder='Dish Name'>" + generateDishTypeSelect("main") + name_p + "<textarea class='main-ingredients' id='main-ingredients-" + $.p1s.createmeal.data.numberof.main + "' placeholder='Ingredients'/><p>" + ingredients_p + "</p>";
+            var new_input = "<input type='text' class='main-dish-name' id='main-dish-" + $.p1s.createmeal.data.numberof.main + "' placeholder='Dish Name'>" + generateDishTypeSelect("main") + name_p + "<div class='tags-input-field main-ingredients' id='main-tags-input-field-ingredients-"+ $.p1s.createmeal.data.numberof.main +"'><div class='tags'></div><input type='text'/></div>"+ ingredients_p + "</p>";
             $("#main-input-container").append(new_input);
+            $("#main-tags-input-field-ingredients-"+$.p1s.createmeal.data.numberof.main+">input").keyup(keyupTagInput);
         });
     }
     if(selected>=3) {
         $("#desert-add-dish-button").click(function() {
             $.p1s.createmeal.data.numberof.desert++;
-            var new_input = "<input type='text' class='desert-dish-name' id='desert-dish-" + $.p1s.createmeal.data.numberof.desert + "' placeholder='Dish Name'>" + generateDishTypeSelect("desert") + name_p + "<textarea class='desert-ingredients' id='desert-ingredients-" + $.p1s.createmeal.data.numberof.desert + "' placeholder='Ingredients'/><p>" + ingredients_p + "</p>";
+            var new_input = "<input type='text' class='desert-dish-name' id='desert-dish-" + $.p1s.createmeal.data.numberof.desert + "' placeholder='Dish Name'>" + generateDishTypeSelect("desert") + name_p + "<div class='tags-input-field desert-ingredients' id='desert-tags-input-field-ingredients-"+ $.p1s.createmeal.data.numberof.desert +"'><div class='tags'></div><input type='text'/></div>"+ ingredients_p + "</p>";
             $("#desert-input-container").append(new_input);
+            $("#desert-tags-input-field-ingredients-"+$.p1s.createmeal.data.numberof.desert+">input").keyup(keyupTagInput);
         });
     }
     if(selected==4) {
         $("#custom-add-dish-button").click(function() {
             $.p1s.createmeal.data.numberof.custom++;
-            var new_input = "<input type='text' class='custom-dish-name' id='custom-dish-" + $.p1s.createmeal.data.numberof.custom + "' placeholder='Dish Name'>" + generateDishTypeSelect("custom") + name_p +"<textarea class='custom-ingredients' id='custom-ingredients-" + $.p1s.createmeal.data.numberof.custom + "' placeholder='Ingredients'/><p>" + ingredients_p + "</p>";
+            var new_input = "<input type='text' class='custom-dish-name' id='custom-dish-" + $.p1s.createmeal.data.numberof.custom + "' placeholder='Dish Name'>" + generateDishTypeSelect("custom") + name_p + "<div class='tags-input-field custom-ingredients' id='custom-tags-input-field-ingredients-"+ $.p1s.createmeal.data.numberof.custom +"'><div class='tags'></div><input type='text'/></div>"+ ingredients_p + "</p>";
             $("#custom-input-container").append(new_input);
+            $("#custom-tags-input-field-ingredients-"+$.p1s.createmeal.data.numberof.custom+">input").keyup(keyupTagInput);
         });
     } 
 };
+
+function addTagInputListeners(selected) {
+    
+    if(selected>=1) {
+        $("#starter-tags-input-field-ingredients-1>input").keyup(keyupTagInput);
+    }
+    if(selected>=2) {
+        $("#main-tags-input-field-ingredients-1>input").keyup(keyupTagInput);
+    }
+    if(selected>=3) {
+        $("#desert-tags-input-field-ingredients-1>input").keyup(keyupTagInput);
+    }
+    if(selected==4) {
+        $("#custom-tags-input-field-ingredients-1>input").keyup(keyupTagInput);
+    } 
+};
+
+function keyupTagInput(event) {
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    var tag;
+    var tags;
+    if(keycode == '13'){
+        tag = "<span class='tag'>" + $(this).val() + "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span></span>";
+        $(this).parent().find(".tags").append(tag);
+        $(this).val("");
+        tags = $(this).parent().find(".tag");
+        $(tags[tags.length-1]).find(".glyphicon").click(tag_close_click);
+    }
+    if(keycode == '188'){
+        tag = "<span class='tag'>" + $(this).val().substr(0, $(this).val().length-1) + "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span></span>";
+        $(this).parent().find(".tags").append(tag);
+        $(this).val("");
+        tags = $(this).parent().find(".tag");
+        $(tags[tags.length-1]).find(".glyphicon").click(tag_close_click);
+    }
+    if(keycode == '8'){
+        if($(this).val() === "") {
+           tags = $(this).parent().find(".tag"); 
+           tag = tags[tags.length-1].innerText;
+           $(tags[tags.length-1]).remove();
+           $(this).val(tag);
+        }
+    }
+}
+
+function tag_close_click(e) {
+    $(this).parent().remove();
+    $(this).remove(); 
+}
 
 
 $("#saveBtn").click(function(){
@@ -262,7 +318,7 @@ $("#saveBtn").click(function(){
             dish_type : starter_types[i].value,
             dish_name : starter_names[i].value,
             main_dish : false,
-            ingredients : starter_ingredients[i].value
+            ingredients : getIngredientsString(starter_ingredients[i])
         }); 
     }
     meal.courses.push(starters);
@@ -277,7 +333,7 @@ $("#saveBtn").click(function(){
             dish_type : main_tupes[i].value,
             dish_name : main_names[i].value,
             main_dish : false,
-            ingredients : main_ingredients[i].value
+            ingredients : getIngredientsString(main_ingredients[i])
         }); 
     }
     meal.courses.push(main);
@@ -292,7 +348,7 @@ $("#saveBtn").click(function(){
             dish_type : desert_types[i].value,
             dish_name : desert_names[i].value,
             main_dish : false,
-            ingredients : desert_ingredients[i].value
+            ingredients : getIngredientsString(desert_ingredients[i])
         }); 
     }
     meal.courses.push(deserts);
@@ -307,14 +363,16 @@ $("#saveBtn").click(function(){
             dish_type : custom_types[i].value,
             dish_name : custom_names[i].value,
             main_dish : false,
-            ingredients : custom_ingredients[i].value
+            ingredients : getIngredientsString(custom_ingredients[i])
         }); 
     }
     meal.courses.push(custom);
     meal.photos = $.p1s.createmeal.data.photos;
     meal.price = {};
     meal.price.seat = $("#perSeatField").val();
-    meal.price.donation = $("#DonationSelection").val();
+    meal.price.donations = $("#donations-number").val();
+    meal.price.type = $("#DonationSelection").val();
+    meal.price.currency = "euro";
     var calendar = $('#create-meal-input-group-datepicker').data("DateTimePicker");
     var d = new Date(calendar.date());
     var curr_date = d.getDate();
@@ -333,12 +391,20 @@ $("#saveBtn").click(function(){
     curr_min = d.getMinutes();
     meal.end_time = curr_hour + ":" + curr_min;
     meal.host = $.p1s.userID;
+    meal.drinks = ["Wine"];
     postRequest("../php/php/api/createMeal.php",{"json":JSON.stringify(meal)});
 });
 
-function splitIngredients(ingredients) {
-    var res = str.split(",");
-    return res;
+function getIngredientsString(ingredients) {
+    if(typeof ingredients !== 'undefined') {
+        var ingredients_list = $(ingredients).find(".tag");
+        var res = "";
+        for(var i=0; i<ingredients_list.length; i++) {
+            res += ingredients_list[i].innerText + ";";
+        }
+        return res.substring(0, res.length -1);
+    }
+    return "";
 };
 
 $(function () {
@@ -434,11 +500,33 @@ function getBase64(file) {
         //var picture= reader.result.substring(reader.result.indexOf(',')+1);
         var picture= reader.result;
         $.p1s.createmeal.data.photos.push(picture);
-        var element = "<div class='photo' id='create-meal-photo-" + $.p1s.createmeal.data.numberof + "'  style='background-image: url(\""+picture+"\");'></div>";
+        var element = "<div class='photo' id='create-meal-photo-" + $.p1s.createmeal.data.numberof.photos + "'  style='background: url(\""+picture+"\") 50% 50% no-repeat;'><button type='button' class='btn close-photo-button' aria-label='Close' id='photo-close-button"+$.p1s.createmeal.data.numberof.photos+"'><span class='glyphicon glyphicon glyphicon-remove' aria-hidden='true'></span></button></div>";
         $('#uploaded-pictures').append(element);
-
+        $('#photo-close-button'+$.p1s.createmeal.data.numberof.photos).click(function() {
+            $(this).parent().remove();
+            $(this).remove();
+            var number = parseInt($(this).attr("id").substr(18));
+            for(var i=number-1; i<$.p1s.createmeal.data.photos.length-1; i++) {
+                $.p1s.createmeal.data.photos[i]=$.p1s.createmeal.data.photos[i+1];
+            }
+            $.p1s.createmeal.data.photos[$.p1s.createmeal.data.photos.length-1] = "";
+            $.p1s.createmeal.data.photos.length--;
+        });
+        $.p1s.createmeal.data.numberof.photos++;
    };
    reader.onerror = function (error) {
      console.log('Error: ', error);
    };
 };
+
+
+$("#DonationSelection").change(function() {
+    var selected = $(this).val();
+    if(selected === "golden") {
+        $("#donations-number").parent().hide();
+        $("#donations-number-label").parent().hide();
+    } else {
+        $("#donations-number").parent().show();
+        $("#donations-number-label").parent().show();
+    }
+});

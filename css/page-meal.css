@@ -13,7 +13,7 @@
     }
 
     #other-meals-container {
-        width: 300px;
+        width: 350px;
         padding-top: 50px;
     }
 
@@ -598,6 +598,7 @@
 
     .table-container {
         display: table;
+        padding-right: 380px;
     }
 
     .upper-container {
@@ -605,31 +606,37 @@
         background-color: white;
         padding-top: 50px;
         background: #ef804a;
+        text-align: center;
     }
 
-    .upper-container>.menu {
-        width: 500px;
-        height: 500px;
-        margin: 0 auto; 
+    .upper-container .menu {
+        min-height: 500px;
+        min-width: 500px;
+        display: inline-block; 
+
     }
 
-    .upper-container>.menu div {
+    .upper-container .menu div {
         background-color: white;
     }
 
-    .upper-container>.menu>.first-line,
-    .upper-container>.menu>.third-line {
+    .upper-container .menu>.first-line,
+    .upper-container .menu>.third-line {
+        padding-left: 28px;
+        padding-right: 28px;
+        background: none;
+    }
+
+    .upper-container .menu>.first-line>.inner,
+    .upper-container .menu>.third-line>.inner {
         height: 30px;
-        width: -webkit-calc(100% - 60px);
-        width: -moz-calc(100% - 60px);
-        width: calc(100% - 60px);
         margin: 0 auto;
         border: 2px solid black;
         z-index: 1000;
     }
 
-    .upper-container>.menu>.first-line>.cube,
-    .upper-container>.menu>.third-line>.cube {
+    .upper-container .menu>.first-line>.inner>.cube,
+    .upper-container .menu>.third-line>.inner>.cube {
         height: 16px;
         width: 16px;
         border: 2px solid black;
@@ -638,7 +645,7 @@
         z-index: 1001;
     }
 
-    .upper-container>.menu>.first-line>.value {
+    .upper-container .menu>.first-line>.inner>.value {
         width: -webkit-calc(100% - 32px);
         width: -moz-calc(100% - 32px);
         width: calc(100% - 32px);
@@ -647,57 +654,58 @@
         font-size: 18px;
     }
 
-    .upper-container>.menu>.first-line>.left-up {
+    .upper-container .menu>.first-line>.inner>.left-up {
         left: -2px;
         top: -2px;
         float: left;
     }
 
-    .upper-container>.menu>.first-line>.left-mid{
+    .upper-container .menu>.first-line>.inner>.left-mid{
         left: -32px;
         top: 12px;
         float: left;
     }
 
-    .upper-container>.menu>.first-line>.left-down {
+    .upper-container .menu>.first-line>.inner>.left-down {
         left: -62px;
         top: 26px;
         float: left;
     }
 
-    .upper-container>.menu>.first-line>.right-up {
+    .upper-container .menu>.first-line>.inner>.right-up {
         left: 2px;
         top: -2px;
         float: right;
     }
 
-    .upper-container>.menu>.first-line>.right-mid {
+    .upper-container .menu>.first-line>.inner>.right-mid {
         left: 32px;
         top: 12px;
         float: right;
     }
 
-    .upper-container>.menu>.first-line>.right-down {
+    .upper-container .menu>.first-line>.inner>.right-down {
         left: 62px;
         top: 26px;
         float: right;
     }
 
-    .upper-container>.menu>.second-line {
+    .upper-container .menu>.second-line {
         border: 2px solid black;
-        width: -webkit-calc(100% - 4px);
-        width: -moz-calc(100% - 4px);
-        width: calc(100% - 4px);
         margin: 0 auto;
         margin-top: -2px;
-        height: -webkit-calc(100% - 60px);
-        height: -moz-calc(100% - 60px);
-        height: calc(100% - 60px);
+        min-height: 440px;
         position: relative;
         z-index: 1000;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 100px;
+        padding-right: 100px;
+        display: inline-block;
     }
 
-    .upper-container>.menu>.second-line:after {
+    .upper-container .menu>.second-line:after {
         content: "";
         position: absolute;
         z-index: 1020;
@@ -707,7 +715,7 @@
         border-left: 2px solid black;
     }
 
-    .upper-container>.menu>.second-line:before {
+    .upper-container .menu>.second-line:before {
         content: "";
         position: absolute;
         z-index: 1020;
@@ -717,72 +725,65 @@
         border-left: 2px solid black;
     }
 
-    .upper-container>.menu>.third-line {
-        margin-top: -2px;
+    .upper-container .menu>.third-line {
+        margin-top: -7px;
     }
 
-    .upper-container>.menu>.third-line>.left-up {
+    .upper-container .menu>.third-line>.inner>.left-up {
         left: -30px;
         top: -16px;
         float: left;
     }
 
-    .upper-container>.menu>.third-line>.left-mid{
+    .upper-container .menu>.third-line>.inner>.left-mid{
         left: -32px;
         top: -2px;
         float: left;
     }
 
-    .upper-container>.menu>.third-line>.left-down {
+    .upper-container .menu>.third-line>.inner>.left-down {
         left: -34px;
         top: 12px;
         float: left;
     }
 
-    .upper-container>.menu>.third-line>.right-up {
+    .upper-container .menu>.third-line>.inner>.right-up {
         left: 30px;
         top: -16px;
         float: right;
     }
 
-    .upper-container>.menu>.third-line>.right-mid {
+    .upper-container .menu>.third-line>.inner>.right-mid {
         left: 32px;
         top: -2px;
         float: right;
     }
 
-    .upper-container>.menu>.third-line>.right-down {
+    .upper-container .menu>.third-line>.inner>.right-down {
         left: 34px;
         top: 12px;
         float: right;
     }
 
-    .upper-container>.meal-bar {
+    .upper-container .meal-bar {
         width: 100%;
         height: 80px;
         background: white;
         border-top: 3px solid #efefef;
         border-bottom: 3px solid #efefef;
         margin-top: 15px;
+        clear: both;
     }
 
-    .upper-container>.meal-bar>.meal-box {
+    .upper-container .meal-box {
         width: 300px;
         background: white;
-        float: right;
-        margin: 20px;
-        margin-top: -48px;
-        margin-right: 0;
+        position: fixed;
+        top: 110px;
+        right: 2.5%;
     }
 
-    .upper-container>.meal-bar>.empty-box{
-        float: right;
-        height: 100%;
-        width: 20px;
-        border-left: 3px solid #efefef;
-    }
-
-    .upper-container>.meal-bar>.meal-box>.button {
+    .upper-container .meal-box>.button {
         width: 90%;
         height: 40px;
         background: #ef804a;
@@ -795,56 +796,56 @@
         margin-top: 0;
     }
 
-    .upper-container>.meal-bar>.meal-box>.info {
+    .upper-container .meal-box>.info {
         padding: 15px;
     }
 
-    .upper-container>.meal-bar>.meal-box>.info>.row-p1s {
+    .upper-container .meal-box>.info>.row-p1s {
         width: 100%;
         display: inline-block;
         padding-top: 10px;
         padding-bottom: 5px;
     }
 
-    .upper-container>.meal-bar>.meal-box>.info>.row-p1s+.row-p1s {
+    .upper-container .meal-box>.info>.row-p1s+.row-p1s {
         border-top: 1px solid #848484;
     }
 
-    .upper-container>.meal-bar>.meal-box>.info>.row-p1s>.text {
+    .upper-container .meal-box>.info>.row-p1s>.text {
         float: left;
         padding-right: 5px;
     }
 
-    .upper-container>.meal-bar>.meal-box>.info>.row-p1s>.price {
+    .upper-container .meal-box>.info>.row-p1s>.price {
         float: left;
         padding-right: 5px; 
         font-weight: 600;
     }
 
-    .upper-container>.meal-bar>.meal-box>.info>.row-p1s>.number {
+    .upper-container .meal-box>.info>.row-p1s>.number {
         float: left;
         padding-right: 5px;
         font-weight: 600;
     }
 
-    .upper-container>.meal-bar>.meal-box>.info>.row-p1s>.question {
+    .upper-container .meal-box>.info>.row-p1s>.question {
         float: left;
         padding-right: 5px;
     }
 
-    .upper-container>.meal-bar>.meal-box>.info>.row-p1s>.total {
+    .upper-container .meal-box>.info>.row-p1s>.total {
         float: right;
-        width: 55px;
+        text-align: right;
         font-weight: 600;
     }
 
-    .upper-container>.meal-bar>.meal-box>.header {
+    .upper-container .meal-box>.header {
         height: 45px;
         background-color: #848484;
         padding: 15px;
     }
 
-    .upper-container>.meal-bar>.meal-box>.header>.price {
+    .upper-container .meal-box>.header>.price {
         float: right;
         color: white;
         font-size: 20px;
@@ -853,25 +854,25 @@
         margin-right: 10px;
     }
 
-    .upper-container>.meal-bar>.meal-box>.header>.text{
+    .upper-container .meal-box>.header>.text{
         float: right;
         color: white;
         margin-top: 2px;
         font-size: 13px;
     }
 
-    .upper-container>.meal-bar>.meal-box>.inputs>.form-group {
+    .upper-container .meal-box>.inputs>.form-group {
         width: 110px;
         float: left;
         margin: 10px;
         border: 1px solid #848484;
     }
 
-    .upper-container>.meal-bar>.meal-box>.inputs>.form-group+.form-group {
+    .upper-container .meal-box>.inputs>.form-group+.form-group {
         width: 150px;
     }
 
-    .upper-container>.meal-bar>.meal-box>.inputs>.form-group>.mb-input-group {
+    .upper-container .meal-box>.inputs>.form-group>.mb-input-group {
         height: 3em;
         border-top: none;
         border-right: none;
@@ -879,19 +880,19 @@
         width: 100%;
     }
 
-    .upper-container>.meal-bar>.meal-box>.inputs>.form-group .glyphicon {
+    .upper-container .meal-box>.inputs>.form-group .glyphicon {
         color: #848484;
         font-size: 25px;
     }
 
-    .upper-container>.meal-bar>.meal-box>.inputs>.form-group>.mb-input-group>.mb-input-group-addon {
+    .upper-container .meal-box>.inputs>.form-group>.mb-input-group>.mb-input-group-addon {
         background-color: white;
         border: none;
         width: 3em !important;
         padding: 5px;
     }
 
-    .upper-container>.meal-bar>.meal-box>.inputs>.form-group>.mb-input-group>.mb-input {
+    .upper-container .meal-box>.inputs>.form-group>.mb-input-group>.mb-input {
         height: 3em;
         border-top: none;
         border-right: 0px solid #999999;
@@ -904,15 +905,13 @@
         width: 70%;
     }
 
-    .upper-container>.meal-bar>.info {
-        float: right;
+    .upper-container .meal-bar>.info {
         height: 100%;
-        border-right: 3px solid #efefef;
-        margin-right: -20px;
+        display: inline-block;
+        margin: 0 auto;
     }
 
-    .upper-container>.meal-bar>.info>.cell {
-        float: right;
+    .upper-container .meal-bar>.info>.cell {
         text-align: center;
         display: inline-block;
         margin-left: 15px;
@@ -920,7 +919,7 @@
     }
 
 
-    .upper-container>.meal-bar>.info>div>.value {
+    .upper-container .meal-bar>.info>div>.value {
         line-height: 40px;
         vertical-align: middle;
         font-size: 18px;
@@ -929,14 +928,14 @@
         display: inline-block;
     }
 
-    .upper-container>.meal-bar>.info>div>.title {
+    .upper-container .meal-bar>.info>div>.title {
         line-height: 34px;
         vertical-align: middle;
         font-size: 15px;
         color: #848484;
     }
 
-    .upper-container>.meal-bar>.info>div>.value>.chair {
+    .upper-container .meal-bar>.info>div>.value>.chair {
         height: 2em;
         width: 1em;
         background: url(../img/icon/orange/chair.png) 50% 50% no-repeat;
@@ -946,7 +945,91 @@
         float: left;
     }
 
-    .upper-container>.meal-bar>.info>div>.value>.number {
+    .upper-container .meal-bar>.info>div>.value>.number {
         text-align: center;
         float: left;
+    }
+
+    .second-line>.menu-column {
+        width: 130px;
+        float: left;
+        min-height: 100%;
+        text-align: center;
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .second-line>.menu-column>.title {
+        font-size: 15px;
+        width: 100%;
+        border-bottom: 1px solid;
+    }
+
+    .second-line>.menu-column>.dish {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .second-line>.menu-column>.dish>.ingredient {
+        font-size: 12px;
+        text-align: center;
+        font-style: oblique;
+    }
+
+    .menu-drinks {
+        min-width: 200px;
+        min-height: 200px;
+        display: inline-block;
+        background: white;
+        border: 2px solid black;
+        position: relative;
+        float: right;
+        margin-right: 20px;
+    }
+
+    .menu-drinks>.corner {
+        height: 16px;
+        width: 16px;
+        border: 2px solid black;
+        position: absolute;
+        background-color: white;
+    }
+
+    .menu-drinks>.left-upper {
+        left: -16px;
+        top: -16px;
+        border-radius: 50% 50% 0% 50%;
+    }
+
+    .menu-drinks>.right-upper {
+        right: -16px;
+        top: -16px;
+        border-radius: 50% 50% 50% 0%;
+    }
+
+    .menu-drinks>.left-lower {
+        left: -16px;
+        bottom: -16px;
+        border-radius: 50% 0% 50% 50%;
+    }
+
+    .menu-drinks>.right-lower {
+        right: -16px;
+        bottom: -16px;
+        border-radius: 0% 50% 50% 50%;
+    }
+
+    .upper-container>.left-column {
+        width: 410px;
+        display: inline-block;
+        float: left;
+        margin-top: 28px;
+    }
+
+    .upper-container>.middle-column {
+        width: calc(100% - 790px);
+        float: left;
+        margin-top: 30px;
+        margin-bottom: 50px;
     }

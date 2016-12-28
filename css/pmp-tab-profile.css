@@ -9,7 +9,7 @@
     
     .userImage { 
         background: url("../img/user/10004154/profile.jpg") 50% 50% no-repeat;
-        background-size:cover; /* 50% 50% centers image in div */
+        background-size:cover !important; /* 50% 50% centers image in div */
         width: 150px;
         height: 150px;
     }

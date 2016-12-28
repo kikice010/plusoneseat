@@ -18,10 +18,10 @@ require_once __DB_CONNECTION__.'ContinentManager.php';
 $method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
 
 switch ($method) {
-  case 'GET':
+  case 'POST':
     
     //Save mail address in the database
-    $id = filter_input(INPUT_GET, "id");
+    $id = filter_input(INPUT_POST, "id");
     $res = MealOfferManager::getMealOffersById($id);
     $returned_meal = $res[0];
         $obj = null;

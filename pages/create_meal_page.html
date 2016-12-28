@@ -132,7 +132,7 @@
               <label  class="col-xs-2">Meal Type</label>
               <select class="col-xs-2" id="mealTypeSelection">
               </select>
-            </div>
+            </div> 
             <div class="row" id="birthdaySelectionContainer">
               <label class="col-xs-2">Cuisine</label>
               <select class="col-xs-2" id="cuisineContinentSelection">
@@ -171,7 +171,7 @@
 
       <div class="panel panel-default edit-profile-panel">
         <div class="panel-heading">Menu</div>
-        <div class="panel-body" id="menu-content-section">          
+        <div class="panel-body" id="menu-content-section">         
         </div>
       </div>
 
@@ -181,7 +181,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor accumsan mattis. Aliquam a eros nec nunc aliquam egestas. Curabitur porta, ex in viverra mollis, risus nunc rutrum dolor, ac euismod neque massa eu tortor. In tincidunt molestie neque, a convallis nisl efficitur nec.</p>
           <div class="row">
             <label class="col-xs-2">Description</label>
-            <textarea id="descriptionCourseField" class="col-xs-10" rows="7" cols="50" maxlength="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. </textarea> 
+            <textarea id="descriptionCourseField" class="col-xs-10" rows="7" cols="50" maxlength="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. </textarea> 
             <p class="col-xs-offset-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor accumsan mattis. Aliquam a eros nec nunc aliquam egestas. Curabitur porta, ex in viverra mollis, risus nunc rutrum dolor, ac euismod neque massa eu tortor. In tincidunt molestie neque, a convallis nisl efficitur nec.</p>
 
           </div>
@@ -241,10 +241,10 @@
               <p class="col-xs-offset-2">orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div class="row">
-              <input type="number" placeholder="Donated Seats" class="form-control sb-input" id="donations-input">
+              <input type="number" placeholder="Donated Seats" class="form-control sb-input" id="donations-number">
             </div>
             <div class="row">
-              <p class="col-xs-offset-2">orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p class="col-xs-offset-2" id="donations-number-label">orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo libero, varius tristique nisl egestas, mattis venenatis mi. Ut non odio condimentum, ornare felis nec, pharetra lacus. Donec non mollis felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <hr/>
             <div class="row" style="text-align:center">
@@ -351,82 +351,5 @@
 <script type="text/javascript" src="../js/postRequest.js"></script>
 <script type="text/javascript" src="../js/create-meal-page.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Hb7ZjcestOuK7U5luaDINFkCUCmU9YQ&sensor=true&amp;libraries=places"></script>
-<script>
-  $('#navTabs a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show');
-  $("#tab"+e.target.id).fadeIn();
-
-})
-
-  $( '#calendar' ).calendario();
-
-  $(function() {
-      
-        var transEndEventNames = {
-            'WebkitTransition' : 'webkitTransitionEnd',
-            'MozTransition' : 'transitionend',
-            'OTransition' : 'oTransitionEnd',
-            'msTransition' : 'MSTransitionEnd',
-            'transition' : 'transitionend'
-          },
-          transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
-          $wrapper = $( '#custom-inner' ),
-          $calendar = $( '#calendar' ),
-          cal = $calendar.calendario( {
-            onDayClick : function( $el, $contentEl, dateProperties ) {
-
-              if( $contentEl.length > 0 ) {
-                showEvents( $contentEl, dateProperties );
-              }
-
-            },
-            caldata : codropsEvents,
-            displayWeekAbbr : true
-          } ),
-          $month = $( '#custom-month' ).html( cal.getMonthName() ),
-          $year = $( '#custom-year' ).html( cal.getYear() );
-
-        $( '#custom-next' ).on( 'click', function() {
-          cal.gotoNextMonth( updateMonthYear );
-        } );
-        $( '#custom-prev' ).on( 'click', function() {
-          cal.gotoPreviousMonth( updateMonthYear );
-        } );
-
-        function updateMonthYear() {        
-          $month.html( cal.getMonthName() );
-          $year.html( cal.getYear() );
-        }
-
-        // just an example..
-        function showEvents( $contentEl, dateProperties ) {
-
-          hideEvents();
-          
-          var $events = $( '<div id="custom-content-reveal" class="custom-content-reveal"><h4>Events for ' + dateProperties.monthname + ' ' + dateProperties.day + ', ' + dateProperties.year + '</h4></div>' ),
-            $close = $( '<span class="custom-content-close"></span>' ).on( 'click', hideEvents );
-
-          $events.append( $contentEl.html() , $close ).insertAfter( $wrapper );
-          
-          setTimeout( function() {
-            $events.css( 'top', '0%' );
-          }, 25 );
-
-        }
-        function hideEvents() {
-
-          var $events = $( '#custom-content-reveal' );
-          if( $events.length > 0 ) {
-            
-            $events.css( 'top', '100%' );
-            Modernizr.csstransitions ? $events.on( transEndEventName, function() { $( this ).remove(); } ) : $events.remove();
-
-          }
-
-        }
-      
-      });
-</script>
 
 </html>

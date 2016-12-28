@@ -3,6 +3,24 @@ $(function () {
         format: 'MM/DD/YYYY',
         debug: true
     });
+
+    if (typeof $.p1s === 'undefined') {
+        $.p1s = {};
+    }
+    if (typeof $.p1s.datepicker === 'undefined') {
+        $.p1s.datepicker = {};
+        $.p1s.datepicker.first_click_month = true;
+    }
+});
+
+$(document).keydown(function(event){
+    if(event.which=="17")
+         $.p1s.datepicker.ctrl = true;
+});
+
+$(document).keyup(function(event){
+    if(event.which=="17")
+         $.p1s.datepicker.ctrl = false;
 });
 
 $(function () {
@@ -69,7 +87,48 @@ $(function () {
         e.stopPropagation();
         $('#sb-input-group-timepicker-start').data("DateTimePicker").hide();
         $('#sb-input-group-timepicker-end').data("DateTimePicker").hide();
+        $('#sb-input-group-datepicker>.dropdown-menu .day.active').removeClass("active");
+
+        if($('#sb-input-group-datepicker>.dropdown-menu>.list-unstyled>li>.calendar-button').length === 0) {
+            var selection_buttons = "<li><div class='calendar-button' id='sb-datepicker-clear'>Clear selection</div><div class='calendar-button' id='sb-datepicker-select'>Select</div></li>";
+            $('#sb-input-group-datepicker>.dropdown-menu>.list-unstyled').append(selection_buttons);
+        }
+
+        $('#sb-datepicker-select').click(function() {
+
+        });
+
+        $('#sb-datepicker-clear').click(function() {
+            $('#sb-input-group-datepicker>.dropdown-menu .selected').removeClass("selected");
+        });
+
+        
+            $('#sb-input-group-datepicker>.dropdown-menu .day').click(day_click);
+        
+
+        $(".bootstrap-datetimepicker-widget .month").click(function(e){
+            if($.p1s.datepicker.first_click_month) {
+                $.p1s.datepicker.first_click_month = false;
+                $(this).click();
+                $(".bootstrap-datetimepicker-widget .month.active").removeClass("active");
+                $(this).addClass("active");
+                e.stopPropagation();
+                $('#sb-input-group-datepicker>.dropdown-menu .day').click(day_click);
+                $.p1s.datepicker.first_click_month = true;
+            } 
+        });
     });
+
+    function day_click(e) {
+        var classList = $(this).attr('class');
+        if(classList.indexOf("selected") != -1) {
+            $(this).removeClass("selected");
+            $(this).blur();
+        } else {
+            $(this).addClass("selected");
+        }                
+        e.stopPropagation();
+    }
 
     $('#sb-input-group-datepicker').find('.bootstrap-datetimepicker-widget').click(function(e){
         e.stopPropagation();

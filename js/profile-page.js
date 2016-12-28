@@ -29,6 +29,7 @@ $(document).ready(function() {
     $.p1s.profile.user.interests_number = 0;
     $.p1s.profile.user.works_number = 0;
     $.p1s.profile.user.educations_number = 0;
+    $.p1s.profile.user.photo = "";
 });
 
 $(function(){
@@ -92,6 +93,34 @@ $(function(){
             });
         }
     });
+
+    $('#uploadBtn').click(function(e) {
+        $(this).find('input[type="file"]').click();
+    });
+
+    $('#uploadBtn input').click(function(e) {
+        e.stopPropagation();
+    });
+
+    $('#picture-file-input').change(function() {
+      var files = document.getElementById('picture-file-input').files;
+      if (files.length > 0) {
+        getBase64(files[0]);
+      }
+    });
+
+    function getBase64(file) {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            $.p1s.profile.user.photo = reader.result;
+            $('.userImage-holder .userImage-back').attr('style', "background : url(\""+$.p1s.profile.user.photo+"\") 50% 50% no-repeat;");
+            $('.userImage-holder .userImage-front').attr('style', "background : url(\""+$.p1s.profile.user.photo+"\") 50% 50% no-repeat;");
+        }
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    };
 
     $('#upload-button').click(function() {
         var data = {};
