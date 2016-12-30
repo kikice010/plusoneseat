@@ -23,7 +23,7 @@ switch ($method) {
     //Save mail address in the database
     $id = filter_input(INPUT_POST, "id");
     $res = MealOfferManager::getMealOffersByHost($id);
-    echo json_encode($res);
+    //echo json_encode($res);
     $result = array();
     foreach ($res as $returned_meal){
         $obj = null;

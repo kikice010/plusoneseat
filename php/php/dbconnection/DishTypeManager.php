@@ -69,7 +69,9 @@ class DishTypeManager {
         
         $id = null;
         $name = null;
-        $statement->bind_result($id, $name);
+        $has_child = null;
+        $parent = null;
+        $statement->bind_result($id, $name,$has_child,$parent);
         $db_instance->executeStatement();
         
         while($db_instance->fetchResult()){

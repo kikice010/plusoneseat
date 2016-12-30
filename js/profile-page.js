@@ -154,7 +154,7 @@ $(function(){
             index = string.indexOf(",");
             item.city = string.substring(0,index);
             item.country = string.substring(index+1,string.length);
-            if(item.city.length > 0 && ite.country.length > 0 && item.job.length > 0) {
+            if(item.city.length > 0 && item.country.length > 0 && item.job.length > 0) {
                 work.push(item);
             }
         }
@@ -174,7 +174,7 @@ $(function(){
             item.level = $("#field-language-level-"+i).val();
             item.language = $("#field-language-"+i).val();
             languages.push(item);
-            if(item.level.length > 0 && ite.language.length > 0 ) {
+            if(item.level.length > 0 && item.language.length > 0 ) {
                 interests.push(item);
             }
         }
@@ -185,7 +185,7 @@ $(function(){
             item.code = $("#field-country-code-"+i).val();
             item.phone = $("#field-phone-"+i).val();
             phones.push(item);
-            if(item.level.length > 0 && ite.language.length > 0 ) {
+            if(item.level.length > 0 && item.language.length > 0 ) {
                 interests.push(item);
             }
         }

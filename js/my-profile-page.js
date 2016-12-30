@@ -11,8 +11,8 @@ $(document).ready(function() {
     }
     if (typeof $.p1s.myprofile.url === 'undefined') {
         $.p1s.myprofile.url = {};
-        $.p1s.myprofile.url.fetch_user = "http://localhost:8080/plusoneseat/php/php/api/getProfile.php";
-        $.p1s.myprofile.url.fetch_user_meals = "http://localhost:8080/plusoneseat/php/php/api/getMealOfferByHost.php"
+        $.p1s.myprofile.url.fetch_user = "../php/php/api/getProfile.php";
+        $.p1s.myprofile.url.fetch_user_meals = "../php/php/api/getMealOfferByHost.php"
     }
 
     var get_user = $.get( $.p1s.myprofile.url.fetch_user, { id: $.p1s.user.id } );

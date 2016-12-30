@@ -47,7 +47,7 @@ function signUp() {
 	    var email = $("#emailSignUpField").val();
 	    var password = $("#passwordSignUpField").val();
 	    if(email !== "" && password!== ""){ 	
-	    	postRequest("./php/php/api/signup.php",{'email':email, 'password':password},callbackFunctionPost,setErrorMessage);
+	    	postRequest("./php/php/api/signup.php",{'email':email, 'password':password},callbackFunction,setErrorMessage);
 
 	    }
 	    else{
