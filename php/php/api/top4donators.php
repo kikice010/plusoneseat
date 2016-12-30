@@ -14,7 +14,8 @@ require_once __DB_CONNECTION__.'MealPhotoManager.php';
 $method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
 
 
-    $result = array();
+    $result["hosts"] = array();
+    $result["meals"] = array();
 
     $res = MealOfferManager::getTop4HostIds();
     foreach ($res as $tupple){
@@ -44,7 +45,24 @@ $method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
         else
             $row["meal_picture"] = "no photos";
 
-        array_push($result, $row);
+        array_push($result["hosts"], $row);
+    }  
+
+    $res = MealOfferManager::getTop4HostIds();
+    foreach ($res as $tupple){
+        
+
+        
+       
+        $meal_offers = MealOfferManager::getMealOffersByHost($user->getId());
+        foreach ($meal_offers as $meal){
+            
+            if(new Date() < new Date($meal->getDate()) ){
+                array_push($result["meals"], $meal);
+            }  
+        }
+
+       
     }  
 
     echo json_encode($result);

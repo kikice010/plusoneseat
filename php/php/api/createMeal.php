@@ -34,9 +34,12 @@ switch ($method) {
     $courses = $obj['courses']; //check again
     $photos = $obj['photos'];
     $price = $obj['price']; //complex type, price per seat, currency, number of donations and type of donations
-    $date = $obj['date'];
+    //$date = $obj['date'];
     $start_time = $obj['start_time'];
     $end_time = $obj['end_time'];
+
+    $dt = \DateTime::createFromFormat('d/m/Y', $obj['date']);
+    $date = $dt->format('Y-m-d');
 
     $continent = ContinentManager::getContinentByName($cuisine["continent"]);
     $continent_id = $continent->getId();
