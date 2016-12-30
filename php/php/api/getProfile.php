@@ -21,7 +21,7 @@ switch ($method) {
   case 'GET':
     
     //Save mail address in the database
-    $id = filter_input(INPUT_GET, "id_user");
+    $id = filter_input(INPUT_GET, "id");
     //$user = new User($id, null, null, null, null, null,null, null,null, null,null);
     $returned_user = UserManager::getUser($id);
 
@@ -30,15 +30,15 @@ switch ($method) {
 
     if(count($returned_user)>0)
     {
-            $returned_education = UserEducationManager::getAllEducationForUser($returned_user[0]);
-            $returned_work = UserWorkManager::getAllWorkForUser($returned_user[0]);
-            $returned_interests = UserInterestManager::getAllInterestsForUser($returned_user[0]);
-            $returned_languages = UserLanguageManager::getAllLanguagesForUser($returned_user[0]);
-            $returned_phonenumbers = UserPhonenumberManager::getAllPhonenumberForUser($returned_user[0]);
+            $returned_education = UserEducationManager::getAllEducationForUser($returned_user);
+            $returned_work = UserWorkManager::getAllWorkForUser($returned_user);
+            $returned_interests = UserInterestManager::getAllInterestsForUser($returned_user);
+            $returned_languages = UserLanguageManager::getAllLanguagesForUser($returned_user);
+            $returned_phonenumbers = UserPhonenumberManager::getAllPhonenumberForUser($returned_user);
             // echo json_encode(strcmp($returned_password,$password));
             $result['success'] = 1;
             $result['message'] = 'User fetched.';
-            $result['user'] = $returned_user[0];
+            $result['user'] = $returned_user;
             $result['user_education'] = $returned_education;
             $result['user_work'] = $returned_work;
             $result['user_interests'] = $returned_interests;

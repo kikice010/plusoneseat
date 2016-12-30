@@ -392,8 +392,18 @@ $("#saveBtn").click(function(){
     meal.end_time = curr_hour + ":" + curr_min;
     meal.host = $.p1s.userID;
     meal.drinks = ["Wine"];
-    postRequest("../php/php/api/createMeal.php",{"json":JSON.stringify(meal)});
+    postRequest("../php/php/api/createMeal.php",{"json":JSON.stringify(meal)},callbackFunction,setErrorMessage);
 });
+
+function setErrorMessage(msg){
+    $(".labelError").text(msg);
+     $(".labelError").fadeIn().delay(500).fadeOut();
+}
+function callbackFunction(msg){
+    $(".labelError").text(msg);
+     $(".labelError").fadeIn().delay(500).fadeOut();
+    setTimeout(window.location.assign('pages/profile_page.html'),1500);
+}
 
 function getIngredientsString(ingredients) {
     if(typeof ingredients !== 'undefined') {

@@ -75,6 +75,10 @@ switch ($method) {
             DishManager::insertDish($newDish);
         }
     }
+
+    $result["success"] = 1;
+    $result["message"] = $id_meal_offer;
+    echo json_encode($result);
     
 }
 

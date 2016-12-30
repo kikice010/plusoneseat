@@ -11,7 +11,7 @@ function postRequest(url,params,callback_function,callback_error){
 	            callback_error(data.message);
 	        }
 	        else{
-	          	callbackFunction(data.message);
+	          	callbackFunctionPost(data.message);
 	        }          
 	    },
 
@@ -20,4 +20,15 @@ function postRequest(url,params,callback_function,callback_error){
 	        console.log("Details: " + desc + "\nError:" + err);
 	    }
 	});
+}
+
+function setErrorMessage(msg){
+    // $(".labelError").text(msg);
+    //  $(".labelError").fadeIn().delay(500).fadeOut();
+}
+function callbackFunctionPost(msg){
+	console.log(msg);
+    // $(".labelError").text(msg);
+    //  $(".labelError").fadeIn().delay(500).fadeOut();
+    // setTimeout(window.location.assign('pages/profile_page.html'),1500);
 }
